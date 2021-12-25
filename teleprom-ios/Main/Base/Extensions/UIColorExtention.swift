@@ -9,8 +9,12 @@ import UIKit
 
 extension UIColor {
     
-    class var menuColor: UIColor {
+    class var customLightGray: UIColor {
         return UIColor(hexString: "#2F2F2F")!
+    }
+    
+    class var customDarkGray: UIColor {
+        return UIColor(hexString: "#282828")!
     }
     
     public convenience init?(hexString: String) {

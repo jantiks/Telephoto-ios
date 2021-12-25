@@ -20,6 +20,14 @@
 		A01C908F2776F2420098EEB8 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C908E2776F2420098EEB8 /* UIColorExtention.swift */; };
 		A01C9092277767BE0098EEB8 /* TabBarViewControllerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C9091277767BE0098EEB8 /* TabBarViewControllerConfig.swift */; };
 		A01C909427776AD90098EEB8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C909327776AD90098EEB8 /* TabBarViewController.swift */; };
+		A01C909727776DE50098EEB8 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C909627776DE50098EEB8 /* BaseNavigationController.swift */; };
+		A01C90AF277785CF0098EEB8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A01C90B1277785CF0098EEB8 /* Localizable.strings */; };
+		A01C90B4277787900098EEB8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C90B3277787900098EEB8 /* StringExtension.swift */; };
+		A01C90B7277788B60098EEB8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C90B5277788B60098EEB8 /* SettingsViewController.swift */; };
+		A01C90B8277788B60098EEB8 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C90B6277788B60098EEB8 /* SettingsViewController.xib */; };
+		A01C90BE27778B340098EEB8 /* SettingsTableCellConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C90BD27778B340098EEB8 /* SettingsTableCellConfig.swift */; };
+		A01C90C227779DD90098EEB8 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C90C027779DD80098EEB8 /* SettingsTableViewCell.swift */; };
+		A01C90C327779DD90098EEB8 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C90C127779DD80098EEB8 /* SettingsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +46,17 @@
 		A01C908E2776F2420098EEB8 /* UIColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtention.swift; sourceTree = "<group>"; };
 		A01C9091277767BE0098EEB8 /* TabBarViewControllerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewControllerConfig.swift; sourceTree = "<group>"; };
 		A01C909327776AD90098EEB8 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		A01C909627776DE50098EEB8 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		A01C90AD277785B00098EEB8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		A01C90AE277785B00098EEB8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A01C90B0277785CF0098EEB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A01C90B2277785DC0098EEB8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A01C90B3277787900098EEB8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		A01C90B5277788B60098EEB8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A01C90B6277788B60098EEB8 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		A01C90BD27778B340098EEB8 /* SettingsTableCellConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableCellConfig.swift; sourceTree = "<group>"; };
+		A01C90C027779DD80098EEB8 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		A01C90C127779DD80098EEB8 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +89,7 @@
 		A01C9067277512200098EEB8 /* teleprom-ios */ = {
 			isa = PBXGroup;
 			children = (
+				A01C909E277781720098EEB8 /* Localization */,
 				A01C907D277514CC0098EEB8 /* Main */,
 				A01C907C277514990098EEB8 /* Supporting files */,
 				A01C9076277512260098EEB8 /* Info.plist */,
@@ -95,6 +115,7 @@
 			children = (
 				A01C908927751A350098EEB8 /* Base */,
 				A01C908B27751A500098EEB8 /* TabBarController */,
+				A01C909927776EFC0098EEB8 /* SettingsViewController */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -104,6 +125,7 @@
 			children = (
 				A01C907E277514DE0098EEB8 /* GlobalExtension.swift */,
 				A01C908E2776F2420098EEB8 /* UIColorExtention.swift */,
+				A01C90B3277787900098EEB8 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -121,6 +143,7 @@
 			children = (
 				A01C908C27751A630098EEB8 /* BaseTabBarViewController.swift */,
 				A01C9085277515B80098EEB8 /* BaseViewController.swift */,
+				A01C909627776DE50098EEB8 /* BaseNavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -158,6 +181,42 @@
 				A01C9091277767BE0098EEB8 /* TabBarViewControllerConfig.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A01C909927776EFC0098EEB8 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A01C90BF27779D760098EEB8 /* Cells */,
+				A01C90B927778AB30098EEB8 /* Models */,
+				A01C90B5277788B60098EEB8 /* SettingsViewController.swift */,
+				A01C90B6277788B60098EEB8 /* SettingsViewController.xib */,
+			);
+			path = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		A01C909E277781720098EEB8 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				A01C90B1277785CF0098EEB8 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		A01C90B927778AB30098EEB8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A01C90BD27778B340098EEB8 /* SettingsTableCellConfig.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A01C90BF27779D760098EEB8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A01C90C027779DD80098EEB8 /* SettingsTableViewCell.swift */,
+				A01C90C127779DD80098EEB8 /* SettingsTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +261,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = A01C905C277512200098EEB8;
 			productRefGroup = A01C9066277512200098EEB8 /* Products */;
@@ -218,9 +278,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A01C90C327779DD90098EEB8 /* SettingsTableViewCell.xib in Resources */,
 				A01C9075277512260098EEB8 /* LaunchScreen.storyboard in Resources */,
+				A01C90AF277785CF0098EEB8 /* Localizable.strings in Resources */,
 				A01C9072277512260098EEB8 /* Assets.xcassets in Resources */,
 				A01C9070277512200098EEB8 /* Main.storyboard in Resources */,
+				A01C90B8277788B60098EEB8 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,15 +295,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01C906D277512200098EEB8 /* ViewController.swift in Sources */,
+				A01C90BE27778B340098EEB8 /* SettingsTableCellConfig.swift in Sources */,
 				A01C9069277512200098EEB8 /* AppDelegate.swift in Sources */,
 				A01C9092277767BE0098EEB8 /* TabBarViewControllerConfig.swift in Sources */,
 				A01C9082277514F30098EEB8 /* BaseCustomView.swift in Sources */,
 				A01C907F277514DE0098EEB8 /* GlobalExtension.swift in Sources */,
 				A01C908F2776F2420098EEB8 /* UIColorExtention.swift in Sources */,
 				A01C908D27751A630098EEB8 /* BaseTabBarViewController.swift in Sources */,
+				A01C90C227779DD90098EEB8 /* SettingsTableViewCell.swift in Sources */,
+				A01C909727776DE50098EEB8 /* BaseNavigationController.swift in Sources */,
 				A01C906B277512200098EEB8 /* SceneDelegate.swift in Sources */,
 				A01C909427776AD90098EEB8 /* TabBarViewController.swift in Sources */,
+				A01C90B7277788B60098EEB8 /* SettingsViewController.swift in Sources */,
 				A01C9086277515B80098EEB8 /* BaseViewController.swift in Sources */,
+				A01C90B4277787900098EEB8 /* StringExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +319,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A01C906F277512200098EEB8 /* Base */,
+				A01C90AD277785B00098EEB8 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -259,8 +328,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				A01C9074277512260098EEB8 /* Base */,
+				A01C90AE277785B00098EEB8 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A01C90B1277785CF0098EEB8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A01C90B0277785CF0098EEB8 /* en */,
+				A01C90B2277785DC0098EEB8 /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -270,6 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -317,7 +397,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -331,6 +411,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -372,7 +453,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

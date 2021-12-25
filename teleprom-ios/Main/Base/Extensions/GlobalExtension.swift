@@ -18,4 +18,4 @@ func getKeyWindow() -> UIWindow? {
 func getController<T: UIViewController>() -> T {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     return storyboard.instantiateViewController(withIdentifier: String(describing: T.self)) as! T
-}sss
+}

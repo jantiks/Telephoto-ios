@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  teleprom-ios
+
+  Created by Tigran Arsenyan on 12/25/21.
+  
+*/
+
+"main.tab.records" = "Records";
+"main.tab.settings" = "Settings";
+"settings.video.settings" = "Video Settings";
+"settings.language" = "Language";
+"settings.help" = "Help";
+"settings.about" = "About";

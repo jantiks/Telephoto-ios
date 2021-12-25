@@ -24,7 +24,7 @@ class BaseTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UITabBar.appearance().backgroundColor = .menuColor
+        UITabBar.appearance().backgroundColor = .customLightGray
         UITabBar.appearance().tintColor = .white
         UITabBar.appearance().unselectedItemTintColor = .gray
     }
