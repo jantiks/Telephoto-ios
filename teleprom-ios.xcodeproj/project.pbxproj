@@ -16,6 +16,10 @@
 		A01C907F277514DE0098EEB8 /* GlobalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C907E277514DE0098EEB8 /* GlobalExtension.swift */; };
 		A01C9082277514F30098EEB8 /* BaseCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C9081277514F30098EEB8 /* BaseCustomView.swift */; };
 		A01C9086277515B80098EEB8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C9085277515B80098EEB8 /* BaseViewController.swift */; };
+		A01C908D27751A630098EEB8 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C908C27751A630098EEB8 /* BaseTabBarViewController.swift */; };
+		A01C908F2776F2420098EEB8 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C908E2776F2420098EEB8 /* UIColorExtention.swift */; };
+		A01C9092277767BE0098EEB8 /* TabBarViewControllerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C9091277767BE0098EEB8 /* TabBarViewControllerConfig.swift */; };
+		A01C909427776AD90098EEB8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C909327776AD90098EEB8 /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		A01C907E277514DE0098EEB8 /* GlobalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalExtension.swift; sourceTree = "<group>"; };
 		A01C9081277514F30098EEB8 /* BaseCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCustomView.swift; sourceTree = "<group>"; };
 		A01C9085277515B80098EEB8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A01C908C27751A630098EEB8 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
+		A01C908E2776F2420098EEB8 /* UIColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtention.swift; sourceTree = "<group>"; };
+		A01C9091277767BE0098EEB8 /* TabBarViewControllerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewControllerConfig.swift; sourceTree = "<group>"; };
+		A01C909327776AD90098EEB8 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +93,8 @@
 		A01C907D277514CC0098EEB8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				A01C9084277515AA0098EEB8 /* Controllers */,
-				A01C9080277514E20098EEB8 /* Extensions */,
-				A01C9083277514FA0098EEB8 /* Views */,
+				A01C908927751A350098EEB8 /* Base */,
+				A01C908B27751A500098EEB8 /* TabBarController */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -96,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				A01C907E277514DE0098EEB8 /* GlobalExtension.swift */,
+				A01C908E2776F2420098EEB8 /* UIColorExtention.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -111,9 +119,45 @@
 		A01C9084277515AA0098EEB8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A01C908C27751A630098EEB8 /* BaseTabBarViewController.swift */,
 				A01C9085277515B80098EEB8 /* BaseViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A01C908927751A350098EEB8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A01C909527776B180098EEB8 /* Models */,
+				A01C9084277515AA0098EEB8 /* Controllers */,
+				A01C9080277514E20098EEB8 /* Extensions */,
+				A01C9083277514FA0098EEB8 /* Views */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A01C908B27751A500098EEB8 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				A01C9090277767AF0098EEB8 /* Models */,
+				A01C909327776AD90098EEB8 /* TabBarViewController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		A01C9090277767AF0098EEB8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A01C909527776B180098EEB8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A01C9091277767BE0098EEB8 /* TabBarViewControllerConfig.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,9 +233,13 @@
 			files = (
 				A01C906D277512200098EEB8 /* ViewController.swift in Sources */,
 				A01C9069277512200098EEB8 /* AppDelegate.swift in Sources */,
+				A01C9092277767BE0098EEB8 /* TabBarViewControllerConfig.swift in Sources */,
 				A01C9082277514F30098EEB8 /* BaseCustomView.swift in Sources */,
 				A01C907F277514DE0098EEB8 /* GlobalExtension.swift in Sources */,
+				A01C908F2776F2420098EEB8 /* UIColorExtention.swift in Sources */,
+				A01C908D27751A630098EEB8 /* BaseTabBarViewController.swift in Sources */,
 				A01C906B277512200098EEB8 /* SceneDelegate.swift in Sources */,
+				A01C909427776AD90098EEB8 /* TabBarViewController.swift in Sources */,
 				A01C9086277515B80098EEB8 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
