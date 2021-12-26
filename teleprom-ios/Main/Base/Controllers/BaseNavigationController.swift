@@ -13,19 +13,18 @@ class BaseNavigationController: UINavigationController {
         return .portrait
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+//    override var prefersStatusBarHidden: Bool {
+//        return true
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .customDarkGray
-        navigationBar.barTintColor = .customDarkGray
+        view.backgroundColor = .controllerGray
+        navigationBar.barTintColor = .controllerGray
         navigationBar.isTranslucent = false
         navigationBar.tintColor = .white
         navigationBar.shadowImage = UIImage()
-        
         navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }

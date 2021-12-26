@@ -28,6 +28,16 @@
 		A01C90BE27778B340098EEB8 /* SettingsTableCellConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C90BD27778B340098EEB8 /* SettingsTableCellConfig.swift */; };
 		A01C90C227779DD90098EEB8 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C90C027779DD80098EEB8 /* SettingsTableViewCell.swift */; };
 		A01C90C327779DD90098EEB8 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C90C127779DD80098EEB8 /* SettingsTableViewCell.xib */; };
+		A01C90C62778182A0098EEB8 /* CommonCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C90C52778182A0098EEB8 /* CommonCommand.swift */; };
+		A01C90CE277818C90098EEB8 /* VideoSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C90CC277818C90098EEB8 /* VideoSettingsViewController.swift */; };
+		A01C90CF277818C90098EEB8 /* VideoSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C90CD277818C90098EEB8 /* VideoSettingsViewController.xib */; };
+		A01C90D127781A210098EEB8 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C90D027781A210098EEB8 /* UIViewExtension.swift */; };
+		A01C90D427781D8F0098EEB8 /* VideoSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C90D327781D8F0098EEB8 /* VideoSetting.swift */; };
+		A032736427783F18008A138C /* TableViewCellWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032736227783F18008A138C /* TableViewCellWithLabel.swift */; };
+		A032736527783F18008A138C /* TableViewCellWithLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = A032736327783F18008A138C /* TableViewCellWithLabel.xib */; };
+		A0327368277845C9008A138C /* SetVideoSettingsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0327367277845C9008A138C /* SetVideoSettingsCommand.swift */; };
+		A032736B27784646008A138C /* UserSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032736A27784646008A138C /* UserSettingsManager.swift */; };
+		A032736D277846FA008A138C /* SetDefaultCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032736C277846FA008A138C /* SetDefaultCommands.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +67,16 @@
 		A01C90BD27778B340098EEB8 /* SettingsTableCellConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableCellConfig.swift; sourceTree = "<group>"; };
 		A01C90C027779DD80098EEB8 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		A01C90C127779DD80098EEB8 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		A01C90C52778182A0098EEB8 /* CommonCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCommand.swift; sourceTree = "<group>"; };
+		A01C90CC277818C90098EEB8 /* VideoSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSettingsViewController.swift; sourceTree = "<group>"; };
+		A01C90CD277818C90098EEB8 /* VideoSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoSettingsViewController.xib; sourceTree = "<group>"; };
+		A01C90D027781A210098EEB8 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		A01C90D327781D8F0098EEB8 /* VideoSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSetting.swift; sourceTree = "<group>"; };
+		A032736227783F18008A138C /* TableViewCellWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellWithLabel.swift; sourceTree = "<group>"; };
+		A032736327783F18008A138C /* TableViewCellWithLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellWithLabel.xib; sourceTree = "<group>"; };
+		A0327367277845C9008A138C /* SetVideoSettingsCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetVideoSettingsCommand.swift; sourceTree = "<group>"; };
+		A032736A27784646008A138C /* UserSettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsManager.swift; sourceTree = "<group>"; };
+		A032736C277846FA008A138C /* SetDefaultCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDefaultCommands.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				A01C908927751A350098EEB8 /* Base */,
-				A01C908B27751A500098EEB8 /* TabBarController */,
-				A01C909927776EFC0098EEB8 /* SettingsViewController */,
+				A01C908B27751A500098EEB8 /* TabBar */,
+				A01C909927776EFC0098EEB8 /* Settings */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -126,6 +146,7 @@
 				A01C907E277514DE0098EEB8 /* GlobalExtension.swift */,
 				A01C908E2776F2420098EEB8 /* UIColorExtention.swift */,
 				A01C90B3277787900098EEB8 /* StringExtension.swift */,
+				A01C90D027781A210098EEB8 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -151,6 +172,8 @@
 		A01C908927751A350098EEB8 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				A03273692778462F008A138C /* Managers */,
+				A01C90C42778181C0098EEB8 /* Commands */,
 				A01C909527776B180098EEB8 /* Models */,
 				A01C9084277515AA0098EEB8 /* Controllers */,
 				A01C9080277514E20098EEB8 /* Extensions */,
@@ -159,13 +182,13 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		A01C908B27751A500098EEB8 /* TabBarController */ = {
+		A01C908B27751A500098EEB8 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
 				A01C9090277767AF0098EEB8 /* Models */,
 				A01C909327776AD90098EEB8 /* TabBarViewController.swift */,
 			);
-			path = TabBarController;
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		A01C9090277767AF0098EEB8 /* Models */ = {
@@ -183,15 +206,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		A01C909927776EFC0098EEB8 /* SettingsViewController */ = {
+		A01C909927776EFC0098EEB8 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				A01C90BF27779D760098EEB8 /* Cells */,
-				A01C90B927778AB30098EEB8 /* Models */,
-				A01C90B5277788B60098EEB8 /* SettingsViewController.swift */,
-				A01C90B6277788B60098EEB8 /* SettingsViewController.xib */,
+				A01C90C7277818580098EEB8 /* SettingsViewController */,
+				A01C90C8277818760098EEB8 /* VideoSettingsViewController */,
+				A01C90CA277818990098EEB8 /* HelpViewController */,
+				A01C90C92778188A0098EEB8 /* LanguageSelectViewController */,
+				A01C90CB277818A30098EEB8 /* AboutViewController */,
 			);
-			path = SettingsViewController;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		A01C909E277781720098EEB8 /* Localization */ = {
@@ -217,6 +241,84 @@
 				A01C90C127779DD80098EEB8 /* SettingsTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		A01C90C42778181C0098EEB8 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				A01C90C52778182A0098EEB8 /* CommonCommand.swift */,
+				A0327367277845C9008A138C /* SetVideoSettingsCommand.swift */,
+				A032736C277846FA008A138C /* SetDefaultCommands.swift */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
+		A01C90C7277818580098EEB8 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A01C90BF27779D760098EEB8 /* Cells */,
+				A01C90B927778AB30098EEB8 /* Models */,
+				A01C90B5277788B60098EEB8 /* SettingsViewController.swift */,
+				A01C90B6277788B60098EEB8 /* SettingsViewController.xib */,
+			);
+			path = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		A01C90C8277818760098EEB8 /* VideoSettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A032735F27783EDC008A138C /* Cells */,
+				A01C90CC277818C90098EEB8 /* VideoSettingsViewController.swift */,
+				A01C90CD277818C90098EEB8 /* VideoSettingsViewController.xib */,
+				A01C90D227781D840098EEB8 /* Enums */,
+			);
+			path = VideoSettingsViewController;
+			sourceTree = "<group>";
+		};
+		A01C90C92778188A0098EEB8 /* LanguageSelectViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LanguageSelectViewController;
+			sourceTree = "<group>";
+		};
+		A01C90CA277818990098EEB8 /* HelpViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HelpViewController;
+			sourceTree = "<group>";
+		};
+		A01C90CB277818A30098EEB8 /* AboutViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AboutViewController;
+			sourceTree = "<group>";
+		};
+		A01C90D227781D840098EEB8 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A01C90D327781D8F0098EEB8 /* VideoSetting.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		A032735F27783EDC008A138C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A032736227783F18008A138C /* TableViewCellWithLabel.swift */,
+				A032736327783F18008A138C /* TableViewCellWithLabel.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A03273692778462F008A138C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A032736A27784646008A138C /* UserSettingsManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,10 +382,12 @@
 			files = (
 				A01C90C327779DD90098EEB8 /* SettingsTableViewCell.xib in Resources */,
 				A01C9075277512260098EEB8 /* LaunchScreen.storyboard in Resources */,
+				A032736527783F18008A138C /* TableViewCellWithLabel.xib in Resources */,
 				A01C90AF277785CF0098EEB8 /* Localizable.strings in Resources */,
 				A01C9072277512260098EEB8 /* Assets.xcassets in Resources */,
 				A01C9070277512200098EEB8 /* Main.storyboard in Resources */,
 				A01C90B8277788B60098EEB8 /* SettingsViewController.xib in Resources */,
+				A01C90CF277818C90098EEB8 /* VideoSettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,16 +401,24 @@
 				A01C906D277512200098EEB8 /* ViewController.swift in Sources */,
 				A01C90BE27778B340098EEB8 /* SettingsTableCellConfig.swift in Sources */,
 				A01C9069277512200098EEB8 /* AppDelegate.swift in Sources */,
+				A032736B27784646008A138C /* UserSettingsManager.swift in Sources */,
 				A01C9092277767BE0098EEB8 /* TabBarViewControllerConfig.swift in Sources */,
+				A01C90CE277818C90098EEB8 /* VideoSettingsViewController.swift in Sources */,
 				A01C9082277514F30098EEB8 /* BaseCustomView.swift in Sources */,
+				A0327368277845C9008A138C /* SetVideoSettingsCommand.swift in Sources */,
+				A01C90D127781A210098EEB8 /* UIViewExtension.swift in Sources */,
 				A01C907F277514DE0098EEB8 /* GlobalExtension.swift in Sources */,
+				A01C90C62778182A0098EEB8 /* CommonCommand.swift in Sources */,
 				A01C908F2776F2420098EEB8 /* UIColorExtention.swift in Sources */,
 				A01C908D27751A630098EEB8 /* BaseTabBarViewController.swift in Sources */,
 				A01C90C227779DD90098EEB8 /* SettingsTableViewCell.swift in Sources */,
 				A01C909727776DE50098EEB8 /* BaseNavigationController.swift in Sources */,
+				A032736D277846FA008A138C /* SetDefaultCommands.swift in Sources */,
 				A01C906B277512200098EEB8 /* SceneDelegate.swift in Sources */,
+				A032736427783F18008A138C /* TableViewCellWithLabel.swift in Sources */,
 				A01C909427776AD90098EEB8 /* TabBarViewController.swift in Sources */,
 				A01C90B7277788B60098EEB8 /* SettingsViewController.swift in Sources */,
+				A01C90D427781D8F0098EEB8 /* VideoSetting.swift in Sources */,
 				A01C9086277515B80098EEB8 /* BaseViewController.swift in Sources */,
 				A01C90B4277787900098EEB8 /* StringExtension.swift in Sources */,
 			);

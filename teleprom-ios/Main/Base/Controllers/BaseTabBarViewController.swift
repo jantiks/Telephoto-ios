@@ -13,18 +13,18 @@ class BaseTabBarViewController: UITabBarController {
         return .portrait
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
+//    override var prefersStatusBarHidden: Bool {
+//        return true
+//    }
+//    
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UITabBar.appearance().backgroundColor = .customLightGray
+        UITabBar.appearance().backgroundColor = .tabBarGray
         UITabBar.appearance().tintColor = .white
         UITabBar.appearance().unselectedItemTintColor = .gray
     }

@@ -12,3 +12,7 @@
 "settings.language" = "Language";
 "settings.help" = "Help";
 "settings.about" = "About";
+"hd.720p" = "720P HD, 30 fps";
+"hd.1080p" = "1080P HD, 30 fps";
+"hd.1080p.60fps" = "1080P HD, 60 fps";
+"settings.explantation.label" = "A minute of video will contain:\n• 40  MB for 720р HD, 30 fps (less space)\n• 60  MB for 1080р HD, fps (default)\n• 90  MB for 1080р HD, 60 fps (smoothed out)";

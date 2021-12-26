@@ -9,12 +9,20 @@ import UIKit
 
 extension UIColor {
     
-    class var customLightGray: UIColor {
+    class var tabBarGray: UIColor {
         return UIColor(hexString: "#2F2F2F")!
     }
     
-    class var customDarkGray: UIColor {
+    class var controllerGray: UIColor {
         return UIColor(hexString: "#282828")!
+    }
+    
+    class var telepromPink: UIColor {
+        return UIColor(hexString: "#F24084")!
+    }
+    
+    class var tableBgGray: UIColor {
+        return UIColor(hexString: "#3C3C3C")!
     }
     
     public convenience init?(hexString: String) {

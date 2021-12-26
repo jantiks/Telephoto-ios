@@ -23,23 +23,38 @@ class SettingsViewController: BaseViewController {
         settingsTableView.delegate = self
         settingsTableView.dataSource = self
         settingsTableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingsTableViewCell")
-        
+
         initUI()
     }
     
-    private func initUI() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    private func initUI() {
         navigationItem.title = "main.tab.settings".localized
         
-        view.backgroundColor = .customDarkGray
-        settingsTableView.backgroundColor = .customDarkGray
+        view.backgroundColor = .controllerGray
+        settingsTableView.backgroundColor = .controllerGray
         settingsTableView.separatorColor = .clear
     }
 }
 
 extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row
+        if indexPath.row == 0 {
+            let vc = VideoSettingsViewController()
+            vc.title = tableData[indexPath.row].title
+            navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 1 {
+
+        } else if indexPath.row == 2 {
+
+        } else if indexPath.row == 3 {
+
+        }
     }
 }
 
