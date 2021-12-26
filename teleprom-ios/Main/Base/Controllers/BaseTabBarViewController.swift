@@ -21,6 +21,8 @@ class BaseTabBarViewController: UITabBarController {
 //        return .lightContent
 //    }
     
+    private var config: [TabBarViewControllerConfig] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,14 +32,24 @@ class BaseTabBarViewController: UITabBarController {
     }
     
     func setupVCs(_ config: [TabBarViewControllerConfig]) {
+        self.config = config
+        
         viewControllers = config.map({
             let vc = $0.controller
             
-            vc.tabBarItem.title = $0.tabBarItemTitle
+            vc.tabBarItem.title = $0.tabBarItemTitle.localized
             vc.tabBarItem.image = $0.tabBarItemImage
             vc.tabBarItem.imageInsets = $0.imageInset
             
             return vc
         })
+    }
+    
+    func updateTabBar() {
+        guard let controllers = viewControllers else { return }
+        
+        for i in 0..<controllers.count {
+            controllers[i].tabBarItem.title = config[i].tabBarItemTitle.localized
+        }
     }
 }

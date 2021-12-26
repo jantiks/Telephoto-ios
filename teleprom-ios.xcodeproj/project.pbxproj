@@ -38,6 +38,11 @@
 		A0327368277845C9008A138C /* SetVideoSettingsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0327367277845C9008A138C /* SetVideoSettingsCommand.swift */; };
 		A032736B27784646008A138C /* UserSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032736A27784646008A138C /* UserSettingsManager.swift */; };
 		A032736D277846FA008A138C /* SetDefaultCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032736C277846FA008A138C /* SetDefaultCommands.swift */; };
+		A03273702778526E008A138C /* LanguageSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032736E2778526E008A138C /* LanguageSelectionViewController.swift */; };
+		A03273712778526E008A138C /* LanguageSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A032736F2778526E008A138C /* LanguageSelectionViewController.xib */; };
+		A032737427785497008A138C /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032737327785497008A138C /* Languages.swift */; };
+		A08153A627785EEF00AADED9 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153A527785EEF00AADED9 /* LanguageManager.swift */; };
+		A08153A827785FCC00AADED9 /* DoneCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153A727785FCC00AADED9 /* DoneCommand.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +82,11 @@
 		A0327367277845C9008A138C /* SetVideoSettingsCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetVideoSettingsCommand.swift; sourceTree = "<group>"; };
 		A032736A27784646008A138C /* UserSettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsManager.swift; sourceTree = "<group>"; };
 		A032736C277846FA008A138C /* SetDefaultCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDefaultCommands.swift; sourceTree = "<group>"; };
+		A032736E2778526E008A138C /* LanguageSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionViewController.swift; sourceTree = "<group>"; };
+		A032736F2778526E008A138C /* LanguageSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageSelectionViewController.xib; sourceTree = "<group>"; };
+		A032737327785497008A138C /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
+		A08153A527785EEF00AADED9 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		A08153A727785FCC00AADED9 /* DoneCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneCommand.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +259,7 @@
 				A01C90C52778182A0098EEB8 /* CommonCommand.swift */,
 				A0327367277845C9008A138C /* SetVideoSettingsCommand.swift */,
 				A032736C277846FA008A138C /* SetDefaultCommands.swift */,
+				A08153A727785FCC00AADED9 /* DoneCommand.swift */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -278,6 +289,9 @@
 		A01C90C92778188A0098EEB8 /* LanguageSelectViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A032737227785481008A138C /* Enums */,
+				A032736E2778526E008A138C /* LanguageSelectionViewController.swift */,
+				A032736F2778526E008A138C /* LanguageSelectionViewController.xib */,
 			);
 			path = LanguageSelectViewController;
 			sourceTree = "<group>";
@@ -317,8 +331,17 @@
 			isa = PBXGroup;
 			children = (
 				A032736A27784646008A138C /* UserSettingsManager.swift */,
+				A08153A527785EEF00AADED9 /* LanguageManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		A032737227785481008A138C /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A032737327785497008A138C /* Languages.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01C90C327779DD90098EEB8 /* SettingsTableViewCell.xib in Resources */,
+				A03273712778526E008A138C /* LanguageSelectionViewController.xib in Resources */,
 				A01C9075277512260098EEB8 /* LaunchScreen.storyboard in Resources */,
 				A032736527783F18008A138C /* TableViewCellWithLabel.xib in Resources */,
 				A01C90AF277785CF0098EEB8 /* Localizable.strings in Resources */,
@@ -399,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01C906D277512200098EEB8 /* ViewController.swift in Sources */,
+				A08153A627785EEF00AADED9 /* LanguageManager.swift in Sources */,
 				A01C90BE27778B340098EEB8 /* SettingsTableCellConfig.swift in Sources */,
 				A01C9069277512200098EEB8 /* AppDelegate.swift in Sources */,
 				A032736B27784646008A138C /* UserSettingsManager.swift in Sources */,
@@ -406,6 +431,7 @@
 				A01C90CE277818C90098EEB8 /* VideoSettingsViewController.swift in Sources */,
 				A01C9082277514F30098EEB8 /* BaseCustomView.swift in Sources */,
 				A0327368277845C9008A138C /* SetVideoSettingsCommand.swift in Sources */,
+				A08153A827785FCC00AADED9 /* DoneCommand.swift in Sources */,
 				A01C90D127781A210098EEB8 /* UIViewExtension.swift in Sources */,
 				A01C907F277514DE0098EEB8 /* GlobalExtension.swift in Sources */,
 				A01C90C62778182A0098EEB8 /* CommonCommand.swift in Sources */,
@@ -415,7 +441,9 @@
 				A01C909727776DE50098EEB8 /* BaseNavigationController.swift in Sources */,
 				A032736D277846FA008A138C /* SetDefaultCommands.swift in Sources */,
 				A01C906B277512200098EEB8 /* SceneDelegate.swift in Sources */,
+				A03273702778526E008A138C /* LanguageSelectionViewController.swift in Sources */,
 				A032736427783F18008A138C /* TableViewCellWithLabel.swift in Sources */,
+				A032737427785497008A138C /* Languages.swift in Sources */,
 				A01C909427776AD90098EEB8 /* TabBarViewController.swift in Sources */,
 				A01C90B7277788B60098EEB8 /* SettingsViewController.swift in Sources */,
 				A01C90D427781D8F0098EEB8 /* VideoSetting.swift in Sources */,

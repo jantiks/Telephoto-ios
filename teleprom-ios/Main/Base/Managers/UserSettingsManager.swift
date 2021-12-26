@@ -19,7 +19,7 @@ class UserSettingsManager {
     
     func getVideoSetting() -> VideoSetting {
         let rawValue = UserDefaults.standard.integer(forKey: "VideoSettings")
-        print("getting settings \(VideoSetting(rawValue).title)")
+        
         return VideoSetting(rawValue)
     }
 }

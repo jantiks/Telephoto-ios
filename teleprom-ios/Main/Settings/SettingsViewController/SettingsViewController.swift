@@ -11,11 +11,7 @@ class SettingsViewController: BaseViewController {
     
     @IBOutlet private weak var settingsTableView: UITableView!
     
-    private var tableData: [SettingsTableCellConfig] =
-        [SettingsTableCellConfig(title: "settings.video.settings".localized, image: UIImage(named: "videoSettings")!),
-         SettingsTableCellConfig(title: "settings.language".localized, image: UIImage(named: "language")!),
-         SettingsTableCellConfig(title: "settings.help".localized, image: UIImage(named: "help")!),
-         SettingsTableCellConfig(title: "settings.about".localized, image: UIImage(named: "about")!)]
+    private var tableData: [SettingsTableCellConfig] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +21,11 @@ class SettingsViewController: BaseViewController {
         settingsTableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingsTableViewCell")
 
         initUI()
+        reloadData()
+        
+        LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
+            self?.reloadData()
+        })])
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,16 +41,27 @@ class SettingsViewController: BaseViewController {
         settingsTableView.backgroundColor = .controllerGray
         settingsTableView.separatorColor = .clear
     }
+    
+    private func reloadData() {
+        tableData =
+        [SettingsTableCellConfig(title: "settings.video.settings".localized, image: UIImage(named: "videoSettings")!),
+         SettingsTableCellConfig(title: "settings.language".localized, image: UIImage(named: "language")!),
+         SettingsTableCellConfig(title: "settings.help".localized, image: UIImage(named: "help")!),
+         SettingsTableCellConfig(title: "settings.about".localized, image: UIImage(named: "about")!)]
+        settingsTableView.reloadData()
+        
+        navigationItem.title = "main.tab.settings".localized
+    }
 }
 
 extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let vc = VideoSettingsViewController()
-            vc.title = tableData[indexPath.row].title
             navigationController?.pushViewController(vc, animated: true)
         } else if indexPath.row == 1 {
-
+            let vc = LanguageSelectionViewController()
+            navigationController?.pushViewController(vc, animated: true)
         } else if indexPath.row == 2 {
 
         } else if indexPath.row == 3 {

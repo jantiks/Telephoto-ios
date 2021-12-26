@@ -1,5 +1,5 @@
 //
-//  VideoSettingsViewController.swift
+//  LanguageSelectionViewController.swift
 //  teleprom-ios
 //
 //  Created by Tigran Arsenyan on 12/26/21.
@@ -7,20 +7,18 @@
 
 import UIKit
 
-class VideoSettingsViewController: UIViewController {
+class LanguageSelectionViewController: BaseViewController {
 
-    @IBOutlet private weak var videoSettingsTable: UITableView!
-    @IBOutlet private weak var bottomLabel: UILabel!
+    @IBOutlet weak var languageSelectTable: UITableView!
     
-    private var tableData: [VideoSetting] = VideoSetting.allCases
+    private let tableData: [Languages] = Languages.allCases
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        videoSettingsTable.delegate = self
-        videoSettingsTable.dataSource = self
-        videoSettingsTable.register(UINib(nibName: "\(TableViewCellWithLabel.self)", bundle: nibBundle), forCellReuseIdentifier: "VideoSettingsCell")
-
+        languageSelectTable.delegate = self
+        languageSelectTable.dataSource = self
+        languageSelectTable.register(UINib(nibName: "\(TableViewCellWithLabel.self)", bundle: nil), forCellReuseIdentifier: "LanguageCell")
         initUI()
     }
     
@@ -30,32 +28,34 @@ class VideoSettingsViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = false
     }
     
-    private func initUI() {
-        videoSettingsTable.backgroundColor = .tableBgGray
-        videoSettingsTable.separatorColor = .clear
-        bottomLabel.text = "settings.explantation.label".localized
-        title = "settings.video.settings".localized
+    func initUI() {
+        languageSelectTable.backgroundColor = .tableBgGray
+        languageSelectTable.separatorColor = .clear
+        languageSelectTable.separatorStyle = .none
+        title = "settings.language".localized
     }
 }
 
-extension VideoSettingsViewController: UITableViewDelegate {
+extension LanguageSelectionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cells = tableView.visibleCells as? [TableViewCellWithLabel] else { return }
         cells.forEach({ $0.setTitleColor(.white) })
         
         cells[indexPath.row].setTitleColor(.telepromPink)
-        UserSettingsManager.shared.setVideoSetting(tableData[indexPath.row])
+        Languages.setAppLanguage(code: tableData[indexPath.row].rawValue)
+        LanguageManager.shared.languageChanged()
+        title = "settings.language".localized
     }
 }
 
-extension VideoSettingsViewController: UITableViewDataSource {
+extension LanguageSelectionViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "VideoSettingsCell") as? TableViewCellWithLabel else { fatalError("Can't find cell with identifier 'VideoSettingsCell'") }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LanguageCell") as? TableViewCellWithLabel else { fatalError("Can't find cell with identifier 'LanguageCell'") }
         
         cell.selectionStyle = .none
         cell.titleLabel?.text = tableData[indexPath.row].name
@@ -70,7 +70,7 @@ extension VideoSettingsViewController: UITableViewDataSource {
             cell.bottomSeparator.isHidden = true
         }
         
-        if tableData[indexPath.row] == UserSettingsManager.shared.getVideoSetting() {
+        if tableData[indexPath.row].rawValue == Languages.getAppCurrentLanguage() {
             cell.setTitleColor(.telepromPink)
         }
         

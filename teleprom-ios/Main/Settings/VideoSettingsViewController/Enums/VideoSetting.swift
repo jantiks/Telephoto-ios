@@ -7,17 +7,17 @@
 
 import Foundation
 
-enum VideoSetting: CaseIterable {
+enum VideoSetting: Int, CaseIterable {
     
     case hd_720p, hd_1080p, hd_1080p_60fps
-    
+        
     init(_ rawValue: Int) {
         switch rawValue {
-        case 0:
+        case VideoSetting.hd_720p.rawValue:
             self = .hd_720p
-        case 1:
+        case VideoSetting.hd_1080p.rawValue:
             self = .hd_1080p
-        case 2:
+        case VideoSetting.hd_1080p_60fps.rawValue:
             self = .hd_1080p_60fps
         default:
             fatalError("WRONG RAW VALUE")
@@ -37,7 +37,7 @@ enum VideoSetting: CaseIterable {
         }
     }
     
-    var title: String {
+    var name: String {
         get {
             switch self {
             case .hd_720p:
