@@ -43,6 +43,10 @@
 		A032737427785497008A138C /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032737327785497008A138C /* Languages.swift */; };
 		A08153A627785EEF00AADED9 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153A527785EEF00AADED9 /* LanguageManager.swift */; };
 		A08153A827785FCC00AADED9 /* DoneCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153A727785FCC00AADED9 /* DoneCommand.swift */; };
+		A08153AB277869E200AADED9 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153A9277869E200AADED9 /* HelpViewController.swift */; };
+		A08153AC277869E200AADED9 /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08153AA277869E200AADED9 /* HelpViewController.xib */; };
+		A08153AF2778948000AADED9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153AD2778948000AADED9 /* AboutViewController.swift */; };
+		A08153B02778948000AADED9 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08153AE2778948000AADED9 /* AboutViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +91,10 @@
 		A032737327785497008A138C /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		A08153A527785EEF00AADED9 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		A08153A727785FCC00AADED9 /* DoneCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneCommand.swift; sourceTree = "<group>"; };
+		A08153A9277869E200AADED9 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		A08153AA277869E200AADED9 /* HelpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
+		A08153AD2778948000AADED9 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		A08153AE2778948000AADED9 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,8 +229,8 @@
 			children = (
 				A01C90C7277818580098EEB8 /* SettingsViewController */,
 				A01C90C8277818760098EEB8 /* VideoSettingsViewController */,
-				A01C90CA277818990098EEB8 /* HelpViewController */,
 				A01C90C92778188A0098EEB8 /* LanguageSelectViewController */,
+				A01C90CA277818990098EEB8 /* HelpViewController */,
 				A01C90CB277818A30098EEB8 /* AboutViewController */,
 			);
 			path = Settings;
@@ -299,6 +307,8 @@
 		A01C90CA277818990098EEB8 /* HelpViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A08153A9277869E200AADED9 /* HelpViewController.swift */,
+				A08153AA277869E200AADED9 /* HelpViewController.xib */,
 			);
 			path = HelpViewController;
 			sourceTree = "<group>";
@@ -306,6 +316,8 @@
 		A01C90CB277818A30098EEB8 /* AboutViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A08153AD2778948000AADED9 /* AboutViewController.swift */,
+				A08153AE2778948000AADED9 /* AboutViewController.xib */,
 			);
 			path = AboutViewController;
 			sourceTree = "<group>";
@@ -404,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01C90C327779DD90098EEB8 /* SettingsTableViewCell.xib in Resources */,
+				A08153AC277869E200AADED9 /* HelpViewController.xib in Resources */,
 				A03273712778526E008A138C /* LanguageSelectionViewController.xib in Resources */,
 				A01C9075277512260098EEB8 /* LaunchScreen.storyboard in Resources */,
 				A032736527783F18008A138C /* TableViewCellWithLabel.xib in Resources */,
@@ -411,6 +424,7 @@
 				A01C9072277512260098EEB8 /* Assets.xcassets in Resources */,
 				A01C9070277512200098EEB8 /* Main.storyboard in Resources */,
 				A01C90B8277788B60098EEB8 /* SettingsViewController.xib in Resources */,
+				A08153B02778948000AADED9 /* AboutViewController.xib in Resources */,
 				A01C90CF277818C90098EEB8 /* VideoSettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,6 +443,7 @@
 				A032736B27784646008A138C /* UserSettingsManager.swift in Sources */,
 				A01C9092277767BE0098EEB8 /* TabBarViewControllerConfig.swift in Sources */,
 				A01C90CE277818C90098EEB8 /* VideoSettingsViewController.swift in Sources */,
+				A08153AB277869E200AADED9 /* HelpViewController.swift in Sources */,
 				A01C9082277514F30098EEB8 /* BaseCustomView.swift in Sources */,
 				A0327368277845C9008A138C /* SetVideoSettingsCommand.swift in Sources */,
 				A08153A827785FCC00AADED9 /* DoneCommand.swift in Sources */,
@@ -447,6 +462,7 @@
 				A01C909427776AD90098EEB8 /* TabBarViewController.swift in Sources */,
 				A01C90B7277788B60098EEB8 /* SettingsViewController.swift in Sources */,
 				A01C90D427781D8F0098EEB8 /* VideoSetting.swift in Sources */,
+				A08153AF2778948000AADED9 /* AboutViewController.swift in Sources */,
 				A01C9086277515B80098EEB8 /* BaseViewController.swift in Sources */,
 				A01C90B4277787900098EEB8 /* StringExtension.swift in Sources */,
 			);

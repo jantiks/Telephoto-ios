@@ -32,6 +32,14 @@ class SettingsViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.viewDidLayoutSubviews()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.viewDidLayoutSubviews()
     }
     
     private func initUI() {
@@ -63,7 +71,8 @@ extension SettingsViewController: UITableViewDelegate {
             let vc = LanguageSelectionViewController()
             navigationController?.pushViewController(vc, animated: true)
         } else if indexPath.row == 2 {
-
+            let vc = HelpViewController()
+            navigationController?.pushViewController(vc, animated: true)
         } else if indexPath.row == 3 {
 
         }

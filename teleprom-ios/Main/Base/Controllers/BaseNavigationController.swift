@@ -22,10 +22,11 @@ class BaseNavigationController: UINavigationController {
 
         view.backgroundColor = .controllerGray
         navigationBar.barTintColor = .controllerGray
-        navigationBar.isTranslucent = false
+        navigationBar.isTranslucent = true
         navigationBar.tintColor = .white
-        navigationBar.shadowImage = UIImage()
         navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.shadowImage = UIImage()
     }
 }
