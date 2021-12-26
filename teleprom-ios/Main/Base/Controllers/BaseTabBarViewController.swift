@@ -12,15 +12,7 @@ class BaseTabBarViewController: UITabBarController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
-    
-//    override var prefersStatusBarHidden: Bool {
-//        return true
-//    }
-//    
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        return .lightContent
-//    }
-    
+
     private var config: [TabBarViewControllerConfig] = []
     
     override func viewDidLoad() {
@@ -29,6 +21,10 @@ class BaseTabBarViewController: UITabBarController {
         UITabBar.appearance().backgroundColor = .tabBarGray
         UITabBar.appearance().tintColor = .white
         UITabBar.appearance().unselectedItemTintColor = .gray
+        
+        LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
+            self?.updateTabBar()
+        })])
     }
     
     func setupVCs(_ config: [TabBarViewControllerConfig]) {

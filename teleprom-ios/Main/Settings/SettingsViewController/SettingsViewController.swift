@@ -6,24 +6,19 @@
 //
 
 import UIKit
-
 class SettingsViewController: BaseViewController {
     
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var settingsTableView: UITableView!
     
     private var tableData: [SettingsTableCellConfig] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         settingsTableView.delegate = self
         settingsTableView.dataSource = self
         settingsTableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingsTableViewCell")
-
         initUI()
         reloadData()
-        
         LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
             self?.reloadData()
         })])
@@ -31,14 +26,11 @@ class SettingsViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        navigationItem.backButtonTitle = ""
         navigationController?.navigationBar.isHidden = false
     }
     
@@ -56,12 +48,11 @@ class SettingsViewController: BaseViewController {
          SettingsTableCellConfig(title: "settings.help".localized, image: UIImage(named: "help")!),
          SettingsTableCellConfig(title: "settings.about".localized, image: UIImage(named: "about")!)]
         settingsTableView.reloadData()
-        
         titleLabel.text = "main.tab.settings".localized
     }
 }
-
 extension SettingsViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let vc = VideoSettingsViewController()
@@ -78,18 +69,16 @@ extension SettingsViewController: UITableViewDelegate {
         }
     }
 }
-
 extension SettingsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableData.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell") as? SettingsTableViewCell else { fatalError("Couldn't load SettingsTableView cell") }
         cell.backgroundColor = .clear
         cell.setTitle(tableData[indexPath.row].title)
         cell.setImage(tableData[indexPath.row].image)
-        
         return cell
     }
 }

@@ -206,17 +206,9 @@
 		A01C908B27751A500098EEB8 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				A01C9090277767AF0098EEB8 /* Models */,
 				A01C909327776AD90098EEB8 /* TabBarViewController.swift */,
 			);
 			path = TabBar;
-			sourceTree = "<group>";
-		};
-		A01C9090277767AF0098EEB8 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		A01C909527776B180098EEB8 /* Models */ = {

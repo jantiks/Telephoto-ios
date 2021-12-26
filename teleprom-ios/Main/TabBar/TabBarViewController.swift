@@ -17,9 +17,5 @@ class TabBarViewController: BaseTabBarViewController {
             TabBarViewControllerConfig(controller: UIViewController(), tabBarItemTitle: "", tabBarItemImage: UIImage(named: "rec")!.withRenderingMode(.alwaysOriginal), imageInset: UIEdgeInsets(top: -8, left: 0, bottom: 8, right: 0)),
             TabBarViewControllerConfig(controller: BaseNavigationController(rootViewController: SettingsViewController()), tabBarItemTitle: "main.tab.settings", tabBarItemImage: UIImage(named: "settings")!)
         ])
-        
-        LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
-            self?.updateTabBar()
-        })])
     }
 }
