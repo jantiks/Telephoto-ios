@@ -47,6 +47,7 @@
 		A08153AC277869E200AADED9 /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08153AA277869E200AADED9 /* HelpViewController.xib */; };
 		A08153AF2778948000AADED9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153AD2778948000AADED9 /* AboutViewController.swift */; };
 		A08153B02778948000AADED9 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08153AE2778948000AADED9 /* AboutViewController.xib */; };
+		A08153B22778AC1400AADED9 /* SKStoreReviewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153B12778AC1400AADED9 /* SKStoreReviewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,7 @@
 		A08153AA277869E200AADED9 /* HelpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
 		A08153AD2778948000AADED9 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		A08153AE2778948000AADED9 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		A08153B12778AC1400AADED9 /* SKStoreReviewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKStoreReviewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				A01C908E2776F2420098EEB8 /* UIColorExtention.swift */,
 				A01C90B3277787900098EEB8 /* StringExtension.swift */,
 				A01C90D027781A210098EEB8 /* UIViewExtension.swift */,
+				A08153B12778AC1400AADED9 /* SKStoreReviewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				A01C906D277512200098EEB8 /* ViewController.swift in Sources */,
 				A08153A627785EEF00AADED9 /* LanguageManager.swift in Sources */,
 				A01C90BE27778B340098EEB8 /* SettingsTableCellConfig.swift in Sources */,
+				A08153B22778AC1400AADED9 /* SKStoreReviewControllerExtension.swift in Sources */,
 				A01C9069277512200098EEB8 /* AppDelegate.swift in Sources */,
 				A032736B27784646008A138C /* UserSettingsManager.swift in Sources */,
 				A01C9092277767BE0098EEB8 /* TabBarViewControllerConfig.swift in Sources */,
@@ -644,7 +648,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -673,7 +677,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

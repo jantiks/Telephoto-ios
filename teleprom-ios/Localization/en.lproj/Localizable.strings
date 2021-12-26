@@ -19,3 +19,7 @@
 "settings.help.explanation" = "For errors or suggestions, you can contact us by Email";
 "settings.help.copy" = "Copy";
 "settings.help.copied" = "Copied";
+"about.user.agreement" = "User agreement";
+"about.policy" = "Privacy Policy";
+"about.share" = "Share app";
+"about.rate" = "Rate app";

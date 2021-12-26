@@ -9,6 +9,7 @@ import UIKit
 
 class SettingsViewController: BaseViewController {
     
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var settingsTableView: UITableView!
     
     private var tableData: [SettingsTableCellConfig] = []
@@ -31,23 +32,21 @@ class SettingsViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.viewDidLayoutSubviews()
+        navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        navigationController?.navigationBar.prefersLargeTitles = false
-        navigationController?.viewDidLayoutSubviews()
+        navigationItem.backButtonTitle = ""
+        navigationController?.navigationBar.isHidden = false
     }
     
     private func initUI() {
-        navigationItem.title = "main.tab.settings".localized
-        
         view.backgroundColor = .controllerGray
         settingsTableView.backgroundColor = .controllerGray
         settingsTableView.separatorColor = .clear
+        titleLabel.text = "main.tab.settings".localized
     }
     
     private func reloadData() {
@@ -58,7 +57,7 @@ class SettingsViewController: BaseViewController {
          SettingsTableCellConfig(title: "settings.about".localized, image: UIImage(named: "about")!)]
         settingsTableView.reloadData()
         
-        navigationItem.title = "main.tab.settings".localized
+        titleLabel.text = "main.tab.settings".localized
     }
 }
 
@@ -74,7 +73,8 @@ extension SettingsViewController: UITableViewDelegate {
             let vc = HelpViewController()
             navigationController?.pushViewController(vc, animated: true)
         } else if indexPath.row == 3 {
-
+            let vc = AboutViewController()
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

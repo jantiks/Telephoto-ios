@@ -24,12 +24,6 @@ class VideoSettingsViewController: UIViewController {
         initUI()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.navigationBar.prefersLargeTitles = false
-    }
-    
     private func initUI() {
         videoSettingsTable.backgroundColor = .tableBgGray
         videoSettingsTable.separatorColor = .clear
