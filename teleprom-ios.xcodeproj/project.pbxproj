@@ -49,6 +49,8 @@
 		A08153AF2778948000AADED9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153AD2778948000AADED9 /* AboutViewController.swift */; };
 		A08153B02778948000AADED9 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08153AE2778948000AADED9 /* AboutViewController.xib */; };
 		A08153B22778AC1400AADED9 /* SKStoreReviewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153B12778AC1400AADED9 /* SKStoreReviewControllerExtension.swift */; };
+		A0B45B84277A463C00E8B0D7 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B82277A463C00E8B0D7 /* RecordsViewController.swift */; };
+		A0B45B85277A463C00E8B0D7 /* RecordsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B45B83277A463C00E8B0D7 /* RecordsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +102,8 @@
 		A08153AD2778948000AADED9 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		A08153AE2778948000AADED9 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		A08153B12778AC1400AADED9 /* SKStoreReviewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKStoreReviewControllerExtension.swift; sourceTree = "<group>"; };
+		A0B45B82277A463C00E8B0D7 /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
+		A0B45B83277A463C00E8B0D7 /* RecordsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordsViewController.xib; sourceTree = "<group>"; };
 		CC80B414167A2CCA50E7F600 /* Pods-teleprom-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teleprom-ios.debug.xcconfig"; path = "Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,7 +125,6 @@
 				CC80B414167A2CCA50E7F600 /* Pods-teleprom-ios.debug.xcconfig */,
 				58BF6B409573E6439D09BE72 /* Pods-teleprom-ios.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -172,6 +175,7 @@
 			children = (
 				A01C908927751A350098EEB8 /* Base */,
 				A01C908B27751A500098EEB8 /* TabBar */,
+				A0B45B81277A462C00E8B0D7 /* Records */,
 				A01C909927776EFC0098EEB8 /* Settings */,
 			);
 			path = Main;
@@ -368,6 +372,23 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		A0B45B81277A462C00E8B0D7 /* Records */ = {
+			isa = PBXGroup;
+			children = (
+				A0B45B86277A483900E8B0D7 /* RecordsViewController */,
+			);
+			path = Records;
+			sourceTree = "<group>";
+		};
+		A0B45B86277A483900E8B0D7 /* RecordsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A0B45B82277A463C00E8B0D7 /* RecordsViewController.swift */,
+				A0B45B83277A463C00E8B0D7 /* RecordsViewController.xib */,
+			);
+			path = RecordsViewController;
+			sourceTree = "<group>";
+		};
 		DEF22D3E31C53418E7F8C635 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,6 +461,7 @@
 				A01C90C327779DD90098EEB8 /* SettingsTableViewCell.xib in Resources */,
 				A08153AC277869E200AADED9 /* HelpViewController.xib in Resources */,
 				A03273712778526E008A138C /* LanguageSelectionViewController.xib in Resources */,
+				A0B45B85277A463C00E8B0D7 /* RecordsViewController.xib in Resources */,
 				A01C9075277512260098EEB8 /* LaunchScreen.storyboard in Resources */,
 				A032736527783F18008A138C /* TableViewCellWithLabel.xib in Resources */,
 				A01C90AF277785CF0098EEB8 /* Localizable.strings in Resources */,
@@ -501,6 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01C906D277512200098EEB8 /* ViewController.swift in Sources */,
+				A0B45B84277A463C00E8B0D7 /* RecordsViewController.swift in Sources */,
 				A08153A627785EEF00AADED9 /* LanguageManager.swift in Sources */,
 				A01C90BE27778B340098EEB8 /* SettingsTableCellConfig.swift in Sources */,
 				A08153B22778AC1400AADED9 /* SKStoreReviewControllerExtension.swift in Sources */,

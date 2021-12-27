@@ -23,3 +23,5 @@
 "about.policy" = "Политика конфиденциальности";
 "about.share" = "Поделиться приложеннием";
 "about.rate" = "Оценить приложение";
+"main.tab.new.records" = "Ваши записи";
+"records.select.button.title" = "Выбрать";
