@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABo-EJ-5jk">
-                    <rect key="frame" x="15" y="69" width="384" height="36"/>
+                    <rect key="frame" x="15" y="59" width="384" height="36"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxU-R5-BtI" userLabel="title label">
                             <rect key="frame" x="0.0" y="0.0" width="74.5" height="36"/>
@@ -31,10 +31,12 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3Q-cs-BRZ">
-                            <rect key="frame" x="317" y="2.5" width="67" height="31"/>
+                            <rect key="frame" x="315.5" y="2.5" width="68.5" height="31"/>
                             <color key="tintColor" white="0.41999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Button">
+                                <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/>
+                            </buttonConfiguration>
                             <connections>
                                 <action selector="selectAction:" destination="-1" eventType="touchUpInside" id="OPe-4f-70t"/>
                             </connections>
@@ -45,12 +47,11 @@
                         <constraint firstAttribute="bottom" secondItem="qxU-R5-BtI" secondAttribute="bottom" id="jYH-as-nNS"/>
                         <constraint firstItem="C3Q-cs-BRZ" firstAttribute="centerY" secondItem="ABo-EJ-5jk" secondAttribute="centerY" id="mPj-4N-lRt"/>
                         <constraint firstItem="qxU-R5-BtI" firstAttribute="leading" secondItem="ABo-EJ-5jk" secondAttribute="leading" id="uzs-xP-cGw"/>
-                        <constraint firstAttribute="height" constant="36" id="vzf-UP-mcU"/>
                         <constraint firstItem="qxU-R5-BtI" firstAttribute="top" secondItem="ABo-EJ-5jk" secondAttribute="top" id="wJ1-WP-o9j"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ec9-AO-RuP">
-                    <rect key="frame" x="0.0" y="130" width="414" height="732"/>
+                    <rect key="frame" x="0.0" y="120" width="414" height="742"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VUY-5w-ii2">
                         <size key="itemSize" width="128" height="128"/>
@@ -68,7 +69,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ec9-AO-RuP" secondAttribute="bottom" id="WeZ-nc-mhx"/>
                 <constraint firstItem="ABo-EJ-5jk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="cWW-ey-aqR"/>
                 <constraint firstAttribute="trailing" secondItem="ABo-EJ-5jk" secondAttribute="trailing" constant="15" id="f3M-3b-U9Y"/>
-                <constraint firstItem="ABo-EJ-5jk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="fjo-3y-7Kr"/>
+                <constraint firstItem="ABo-EJ-5jk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="fjo-3y-7Kr"/>
             </constraints>
             <point key="canvasLocation" x="139" y="97"/>
         </view>

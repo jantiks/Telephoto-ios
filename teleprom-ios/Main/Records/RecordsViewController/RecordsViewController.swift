@@ -17,6 +17,10 @@ class RecordsViewController: BaseViewController {
         super.viewDidLoad()
 
         initUI()
+        
+        LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
+            self?.reloadData()
+        })])
     }
     
     override func viewWillAppear(_ animated: Bool) {
