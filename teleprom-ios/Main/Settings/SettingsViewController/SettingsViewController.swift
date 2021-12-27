@@ -6,6 +6,14 @@
 //
 
 import UIKit
+import RealmSwift
+
+class User: Object {
+    @objc dynamic var name = "vzgo"
+    @objc dynamic var asd = "asd"
+}
+
+
 class SettingsViewController: BaseViewController {
     
     @IBOutlet private weak var titleLabel: UILabel!
@@ -22,6 +30,12 @@ class SettingsViewController: BaseViewController {
         LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
             self?.reloadData()
         })])
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(User())
+            print("SAVED IN REALM")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
