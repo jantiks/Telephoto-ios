@@ -49,8 +49,16 @@
 		A08153AF2778948000AADED9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153AD2778948000AADED9 /* AboutViewController.swift */; };
 		A08153B02778948000AADED9 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08153AE2778948000AADED9 /* AboutViewController.xib */; };
 		A08153B22778AC1400AADED9 /* SKStoreReviewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153B12778AC1400AADED9 /* SKStoreReviewControllerExtension.swift */; };
-		A0B45B84277A463C00E8B0D7 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B82277A463C00E8B0D7 /* RecordsViewController.swift */; };
-		A0B45B85277A463C00E8B0D7 /* RecordsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B45B83277A463C00E8B0D7 /* RecordsViewController.xib */; };
+		A0B45B84277A463C00E8B0D7 /* RecordsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B82277A463C00E8B0D7 /* RecordsListViewController.swift */; };
+		A0B45B85277A463C00E8B0D7 /* RecordsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B45B83277A463C00E8B0D7 /* RecordsListViewController.xib */; };
+		A0B45B8A277A4C3000E8B0D7 /* AddRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B88277A4C3000E8B0D7 /* AddRecordCell.swift */; };
+		A0B45B8B277A4C3000E8B0D7 /* AddRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B45B89277A4C3000E8B0D7 /* AddRecordCell.xib */; };
+		A0B45B8E277B9B1000E8B0D7 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B8C277B9B1000E8B0D7 /* RecordCell.swift */; };
+		A0B45B8F277B9B1000E8B0D7 /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B45B8D277B9B1000E8B0D7 /* RecordCell.xib */; };
+		A0B45B91277B9BC500E8B0D7 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B90277B9BC500E8B0D7 /* Record.swift */; };
+		A0B45B93277B9C1200E8B0D7 /* BaseRealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B92277B9C1200E8B0D7 /* BaseRealmObject.swift */; };
+		A0B45B97277BA96D00E8B0D7 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B95277BA96D00E8B0D7 /* RecordViewController.swift */; };
+		A0B45B98277BA96D00E8B0D7 /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B45B96277BA96D00E8B0D7 /* RecordViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,8 +110,16 @@
 		A08153AD2778948000AADED9 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		A08153AE2778948000AADED9 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		A08153B12778AC1400AADED9 /* SKStoreReviewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKStoreReviewControllerExtension.swift; sourceTree = "<group>"; };
-		A0B45B82277A463C00E8B0D7 /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
-		A0B45B83277A463C00E8B0D7 /* RecordsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordsViewController.xib; sourceTree = "<group>"; };
+		A0B45B82277A463C00E8B0D7 /* RecordsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListViewController.swift; sourceTree = "<group>"; };
+		A0B45B83277A463C00E8B0D7 /* RecordsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordsListViewController.xib; sourceTree = "<group>"; };
+		A0B45B88277A4C3000E8B0D7 /* AddRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordCell.swift; sourceTree = "<group>"; };
+		A0B45B89277A4C3000E8B0D7 /* AddRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddRecordCell.xib; sourceTree = "<group>"; };
+		A0B45B8C277B9B1000E8B0D7 /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
+		A0B45B8D277B9B1000E8B0D7 /* RecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordCell.xib; sourceTree = "<group>"; };
+		A0B45B90277B9BC500E8B0D7 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		A0B45B92277B9C1200E8B0D7 /* BaseRealmObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRealmObject.swift; sourceTree = "<group>"; };
+		A0B45B95277BA96D00E8B0D7 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		A0B45B96277BA96D00E8B0D7 /* RecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordViewController.xib; sourceTree = "<group>"; };
 		CC80B414167A2CCA50E7F600 /* Pods-teleprom-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teleprom-ios.debug.xcconfig"; path = "Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -214,6 +230,7 @@
 		A01C908927751A350098EEB8 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				A0B45B94277B9CEA00E8B0D7 /* RealmModels */,
 				A03273692778462F008A138C /* Managers */,
 				A01C90C42778181C0098EEB8 /* Commands */,
 				A01C909527776B180098EEB8 /* Models */,
@@ -375,18 +392,49 @@
 		A0B45B81277A462C00E8B0D7 /* Records */ = {
 			isa = PBXGroup;
 			children = (
-				A0B45B86277A483900E8B0D7 /* RecordsViewController */,
+				A0B45B86277A483900E8B0D7 /* RecordsListViewController */,
+				A0B45B99277BA97500E8B0D7 /* RecordViewController */,
 			);
 			path = Records;
 			sourceTree = "<group>";
 		};
-		A0B45B86277A483900E8B0D7 /* RecordsViewController */ = {
+		A0B45B86277A483900E8B0D7 /* RecordsListViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A0B45B82277A463C00E8B0D7 /* RecordsViewController.swift */,
-				A0B45B83277A463C00E8B0D7 /* RecordsViewController.xib */,
+				A0B45B87277A4BFC00E8B0D7 /* Cells */,
+				A0B45B82277A463C00E8B0D7 /* RecordsListViewController.swift */,
+				A0B45B83277A463C00E8B0D7 /* RecordsListViewController.xib */,
 			);
-			path = RecordsViewController;
+			path = RecordsListViewController;
+			sourceTree = "<group>";
+		};
+		A0B45B87277A4BFC00E8B0D7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A0B45B88277A4C3000E8B0D7 /* AddRecordCell.swift */,
+				A0B45B89277A4C3000E8B0D7 /* AddRecordCell.xib */,
+				A0B45B8C277B9B1000E8B0D7 /* RecordCell.swift */,
+				A0B45B8D277B9B1000E8B0D7 /* RecordCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A0B45B94277B9CEA00E8B0D7 /* RealmModels */ = {
+			isa = PBXGroup;
+			children = (
+				A0B45B90277B9BC500E8B0D7 /* Record.swift */,
+				A0B45B92277B9C1200E8B0D7 /* BaseRealmObject.swift */,
+			);
+			path = RealmModels;
+			sourceTree = "<group>";
+		};
+		A0B45B99277BA97500E8B0D7 /* RecordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A0B45B95277BA96D00E8B0D7 /* RecordViewController.swift */,
+				A0B45B96277BA96D00E8B0D7 /* RecordViewController.xib */,
+			);
+			path = RecordViewController;
 			sourceTree = "<group>";
 		};
 		DEF22D3E31C53418E7F8C635 /* Frameworks */ = {
@@ -458,15 +506,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0B45B8B277A4C3000E8B0D7 /* AddRecordCell.xib in Resources */,
 				A01C90C327779DD90098EEB8 /* SettingsTableViewCell.xib in Resources */,
 				A08153AC277869E200AADED9 /* HelpViewController.xib in Resources */,
 				A03273712778526E008A138C /* LanguageSelectionViewController.xib in Resources */,
-				A0B45B85277A463C00E8B0D7 /* RecordsViewController.xib in Resources */,
+				A0B45B85277A463C00E8B0D7 /* RecordsListViewController.xib in Resources */,
 				A01C9075277512260098EEB8 /* LaunchScreen.storyboard in Resources */,
+				A0B45B8F277B9B1000E8B0D7 /* RecordCell.xib in Resources */,
 				A032736527783F18008A138C /* TableViewCellWithLabel.xib in Resources */,
 				A01C90AF277785CF0098EEB8 /* Localizable.strings in Resources */,
 				A01C9072277512260098EEB8 /* Assets.xcassets in Resources */,
 				A01C9070277512200098EEB8 /* Main.storyboard in Resources */,
+				A0B45B98277BA96D00E8B0D7 /* RecordViewController.xib in Resources */,
 				A01C90B8277788B60098EEB8 /* SettingsViewController.xib in Resources */,
 				A08153B02778948000AADED9 /* AboutViewController.xib in Resources */,
 				A01C90CF277818C90098EEB8 /* VideoSettingsViewController.xib in Resources */,
@@ -523,8 +574,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01C906D277512200098EEB8 /* ViewController.swift in Sources */,
-				A0B45B84277A463C00E8B0D7 /* RecordsViewController.swift in Sources */,
+				A0B45B84277A463C00E8B0D7 /* RecordsListViewController.swift in Sources */,
 				A08153A627785EEF00AADED9 /* LanguageManager.swift in Sources */,
+				A0B45B97277BA96D00E8B0D7 /* RecordViewController.swift in Sources */,
 				A01C90BE27778B340098EEB8 /* SettingsTableCellConfig.swift in Sources */,
 				A08153B22778AC1400AADED9 /* SKStoreReviewControllerExtension.swift in Sources */,
 				A01C9069277512200098EEB8 /* AppDelegate.swift in Sources */,
@@ -537,13 +589,16 @@
 				A08153A827785FCC00AADED9 /* DoneCommand.swift in Sources */,
 				A01C90D127781A210098EEB8 /* UIViewExtension.swift in Sources */,
 				A01C907F277514DE0098EEB8 /* GlobalExtension.swift in Sources */,
+				A0B45B93277B9C1200E8B0D7 /* BaseRealmObject.swift in Sources */,
 				A01C90C62778182A0098EEB8 /* CommonCommand.swift in Sources */,
+				A0B45B8E277B9B1000E8B0D7 /* RecordCell.swift in Sources */,
 				A01C908F2776F2420098EEB8 /* UIColorExtention.swift in Sources */,
 				A01C908D27751A630098EEB8 /* BaseTabBarViewController.swift in Sources */,
 				A01C90C227779DD90098EEB8 /* SettingsTableViewCell.swift in Sources */,
 				A01C909727776DE50098EEB8 /* BaseNavigationController.swift in Sources */,
 				A032736D277846FA008A138C /* SetDefaultCommands.swift in Sources */,
 				A01C906B277512200098EEB8 /* SceneDelegate.swift in Sources */,
+				A0B45B8A277A4C3000E8B0D7 /* AddRecordCell.swift in Sources */,
 				A03273702778526E008A138C /* LanguageSelectionViewController.swift in Sources */,
 				A032736427783F18008A138C /* TableViewCellWithLabel.swift in Sources */,
 				A032737427785497008A138C /* Languages.swift in Sources */,
@@ -552,6 +607,7 @@
 				A01C90D427781D8F0098EEB8 /* VideoSetting.swift in Sources */,
 				A08153AF2778948000AADED9 /* AboutViewController.swift in Sources */,
 				A01C9086277515B80098EEB8 /* BaseViewController.swift in Sources */,
+				A0B45B91277B9BC500E8B0D7 /* Record.swift in Sources */,
 				A01C90B4277787900098EEB8 /* StringExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

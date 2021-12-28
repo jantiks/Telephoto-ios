@@ -33,5 +33,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    static func getController() -> UIViewController? {
+        if var topController = getKeyWindow()?.rootViewController {
+            while let presentedViewController = topController.presentedViewController, !presentedViewController.isBeingDismissed {
+                topController = presentedViewController
+            }
+            
+            return topController
+        }
+        
+        return nil
+    }
 }
 
