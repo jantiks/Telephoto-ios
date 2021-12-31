@@ -23,6 +23,8 @@
 "about.policy" = "Privacy Policy";
 "about.share" = "Share app";
 "about.rate" = "Rate app";
-"main.tab.new.records" = "Your records";
-"records.select.button.title" = "Select";
+"main.tab.records.your.records" = "Your records";
+"main.tab.records.select.record" = "Select a record";
+"records.mode.select.button.title" = "Select";
+"records.mode.cancel.button.title" = "Cancel";
 "record.navbar.save" = "Save";

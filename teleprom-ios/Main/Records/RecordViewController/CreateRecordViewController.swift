@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecordViewController: BaseViewController {
+class CreateRecordViewController: BaseViewController {
 
     @IBOutlet private weak var titleTextField: UITextField!
     @IBOutlet private weak var contentTextView: UITextView!
@@ -67,7 +67,7 @@ class RecordViewController: BaseViewController {
     }
 }
 
-extension RecordViewController: UITextViewDelegate {
+extension CreateRecordViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         title = "\(textView.text.count)/1000"
     }

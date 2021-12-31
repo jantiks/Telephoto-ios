@@ -12,10 +12,12 @@ class AddRecordCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        cornerRadius = 20
+        backgroundColor = .tableBgGray
     }
     
     @IBAction func addRecordAction(_ sender: UIButton) {
-        let vc = RecordViewController()
+        let vc = CreateRecordViewController()
         
         findViewController()?.navigationController?.pushViewController(vc, animated: true)
     }

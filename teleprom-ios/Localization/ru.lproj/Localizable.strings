@@ -23,6 +23,8 @@
 "about.policy" = "Политика конфиденциальности";
 "about.share" = "Поделиться приложеннием";
 "about.rate" = "Оценить приложение";
-"main.tab.new.records" = "Ваши записи";
-"records.select.button.title" = "Выбрать";
+"main.tab.records.your.records" = "Ваши записи";
+"main.tab.records.select.record" = "Выберете запись";
+"records.mode.select.button.title" = "Выбрать";
+"records.mode.cancel.button.title" = "Отменить";
 "record.navbar.save" = "Сохранить";

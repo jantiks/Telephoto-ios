@@ -57,10 +57,12 @@
 		A0B45B8F277B9B1000E8B0D7 /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B45B8D277B9B1000E8B0D7 /* RecordCell.xib */; };
 		A0B45B91277B9BC500E8B0D7 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B90277B9BC500E8B0D7 /* Record.swift */; };
 		A0B45B93277B9C1200E8B0D7 /* BaseRealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B92277B9C1200E8B0D7 /* BaseRealmObject.swift */; };
-		A0B45B97277BA96D00E8B0D7 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B95277BA96D00E8B0D7 /* RecordViewController.swift */; };
-		A0B45B98277BA96D00E8B0D7 /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B45B96277BA96D00E8B0D7 /* RecordViewController.xib */; };
+		A0B45B97277BA96D00E8B0D7 /* CreateRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B95277BA96D00E8B0D7 /* CreateRecordViewController.swift */; };
+		A0B45B98277BA96D00E8B0D7 /* CreateRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B45B96277BA96D00E8B0D7 /* CreateRecordViewController.xib */; };
 		A0B45B9C277E470E00E8B0D7 /* RecordDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B9B277E470E00E8B0D7 /* RecordDataProvider.swift */; };
 		A0B45B9E277EB7F600E8B0D7 /* RealmExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B9D277EB7F600E8B0D7 /* RealmExtension.swift */; };
+		A0B45BA1277ED68800E8B0D7 /* RecordsListMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45BA0277ED68800E8B0D7 /* RecordsListMode.swift */; };
+		A0B45BA5277EE29000E8B0D7 /* RecordCellConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45BA4277EE29000E8B0D7 /* RecordCellConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,10 +122,12 @@
 		A0B45B8D277B9B1000E8B0D7 /* RecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordCell.xib; sourceTree = "<group>"; };
 		A0B45B90277B9BC500E8B0D7 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		A0B45B92277B9C1200E8B0D7 /* BaseRealmObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRealmObject.swift; sourceTree = "<group>"; };
-		A0B45B95277BA96D00E8B0D7 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
-		A0B45B96277BA96D00E8B0D7 /* RecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordViewController.xib; sourceTree = "<group>"; };
+		A0B45B95277BA96D00E8B0D7 /* CreateRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecordViewController.swift; sourceTree = "<group>"; };
+		A0B45B96277BA96D00E8B0D7 /* CreateRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateRecordViewController.xib; sourceTree = "<group>"; };
 		A0B45B9B277E470E00E8B0D7 /* RecordDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDataProvider.swift; sourceTree = "<group>"; };
 		A0B45B9D277EB7F600E8B0D7 /* RealmExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmExtension.swift; sourceTree = "<group>"; };
+		A0B45BA0277ED68800E8B0D7 /* RecordsListMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListMode.swift; sourceTree = "<group>"; };
+		A0B45BA4277EE29000E8B0D7 /* RecordCellConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCellConfig.swift; sourceTree = "<group>"; };
 		CC80B414167A2CCA50E7F600 /* Pods-teleprom-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teleprom-ios.debug.xcconfig"; path = "Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -407,6 +411,7 @@
 		A0B45B86277A483900E8B0D7 /* RecordsListViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A0B45B9F277ED63F00E8B0D7 /* Enums */,
 				A0B45B87277A4BFC00E8B0D7 /* Cells */,
 				A0B45B82277A463C00E8B0D7 /* RecordsListViewController.swift */,
 				A0B45B83277A463C00E8B0D7 /* RecordsListViewController.xib */,
@@ -417,10 +422,8 @@
 		A0B45B87277A4BFC00E8B0D7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				A0B45B88277A4C3000E8B0D7 /* AddRecordCell.swift */,
-				A0B45B89277A4C3000E8B0D7 /* AddRecordCell.xib */,
-				A0B45B8C277B9B1000E8B0D7 /* RecordCell.swift */,
-				A0B45B8D277B9B1000E8B0D7 /* RecordCell.xib */,
+				A0B45BA2277EE27900E8B0D7 /* Add record cell */,
+				A0B45BA3277EE28300E8B0D7 /* Record cell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -437,8 +440,8 @@
 		A0B45B99277BA97500E8B0D7 /* RecordViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A0B45B95277BA96D00E8B0D7 /* RecordViewController.swift */,
-				A0B45B96277BA96D00E8B0D7 /* RecordViewController.xib */,
+				A0B45B95277BA96D00E8B0D7 /* CreateRecordViewController.swift */,
+				A0B45B96277BA96D00E8B0D7 /* CreateRecordViewController.xib */,
 			);
 			path = RecordViewController;
 			sourceTree = "<group>";
@@ -449,6 +452,33 @@
 				A0B45B9B277E470E00E8B0D7 /* RecordDataProvider.swift */,
 			);
 			path = "Data Providers";
+			sourceTree = "<group>";
+		};
+		A0B45B9F277ED63F00E8B0D7 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A0B45BA0277ED68800E8B0D7 /* RecordsListMode.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		A0B45BA2277EE27900E8B0D7 /* Add record cell */ = {
+			isa = PBXGroup;
+			children = (
+				A0B45B88277A4C3000E8B0D7 /* AddRecordCell.swift */,
+				A0B45B89277A4C3000E8B0D7 /* AddRecordCell.xib */,
+			);
+			path = "Add record cell";
+			sourceTree = "<group>";
+		};
+		A0B45BA3277EE28300E8B0D7 /* Record cell */ = {
+			isa = PBXGroup;
+			children = (
+				A0B45B8C277B9B1000E8B0D7 /* RecordCell.swift */,
+				A0B45B8D277B9B1000E8B0D7 /* RecordCell.xib */,
+				A0B45BA4277EE29000E8B0D7 /* RecordCellConfig.swift */,
+			);
+			path = "Record cell";
 			sourceTree = "<group>";
 		};
 		DEF22D3E31C53418E7F8C635 /* Frameworks */ = {
@@ -531,7 +561,7 @@
 				A01C90AF277785CF0098EEB8 /* Localizable.strings in Resources */,
 				A01C9072277512260098EEB8 /* Assets.xcassets in Resources */,
 				A01C9070277512200098EEB8 /* Main.storyboard in Resources */,
-				A0B45B98277BA96D00E8B0D7 /* RecordViewController.xib in Resources */,
+				A0B45B98277BA96D00E8B0D7 /* CreateRecordViewController.xib in Resources */,
 				A01C90B8277788B60098EEB8 /* SettingsViewController.xib in Resources */,
 				A08153B02778948000AADED9 /* AboutViewController.xib in Resources */,
 				A01C90CF277818C90098EEB8 /* VideoSettingsViewController.xib in Resources */,
@@ -587,10 +617,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0B45BA1277ED68800E8B0D7 /* RecordsListMode.swift in Sources */,
 				A01C906D277512200098EEB8 /* ViewController.swift in Sources */,
 				A0B45B84277A463C00E8B0D7 /* RecordsListViewController.swift in Sources */,
 				A08153A627785EEF00AADED9 /* LanguageManager.swift in Sources */,
-				A0B45B97277BA96D00E8B0D7 /* RecordViewController.swift in Sources */,
+				A0B45B97277BA96D00E8B0D7 /* CreateRecordViewController.swift in Sources */,
 				A01C90BE27778B340098EEB8 /* SettingsTableCellConfig.swift in Sources */,
 				A08153B22778AC1400AADED9 /* SKStoreReviewControllerExtension.swift in Sources */,
 				A01C9069277512200098EEB8 /* AppDelegate.swift in Sources */,
@@ -624,6 +655,7 @@
 				A01C9086277515B80098EEB8 /* BaseViewController.swift in Sources */,
 				A0B45B91277B9BC500E8B0D7 /* Record.swift in Sources */,
 				A01C90B4277787900098EEB8 /* StringExtension.swift in Sources */,
+				A0B45BA5277EE29000E8B0D7 /* RecordCellConfig.swift in Sources */,
 				A0B45B9E277EB7F600E8B0D7 /* RealmExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

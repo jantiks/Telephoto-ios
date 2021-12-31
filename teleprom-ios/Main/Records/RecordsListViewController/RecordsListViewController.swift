@@ -13,7 +13,8 @@ class RecordsListViewController: BaseViewController {
     @IBOutlet private weak var recordsCollectionView: UICollectionView!
     @IBOutlet private weak var selectButton: UIButton!
     
-    private var records: [Record] = []
+    private var recordsConfigs: [RecordCellConfig] = []
+    private var mode: RecordsListMode = .add
     private var interItemSpace: CGFloat = 0
     
     override func viewDidLoad() {
@@ -54,21 +55,39 @@ class RecordsListViewController: BaseViewController {
     
     private func initUI() {
         interItemSpace = view.bounds.width * 0.05
-        selectButton.setTitleColor(.telepromPink, for: .normal)
-        reloadData()
+        updateViewsForCurrentSelectionMode()
         
         let flow = recordsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         flow.sectionInset = UIEdgeInsets(top: 0, left: interItemSpace, bottom: 0, right: interItemSpace)
     }
     
     private func reloadData() {
-        records = RecordDataProvider.shared.getRecords().reversed()
+        recordsConfigs = RecordDataProvider.shared.getRecords().reversed().map({ RecordCellConfig(record: $0, mode: mode) })
         recordsCollectionView.reloadData()
-        titleLabel.text = "main.tab.new.records".localized
-        selectButton.setTitle("records.select.button.title".localized, for: .normal)
+        languageConfigure()
+    }
+    
+    private func toggleSelectionMode() {
+        mode.toggle()
+        updateViewsForCurrentSelectionMode()
+    }
+    
+    private func updateViewsForCurrentSelectionMode() {
+        selectButton.setTitleColor(mode == .add ? .telepromPink : .white, for: .normal)
+        reloadData()
+        languageConfigure()
+    }
+    
+    private func languageConfigure() {
+        let buttonTitle = mode == .add ? "records.mode.select.button.title".localized : "records.mode.cancel.button.title".localized
+        let title = mode == .add ? "main.tab.records.your.records".localized : "main.tab.records.select.record".localized
+        
+        selectButton.setTitle(buttonTitle, for: .normal)
+        titleLabel.text = title
     }
     
     @IBAction func selectAction(_ sender: UIButton) {
+        toggleSelectionMode()
     }
 }
 
@@ -80,9 +99,6 @@ extension RecordsListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        if indexPath.item == 0 {
-//            return CGSize(width: view.bounds.width / 2 - view.bounds.width * 0.1, height: 150)
-//        }
         let width = view.bounds.width / 2 - interItemSpace * 1.5
         return CGSize(width: width, height: width * 1.2)
     }
@@ -103,24 +119,31 @@ extension RecordsListViewController: UICollectionViewDelegateFlowLayout {
 extension RecordsListViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return records.count + 1
+        return mode == .add ? recordsConfigs.count + 1 : recordsConfigs.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == 0 {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addCell", for: indexPath) as? AddRecordCell else { fatalError("couldn't load addCell") }
-            
-            cell.cornerRadius = 20
-            cell.backgroundColor = .tableBgGray
+        if mode == .add {
+            if indexPath.row == 0 {
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addCell", for: indexPath) as? AddRecordCell else { fatalError("couldn't load addCell") }
+                
+                return cell
+                
+            } else {
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recordCell", for: indexPath) as? RecordCell else { fatalError("couldn't load recordCell") }
 
-            return cell
-            
+                cell.configure(recordsConfigs[indexPath.row - 1])
+                
+                return cell
+            }
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recordCell", for: indexPath) as? RecordCell else { fatalError("couldn't load recordCell") }
 
-            cell.cornerRadius = 20
-            cell.backgroundColor = .tableBgGray
-            cell.setRecord(records[indexPath.row - 1])
+            cell.configure(recordsConfigs[indexPath.row])
+            cell.setSelectedCommand = DoneCommand({ [weak self] in
+                self?.recordsConfigs.forEach({ $0.isSelected = false })
+                self?.recordsCollectionView.reloadData()
+            })
             
             return cell
         }

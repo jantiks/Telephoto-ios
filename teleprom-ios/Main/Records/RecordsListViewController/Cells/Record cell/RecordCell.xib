@@ -42,7 +42,7 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title=" "/>
                         <connections>
-                            <action selector="openRecordAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="xeZ-x2-kkh"/>
+                            <action selector="tapAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ue3-2b-zTS"/>
                         </connections>
                     </button>
                 </subviews>
