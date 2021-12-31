@@ -62,7 +62,7 @@ class CreateRecordViewController: BaseViewController {
         record.setTitle(titleTextField.text ?? "")
         record.setText(contentTextView.text)
         
-        RecordDataProvider.shared.addRecord(record)
+        RecordDataProvider.shared.add(record)
         navigationController?.popViewController(animated: true)
     }
 }

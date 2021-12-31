@@ -12,6 +12,8 @@ class RecordsListViewController: BaseViewController {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var recordsCollectionView: UICollectionView!
     @IBOutlet private weak var selectButton: UIButton!
+    @IBOutlet private weak var selectionActionsView: UIView!
+
     
     private var recordsConfigs: [RecordCellConfig] = []
     private var mode: RecordsListMode = .add
@@ -42,7 +44,7 @@ class RecordsListViewController: BaseViewController {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.isHidden = false
     }
-    
+
     private func registerCells() {
         recordsCollectionView.register(UINib(nibName: "\(AddRecordCell.self)", bundle: nil), forCellWithReuseIdentifier: "addCell")
         recordsCollectionView.register(UINib(nibName: "\(RecordCell.self)", bundle: nil), forCellWithReuseIdentifier: "recordCell")
@@ -55,6 +57,7 @@ class RecordsListViewController: BaseViewController {
     
     private func initUI() {
         interItemSpace = view.bounds.width * 0.05
+        selectionActionsView.backgroundColor = .tabBarGray
         updateViewsForCurrentSelectionMode()
         
         let flow = recordsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
@@ -62,7 +65,7 @@ class RecordsListViewController: BaseViewController {
     }
     
     private func reloadData() {
-        recordsConfigs = RecordDataProvider.shared.getRecords().reversed().map({ RecordCellConfig(record: $0, mode: mode) })
+        recordsConfigs = RecordDataProvider.shared.getAll().reversed().map({ RecordCellConfig(record: $0, mode: mode) })
         recordsCollectionView.reloadData()
         languageConfigure()
     }
@@ -74,6 +77,9 @@ class RecordsListViewController: BaseViewController {
     
     private func updateViewsForCurrentSelectionMode() {
         selectButton.setTitleColor(mode == .add ? .telepromPink : .white, for: .normal)
+        selectionActionsView.isHidden = mode == .select ? false : true
+        tabBarController?.tabBar.isHidden = !selectionActionsView.isHidden
+        
         reloadData()
         languageConfigure()
     }
@@ -88,6 +94,31 @@ class RecordsListViewController: BaseViewController {
     
     @IBAction func selectAction(_ sender: UIButton) {
         toggleSelectionMode()
+    }
+    
+    @IBAction func dublicateAction(_ sender: UIButton) {
+        guard let record = recordsConfigs.first(where: { $0.isSelected })?.record else { return }
+        
+        let dublicatedRecord = Record().pull(from: record)
+        dublicatedRecord.setTitle("record.dublicate".localized + " " + (dublicatedRecord.getTitle() ?? ""))
+        RecordDataProvider.shared.add(dublicatedRecord)
+    }
+    
+    @IBAction func deleteAction(_ sender: UIButton) {
+        let alertTitle = recordsConfigs.contains(where: { $0.isSelected }) ? "record.delete.popup.single".localized : "record.delete.popup.all".localized
+        let deleteTitle = recordsConfigs.contains(where: { $0.isSelected }) ? "alert.delete".localized : "alert.delete.all".localized
+        
+        let ac = UIAlertController(title: alertTitle, message: nil, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "alert.cancel".localized, style: .default, handler: nil))
+        ac.addAction(UIAlertAction(title: deleteTitle, style: .destructive, handler: { [weak self] action in
+            if let record = self?.recordsConfigs.first(where: { $0.isSelected })?.record {
+                RecordDataProvider.shared.delete(record)
+            } else {
+                RecordDataProvider.shared.deleteAll()
+            }
+        }))
+        
+        present(ac, animated: true)
     }
 }
 
@@ -143,8 +174,6 @@ extension RecordsListViewController: UICollectionViewDataSource {
             cell.setSelectedCommand = DoneCommand({ [weak self] in
                 guard let self = self else { return }
                 guard let selectedCellConfigIndex = self.recordsConfigs.firstIndex(where: { $0.isSelected }), selectedCellConfigIndex != indexPath.item else { return }
-                print("asd disselect index = \(selectedCellConfigIndex)")
-                print("asd selected index = \(indexPath.item)")
 
                 self.recordsConfigs[selectedCellConfigIndex].isSelected = false
                 self.recordsCollectionView.reloadItems(at: [IndexPath(item: selectedCellConfigIndex, section: 0)])

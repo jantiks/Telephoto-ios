@@ -33,4 +33,11 @@ class Record: BaseRealmObject {
     func getText() -> String? {
         return text
     }
+    
+    func pull(from record: Record) -> Record {
+        title = record.title
+        text = record.text
+        
+        return self
+    }
 }

@@ -28,3 +28,9 @@
 "records.mode.select.button.title" = "Select";
 "records.mode.cancel.button.title" = "Cancel";
 "record.navbar.save" = "Save";
+"record.dublicate" = "(Copy)";
+"record.delete.popup.all" = "Do You definitely want to delete all records?";
+"record.delete.popup.single" = "Do You definitely want to delete this record?";
+"alert.delete" = "Delete";
+"alert.delete.all" = "Delete all";
+"alert.cancel" = "Cancel";

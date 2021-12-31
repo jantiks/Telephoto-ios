@@ -28,3 +28,9 @@
 "records.mode.select.button.title" = "Выбрать";
 "records.mode.cancel.button.title" = "Отменить";
 "record.navbar.save" = "Сохранить";
+"record.dublicate" = "(Копия)";
+"record.delete.popup.all" = "Вы точно хотите удалить все записи?";
+"record.delete.popup.single" = "Вы точно хотите удалить запись?";
+"alert.delete" = "Удалить";
+"alert.delete.all" = "Удалить все";
+"alert.cancel" = "Отмена";

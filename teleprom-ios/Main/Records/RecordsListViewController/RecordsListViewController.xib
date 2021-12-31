@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,6 +13,7 @@
             <connections>
                 <outlet property="recordsCollectionView" destination="ec9-AO-RuP" id="xUR-b6-mLP"/>
                 <outlet property="selectButton" destination="C3Q-cs-BRZ" id="1OU-t7-Iwb"/>
+                <outlet property="selectionActionsView" destination="jZo-OE-0eB" id="9WX-vt-fif"/>
                 <outlet property="titleLabel" destination="qxU-R5-BtI" id="q66-L7-hp5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -51,7 +53,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ec9-AO-RuP" userLabel="records collection view">
-                    <rect key="frame" x="0.0" y="117.5" width="414" height="744.5"/>
+                    <rect key="frame" x="0.0" y="117.5" width="414" height="778.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VUY-5w-ii2">
                         <size key="itemSize" width="128" height="128"/>
@@ -60,18 +62,65 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZo-OE-0eB">
+                    <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hq-vw-l83">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNy-kh-roD" userLabel="dublicate button">
+                                    <rect key="frame" x="0.0" y="0.0" width="207" height="49"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Button">
+                                        <imageReference key="image" image="square.on.square" catalog="system" symbolScale="large"/>
+                                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="10"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="dublicateAction:" destination="-1" eventType="touchUpInside" id="qWY-wt-bVl"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jii-5G-Qfv" userLabel="delete button">
+                                    <rect key="frame" x="207" y="0.0" width="207" height="49"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system" title="Button">
+                                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="10"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="deleteAction:" destination="-1" eventType="touchUpInside" id="7KJ-YN-vXJ"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="49" id="xnZ-BQ-Dsc"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="1hq-vw-l83" secondAttribute="bottom" id="8W6-oY-4e1"/>
+                        <constraint firstItem="1hq-vw-l83" firstAttribute="top" secondItem="jZo-OE-0eB" secondAttribute="top" id="UyD-ar-k2D"/>
+                        <constraint firstAttribute="trailing" secondItem="1hq-vw-l83" secondAttribute="trailing" id="hUI-oh-yyz"/>
+                        <constraint firstItem="1hq-vw-l83" firstAttribute="leading" secondItem="jZo-OE-0eB" secondAttribute="leading" id="puK-qK-1JE"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
                 <constraint firstItem="ec9-AO-RuP" firstAttribute="top" secondItem="ABo-EJ-5jk" secondAttribute="bottom" constant="25" id="118-Sm-V6b"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ec9-AO-RuP" secondAttribute="trailing" id="8wz-QK-JuM"/>
                 <constraint firstItem="ec9-AO-RuP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9A9-v9-Yt3"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ec9-AO-RuP" secondAttribute="bottom" id="WeZ-nc-mhx"/>
+                <constraint firstAttribute="bottom" secondItem="jZo-OE-0eB" secondAttribute="bottom" id="Gua-Qj-p4H"/>
+                <constraint firstAttribute="bottom" secondItem="ec9-AO-RuP" secondAttribute="bottom" id="WeZ-nc-mhx"/>
                 <constraint firstItem="ABo-EJ-5jk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="cWW-ey-aqR"/>
                 <constraint firstAttribute="trailing" secondItem="ABo-EJ-5jk" secondAttribute="trailing" constant="15" id="f3M-3b-U9Y"/>
                 <constraint firstItem="ABo-EJ-5jk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="fjo-3y-7Kr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jZo-OE-0eB" secondAttribute="trailing" id="nbD-Hi-6VH"/>
+                <constraint firstItem="jZo-OE-0eB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="weR-aQ-3tA"/>
             </constraints>
             <point key="canvasLocation" x="139" y="97"/>
         </view>
     </objects>
+    <resources>
+        <image name="square.on.square" catalog="system" width="128" height="113"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
+    </resources>
 </document>

@@ -15,18 +15,39 @@ class RecordDataProvider {
     
     private init() {}
     
-    func addRecord(_ record: Record) {
+    func add(_ record: Record) {
         let realm = try! Realm()
+        
         try! realm.write {
             realm.add(record, update: .all)
         }
         reloadCommands.forEach({ $0.execute() })
     }
     
-    func getRecords() -> [Record] {
+    func getAll() -> [Record] {
         let realm = try! Realm()
         
         return realm.objects(Record.self).map({ $0 })
+    }
+    
+    func delete(_ record: Record) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.delete(record)
+        }
+        
+        reloadCommands.forEach({ $0.execute() })
+    }
+    
+    func deleteAll() {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.delete(getAll())
+        }
+        
+        reloadCommands.forEach({ $0.execute() })
     }
     
     func recordsUpdated() {
