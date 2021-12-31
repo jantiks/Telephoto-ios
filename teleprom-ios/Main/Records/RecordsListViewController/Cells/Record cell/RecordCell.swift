@@ -26,16 +26,14 @@ class RecordCell: UICollectionViewCell {
     func configure(_ config: RecordCellConfig) {
         self.config = config
         
-        titleLabel.text = config.record.title
+        titleLabel.text = config.record.getTitle()
         contentLabel.text = config.record.getText()
         updateBorderLayer()
     }
 
     private func updateBorderLayer() {
-//        layer.borderWidth = 1
-//        layer.borderColor = config?.isSelected == true ? UIColor.telepromPink.cgColor : UIColor.clear.cgColor
-        
-        backgroundColor = config?.isSelected == true ? UIColor.telepromPink : UIColor.tableBgGray
+        layer.borderWidth = 1
+        layer.borderColor = config?.isSelected == true ? UIColor.telepromPink.cgColor : UIColor.clear.cgColor
     }
     
     private func setSelected() {

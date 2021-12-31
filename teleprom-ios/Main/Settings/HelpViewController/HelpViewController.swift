@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HelpViewController: UIViewController {
+class HelpViewController: BaseViewController {
 
     @IBOutlet private weak var explanationLabel: UILabel!
     @IBOutlet private weak var copyButton: UIButton!

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VideoSettingsViewController: UIViewController {
+class VideoSettingsViewController: BaseViewController {
 
     @IBOutlet private weak var videoSettingsTable: UITableView!
     @IBOutlet private weak var bottomLabel: UILabel!

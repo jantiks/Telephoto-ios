@@ -124,25 +124,30 @@ extension RecordsListViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if mode == .add {
-            if indexPath.row == 0 {
+            if indexPath.item == 0 {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addCell", for: indexPath) as? AddRecordCell else { fatalError("couldn't load addCell") }
                 
                 return cell
                 
             } else {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recordCell", for: indexPath) as? RecordCell else { fatalError("couldn't load recordCell") }
-
-                cell.configure(recordsConfigs[indexPath.row - 1])
+                
+                cell.configure(recordsConfigs[indexPath.item - 1])
                 
                 return cell
             }
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recordCell", for: indexPath) as? RecordCell else { fatalError("couldn't load recordCell") }
 
-            cell.configure(recordsConfigs[indexPath.row])
+            cell.configure(recordsConfigs[indexPath.item])
             cell.setSelectedCommand = DoneCommand({ [weak self] in
-                self?.recordsConfigs.forEach({ $0.isSelected = false })
-                self?.recordsCollectionView.reloadData()
+                guard let self = self else { return }
+                guard let selectedCellConfigIndex = self.recordsConfigs.firstIndex(where: { $0.isSelected }), selectedCellConfigIndex != indexPath.item else { return }
+                print("asd disselect index = \(selectedCellConfigIndex)")
+                print("asd selected index = \(indexPath.item)")
+
+                self.recordsConfigs[selectedCellConfigIndex].isSelected = false
+                self.recordsCollectionView.reloadItems(at: [IndexPath(item: selectedCellConfigIndex, section: 0)])
             })
             
             return cell
