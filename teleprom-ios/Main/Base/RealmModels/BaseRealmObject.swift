@@ -9,7 +9,7 @@ import RealmSwift
 
 class BaseRealmObject: Object {
     
-    @objc dynamic var id: String = ""
+    @objc dynamic var id: String = UUID().uuidString
     
     required convenience init(_ id: String) {
         self.init()

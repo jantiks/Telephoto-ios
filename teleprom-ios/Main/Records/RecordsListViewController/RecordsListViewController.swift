@@ -13,6 +13,7 @@ class RecordsListViewController: BaseViewController {
     @IBOutlet private weak var recordsCollectionView: UICollectionView!
     @IBOutlet private weak var selectButton: UIButton!
     
+    private var records: [Record] = []
     private var interItemSpace: CGFloat = 0
     
     override func viewDidLoad() {
@@ -23,6 +24,10 @@ class RecordsListViewController: BaseViewController {
         initUI()
         
         LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
+            self?.reloadData()
+        })])
+        
+        RecordDataProvider.shared.addReloadCommands([DoneCommand({ [weak self] in
             self?.reloadData()
         })])
     }
@@ -57,6 +62,7 @@ class RecordsListViewController: BaseViewController {
     }
     
     private func reloadData() {
+        records = RecordDataProvider.shared.getRecords().reversed()
         recordsCollectionView.reloadData()
         titleLabel.text = "main.tab.new.records".localized
         selectButton.setTitle("records.select.button.title".localized, for: .normal)
@@ -97,28 +103,24 @@ extension RecordsListViewController: UICollectionViewDelegateFlowLayout {
 extension RecordsListViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return records.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addCell", for: indexPath) as? AddRecordCell else { fatalError("couldn't load addCell") }
+            
             cell.cornerRadius = 20
             cell.backgroundColor = .tableBgGray
-            cell.addRecordCommand = DoneCommand({ [weak self] in
-                let vc = RecordViewController()
-                self?.navigationController?.pushViewController(vc, animated: true)
-            })
+
             return cell
             
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recordCell", for: indexPath) as? RecordCell else { fatalError("couldn't load recordCell") }
-            let record = Record()
-            record.text = "Hello sdsdsdsd sddfdfdfdf sdsdsdsdsd dsddfdfdfdf sdsdsdsdsd dfdfdfdf sdsdsdsdsd dfdfdfdf sdsdsdsdsdd fdfdfdf sdsdsdsds ddfd fdfdf sdsdsdsdsdd fdfdfdf"
-            record.title = "Hello record dfdf dfdfdf dfdfdf dfd fd fdfdf"
+
             cell.cornerRadius = 20
             cell.backgroundColor = .tableBgGray
-            cell.setRecord(record)
+            cell.setRecord(records[indexPath.row - 1])
             
             return cell
         }

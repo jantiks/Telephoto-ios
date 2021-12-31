@@ -8,8 +8,6 @@
 import UIKit
 
 class AddRecordCell: UICollectionViewCell {
-
-    var addRecordCommand: CommonCommand? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,6 +15,8 @@ class AddRecordCell: UICollectionViewCell {
     }
     
     @IBAction func addRecordAction(_ sender: UIButton) {
-        addRecordCommand?.execute()
+        let vc = RecordViewController()
+        
+        findViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }

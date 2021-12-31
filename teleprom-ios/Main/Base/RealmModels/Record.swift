@@ -13,7 +13,10 @@ class Record: BaseRealmObject {
     @objc dynamic var text: String?
     
     func setTitle(_ title: String) {
+        realm?.beginWrite()
         self.title = title
+        try! realm?.commitWrite()
+        RecordDataProvider.shared.recordsUpdated()
     }
     
     func getTitle() -> String? {
@@ -21,7 +24,10 @@ class Record: BaseRealmObject {
     }
     
     func setText(_ text: String) {
+        realm?.beginWrite()
         self.text = text
+        try! realm?.commitWrite()
+        RecordDataProvider.shared.recordsUpdated()
     }
     
     func getText() -> String? {

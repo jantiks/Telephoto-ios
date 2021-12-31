@@ -37,6 +37,14 @@
                             </label>
                         </subviews>
                     </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wd-Ak-Z4c" userLabel="open record ">
+                        <rect key="frame" x="0.0" y="0.0" width="258" height="258"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title=" "/>
+                        <connections>
+                            <action selector="openRecordAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="xeZ-x2-kkh"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -44,7 +52,11 @@
                 <constraint firstItem="ECG-TV-ZBd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="1ER-hy-pFj"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ECG-TV-ZBd" secondAttribute="bottom" constant="15" id="CjC-gd-Ltv"/>
                 <constraint firstItem="ECG-TV-ZBd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="S34-6a-z3z"/>
+                <constraint firstAttribute="bottom" secondItem="0wd-Ak-Z4c" secondAttribute="bottom" id="arm-Ry-qwM"/>
+                <constraint firstItem="0wd-Ak-Z4c" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fjA-8t-3y4"/>
+                <constraint firstItem="0wd-Ak-Z4c" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gG3-Ch-VUe"/>
                 <constraint firstAttribute="trailing" secondItem="ECG-TV-ZBd" secondAttribute="trailing" constant="15" id="jaK-3C-g5E"/>
+                <constraint firstAttribute="trailing" secondItem="0wd-Ak-Z4c" secondAttribute="trailing" id="kVg-lf-RBG"/>
             </constraints>
             <size key="customSize" width="258" height="258"/>
             <connections>

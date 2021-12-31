@@ -12,11 +12,6 @@ class RecordCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     private var record: Record?
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
     
     func setRecord(_ record: Record) {
         self.record = record
@@ -25,6 +20,15 @@ class RecordCell: UICollectionViewCell {
 
     private func updateUi() {
         titleLabel.text = record?.title ?? ""
-        contentLabel.text = record?.text ?? ""
+        contentLabel.text = record?.getText()
+    }
+    
+    @IBAction func openRecordAction(_ sender: UIButton) {
+        guard let record = record else { return }
+        
+        let vc = RecordViewController()
+        vc.setRecord(record)
+        
+        findViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }

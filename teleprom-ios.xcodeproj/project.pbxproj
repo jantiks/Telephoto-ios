@@ -59,6 +59,8 @@
 		A0B45B93277B9C1200E8B0D7 /* BaseRealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B92277B9C1200E8B0D7 /* BaseRealmObject.swift */; };
 		A0B45B97277BA96D00E8B0D7 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B95277BA96D00E8B0D7 /* RecordViewController.swift */; };
 		A0B45B98277BA96D00E8B0D7 /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B45B96277BA96D00E8B0D7 /* RecordViewController.xib */; };
+		A0B45B9C277E470E00E8B0D7 /* RecordDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B9B277E470E00E8B0D7 /* RecordDataProvider.swift */; };
+		A0B45B9E277EB7F600E8B0D7 /* RealmExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B9D277EB7F600E8B0D7 /* RealmExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +122,8 @@
 		A0B45B92277B9C1200E8B0D7 /* BaseRealmObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRealmObject.swift; sourceTree = "<group>"; };
 		A0B45B95277BA96D00E8B0D7 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		A0B45B96277BA96D00E8B0D7 /* RecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordViewController.xib; sourceTree = "<group>"; };
+		A0B45B9B277E470E00E8B0D7 /* RecordDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDataProvider.swift; sourceTree = "<group>"; };
+		A0B45B9D277EB7F600E8B0D7 /* RealmExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmExtension.swift; sourceTree = "<group>"; };
 		CC80B414167A2CCA50E7F600 /* Pods-teleprom-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teleprom-ios.debug.xcconfig"; path = "Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -205,6 +209,7 @@
 				A01C90B3277787900098EEB8 /* StringExtension.swift */,
 				A01C90D027781A210098EEB8 /* UIViewExtension.swift */,
 				A08153B12778AC1400AADED9 /* SKStoreReviewControllerExtension.swift */,
+				A0B45B9D277EB7F600E8B0D7 /* RealmExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 		A01C908927751A350098EEB8 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				A0B45B9A277E46F900E8B0D7 /* Data Providers */,
 				A0B45B94277B9CEA00E8B0D7 /* RealmModels */,
 				A03273692778462F008A138C /* Managers */,
 				A01C90C42778181C0098EEB8 /* Commands */,
@@ -437,6 +443,14 @@
 			path = RecordViewController;
 			sourceTree = "<group>";
 		};
+		A0B45B9A277E46F900E8B0D7 /* Data Providers */ = {
+			isa = PBXGroup;
+			children = (
+				A0B45B9B277E470E00E8B0D7 /* RecordDataProvider.swift */,
+			);
+			path = "Data Providers";
+			sourceTree = "<group>";
+		};
 		DEF22D3E31C53418E7F8C635 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,6 +603,7 @@
 				A08153A827785FCC00AADED9 /* DoneCommand.swift in Sources */,
 				A01C90D127781A210098EEB8 /* UIViewExtension.swift in Sources */,
 				A01C907F277514DE0098EEB8 /* GlobalExtension.swift in Sources */,
+				A0B45B9C277E470E00E8B0D7 /* RecordDataProvider.swift in Sources */,
 				A0B45B93277B9C1200E8B0D7 /* BaseRealmObject.swift in Sources */,
 				A01C90C62778182A0098EEB8 /* CommonCommand.swift in Sources */,
 				A0B45B8E277B9B1000E8B0D7 /* RecordCell.swift in Sources */,
@@ -609,6 +624,7 @@
 				A01C9086277515B80098EEB8 /* BaseViewController.swift in Sources */,
 				A0B45B91277B9BC500E8B0D7 /* Record.swift in Sources */,
 				A01C90B4277787900098EEB8 /* StringExtension.swift in Sources */,
+				A0B45B9E277EB7F600E8B0D7 /* RealmExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
