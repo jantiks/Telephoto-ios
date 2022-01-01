@@ -25,5 +25,22 @@ class TextModifierView: BaseCustomView {
         
         changeFontButton.layer.borderWidth = 0.5
         changeFontButton.layer.borderColor = UIColor.white.cgColor
+        
+    }
+    
+    @IBAction func boldAction(_ sender: UIButton) {
+    }
+    @IBAction func underlineAction(_ sender: UIButton) {
+    }
+    @IBAction func italicAction(_ sender: UIButton) {
+    }
+    @IBAction func changeFontAction(_ sender: UIButton) {
+        print("change font asd")
+    }
+    @IBAction func leftAlignAction(_ sender: UIButton) {
+    }
+    @IBAction func centerAlignAction(_ sender: UIButton) {
+    }
+    @IBAction func rightCenterAction(_ sender: UIButton) {
     }
 }

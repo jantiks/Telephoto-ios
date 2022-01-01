@@ -36,3 +36,5 @@
 "alert.cancel" = "Cancel";
 "records.dublicate" = "Dublicate";
 "records.delete.all" = "Delete all";
+"create.record.title.text.placeholder" = "Title goes here...";
+"create.record.content.text.placeholder" = "Enter some text...";

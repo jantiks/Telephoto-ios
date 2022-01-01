@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="backgroundView" destination="WFe-rx-mPS" id="hWY-aH-Lhm"/>
                 <outlet property="contentTextView" destination="sjq-D0-3JV" id="udd-4b-y21"/>
+                <outlet property="textViewModifier" destination="uyM-06-BJJ" id="GBg-m3-WWm"/>
                 <outlet property="titleTextField" destination="TRh-d4-JR4" id="AJm-dI-8dk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -51,22 +52,8 @@
                 </textView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uyM-06-BJJ" customClass="TextModifierView" customModule="teleprom_ios" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="802" width="414" height="60"/>
-                    <subviews>
-                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogd-EJ-Uzh">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
-                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lvC-17-TsV">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </view>
-                            <blurEffect style="regular"/>
-                        </visualEffectView>
-                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="ogd-EJ-Uzh" secondAttribute="trailing" id="EJr-uL-8IA"/>
                         <constraint firstAttribute="height" constant="60" id="PG9-oR-8vH"/>
-                        <constraint firstItem="ogd-EJ-Uzh" firstAttribute="leading" secondItem="uyM-06-BJJ" secondAttribute="leading" id="gIx-Ll-EEg"/>
-                        <constraint firstAttribute="bottom" secondItem="ogd-EJ-Uzh" secondAttribute="bottom" id="rsC-B6-Osq"/>
-                        <constraint firstItem="ogd-EJ-Uzh" firstAttribute="top" secondItem="uyM-06-BJJ" secondAttribute="top" id="vkD-4W-fJm"/>
                     </constraints>
                 </view>
             </subviews>

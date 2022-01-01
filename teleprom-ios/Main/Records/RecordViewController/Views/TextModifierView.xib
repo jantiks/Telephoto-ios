@@ -34,18 +34,27 @@
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" image="bold" catalog="system"/>
+                                            <connections>
+                                                <action selector="boldAction:" destination="-1" eventType="touchUpInside" id="sVa-oh-BmA"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0t-Fz-dKl">
                                             <rect key="frame" x="45.5" y="0.0" width="46" height="150"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" image="underline" catalog="system"/>
+                                            <connections>
+                                                <action selector="underlineAction:" destination="-1" eventType="touchUpInside" id="LdQ-49-z8n"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2H7-dR-mVG">
                                             <rect key="frame" x="91.5" y="0.0" width="45.5" height="150"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" image="italic" catalog="system"/>
+                                            <connections>
+                                                <action selector="italicAction:" destination="-1" eventType="touchUpInside" id="XBH-eG-hpo"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -61,11 +70,15 @@
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" title="24 ^"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="24 ^"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                     <real key="value" value="8"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="changeFontAction:" destination="-1" eventType="touchUpInside" id="XJ7-hr-0sF"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -81,18 +94,27 @@
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" image="text.alignleft" catalog="system"/>
+                                            <connections>
+                                                <action selector="leftAlignAction:" destination="-1" eventType="touchUpInside" id="8g0-pc-8ze"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4e-bD-nTd">
                                             <rect key="frame" x="45.5" y="0.0" width="46" height="150"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" image="text.aligncenter" catalog="system"/>
+                                            <connections>
+                                                <action selector="centerAlignAction:" destination="-1" eventType="touchUpInside" id="UgF-3o-gEA"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzH-6P-Wbf">
                                             <rect key="frame" x="91.5" y="0.0" width="45.5" height="150"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" image="text.alignright" catalog="system"/>
+                                            <connections>
+                                                <action selector="rightCenterAction:" destination="-1" eventType="touchUpInside" id="oEi-zY-b5O"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>

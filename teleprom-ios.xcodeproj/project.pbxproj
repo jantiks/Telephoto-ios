@@ -49,6 +49,7 @@
 		A08153AF2778948000AADED9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153AD2778948000AADED9 /* AboutViewController.swift */; };
 		A08153B02778948000AADED9 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08153AE2778948000AADED9 /* AboutViewController.xib */; };
 		A08153B22778AC1400AADED9 /* SKStoreReviewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153B12778AC1400AADED9 /* SKStoreReviewControllerExtension.swift */; };
+		A09C46BB2780EBCC00B9DF23 /* VisualEffectViewWithIntensity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09C46BA2780EBCC00B9DF23 /* VisualEffectViewWithIntensity.swift */; };
 		A0B45B84277A463C00E8B0D7 /* RecordsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B82277A463C00E8B0D7 /* RecordsListViewController.swift */; };
 		A0B45B85277A463C00E8B0D7 /* RecordsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B45B83277A463C00E8B0D7 /* RecordsListViewController.xib */; };
 		A0B45B8A277A4C3000E8B0D7 /* AddRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B88277A4C3000E8B0D7 /* AddRecordCell.swift */; };
@@ -117,6 +118,7 @@
 		A08153AD2778948000AADED9 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		A08153AE2778948000AADED9 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		A08153B12778AC1400AADED9 /* SKStoreReviewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKStoreReviewControllerExtension.swift; sourceTree = "<group>"; };
+		A09C46BA2780EBCC00B9DF23 /* VisualEffectViewWithIntensity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectViewWithIntensity.swift; sourceTree = "<group>"; };
 		A0B45B82277A463C00E8B0D7 /* RecordsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListViewController.swift; sourceTree = "<group>"; };
 		A0B45B83277A463C00E8B0D7 /* RecordsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordsListViewController.xib; sourceTree = "<group>"; };
 		A0B45B88277A4C3000E8B0D7 /* AddRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordCell.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				A01C9081277514F30098EEB8 /* BaseCustomView.swift */,
+				A09C46BA2780EBCC00B9DF23 /* VisualEffectViewWithIntensity.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 				A01C90C62778182A0098EEB8 /* CommonCommand.swift in Sources */,
 				A0B45B8E277B9B1000E8B0D7 /* RecordCell.swift in Sources */,
 				A01C908F2776F2420098EEB8 /* UIColorExtention.swift in Sources */,
+				A09C46BB2780EBCC00B9DF23 /* VisualEffectViewWithIntensity.swift in Sources */,
 				A01C908D27751A630098EEB8 /* BaseTabBarViewController.swift in Sources */,
 				A01C90C227779DD90098EEB8 /* SettingsTableViewCell.swift in Sources */,
 				A01C909727776DE50098EEB8 /* BaseNavigationController.swift in Sources */,
