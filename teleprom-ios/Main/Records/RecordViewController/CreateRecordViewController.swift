@@ -13,6 +13,7 @@ class CreateRecordViewController: BaseViewController {
     @IBOutlet private weak var contentTextView: UITextView!
     @IBOutlet private weak var backgroundView: UIView!
     @IBOutlet private weak var textViewModifier: TextModifierView!
+    @IBOutlet private weak var textModifierBottomConstraint: NSLayoutConstraint!
     
     private var contentTextViewPlaceholderLabel: UILabel!
 
@@ -20,11 +21,10 @@ class CreateRecordViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if record == nil {
-            record = Record()
-        }
         
+        setRecordIfNeeded()
         initUI()
+        addKeyboardObservers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +45,12 @@ class CreateRecordViewController: BaseViewController {
     
     func setRecord(_ record: Record) {
         self.record = record
+    }
+    
+    private func setRecordIfNeeded() {
+        if record == nil {
+            record = Record()
+        }
     }
     
     private func initUI() {
@@ -93,6 +99,14 @@ class CreateRecordViewController: BaseViewController {
         NSLayoutConstraint(item: effectView, attribute: .trailing, relatedBy: .equal, toItem: textViewModifier, attribute: .trailing, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: effectView, attribute: .top, relatedBy: .equal, toItem: textViewModifier, attribute: .top, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: effectView, attribute: .bottom, relatedBy: .equal, toItem: textViewModifier, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
+    }
+    
+    override func keyboardDidHide() {
+        textModifierBottomConstraint.constant = 0
+    }
+    
+    override func keyboardDidShow(_ size: CGRect) {
+        textModifierBottomConstraint.constant = size.height - view.safeAreaInsets.bottom
     }
     
     @objc private func textFieldDidChange(_ textField: UITextField) {

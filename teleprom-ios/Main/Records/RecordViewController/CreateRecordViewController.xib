@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="backgroundView" destination="WFe-rx-mPS" id="hWY-aH-Lhm"/>
                 <outlet property="contentTextView" destination="sjq-D0-3JV" id="udd-4b-y21"/>
+                <outlet property="textModifierBottomConstraint" destination="5Kh-xs-uhj" id="xYJ-3o-Kt1"/>
                 <outlet property="textViewModifier" destination="uyM-06-BJJ" id="GBg-m3-WWm"/>
                 <outlet property="titleTextField" destination="TRh-d4-JR4" id="AJm-dI-8dk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
