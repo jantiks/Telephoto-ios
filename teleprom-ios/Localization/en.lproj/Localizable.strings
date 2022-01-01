@@ -34,3 +34,5 @@
 "alert.delete" = "Delete";
 "alert.delete.all" = "Delete all";
 "alert.cancel" = "Cancel";
+"records.dublicate" = "Dublicate";
+"records.delete.all" = "Delete all";

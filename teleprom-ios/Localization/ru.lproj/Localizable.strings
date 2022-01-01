@@ -34,3 +34,5 @@
 "alert.delete" = "Удалить";
 "alert.delete.all" = "Удалить все";
 "alert.cancel" = "Отмена";
+"records.dublicate" = "Дублировать";
+"records.delete.all" = "Удалить все";

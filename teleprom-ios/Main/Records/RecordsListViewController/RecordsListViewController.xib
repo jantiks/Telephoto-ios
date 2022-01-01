@@ -11,9 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecordsListViewController" customModule="teleprom_ios" customModuleProvider="target">
             <connections>
+                <outlet property="deletButton" destination="Jii-5G-Qfv" id="eoZ-3k-c3P"/>
+                <outlet property="dublicateButton" destination="TNy-kh-roD" id="nxa-LD-BHo"/>
                 <outlet property="recordsCollectionView" destination="ec9-AO-RuP" id="xUR-b6-mLP"/>
                 <outlet property="selectButton" destination="C3Q-cs-BRZ" id="1OU-t7-Iwb"/>
                 <outlet property="selectionActionsView" destination="jZo-OE-0eB" id="9WX-vt-fif"/>
+                <outlet property="selectionActionsViewHeightConstraint" destination="NfT-6N-V2k" id="KyW-bZ-BIs"/>
                 <outlet property="titleLabel" destination="qxU-R5-BtI" id="q66-L7-hp5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -63,40 +66,41 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZo-OE-0eB">
-                    <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                    <rect key="frame" x="0.0" y="806" width="414" height="90"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hq-vw-l83">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1hq-vw-l83">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNy-kh-roD" userLabel="dublicate button">
-                                    <rect key="frame" x="0.0" y="0.0" width="207" height="49"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Button">
-                                        <imageReference key="image" image="square.on.square" catalog="system" symbolScale="large"/>
-                                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="10"/>
-                                    </buttonConfiguration>
+                                    <rect key="frame" x="0.0" y="0.0" width="207" height="90"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Dublicate">
+                                        <imageReference key="image" image="square.on.square" catalog="system" symbolScale="medium"/>
+                                    </state>
                                     <connections>
-                                        <action selector="dublicateAction:" destination="-1" eventType="touchUpInside" id="qWY-wt-bVl"/>
+                                        <action selector="dublicateAction:" destination="-1" eventType="touchUpInside" id="RNg-1n-dMv"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jii-5G-Qfv" userLabel="delete button">
-                                    <rect key="frame" x="207" y="0.0" width="207" height="49"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system" title="Button">
-                                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="10"/>
-                                    </buttonConfiguration>
+                                    <rect key="frame" x="207" y="0.0" width="207" height="90"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Delete">
+                                        <imageReference key="image" image="trash" catalog="system" symbolScale="medium"/>
+                                    </state>
                                     <connections>
                                         <action selector="deleteAction:" destination="-1" eventType="touchUpInside" id="7KJ-YN-vXJ"/>
                                     </connections>
                                 </button>
                             </subviews>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="49" id="xnZ-BQ-Dsc"/>
-                            </constraints>
                         </stackView>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="1hq-vw-l83" secondAttribute="bottom" id="8W6-oY-4e1"/>
+                        <constraint firstAttribute="height" constant="90" id="NfT-6N-V2k"/>
                         <constraint firstItem="1hq-vw-l83" firstAttribute="top" secondItem="jZo-OE-0eB" secondAttribute="top" id="UyD-ar-k2D"/>
                         <constraint firstAttribute="trailing" secondItem="1hq-vw-l83" secondAttribute="trailing" id="hUI-oh-yyz"/>
                         <constraint firstItem="1hq-vw-l83" firstAttribute="leading" secondItem="jZo-OE-0eB" secondAttribute="leading" id="puK-qK-1JE"/>

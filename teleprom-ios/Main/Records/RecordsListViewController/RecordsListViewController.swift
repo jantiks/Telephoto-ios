@@ -13,7 +13,9 @@ class RecordsListViewController: BaseViewController {
     @IBOutlet private weak var recordsCollectionView: UICollectionView!
     @IBOutlet private weak var selectButton: UIButton!
     @IBOutlet private weak var selectionActionsView: UIView!
-
+    @IBOutlet private weak var selectionActionsViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var dublicateButton: UIButton!
+    @IBOutlet private weak var deletButton: UIButton!
     
     private var recordsConfigs: [RecordCellConfig] = []
     private var mode: RecordsListMode = .add
@@ -58,6 +60,7 @@ class RecordsListViewController: BaseViewController {
     private func initUI() {
         interItemSpace = view.bounds.width * 0.05
         selectionActionsView.backgroundColor = .tabBarGray
+        
         updateViewsForCurrentSelectionMode()
         
         let flow = recordsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
@@ -73,6 +76,7 @@ class RecordsListViewController: BaseViewController {
     private func toggleSelectionMode() {
         mode.toggle()
         updateViewsForCurrentSelectionMode()
+        selectionActionsViewHeightConstraint.constant = tabBarController?.tabBar.bounds.height ?? 49
     }
     
     private func updateViewsForCurrentSelectionMode() {
@@ -85,10 +89,17 @@ class RecordsListViewController: BaseViewController {
     }
     
     private func languageConfigure() {
-        let buttonTitle = mode == .add ? "records.mode.select.button.title".localized : "records.mode.cancel.button.title".localized
+        let selectButtonTitle = mode == .add ? "records.mode.select.button.title".localized : "records.mode.cancel.button.title".localized
+        let dublicateButtonTitle = "records.dublicate".localized
+        let deleteButtonTitle = "records.delete.all".localized
         let title = mode == .add ? "main.tab.records.your.records".localized : "main.tab.records.select.record".localized
         
-        selectButton.setTitle(buttonTitle, for: .normal)
+        selectButton.setTitle(selectButtonTitle, for: .normal)
+        dublicateButton.setTitle(dublicateButtonTitle, for: .normal)
+        deletButton.setTitle(deleteButtonTitle, for: .normal)
+        deletButton.alignVertical()
+        dublicateButton.alignVertical()
+        
         titleLabel.text = title
     }
     

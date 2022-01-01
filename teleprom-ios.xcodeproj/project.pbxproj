@@ -63,6 +63,7 @@
 		A0B45B9E277EB7F600E8B0D7 /* RealmExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B9D277EB7F600E8B0D7 /* RealmExtension.swift */; };
 		A0B45BA1277ED68800E8B0D7 /* RecordsListMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45BA0277ED68800E8B0D7 /* RecordsListMode.swift */; };
 		A0B45BA5277EE29000E8B0D7 /* RecordCellConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45BA4277EE29000E8B0D7 /* RecordCellConfig.swift */; };
+		A0B47B15278071F0004C7526 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B47B14278071F0004C7526 /* UIButtonExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +129,7 @@
 		A0B45B9D277EB7F600E8B0D7 /* RealmExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmExtension.swift; sourceTree = "<group>"; };
 		A0B45BA0277ED68800E8B0D7 /* RecordsListMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListMode.swift; sourceTree = "<group>"; };
 		A0B45BA4277EE29000E8B0D7 /* RecordCellConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCellConfig.swift; sourceTree = "<group>"; };
+		A0B47B14278071F0004C7526 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		CC80B414167A2CCA50E7F600 /* Pods-teleprom-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teleprom-ios.debug.xcconfig"; path = "Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -214,6 +216,7 @@
 				A01C90D027781A210098EEB8 /* UIViewExtension.swift */,
 				A08153B12778AC1400AADED9 /* SKStoreReviewControllerExtension.swift */,
 				A0B45B9D277EB7F600E8B0D7 /* RealmExtension.swift */,
+				A0B47B14278071F0004C7526 /* UIButtonExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -643,6 +646,7 @@
 				A01C90C227779DD90098EEB8 /* SettingsTableViewCell.swift in Sources */,
 				A01C909727776DE50098EEB8 /* BaseNavigationController.swift in Sources */,
 				A032736D277846FA008A138C /* SetDefaultCommands.swift in Sources */,
+				A0B47B15278071F0004C7526 /* UIButtonExtension.swift in Sources */,
 				A01C906B277512200098EEB8 /* SceneDelegate.swift in Sources */,
 				A0B45B8A277A4C3000E8B0D7 /* AddRecordCell.swift in Sources */,
 				A03273702778526E008A138C /* LanguageSelectionViewController.swift in Sources */,
