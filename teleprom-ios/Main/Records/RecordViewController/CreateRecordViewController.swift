@@ -14,6 +14,7 @@ class CreateRecordViewController: BaseViewController {
     @IBOutlet private weak var backgroundView: UIView!
     @IBOutlet private weak var textViewModifier: TextModifierView!
     @IBOutlet private weak var textModifierBottomConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var contentTextViewBottomConstraint: NSLayoutConstraint!
     
     private var contentTextViewPlaceholderLabel: UILabel!
 
@@ -63,6 +64,27 @@ class CreateRecordViewController: BaseViewController {
         setNavBarButtons()
         setTitleTextField()
         setConetentTextView()
+        addDoneButtonOnKeyboard()
+    }
+    
+    private func addDoneButtonOnKeyboard(){
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        doneToolbar.barStyle = .black
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+        done.tintColor = .white
+        
+        let items = [flexSpace, done]
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        contentTextView.inputAccessoryView = doneToolbar
+        titleTextField.inputAccessoryView = doneToolbar
+    }
+    
+    @objc private func doneButtonAction(){
+        view.endEditing(true)
     }
     
     private func setTitleTextField() {
@@ -93,10 +115,12 @@ class CreateRecordViewController: BaseViewController {
     
     override func keyboardDidHide() {
         textModifierBottomConstraint.constant = 0
+        contentTextViewBottomConstraint.constant = textViewModifier.getInitialHeight()
     }
     
     override func keyboardDidShow(_ size: CGRect) {
         textModifierBottomConstraint.constant = size.height - view.safeAreaInsets.bottom
+        contentTextViewBottomConstraint.constant = size.height - view.safeAreaInsets.bottom + textViewModifier.getInitialHeight()
     }
     
     @objc private func textFieldDidChange(_ textField: UITextField) {
@@ -110,13 +134,6 @@ class CreateRecordViewController: BaseViewController {
         record.setText(contentTextView.attributedText)
         RecordDataProvider.shared.add(record)
         navigationController?.popViewController(animated: true)
-        
-        let data = try! NSKeyedArchiver.archivedData(withRootObject: contentTextView.attributedText, requiringSecureCoding: false)
-        if let attributedString = NSKeyedUnarchiver.unarchiveObject(with: data) as? NSAttributedString {
-            contentTextView.attributedText = attributedString
-        }
-        
-        data
     }
 }
 

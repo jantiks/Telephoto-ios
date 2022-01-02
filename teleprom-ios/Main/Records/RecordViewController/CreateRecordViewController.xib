@@ -12,7 +12,8 @@
             <connections>
                 <outlet property="backgroundView" destination="WFe-rx-mPS" id="hWY-aH-Lhm"/>
                 <outlet property="contentTextView" destination="sjq-D0-3JV" id="udd-4b-y21"/>
-                <outlet property="textModifierBottomConstraint" destination="5Kh-xs-uhj" id="xYJ-3o-Kt1"/>
+                <outlet property="contentTextViewBottomConstraint" destination="OeV-Pg-LQt" id="Uud-1W-8wc"/>
+                <outlet property="textModifierBottomConstraint" destination="5Kh-xs-uhj" id="vAo-JU-Jyb"/>
                 <outlet property="textViewModifier" destination="uyM-06-BJJ" id="GBg-m3-WWm"/>
                 <outlet property="titleTextField" destination="TRh-d4-JR4" id="AJm-dI-8dk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -44,7 +45,7 @@
                     </constraints>
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjq-D0-3JV">
-                    <rect key="frame" x="15" y="119.5" width="384" height="742.5"/>
+                    <rect key="frame" x="15" y="119.5" width="384" height="682.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -69,7 +70,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="WFe-rx-mPS" secondAttribute="top" id="IDp-Bz-G1r"/>
                 <constraint firstItem="TRh-d4-JR4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="KHK-c1-sW2"/>
                 <constraint firstItem="5cn-ZA-diW" firstAttribute="trailing" secondItem="TRh-d4-JR4" secondAttribute="trailing" id="ODY-xK-oeT"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sjq-D0-3JV" secondAttribute="bottom" id="OeV-Pg-LQt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sjq-D0-3JV" secondAttribute="bottom" constant="60" id="OeV-Pg-LQt"/>
                 <constraint firstItem="sjq-D0-3JV" firstAttribute="top" secondItem="5cn-ZA-diW" secondAttribute="bottom" constant="15" id="Opg-IX-vom"/>
                 <constraint firstItem="uyM-06-BJJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WaA-ip-exY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WFe-rx-mPS" secondAttribute="trailing" id="emg-06-hgW"/>

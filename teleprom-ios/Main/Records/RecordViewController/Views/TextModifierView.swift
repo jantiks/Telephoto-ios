@@ -23,6 +23,8 @@ class TextModifierView: BaseCustomView {
     private var selectionFontTableBg: VisualEffectWithIntensityView?
     private let selectFontTableData = [20, 24, 28, 36, 42, 48, 56, 62, 68, 74]
     private var currentFont: UIFont = UIFont.systemFont(ofSize: 24)
+    private let initalHeight: CGFloat = 60
+    private let expandedHeight: CGFloat = 220
     
     override func getXibName() -> String {
         return "\(TextModifierView.self)"
@@ -45,6 +47,10 @@ class TextModifierView: BaseCustomView {
     
     func setTextView(_ textView: UITextView) {
         self.textView = textView
+    }
+    
+    func getInitialHeight() -> CGFloat {
+        return initalHeight
     }
     
     func textViewDidChange() {
@@ -162,7 +168,7 @@ class TextModifierView: BaseCustomView {
         
         selectFontTableView.isHidden = !sender.isSelected
         selectionFontTableBg?.isHidden = selectFontTableView.isHidden
-        setHeightConstraint(selectFontTableView.isHidden ? 60 : 220)
+        setHeightConstraint(selectFontTableView.isHidden ? initalHeight : expandedHeight)
     }
     
     @IBAction func leftAlignAction(_ sender: UIButton) {
@@ -183,7 +189,7 @@ class TextModifierView: BaseCustomView {
     @IBAction func hideSelectFontTableAction(_ sender: UIButton) {
         selectFontTableView.isHidden = true
         selectionFontTableBg?.isHidden = true
-        setHeightConstraint(60)
+        setHeightConstraint(initalHeight)
         changeFontButton.isSelected = false
     }
 }
