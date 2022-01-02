@@ -39,7 +39,6 @@ class TextModifierView: BaseCustomView {
         
         changeFontButton.layer.borderWidth = 0.5
         changeFontButton.layer.borderColor = UIColor.white.cgColor
-        alignmentButtons.first?.isSelected = true
         setSelectFontTableView()
         setActionViewsBg()
         setSelectFontTableBg()
