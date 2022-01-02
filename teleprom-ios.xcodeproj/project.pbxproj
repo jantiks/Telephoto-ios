@@ -42,6 +42,7 @@
 		A03273702778526E008A138C /* LanguageSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032736E2778526E008A138C /* LanguageSelectionViewController.swift */; };
 		A03273712778526E008A138C /* LanguageSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A032736F2778526E008A138C /* LanguageSelectionViewController.xib */; };
 		A032737427785497008A138C /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032737327785497008A138C /* Languages.swift */; };
+		A048127F2781FAF6002EF20F /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A048127E2781FAF6002EF20F /* UIFontExtension.swift */; };
 		A08153A627785EEF00AADED9 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153A527785EEF00AADED9 /* LanguageManager.swift */; };
 		A08153A827785FCC00AADED9 /* DoneCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153A727785FCC00AADED9 /* DoneCommand.swift */; };
 		A08153AB277869E200AADED9 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153A9277869E200AADED9 /* HelpViewController.swift */; };
@@ -111,6 +112,7 @@
 		A032736E2778526E008A138C /* LanguageSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionViewController.swift; sourceTree = "<group>"; };
 		A032736F2778526E008A138C /* LanguageSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageSelectionViewController.xib; sourceTree = "<group>"; };
 		A032737327785497008A138C /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
+		A048127E2781FAF6002EF20F /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		A08153A527785EEF00AADED9 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		A08153A727785FCC00AADED9 /* DoneCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneCommand.swift; sourceTree = "<group>"; };
 		A08153A9277869E200AADED9 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				A08153B12778AC1400AADED9 /* SKStoreReviewControllerExtension.swift */,
 				A0B45B9D277EB7F600E8B0D7 /* RealmExtension.swift */,
 				A0B47B14278071F0004C7526 /* UIButtonExtension.swift */,
+				A048127E2781FAF6002EF20F /* UIFontExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -648,6 +651,7 @@
 				A01C9069277512200098EEB8 /* AppDelegate.swift in Sources */,
 				A032736B27784646008A138C /* UserSettingsManager.swift in Sources */,
 				A01C9092277767BE0098EEB8 /* TabBarViewControllerConfig.swift in Sources */,
+				A048127F2781FAF6002EF20F /* UIFontExtension.swift in Sources */,
 				A0B47B1927808824004C7526 /* TextModifierView.swift in Sources */,
 				A01C90CE277818C90098EEB8 /* VideoSettingsViewController.swift in Sources */,
 				A08153AB277869E200AADED9 /* HelpViewController.swift in Sources */,

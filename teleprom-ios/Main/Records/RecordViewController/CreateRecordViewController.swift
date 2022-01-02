@@ -61,7 +61,6 @@ class CreateRecordViewController: BaseViewController {
         title = "\(contentTextView.text.count)/1000"
         
         setNavBarButtons()
-        setTextModifierBg()
         setTitleTextField()
         setConetentTextView()
     }
@@ -92,16 +91,6 @@ class CreateRecordViewController: BaseViewController {
         rightBarButtonItem.isEnabled = titleTextField.text?.isEmpty == false || !contentTextView.text.isEmpty
     }
     
-    private func setTextModifierBg() {
-        let effectView = VisualEffectWithIntensityView(effect:  UIBlurEffect(style: .light), intensity: 0.4)
-        textViewModifier.insertSubview(effectView, at: 0)
-        effectView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint(item: effectView, attribute: .leading, relatedBy: .equal, toItem: textViewModifier, attribute: .leading, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: effectView, attribute: .trailing, relatedBy: .equal, toItem: textViewModifier, attribute: .trailing, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: effectView, attribute: .top, relatedBy: .equal, toItem: textViewModifier, attribute: .top, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: effectView, attribute: .bottom, relatedBy: .equal, toItem: textViewModifier, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
-    }
-    
     override func keyboardDidHide() {
         textModifierBottomConstraint.constant = 0
     }
@@ -128,6 +117,7 @@ class CreateRecordViewController: BaseViewController {
 extension CreateRecordViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         title = "\(textView.text.count)/1000"
+        textViewModifier.textViewDidChange()
         contentTextViewPlaceholderLabel.isHidden = !textView.text.isEmpty
         navigationItem.rightBarButtonItem?.isEnabled = !textView.text.isEmpty && titleTextField.text?.isEmpty == false
     }
