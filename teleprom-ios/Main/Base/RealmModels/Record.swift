@@ -6,13 +6,14 @@
 //
 
 import RealmSwift
+import Foundation
 
 class Record: BaseRealmObject {
     
     @objc dynamic var title: String?
-    @objc dynamic var text: String?
+    @objc dynamic var textData: Data?
     
-    func setTitle(_ title: String) {
+    func setTitle(_ title: String?) {
         realm?.beginWrite()
         self.title = title
         try! realm?.commitWrite()
@@ -23,20 +24,24 @@ class Record: BaseRealmObject {
         return title
     }
     
-    func setText(_ text: String) {
+    func setText(_ attributedString: NSAttributedString) {
         realm?.beginWrite()
-        self.text = text
+        textData = try! NSKeyedArchiver.archivedData(withRootObject: attributedString, requiringSecureCoding: false)
         try! realm?.commitWrite()
         RecordDataProvider.shared.recordsUpdated()
     }
     
-    func getText() -> String? {
-        return text
+    func getText() -> NSAttributedString? {
+        if let textData = textData {
+            return try! NSKeyedUnarchiver.unarchivedObject(ofClass: NSAttributedString.self, from: textData)
+        } else {
+            return nil
+        }
     }
     
     func pull(from record: Record) -> Record {
-        title = record.title
-        text = record.text
+        setTitle(record.getTitle())
+        setText(record.getText() ?? NSAttributedString(string: ""))
         
         return self
     }

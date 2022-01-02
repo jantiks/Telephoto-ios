@@ -55,8 +55,8 @@ class CreateRecordViewController: BaseViewController {
     }
     
     private func initUI() {
-        titleTextField.text = record?.title
-        contentTextView.text = record?.text
+        titleTextField.text = record?.getTitle()
+        contentTextView.attributedText = record?.getText()
         
         title = "\(contentTextView.text.count)/1000"
         
@@ -107,16 +107,23 @@ class CreateRecordViewController: BaseViewController {
         guard let record = record else { return }
         
         record.setTitle(titleTextField.text ?? "")
-        record.setText(contentTextView.text)
-        
+        record.setText(contentTextView.attributedText)
         RecordDataProvider.shared.add(record)
         navigationController?.popViewController(animated: true)
+        
+        let data = try! NSKeyedArchiver.archivedData(withRootObject: contentTextView.attributedText, requiringSecureCoding: false)
+        if let attributedString = NSKeyedUnarchiver.unarchiveObject(with: data) as? NSAttributedString {
+            contentTextView.attributedText = attributedString
+        }
+        
+        data
     }
 }
 
 extension CreateRecordViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         title = "\(textView.text.count)/1000"
+        
         textViewModifier.textViewDidChange()
         contentTextViewPlaceholderLabel.isHidden = !textView.text.isEmpty
         navigationItem.rightBarButtonItem?.isEnabled = !textView.text.isEmpty && titleTextField.text?.isEmpty == false

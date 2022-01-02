@@ -27,7 +27,7 @@ class RecordCell: UICollectionViewCell {
         self.config = config
         
         titleLabel.text = config.record.getTitle()
-        contentLabel.text = config.record.getText()
+        contentLabel.text = config.record.getText()?.string
         updateBorderLayer()
     }
 

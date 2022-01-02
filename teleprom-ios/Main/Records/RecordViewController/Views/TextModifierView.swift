@@ -214,7 +214,6 @@ extension TextModifierView: UITableViewDataSource {
         cell.textLabel?.textAlignment = .center
         cell.textLabel?.font = cell.textLabel?.font.withSize(19)
         cell.textLabel?.textColor = .white
-        cell.selectedBackgroundView?.tintColor = .red
         cell.selectionStyle = .none
         
         return cell
