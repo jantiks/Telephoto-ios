@@ -10,8 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextModifierView" customModule="teleprom_ios" customModuleProvider="target">
             <connections>
+                <outlet property="boldButton" destination="3kG-Ju-DOc" id="h5W-4L-wrh"/>
                 <outlet property="changeFontButton" destination="yCd-70-nbJ" id="HYv-3Z-nnS"/>
                 <outlet property="conetentView" destination="chy-oU-gtR" id="Xl0-ud-QTl"/>
+                <outlet property="italicButton" destination="2H7-dR-mVG" id="hZb-oW-dcU"/>
                 <outletCollection property="alignmentButtons" destination="uht-hm-vQO" collectionClass="NSMutableArray" id="aS0-Ag-wHu"/>
                 <outletCollection property="alignmentButtons" destination="g4e-bD-nTd" collectionClass="NSMutableArray" id="H0h-h4-WO4"/>
                 <outletCollection property="alignmentButtons" destination="yzH-6P-Wbf" collectionClass="NSMutableArray" id="D3U-wU-eyF"/>
@@ -28,7 +30,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="IZa-pZ-Xzb">
                             <rect key="frame" x="15" y="0.0" width="443" height="150"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5UZ-xK-NfX">
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5UZ-xK-NfX">
                                     <rect key="frame" x="0.0" y="0.0" width="137" height="150"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kG-Ju-DOc">
@@ -42,7 +44,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0t-Fz-dKl">
-                                            <rect key="frame" x="45.5" y="0.0" width="46" height="150"/>
+                                            <rect key="frame" x="45.5" y="10" width="46" height="130"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" image="underline" catalog="system"/>
@@ -60,6 +62,14 @@
                                             </connections>
                                         </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="2H7-dR-mVG" firstAttribute="top" secondItem="5UZ-xK-NfX" secondAttribute="top" id="SEp-Ac-bS2"/>
+                                        <constraint firstAttribute="bottom" secondItem="X0t-Fz-dKl" secondAttribute="bottom" constant="10" id="a3H-dx-MG4"/>
+                                        <constraint firstItem="X0t-Fz-dKl" firstAttribute="top" secondItem="5UZ-xK-NfX" secondAttribute="top" constant="10" id="d9F-9b-8xl"/>
+                                        <constraint firstAttribute="bottom" secondItem="2H7-dR-mVG" secondAttribute="bottom" id="kji-x5-Ivx"/>
+                                        <constraint firstItem="3kG-Ju-DOc" firstAttribute="top" secondItem="5UZ-xK-NfX" secondAttribute="top" id="pP9-W9-8Sb"/>
+                                        <constraint firstAttribute="bottom" secondItem="3kG-Ju-DOc" secondAttribute="bottom" id="uAJ-2q-ETk"/>
+                                    </constraints>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GO6-IJ-tGM">
                                     <rect key="frame" x="153" y="0.0" width="137" height="150"/>

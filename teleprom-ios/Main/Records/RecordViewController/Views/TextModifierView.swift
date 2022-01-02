@@ -12,6 +12,8 @@ class TextModifierView: BaseCustomView {
     @IBOutlet private weak var conetentView: UIView!
     @IBOutlet private weak var changeFontButton: UIButton!
     @IBOutlet private var alignmentButtons: [UIButton]!
+    @IBOutlet private weak var boldButton: UIButton!
+    @IBOutlet private weak var italicButton: UIButton!
     
     private weak var textView: UITextView?
     
@@ -47,17 +49,39 @@ class TextModifierView: BaseCustomView {
         textView?.textStorage.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, textView!.text.count))
         textView?.typingAttributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
     }
+    
+    private func setTypingAttributes(_ attributes: [NSAttributedString.Key: Any]) {
+        for key in attributes.keys {
+            if let value = attributes[key] {
+                textView?.typingAttributes[key] = value
+            }
+        }
+    }
         
     @IBAction func boldAction(_ sender: UIButton) {
-        textView?.typingAttributes[NSAttributedString.Key.font] = UIFont.boldSystemFont(ofSize: textView!.font!.pointSize)
+        sender.isSelected.toggle()
+        italicButton.isSelected = false
+        
+        sender.isSelected ?
+        setTypingAttributes([NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: textView!.font!.pointSize)]) : setTypingAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: textView!.font!.pointSize)])
     }
     
     @IBAction func underlineAction(_ sender: UIButton) {
-        textView?.typingAttributes[NSAttributedString.Key.underlineStyle] = NSUnderlineStyle.single.rawValue
+        sender.isSelected.toggle()
+        
+        if sender.isSelected {
+            setTypingAttributes([NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue])
+        } else {
+            textView?.typingAttributes[NSAttributedString.Key.underlineStyle] = nil
+        }
     }
     
     @IBAction func italicAction(_ sender: UIButton) {
-        textView?.typingAttributes[NSAttributedString.Key.font] = UIFont.italicSystemFont(ofSize: textView!.font!.pointSize)
+        sender.isSelected.toggle()
+        boldButton.isSelected = false
+        
+        sender.isSelected ?
+        setTypingAttributes([NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: textView!.font!.pointSize)]) : setTypingAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: textView!.font!.pointSize)])
     }
     
     @IBAction func changeFontAction(_ sender: UIButton) {
