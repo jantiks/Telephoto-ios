@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextModifierView" customModule="teleprom_ios" customModuleProvider="target">
             <connections>
                 <outlet property="actionViews" destination="IZa-pZ-Xzb" id="xgS-El-rCe"/>
-                <outlet property="bgTapView" destination="EOp-jK-Fdt" id="4El-Io-yfO"/>
+                <outlet property="bgTapButton" destination="dNu-v0-Aeb" id="Jmw-B2-us7"/>
                 <outlet property="boldButton" destination="3kG-Ju-DOc" id="h5W-4L-wrh"/>
                 <outlet property="changeFontButton" destination="yCd-70-nbJ" id="HYv-3Z-nnS"/>
                 <outlet property="conetentView" destination="chy-oU-gtR" id="Xl0-ud-QTl"/>
@@ -31,10 +31,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chy-oU-gtR" userLabel="content view">
                     <rect key="frame" x="0.0" y="0.0" width="473" height="245"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOp-jK-Fdt" userLabel="bg tap view">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNu-v0-Aeb" userLabel="bg tap button">
                             <rect key="frame" x="0.0" y="0.0" width="473" height="245"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </view>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <connections>
+                                <action selector="hideSelectFontTableAction:" destination="-1" eventType="touchUpInside" id="TlC-sY-4st"/>
+                            </connections>
+                        </button>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="IZa-pZ-Xzb" userLabel="action buttons">
                             <rect key="frame" x="15" y="185" width="443" height="60"/>
                             <subviews>
@@ -159,15 +162,15 @@
                         </tableView>
                     </subviews>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="dNu-v0-Aeb" secondAttribute="bottom" id="0jq-WM-kqW"/>
                         <constraint firstAttribute="bottom" secondItem="IZa-pZ-Xzb" secondAttribute="bottom" id="2Tq-PV-Cm3"/>
-                        <constraint firstAttribute="bottom" secondItem="EOp-jK-Fdt" secondAttribute="bottom" id="7N4-5M-1eQ"/>
+                        <constraint firstAttribute="trailing" secondItem="dNu-v0-Aeb" secondAttribute="trailing" id="Ax8-xi-0vz"/>
                         <constraint firstItem="9Bx-lg-1PR" firstAttribute="top" secondItem="chy-oU-gtR" secondAttribute="top" id="G49-dU-qBw"/>
+                        <constraint firstItem="dNu-v0-Aeb" firstAttribute="top" secondItem="chy-oU-gtR" secondAttribute="top" id="J3N-7L-G14"/>
                         <constraint firstAttribute="trailing" secondItem="IZa-pZ-Xzb" secondAttribute="trailing" constant="15" id="MNo-2g-mfg"/>
                         <constraint firstItem="IZa-pZ-Xzb" firstAttribute="top" secondItem="9Bx-lg-1PR" secondAttribute="bottom" constant="-4" id="Obj-gX-cLp"/>
-                        <constraint firstAttribute="trailing" secondItem="EOp-jK-Fdt" secondAttribute="trailing" id="Ql7-6N-zal"/>
-                        <constraint firstItem="EOp-jK-Fdt" firstAttribute="leading" secondItem="chy-oU-gtR" secondAttribute="leading" id="TMQ-b5-MsT"/>
                         <constraint firstItem="IZa-pZ-Xzb" firstAttribute="leading" secondItem="chy-oU-gtR" secondAttribute="leading" constant="15" id="X7d-Xc-g4z"/>
-                        <constraint firstItem="EOp-jK-Fdt" firstAttribute="top" secondItem="chy-oU-gtR" secondAttribute="top" id="aQe-B4-xlw"/>
+                        <constraint firstItem="dNu-v0-Aeb" firstAttribute="leading" secondItem="chy-oU-gtR" secondAttribute="leading" id="ff2-u6-25i"/>
                         <constraint firstItem="9Bx-lg-1PR" firstAttribute="centerX" secondItem="chy-oU-gtR" secondAttribute="centerX" id="zdK-yY-JSB"/>
                     </constraints>
                 </view>

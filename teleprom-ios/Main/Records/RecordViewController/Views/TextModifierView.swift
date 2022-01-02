@@ -16,8 +16,8 @@ class TextModifierView: BaseCustomView {
     @IBOutlet private weak var italicButton: UIButton!
     @IBOutlet private weak var selectFontTableView: UITableView!
     @IBOutlet private weak var actionViews: UIStackView!
-    @IBOutlet private weak var bgTapView: UIView!
     @IBOutlet private weak var underlineButton: UIButton!
+    @IBOutlet private weak var bgTapButton: UIButton!
     
     private weak var textView: UITextView?
     private var selectionFontTableBg: VisualEffectWithIntensityView?
@@ -52,6 +52,7 @@ class TextModifierView: BaseCustomView {
         boldButton.isSelected = currentFont.fontName == ".SFUI-Semibold"
         italicButton.isSelected = currentFont.fontName == ".SFUI-RegularItalic"
         underlineButton.isSelected = textView?.typingAttributes[NSAttributedString.Key.underlineStyle] as? Int == NSUnderlineStyle.single.rawValue
+        changeFontButton.setTitle("\(Int(currentFont.pointSize))", for: .normal)
     }
  
     private func setHeightConstraint(_ constant: CGFloat) {
@@ -178,6 +179,13 @@ class TextModifierView: BaseCustomView {
         setAlignmentButtonSelected(selected: sender)
         setTextAlignment(.right)
     }
+    
+    @IBAction func hideSelectFontTableAction(_ sender: UIButton) {
+        selectFontTableView.isHidden = true
+        selectionFontTableBg?.isHidden = true
+        setHeightConstraint(60)
+        changeFontButton.isSelected = false
+    }
 }
 
 extension TextModifierView: UITableViewDelegate {
@@ -207,7 +215,7 @@ extension TextModifierView: UITableViewDataSource {
         cell.textLabel?.font = cell.textLabel?.font.withSize(19)
         cell.textLabel?.textColor = .white
         cell.selectedBackgroundView?.tintColor = .red
-        cell.isSelected = (textView?.font?.pointSize ?? 0.0) == CGFloat(selectFontTableData[indexPath.row])
+        cell.selectionStyle = .none
         
         return cell
     }
