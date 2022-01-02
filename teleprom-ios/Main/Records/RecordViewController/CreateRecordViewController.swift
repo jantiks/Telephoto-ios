@@ -22,6 +22,7 @@ class CreateRecordViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        textViewModifier.setTextView(contentTextView)
         setRecordIfNeeded()
         initUI()
         addKeyboardObservers()

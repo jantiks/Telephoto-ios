@@ -12,6 +12,9 @@
             <connections>
                 <outlet property="changeFontButton" destination="yCd-70-nbJ" id="HYv-3Z-nnS"/>
                 <outlet property="conetentView" destination="chy-oU-gtR" id="Xl0-ud-QTl"/>
+                <outletCollection property="alignmentButtons" destination="uht-hm-vQO" collectionClass="NSMutableArray" id="aS0-Ag-wHu"/>
+                <outletCollection property="alignmentButtons" destination="g4e-bD-nTd" collectionClass="NSMutableArray" id="H0h-h4-WO4"/>
+                <outletCollection property="alignmentButtons" destination="yzH-6P-Wbf" collectionClass="NSMutableArray" id="D3U-wU-eyF"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
