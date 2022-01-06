@@ -19,3 +19,7 @@ func getController<T: UIViewController>() -> T {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     return storyboard.instantiateViewController(withIdentifier: String(describing: T.self)) as! T
 }
+
+func getTabBar() -> TabBarViewController? {
+    return (UIApplication.shared.delegate as? AppDelegate)?.tabBarController as? TabBarViewController
+}

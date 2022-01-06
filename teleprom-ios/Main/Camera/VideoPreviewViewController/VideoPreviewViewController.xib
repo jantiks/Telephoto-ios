@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoPreviewViewController" customModule="teleprom_ios" customModuleProvider="target">
+            <connections>
+                <outlet property="actionButtonsView" destination="ksv-VG-NxH" id="Ut3-7b-VLl"/>
+                <outlet property="deleteButton" destination="B1L-Gg-PYy" id="0eT-HB-qeL"/>
+                <outlet property="playButton" destination="BgK-uB-JTX" id="Oac-8y-1M6"/>
+                <outlet property="safeAreaView" destination="nq4-AJ-T8v" id="xbf-cq-mOz"/>
+                <outlet property="saveButton" destination="xdC-H8-gsV" id="E0E-uf-T9X"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nq4-AJ-T8v" userLabel="safe area view">
+                    <rect key="frame" x="0.0" y="862" width="414" height="34"/>
+                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ksv-VG-NxH" userLabel="action buttons">
+                    <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="YCI-4v-JpC">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdC-H8-gsV" userLabel="save">
+                                    <rect key="frame" x="0.0" y="0.0" width="121.5" height="50"/>
+                                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    <connections>
+                                        <action selector="saveAction:" destination="-1" eventType="touchUpInside" id="hO7-mV-2Yq"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgK-uB-JTX" userLabel="play">
+                                    <rect key="frame" x="146.5" y="0.0" width="121" height="50"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    <connections>
+                                        <action selector="playAction:" destination="-1" eventType="touchUpInside" id="8Pp-XS-PN7"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1L-Gg-PYy" userLabel="delete">
+                                    <rect key="frame" x="292.5" y="0.0" width="121.5" height="50"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    <connections>
+                                        <action selector="deletAction:" destination="-1" eventType="touchUpInside" id="EiY-xw-J80"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="YCI-4v-JpC" secondAttribute="bottom" id="DJ7-Pb-jTP"/>
+                        <constraint firstItem="YCI-4v-JpC" firstAttribute="leading" secondItem="ksv-VG-NxH" secondAttribute="leading" id="L05-GD-byj"/>
+                        <constraint firstAttribute="height" constant="50" id="Nme-8L-U7W"/>
+                        <constraint firstItem="YCI-4v-JpC" firstAttribute="top" secondItem="ksv-VG-NxH" secondAttribute="top" id="Vfx-13-Vx1"/>
+                        <constraint firstAttribute="trailing" secondItem="YCI-4v-JpC" secondAttribute="trailing" id="hqC-wa-U2N"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ksv-VG-NxH" secondAttribute="trailing" id="1qc-Ih-b4o"/>
+                <constraint firstAttribute="bottom" secondItem="nq4-AJ-T8v" secondAttribute="bottom" id="EJn-lH-cgp"/>
+                <constraint firstItem="nq4-AJ-T8v" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="RIc-Jd-eT4"/>
+                <constraint firstItem="nq4-AJ-T8v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Yam-fQ-QvP"/>
+                <constraint firstItem="ksv-VG-NxH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fW9-N3-lzL"/>
+                <constraint firstItem="nq4-AJ-T8v" firstAttribute="top" secondItem="ksv-VG-NxH" secondAttribute="bottom" id="iiJ-sq-p6u"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nq4-AJ-T8v" secondAttribute="trailing" id="wWO-GG-tXa"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="96.428571428571431"/>
+        </view>
+    </objects>
+</document>

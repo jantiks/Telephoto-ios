@@ -19,6 +19,11 @@ extension UIView {
         }
     }
     
+    var globalFrame: CGRect? {
+        let rootView = UIApplication.shared.keyWindow?.rootViewController?.view
+        return self.superview?.convert(self.frame, to: rootView)
+    }
+    
     func findViewController() -> UIViewController? {
         if let nextResponder = self.next as? UIViewController {
             return nextResponder
