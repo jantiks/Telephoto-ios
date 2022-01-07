@@ -31,6 +31,10 @@ class BaseCustomView: UIView {
     func getXibName() -> String {
         return ""
     }
+    
+    deinit {
+        print("deinit \(self)")
+    }
 }
 
 extension UIView {

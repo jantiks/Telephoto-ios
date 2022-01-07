@@ -42,7 +42,7 @@ class CreateRecordViewController: BaseViewController {
         super.viewWillDisappear(animated)
         
         tabBarController?.tabBar.isHidden = false
-        navigationController?.navigationBar.barTintColor = .controllerGray
+        navigationController?.navigationBar.backgroundColor = .clear
     }
     
     func setRecord(_ record: Record) {

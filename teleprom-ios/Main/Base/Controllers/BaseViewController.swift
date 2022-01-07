@@ -20,6 +20,12 @@ class BaseViewController: UIViewController {
         navigationItem.backButtonTitle = ""
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     func addKeyboardObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.baseKeyboardDidShowNotification(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.baseKeyboardDidHideNotification(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -56,5 +62,9 @@ class BaseViewController: UIViewController {
     
     func keyboardDidHide() {
         
+    }
+    
+    deinit {
+        print("deinit \(self)")
     }
 }

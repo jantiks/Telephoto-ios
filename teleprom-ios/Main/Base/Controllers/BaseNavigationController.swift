@@ -30,4 +30,16 @@ class BaseNavigationController: UINavigationController {
         navigationBar.shadowImage = UIImage()
         navigationItem.backButtonTitle = " "
     }
+    
+    deinit {
+        print("deinit \(self )")
+    }
+}
+
+extension UINavigationController {
+    func setNavigationBarTransparent() {
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.shadowImage = UIImage()
+        navigationBar.isTranslucent = true
+    }
 }

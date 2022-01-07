@@ -48,4 +48,8 @@ class BaseTabBarViewController: UITabBarController {
             controllers[i].tabBarItem.title = config[i].tabBarItemTitle.localized
         }
     }
+    
+    deinit {
+        print("deinit \(self)")
+    }
 }

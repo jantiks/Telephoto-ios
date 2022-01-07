@@ -84,7 +84,7 @@ extension CameraConfiguration {
         guard let captureSession = captureSession, captureSession.isRunning else { throw CameraControllerError.captureSessionIsMissing }
         
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspect
         previewLayer?.connection?.videoOrientation = .portrait
         
         view.layer.insertSublayer(previewLayer!, at: 0)

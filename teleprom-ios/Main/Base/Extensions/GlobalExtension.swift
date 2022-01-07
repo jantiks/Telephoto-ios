@@ -21,5 +21,5 @@ func getController<T: UIViewController>() -> T {
 }
 
 func getTabBar() -> TabBarViewController? {
-    return (UIApplication.shared.delegate as? AppDelegate)?.tabBarController as? TabBarViewController
+    return (UIApplication.shared.delegate as? AppDelegate)?.tabBarController
 }

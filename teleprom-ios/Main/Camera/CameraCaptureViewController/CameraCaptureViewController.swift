@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 class CameraCaptureViewController: UIViewController {
     
@@ -15,28 +17,22 @@ class CameraCaptureViewController: UIViewController {
     private var cameraConfig: CameraConfiguration!
     private let recButtonSize = CGSize(width: 100, height: 100)
     
-    private var videoRecordingStarted: Bool = false {
-        didSet{
-            if videoRecordingStarted {
-                recButton.setBackgroundImage(UIImage(named: "stopRec")!, for: .normal)
-            } else {
-                recButton.setBackgroundImage(UIImage(named: "startRec")!, for: .normal)
-            }
-        }
-    }
+    private var videoRecordingStarted: Bool = false
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         getTabBar()?.tabBar.backgroundColor = .clear
-        addRecButton()
         cameraConfig?.startRunning()
+        addRecButton()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         getTabBar()?.tabBar.backgroundColor = .tabBarGray
+        getTabBar()?.tabBar.isHidden = false
+        
         tabBarBg?.removeFromSuperview()
         removeRecButton()
         cameraConfig?.stopRunning()
@@ -95,6 +91,14 @@ class CameraCaptureViewController: UIViewController {
         tabBarBg?.frame = tabBar.frame
     }
     
+    private func recordingStarted(_ started: Bool) {
+        videoRecordingStarted = started
+        getTabBar()?.tabBar.isHidden = started
+        tabBarBg?.isHidden = started
+        
+        started ? recButton.setBackgroundImage(UIImage(named: "stopRec")!, for: .normal) : recButton.setBackgroundImage(UIImage(named: "startRec")!, for: .normal)
+    }
+    
     private func registerNotification() {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: NSNotification.Name(rawValue: "App is going background"), object: nil)
@@ -105,7 +109,7 @@ class CameraCaptureViewController: UIViewController {
     @objc func appMovedToBackground() {
         if videoRecordingStarted {
             videoRecordingStarted = false
-            self.cameraConfig.stopRecording { (error) in
+            cameraConfig.stopRecording { (error) in
                 print(error ?? "Video recording error")
             }
         }
@@ -115,37 +119,27 @@ class CameraCaptureViewController: UIViewController {
         print("app enters foreground")
     }
     
-    @objc func video(_ video: String, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
-        if let error = error {
-            // we got back an error!
-//            showToast(message: "Could not save!! \n\(error)", fontSize: 12)
-            print("asd couldnt save")
-        } else {
-            print("asd saved ura ura ura")
-        }
-        print(video)
-    }
-    
     @IBAction func didTapOnRecButton(_ sender: UIButton) {
         if videoRecordingStarted {
-            videoRecordingStarted = false
-            self.cameraConfig.stopRecording { [weak self] (error) in
+            recordingStarted(false)
+
+            cameraConfig.stopRecording { (error) in
                 print(error ?? "Video recording error")
             }
         } else if !videoRecordingStarted {
-            videoRecordingStarted = true
-            self.cameraConfig.recordVideo { [weak self] (url, error) in
+            recordingStarted(true)
+            
+            cameraConfig.recordVideo { [weak self] (url, error) in
                 guard let self = self else { return }
                 guard let url = url else {
                     print(error ?? "Video recording error")
+                    self.recordingStarted(false)
                     return
                 }
-                
+
                 let vc = VideoPreviewViewController()
                 vc.videoUrl = url
                 self.navigationController?.pushViewController(vc, animated: true)
-                
-                UISaveVideoAtPathToSavedPhotosAlbum(url.path, self, #selector(self.video(_:didFinishSavingWithError:contextInfo:)), nil)
             }
         }
 
