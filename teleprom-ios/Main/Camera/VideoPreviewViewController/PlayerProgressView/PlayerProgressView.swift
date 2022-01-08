@@ -16,6 +16,7 @@ class PlayerProgressView: BaseCustomView {
     @IBOutlet private weak var sliderButtonLeadingConstraint: NSLayoutConstraint!
     
     private var player: AVPlayer!
+    private let chunkCount: Double = 10
     
     override func getContentView() -> UIView {
         return contentView
@@ -31,15 +32,19 @@ class PlayerProgressView: BaseCustomView {
     }
     
     private func setProgressImages() {
-        guard let asset = player.currentItem?.asset else { fatalError() }// to do: change to return
+        guard let asset = player.currentItem?.asset else { return }
+        
+        let duration = asset.duration.seconds
+        let chunkDuration = duration / chunkCount
         
         let imageGenerator = AVAssetImageGenerator(asset: asset)
-        imageGenerator.requestedTimeToleranceAfter = CMTime(seconds: 0.2, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
-        imageGenerator.requestedTimeToleranceBefore = CMTime(seconds: 0.2, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+        imageGenerator.requestedTimeToleranceAfter = CMTime(seconds: duration / 2 * chunkCount, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+        imageGenerator.requestedTimeToleranceBefore = CMTime(seconds: duration / 2 * chunkCount, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         
-        let thumb = try! imageGenerator.copyCGImage(at: CMTime(seconds: 0, preferredTimescale: CMTimeScale(NSEC_PER_SEC)), actualTime: nil)
-        let image = UIImage(cgImage: thumb, scale: 1.0, orientation: UIImage.Orientation.right)
-        for i in 0..<10 {
+        for i in 0..<Int(chunkCount) {
+            let thumb = try! imageGenerator.copyCGImage(at: CMTime(seconds: chunkDuration * Double(i), preferredTimescale: CMTimeScale(NSEC_PER_SEC)), actualTime: nil)
+            let image = UIImage(cgImage: thumb, scale: 1.0, orientation: UIImage.Orientation.right)
+            
             let imageView = UIImageView(image: image)
             imageView.contentMode = .scaleToFill
             
