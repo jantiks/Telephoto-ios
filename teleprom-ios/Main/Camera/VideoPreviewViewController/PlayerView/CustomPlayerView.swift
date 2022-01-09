@@ -8,15 +8,17 @@
 import UIKit
 import AVFoundation
 
-class CustomPlayerView: BaseCustomView {
+class CustomPlayerView: BaseCustomView, BasePlayerView {
 
     @IBOutlet private weak var contentView: UIView!
     
+    private weak var progressView: BaseProgressView?
     private var player: AVPlayer?
     private var playerLayer: AVPlayerLayer!
     private var timeObserverToken: Any?
     private var finishObserverToken: Any?
     
+    weak var delegate: PlayerViewDelegate?
     var updateTime: ((Double) -> (Void))?
     var playerFinished: (() -> ())?
     
@@ -37,22 +39,46 @@ class CustomPlayerView: BaseCustomView {
         layer.addSublayer(playerLayer)
     }
     
-    func setPlayer(_ url: URL) {
-        player = AVPlayer(url: url)
+    func setConfigure(videoUrl: URL, progressView: BaseProgressView? = nil) {
+        player = AVPlayer(url: videoUrl)
         playerLayer.player = player
         addPeriodicTimeObserver()
+        addVideoFinishedObserver()
+        setProgressView(progressView)
     }
     
-    func getUnsafePlayer() -> AVPlayer {
-        return player!
+    func setProgressView(_ view: BaseProgressView?) {
+        progressView = view
+        progressView?.setPlayer(self)
+    }
+    
+    func getCurrentTime() -> Double {
+        return player?.currentTime().seconds ?? 0.0
+    }
+    
+    func getCurrentAsset() -> AVAsset? {
+        return player?.currentItem?.asset
+    }
+    
+    func getDuration() -> Double {
+        return player?.currentItem?.duration.seconds ?? 0.0
     }
     
     func play() {
         player?.play()
+        delegate?.playPauseAction(true)
     }
     
-    func pasue() {
+    func pause() {
         player?.pause()
+        delegate?.playPauseAction(false)
+    }
+    
+    func seekTo(time: Double) {
+        guard let isPlaying = player?.isPlaying() else { return }
+        
+        player?.seek(to: CMTime(seconds: time, preferredTimescale: CMTimeScale(NSEC_PER_SEC)))
+        isPlaying ? play() : pause()
     }
     
     func isPlaying() -> Bool {
@@ -63,10 +89,11 @@ class CustomPlayerView: BaseCustomView {
         removePeriodicTimeObserver()
 
         let timeScale = CMTimeScale(NSEC_PER_SEC)
-        let time = CMTime(seconds: 0.1, preferredTimescale: timeScale)
+        let time = CMTime(seconds: 0.016, preferredTimescale: timeScale)
 
         timeObserverToken = player?.addPeriodicTimeObserver(forInterval: time, queue: .main, using: { [unowned self] time in
             self.updateTime?(time.seconds)
+            self.progressView?.updateTime(time.seconds)
         })
     }
 
@@ -81,17 +108,22 @@ class CustomPlayerView: BaseCustomView {
         removeVideoFinishedObserver()
         finishObserverToken = NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player?.currentItem, queue: .main) { [unowned self] _ in
             self.playerFinished?()
+            seekTo(time: 0)
+            pause()
         }
     }
     
     private func removeVideoFinishedObserver() {
         if let finishObserverToken = finishObserverToken {
-            player?.removeTimeObserver(finishObserverToken)
+            NotificationCenter.default.removeObserver(player)
+            NotificationCenter.default.removeObserver(player?.currentItem)
             self.finishObserverToken = nil
         }
     }
     
     deinit {
+        print("asd deinit")
+        
         removePeriodicTimeObserver()
         removeVideoFinishedObserver()
     }

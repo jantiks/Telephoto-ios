@@ -39,6 +39,13 @@
 		A0301E742788DBAC00B40BE8 /* AVPlayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0301E732788DBAC00B40BE8 /* AVPlayerExtension.swift */; };
 		A0301E782788E46800B40BE8 /* PlayerProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0301E762788E46800B40BE8 /* PlayerProgressView.swift */; };
 		A0301E792788E46900B40BE8 /* PlayerProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0301E772788E46800B40BE8 /* PlayerProgressView.xib */; };
+		A0301E7C2789995700B40BE8 /* PlayerProgressDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0301E7B2789995700B40BE8 /* PlayerProgressDelegate.swift */; };
+		A0301E7F2789E80C00B40BE8 /* BaseProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0301E7E2789E80B00B40BE8 /* BaseProgressView.swift */; };
+		A0301E812789E81D00B40BE8 /* BasePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0301E802789E81D00B40BE8 /* BasePlayerView.swift */; };
+		A0301E83278A273400B40BE8 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0301E82278A273400B40BE8 /* DoubleExtension.swift */; };
+		A0301E89278A28AE00B40BE8 /* PlayerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0301E88278A28AE00B40BE8 /* PlayerViewDelegate.swift */; };
+		A0301E8D278ACDD600B40BE8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0301E8B278ACDD600B40BE8 /* LoadingView.swift */; };
+		A0301E8E278ACDD600B40BE8 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0301E8C278ACDD600B40BE8 /* LoadingView.xib */; };
 		A032736427783F18008A138C /* TableViewCellWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032736227783F18008A138C /* TableViewCellWithLabel.swift */; };
 		A032736527783F18008A138C /* TableViewCellWithLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = A032736327783F18008A138C /* TableViewCellWithLabel.xib */; };
 		A0327368277845C9008A138C /* SetVideoSettingsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0327367277845C9008A138C /* SetVideoSettingsCommand.swift */; };
@@ -119,6 +126,13 @@
 		A0301E732788DBAC00B40BE8 /* AVPlayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerExtension.swift; sourceTree = "<group>"; };
 		A0301E762788E46800B40BE8 /* PlayerProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProgressView.swift; sourceTree = "<group>"; };
 		A0301E772788E46800B40BE8 /* PlayerProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerProgressView.xib; sourceTree = "<group>"; };
+		A0301E7B2789995700B40BE8 /* PlayerProgressDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProgressDelegate.swift; sourceTree = "<group>"; };
+		A0301E7E2789E80B00B40BE8 /* BaseProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProgressView.swift; sourceTree = "<group>"; };
+		A0301E802789E81D00B40BE8 /* BasePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePlayerView.swift; sourceTree = "<group>"; };
+		A0301E82278A273400B40BE8 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		A0301E88278A28AE00B40BE8 /* PlayerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewDelegate.swift; sourceTree = "<group>"; };
+		A0301E8B278ACDD600B40BE8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		A0301E8C278ACDD600B40BE8 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		A032736227783F18008A138C /* TableViewCellWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellWithLabel.swift; sourceTree = "<group>"; };
 		A032736327783F18008A138C /* TableViewCellWithLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellWithLabel.xib; sourceTree = "<group>"; };
 		A0327367277845C9008A138C /* SetVideoSettingsCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetVideoSettingsCommand.swift; sourceTree = "<group>"; };
@@ -258,6 +272,7 @@
 				A0B47B14278071F0004C7526 /* UIButtonExtension.swift */,
 				A048127E2781FAF6002EF20F /* UIFontExtension.swift */,
 				A0301E732788DBAC00B40BE8 /* AVPlayerExtension.swift */,
+				A0301E82278A273400B40BE8 /* DoubleExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -284,6 +299,7 @@
 		A01C908927751A350098EEB8 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				A0301E86278A289000B40BE8 /* Player */,
 				A0B45B9A277E46F900E8B0D7 /* Data Providers */,
 				A0B45B94277B9CEA00E8B0D7 /* RealmModels */,
 				A03273692778462F008A138C /* Managers */,
@@ -434,6 +450,49 @@
 				A0301E772788E46800B40BE8 /* PlayerProgressView.xib */,
 			);
 			path = PlayerProgressView;
+			sourceTree = "<group>";
+		};
+		A0301E7A2789994500B40BE8 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				A0301E7B2789995700B40BE8 /* PlayerProgressDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		A0301E7D2789E7F900B40BE8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A0301E7E2789E80B00B40BE8 /* BaseProgressView.swift */,
+				A0301E802789E81D00B40BE8 /* BasePlayerView.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A0301E86278A289000B40BE8 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				A0301E87278A289A00B40BE8 /* Delegates */,
+				A0301E7D2789E7F900B40BE8 /* Protocols */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		A0301E87278A289A00B40BE8 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				A0301E88278A28AE00B40BE8 /* PlayerViewDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		A0301E8A278ACDC200B40BE8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0301E8B278ACDD600B40BE8 /* LoadingView.swift */,
+				A0301E8C278ACDD600B40BE8 /* LoadingView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A032735F27783EDC008A138C /* Cells */ = {
@@ -592,6 +651,8 @@
 		A0D31FAB27872DBF002B718D /* VideoPreviewViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A0301E8A278ACDC200B40BE8 /* Views */,
+				A0301E7A2789994500B40BE8 /* Delegates */,
 				A0301E752788E33300B40BE8 /* PlayerProgressView */,
 				A0301E662788BF6500B40BE8 /* PlayerView */,
 				A0608BEA27874A99004077F9 /* Commands */,
@@ -680,6 +741,7 @@
 				A0441A7927861F0700578EAE /* CameraCaptureViewController.xib in Resources */,
 				A01C90B8277788B60098EEB8 /* SettingsViewController.xib in Resources */,
 				A08153B02778948000AADED9 /* AboutViewController.xib in Resources */,
+				A0301E8E278ACDD600B40BE8 /* LoadingView.xib in Resources */,
 				A01C90CF277818C90098EEB8 /* VideoSettingsViewController.xib in Resources */,
 				A0D31FAF27872DE3002B718D /* VideoPreviewViewController.xib in Resources */,
 			);
@@ -737,6 +799,7 @@
 				A0B45BA1277ED68800E8B0D7 /* RecordsListMode.swift in Sources */,
 				A0301E782788E46800B40BE8 /* PlayerProgressView.swift in Sources */,
 				A01C906D277512200098EEB8 /* ViewController.swift in Sources */,
+				A0301E812789E81D00B40BE8 /* BasePlayerView.swift in Sources */,
 				A0B45B84277A463C00E8B0D7 /* RecordsListViewController.swift in Sources */,
 				A08153A627785EEF00AADED9 /* LanguageManager.swift in Sources */,
 				A0B45B97277BA96D00E8B0D7 /* CreateRecordViewController.swift in Sources */,
@@ -746,23 +809,28 @@
 				A01C9069277512200098EEB8 /* AppDelegate.swift in Sources */,
 				A032736B27784646008A138C /* UserSettingsManager.swift in Sources */,
 				A01C9092277767BE0098EEB8 /* TabBarViewControllerConfig.swift in Sources */,
+				A0301E7C2789995700B40BE8 /* PlayerProgressDelegate.swift in Sources */,
 				A0301E742788DBAC00B40BE8 /* AVPlayerExtension.swift in Sources */,
 				A048127F2781FAF6002EF20F /* UIFontExtension.swift in Sources */,
 				A0B47B1927808824004C7526 /* TextModifierView.swift in Sources */,
+				A0301E8D278ACDD600B40BE8 /* LoadingView.swift in Sources */,
 				A01C90CE277818C90098EEB8 /* VideoSettingsViewController.swift in Sources */,
 				A08153AB277869E200AADED9 /* HelpViewController.swift in Sources */,
 				A01C9082277514F30098EEB8 /* BaseCustomView.swift in Sources */,
 				A0327368277845C9008A138C /* SetVideoSettingsCommand.swift in Sources */,
 				A08153A827785FCC00AADED9 /* DoneCommand.swift in Sources */,
+				A0301E89278A28AE00B40BE8 /* PlayerViewDelegate.swift in Sources */,
 				A01C90D127781A210098EEB8 /* UIViewExtension.swift in Sources */,
 				A01C907F277514DE0098EEB8 /* GlobalExtension.swift in Sources */,
 				A0B45B9C277E470E00E8B0D7 /* RecordDataProvider.swift in Sources */,
+				A0301E83278A273400B40BE8 /* DoubleExtension.swift in Sources */,
 				A0B45B93277B9C1200E8B0D7 /* BaseRealmObject.swift in Sources */,
 				A01C90C62778182A0098EEB8 /* CommonCommand.swift in Sources */,
 				A0B45B8E277B9B1000E8B0D7 /* RecordCell.swift in Sources */,
 				A01C908F2776F2420098EEB8 /* UIColorExtention.swift in Sources */,
 				A0441A7827861F0700578EAE /* CameraCaptureViewController.swift in Sources */,
 				A09C46BB2780EBCC00B9DF23 /* VisualEffectViewWithIntensity.swift in Sources */,
+				A0301E7F2789E80C00B40BE8 /* BaseProgressView.swift in Sources */,
 				A01C908D27751A630098EEB8 /* BaseTabBarViewController.swift in Sources */,
 				A01C90C227779DD90098EEB8 /* SettingsTableViewCell.swift in Sources */,
 				A01C909727776DE50098EEB8 /* BaseNavigationController.swift in Sources */,

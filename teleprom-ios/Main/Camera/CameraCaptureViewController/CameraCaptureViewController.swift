@@ -12,7 +12,7 @@ import AVKit
 class CameraCaptureViewController: UIViewController {
     
     @IBOutlet weak var previewView: UIView!
-    private var recButton: UIButton!
+    private var recButton: UIButton?
     private var tabBarBg: VisualEffectWithIntensityView?
     private var cameraConfig: CameraConfiguration!
     private let recButtonSize = CGSize(width: 100, height: 100)
@@ -24,7 +24,6 @@ class CameraCaptureViewController: UIViewController {
         
         getTabBar()?.tabBar.backgroundColor = .clear
         cameraConfig?.startRunning()
-        addRecButton()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -32,8 +31,8 @@ class CameraCaptureViewController: UIViewController {
         
         getTabBar()?.tabBar.backgroundColor = .tabBarGray
         getTabBar()?.tabBar.isHidden = false
-        
         tabBarBg?.removeFromSuperview()
+        
         removeRecButton()
         cameraConfig?.stopRunning()
     }
@@ -42,6 +41,7 @@ class CameraCaptureViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         setTabBarBg()
+        addRecButton()
     }
     
     override func viewDidLoad() {
@@ -65,21 +65,21 @@ class CameraCaptureViewController: UIViewController {
     }
     
     private func addRecButton() {
-        recButton?.removeFromSuperview()
+        removeRecButton()
         
         recButton = UIButton()
-        recButton.contentMode = .scaleToFill
-        recButton.addTarget(self, action: #selector(didTapOnRecButton(_:)), for: .touchUpInside)
-        getTabBar()?.view.addSubview(recButton)
+        recButton?.contentMode = .scaleToFill
+        recButton?.addTarget(self, action: #selector(didTapOnRecButton(_:)), for: .touchUpInside)
+        getTabBar()?.view.addSubview(recButton!)
         let centerButtonFrame = (getTabBar()?.tabBar.subviews[2].globalFrame)!
         let recButtonXPosition = centerButtonFrame.minX + (centerButtonFrame.width - recButtonSize.width) / 2
         let recButtonYPosition = centerButtonFrame.minY + (centerButtonFrame.height - recButtonSize.height) / 2 - 8 // 8 is the bottom inset
-        recButton.frame = CGRect(x: recButtonXPosition , y: recButtonYPosition, width: recButtonSize.width, height: recButtonSize.width)
-        recButton.setBackgroundImage(UIImage(named: "startRec")!, for: .normal)
+        recButton?.frame = CGRect(x: recButtonXPosition , y: recButtonYPosition, width: recButtonSize.width, height: recButtonSize.width)
+        recButton?.setBackgroundImage(UIImage(named: "startRec")!, for: .normal)
     }
     
     private func removeRecButton() {
-        recButton.removeFromSuperview()
+        recButton?.removeFromSuperview()
     }
     
     private func setTabBarBg() {
@@ -96,7 +96,7 @@ class CameraCaptureViewController: UIViewController {
         getTabBar()?.tabBar.isHidden = started
         tabBarBg?.isHidden = started
         
-        started ? recButton.setBackgroundImage(UIImage(named: "stopRec")!, for: .normal) : recButton.setBackgroundImage(UIImage(named: "startRec")!, for: .normal)
+        started ? recButton?.setBackgroundImage(UIImage(named: "stopRec")!, for: .normal) : recButton?.setBackgroundImage(UIImage(named: "startRec")!, for: .normal)
     }
     
     private func registerNotification() {
@@ -139,7 +139,8 @@ class CameraCaptureViewController: UIViewController {
 
                 let vc = VideoPreviewViewController()
                 vc.videoUrl = url
-                self.navigationController?.pushViewController(vc, animated: true)
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
             }
         }
 

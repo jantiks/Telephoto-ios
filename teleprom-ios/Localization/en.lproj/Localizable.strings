@@ -40,3 +40,6 @@
 "create.record.content.text.placeholder" = "Enter some text...";
 "video.delete" = "Delete";
 "video.download" = "Download";
+"loading.text" = "Loading";
+"done.text" = "Done";
+"video.delete.alert.message" = "Do you really want to delete this video?";

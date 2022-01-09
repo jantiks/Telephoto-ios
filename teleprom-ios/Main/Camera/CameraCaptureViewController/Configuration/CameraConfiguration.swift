@@ -73,7 +73,9 @@ extension CameraConfiguration {
     }
     
     func startRunning() {
+        print("start")
         captureSession?.startRunning()
+        print("asd eddd")
     }
     
     func stopRunning() {

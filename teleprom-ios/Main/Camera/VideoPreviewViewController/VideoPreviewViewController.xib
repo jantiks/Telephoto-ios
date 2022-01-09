@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="actionButtonsView" destination="ksv-VG-NxH" id="Ut3-7b-VLl"/>
                 <outlet property="deleteButton" destination="B1L-Gg-PYy" id="0eT-HB-qeL"/>
+                <outlet property="loadingView" destination="BkP-r8-ML8" id="gA9-vm-7lE"/>
                 <outlet property="playButton" destination="BgK-uB-JTX" id="Oac-8y-1M6"/>
                 <outlet property="playerView" destination="B1X-Bx-FfI" id="kN4-Yx-51L"/>
                 <outlet property="progressView" destination="P9p-xh-8gJ" id="Bht-er-Lil"/>
@@ -50,15 +51,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="132.5" height="70"/>
                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" image="arrow.down.to.line.alt" catalog="system">
+                                    <state key="normal">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <imageReference key="image" image="arrow.down.to.line.alt" catalog="system" symbolScale="medium"/>
                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                     </state>
                                     <connections>
                                         <action selector="saveAction:" destination="-1" eventType="touchUpInside" id="jhU-PQ-YX6"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgK-uB-JTX" userLabel="play">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgK-uB-JTX" userLabel="play">
                                     <rect key="frame" x="140.5" y="0.0" width="133" height="70"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -75,7 +77,7 @@
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <imageReference key="image" image="trash" catalog="system" symbolScale="large"/>
+                                        <imageReference key="image" image="trash" catalog="system" symbolScale="medium"/>
                                     </state>
                                     <connections>
                                         <action selector="deletAction:" destination="-1" eventType="touchUpInside" id="Gl5-I6-iqE"/>
@@ -94,22 +96,44 @@
                         <constraint firstAttribute="trailing" secondItem="YCI-4v-JpC" secondAttribute="trailing" id="hqC-wa-U2N"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ZN-nQ-Gzw">
+                    <rect key="frame" x="359" y="40.5" width="30" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="BWS-Rx-aqR"/>
+                        <constraint firstAttribute="width" constant="30" id="Ig1-fV-X7a"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" backgroundImage="xmark.circle.fill" catalog="system"/>
+                    <connections>
+                        <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="keC-ee-Q2c"/>
+                    </connections>
+                </button>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BkP-r8-ML8" userLabel="loading view" customClass="LoadingView" customModule="teleprom_ios" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P9p-xh-8gJ" secondAttribute="trailing" id="19A-0W-SSa"/>
+                <constraint firstItem="BkP-r8-ML8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1AB-fX-xQ8"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ksv-VG-NxH" secondAttribute="trailing" id="1qc-Ih-b4o"/>
                 <constraint firstItem="B1X-Bx-FfI" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="8wG-DX-o9F"/>
+                <constraint firstItem="BkP-r8-ML8" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="D8L-pF-Jcg"/>
                 <constraint firstAttribute="bottom" secondItem="nq4-AJ-T8v" secondAttribute="bottom" id="EJn-lH-cgp"/>
                 <constraint firstItem="P9p-xh-8gJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Iag-Xo-qhY"/>
+                <constraint firstAttribute="bottom" secondItem="BkP-r8-ML8" secondAttribute="bottom" id="Kxy-qs-0PR"/>
                 <constraint firstItem="ksv-VG-NxH" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Vhe-vr-OnV"/>
                 <constraint firstItem="nq4-AJ-T8v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Yam-fQ-QvP"/>
+                <constraint firstItem="BkP-r8-ML8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ZQE-me-JjJ"/>
                 <constraint firstItem="B1X-Bx-FfI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ZRV-dn-fd0"/>
                 <constraint firstItem="B1X-Bx-FfI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fFc-Wa-On5"/>
                 <constraint firstItem="ksv-VG-NxH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fW9-N3-lzL"/>
                 <constraint firstItem="nq4-AJ-T8v" firstAttribute="top" secondItem="ksv-VG-NxH" secondAttribute="bottom" id="kQO-Nc-hhY"/>
                 <constraint firstItem="ksv-VG-NxH" firstAttribute="top" secondItem="P9p-xh-8gJ" secondAttribute="bottom" id="m1Q-y9-7Ua"/>
                 <constraint firstAttribute="bottom" secondItem="B1X-Bx-FfI" secondAttribute="bottom" id="oI0-dE-ww0"/>
+                <constraint firstItem="8ZN-nQ-Gzw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="r4y-ba-A4r"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8ZN-nQ-Gzw" secondAttribute="trailing" constant="25" id="uag-OU-r7W"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nq4-AJ-T8v" secondAttribute="trailing" id="wWO-GG-tXa"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="96.428571428571431"/>
@@ -119,5 +143,6 @@
         <image name="arrow.down.to.line.alt" catalog="system" width="128" height="128"/>
         <image name="play.circle.fill" catalog="system" width="128" height="121"/>
         <image name="trash" catalog="system" width="121" height="128"/>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>

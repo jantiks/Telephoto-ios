@@ -17,6 +17,7 @@ class VideoPreviewViewController: BaseViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var loadingView: LoadingView!
     
     var videoUrl: URL! // should be setted before present
     
@@ -59,8 +60,8 @@ class VideoPreviewViewController: BaseViewController {
     }
     
     private func initPlayer() {
-        playerView.setPlayer(videoUrl)
-        progressView.setPlayer(playerView.getUnsafePlayer())
+        playerView.setConfigure(videoUrl: videoUrl, progressView: progressView)
+        playerView.delegate = self
     }
     
     private func videoSavedAction() {
@@ -72,11 +73,19 @@ class VideoPreviewViewController: BaseViewController {
     }
     
     private func showLoading() {
-        
+        loadingView.startLoading()
     }
     
     private func hideLoading() {
-        
+        loadingView.stopLoading()
+    }
+    
+    private func deleteVideo() {
+        do {
+            try FileManager.default.removeItem(at: videoUrl)
+        } catch let error {
+            print("FAILED TO DELETE \(error.localizedDescription)")
+        }
     }
     
     @IBAction func saveAction(_ sender: UIButton) {
@@ -85,20 +94,27 @@ class VideoPreviewViewController: BaseViewController {
     }
     
     @IBAction func playPuseAction(_ sender: UIButton) {
-        if playerView.isPlaying() {
-            playerView.pasue()
-            playButton.setImage(UIImage(systemName: "play.circle.fill"), for: .normal)
-        } else {
-            playerView.play()
-            playButton.setImage(UIImage(systemName: "pause.circle.fill"), for: .normal)
-        }
+        playerView.isPlaying() ? playerView.pause() : playerView.play()
     }
     
     @IBAction func deletAction(_ sender: UIButton) {
-        do {
-            try FileManager.default.removeItem(at: videoUrl)
-        } catch let error {
-            print("FAILED TO DELETE \(error.localizedDescription)")
-        }
+        let ac = UIAlertController(title: nil, message: "video.delete.alert.message".localized, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "alert.cancel".localized, style: .default))
+        ac.addAction(UIAlertAction(title: "alert.delete".localized, style: .destructive, handler: { [weak self] action in
+            self?.deleteVideo()
+            self?.dismiss(animated: true)
+        }))
+        
+        present(ac, animated: true)
+    }
+    
+    @IBAction func closeAction(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+}
+
+extension VideoPreviewViewController: PlayerViewDelegate {
+    func playPauseAction(_ isPlaying: Bool) {
+        isPlaying ? playButton.setImage(UIImage(systemName: "pause.circle.fill"), for: .normal) : playButton.setImage(UIImage(systemName: "play.circle.fill"), for: .normal)
     }
 }
