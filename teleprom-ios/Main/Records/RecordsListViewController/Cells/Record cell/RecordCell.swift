@@ -38,7 +38,6 @@ class RecordCell: UICollectionViewCell {
     
     private func setSelected() {
         setSelectedCommand?.execute()
-        config?.isSelected.toggle()
         updateBorderLayer()
     }
     

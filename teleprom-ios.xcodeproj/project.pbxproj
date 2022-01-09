@@ -58,6 +58,11 @@
 		A0441A7927861F0700578EAE /* CameraCaptureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0441A7727861F0700578EAE /* CameraCaptureViewController.xib */; };
 		A0441A7C2786318200578EAE /* CameraConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0441A7B2786318200578EAE /* CameraConfiguration.swift */; };
 		A048127F2781FAF6002EF20F /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A048127E2781FAF6002EF20F /* UIFontExtension.swift */; };
+		A059E9D1278AF21200C0153C /* UITabBarControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059E9D0278AF21200C0153C /* UITabBarControllerExtension.swift */; };
+		A059E9D5278B08BF00C0153C /* ScrollRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059E9D3278B08BF00C0153C /* ScrollRecordView.swift */; };
+		A059E9D6278B08BF00C0153C /* ScrollRecordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A059E9D4278B08BF00C0153C /* ScrollRecordView.xib */; };
+		A059E9DC278B0EE600C0153C /* SelectRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059E9DA278B0EE600C0153C /* SelectRecordViewController.swift */; };
+		A059E9DD278B0EE600C0153C /* SelectRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A059E9DB278B0EE600C0153C /* SelectRecordViewController.xib */; };
 		A0608BEC27874AAB004077F9 /* SaveVideoCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0608BEB27874AAB004077F9 /* SaveVideoCommand.swift */; };
 		A08153A627785EEF00AADED9 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153A527785EEF00AADED9 /* LanguageManager.swift */; };
 		A08153A827785FCC00AADED9 /* DoneCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153A727785FCC00AADED9 /* DoneCommand.swift */; };
@@ -145,6 +150,11 @@
 		A0441A7727861F0700578EAE /* CameraCaptureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraCaptureViewController.xib; sourceTree = "<group>"; };
 		A0441A7B2786318200578EAE /* CameraConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraConfiguration.swift; sourceTree = "<group>"; };
 		A048127E2781FAF6002EF20F /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		A059E9D0278AF21200C0153C /* UITabBarControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarControllerExtension.swift; sourceTree = "<group>"; };
+		A059E9D3278B08BF00C0153C /* ScrollRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollRecordView.swift; sourceTree = "<group>"; };
+		A059E9D4278B08BF00C0153C /* ScrollRecordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollRecordView.xib; sourceTree = "<group>"; };
+		A059E9DA278B0EE600C0153C /* SelectRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRecordViewController.swift; sourceTree = "<group>"; };
+		A059E9DB278B0EE600C0153C /* SelectRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectRecordViewController.xib; sourceTree = "<group>"; };
 		A0608BEB27874AAB004077F9 /* SaveVideoCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveVideoCommand.swift; sourceTree = "<group>"; };
 		A08153A527785EEF00AADED9 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		A08153A727785FCC00AADED9 /* DoneCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneCommand.swift; sourceTree = "<group>"; };
@@ -264,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				A01C907E277514DE0098EEB8 /* GlobalExtension.swift */,
+				A059E9D0278AF21200C0153C /* UITabBarControllerExtension.swift */,
 				A01C908E2776F2420098EEB8 /* UIColorExtention.swift */,
 				A01C90B3277787900098EEB8 /* StringExtension.swift */,
 				A01C90D027781A210098EEB8 /* UIViewExtension.swift */,
@@ -538,6 +549,42 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		A059E9D2278B08AA00C0153C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A059E9D8278B0EC000C0153C /* ScrollRecord */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A059E9D7278B0E7B00C0153C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A0441A7627861F0700578EAE /* CameraCaptureViewController.swift */,
+				A0441A7727861F0700578EAE /* CameraCaptureViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A059E9D8278B0EC000C0153C /* ScrollRecord */ = {
+			isa = PBXGroup;
+			children = (
+				A059E9D9278B0ED400C0153C /* SelectRecordController */,
+				A059E9D3278B08BF00C0153C /* ScrollRecordView.swift */,
+				A059E9D4278B08BF00C0153C /* ScrollRecordView.xib */,
+			);
+			path = ScrollRecord;
+			sourceTree = "<group>";
+		};
+		A059E9D9278B0ED400C0153C /* SelectRecordController */ = {
+			isa = PBXGroup;
+			children = (
+				A059E9DA278B0EE600C0153C /* SelectRecordViewController.swift */,
+				A059E9DB278B0EE600C0153C /* SelectRecordViewController.xib */,
+			);
+			path = SelectRecordController;
+			sourceTree = "<group>";
+		};
 		A0608BEA27874A99004077F9 /* Commands */ = {
 			isa = PBXGroup;
 			children = (
@@ -641,9 +688,9 @@
 		A0D31FAA27872DA9002B718D /* CameraCaptureViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A059E9D7278B0E7B00C0153C /* Controller */,
 				A0441A7A2786317500578EAE /* Configuration */,
-				A0441A7627861F0700578EAE /* CameraCaptureViewController.swift */,
-				A0441A7727861F0700578EAE /* CameraCaptureViewController.xib */,
+				A059E9D2278B08AA00C0153C /* Views */,
 			);
 			path = CameraCaptureViewController;
 			sourceTree = "<group>";
@@ -731,6 +778,7 @@
 				A0B47B1A27808824004C7526 /* TextModifierView.xib in Resources */,
 				A0B45B85277A463C00E8B0D7 /* RecordsListViewController.xib in Resources */,
 				A01C9075277512260098EEB8 /* LaunchScreen.storyboard in Resources */,
+				A059E9D6278B08BF00C0153C /* ScrollRecordView.xib in Resources */,
 				A0B45B8F277B9B1000E8B0D7 /* RecordCell.xib in Resources */,
 				A032736527783F18008A138C /* TableViewCellWithLabel.xib in Resources */,
 				A01C90AF277785CF0098EEB8 /* Localizable.strings in Resources */,
@@ -738,6 +786,7 @@
 				A01C9072277512260098EEB8 /* Assets.xcassets in Resources */,
 				A01C9070277512200098EEB8 /* Main.storyboard in Resources */,
 				A0B45B98277BA96D00E8B0D7 /* CreateRecordViewController.xib in Resources */,
+				A059E9DD278B0EE600C0153C /* SelectRecordViewController.xib in Resources */,
 				A0441A7927861F0700578EAE /* CameraCaptureViewController.xib in Resources */,
 				A01C90B8277788B60098EEB8 /* SettingsViewController.xib in Resources */,
 				A08153B02778948000AADED9 /* AboutViewController.xib in Resources */,
@@ -800,6 +849,7 @@
 				A0301E782788E46800B40BE8 /* PlayerProgressView.swift in Sources */,
 				A01C906D277512200098EEB8 /* ViewController.swift in Sources */,
 				A0301E812789E81D00B40BE8 /* BasePlayerView.swift in Sources */,
+				A059E9D5278B08BF00C0153C /* ScrollRecordView.swift in Sources */,
 				A0B45B84277A463C00E8B0D7 /* RecordsListViewController.swift in Sources */,
 				A08153A627785EEF00AADED9 /* LanguageManager.swift in Sources */,
 				A0B45B97277BA96D00E8B0D7 /* CreateRecordViewController.swift in Sources */,
@@ -819,6 +869,7 @@
 				A01C9082277514F30098EEB8 /* BaseCustomView.swift in Sources */,
 				A0327368277845C9008A138C /* SetVideoSettingsCommand.swift in Sources */,
 				A08153A827785FCC00AADED9 /* DoneCommand.swift in Sources */,
+				A059E9D1278AF21200C0153C /* UITabBarControllerExtension.swift in Sources */,
 				A0301E89278A28AE00B40BE8 /* PlayerViewDelegate.swift in Sources */,
 				A01C90D127781A210098EEB8 /* UIViewExtension.swift in Sources */,
 				A01C907F277514DE0098EEB8 /* GlobalExtension.swift in Sources */,
@@ -836,6 +887,7 @@
 				A01C909727776DE50098EEB8 /* BaseNavigationController.swift in Sources */,
 				A0301E712788C53900B40BE8 /* CustomPlayerView.swift in Sources */,
 				A0441A7C2786318200578EAE /* CameraConfiguration.swift in Sources */,
+				A059E9DC278B0EE600C0153C /* SelectRecordViewController.swift in Sources */,
 				A032736D277846FA008A138C /* SetDefaultCommands.swift in Sources */,
 				A0B47B15278071F0004C7526 /* UIButtonExtension.swift in Sources */,
 				A01C906B277512200098EEB8 /* SceneDelegate.swift in Sources */,

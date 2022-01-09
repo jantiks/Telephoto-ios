@@ -12,6 +12,8 @@ import AVKit
 class CameraCaptureViewController: UIViewController {
     
     @IBOutlet weak var previewView: UIView!
+    @IBOutlet weak var screllRecordView: ScrollRecordView!
+    
     private var recButton: UIButton?
     private var tabBarBg: VisualEffectWithIntensityView?
     private var cameraConfig: CameraConfiguration!
@@ -71,7 +73,7 @@ class CameraCaptureViewController: UIViewController {
         recButton?.contentMode = .scaleToFill
         recButton?.addTarget(self, action: #selector(didTapOnRecButton(_:)), for: .touchUpInside)
         getTabBar()?.view.addSubview(recButton!)
-        let centerButtonFrame = (getTabBar()?.tabBar.subviews[2].globalFrame)!
+        let centerButtonFrame = (getTabBar()?.orderedTabBarItemViews()[1].globalFrame)!
         let recButtonXPosition = centerButtonFrame.minX + (centerButtonFrame.width - recButtonSize.width) / 2
         let recButtonYPosition = centerButtonFrame.minY + (centerButtonFrame.height - recButtonSize.height) / 2 - 8 // 8 is the bottom inset
         recButton?.frame = CGRect(x: recButtonXPosition , y: recButtonYPosition, width: recButtonSize.width, height: recButtonSize.width)

@@ -102,7 +102,7 @@ extension CameraConfiguration {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let fileUrl = paths[0].appendingPathComponent("output.mp4")
         try? FileManager.default.removeItem(at: fileUrl)
-        videoOutput!.startRecording(to: fileUrl, recordingDelegate: self)
+        videoOutput?.startRecording(to: fileUrl, recordingDelegate: self)
         videoRecordCompletionBlock = completion
     }
     

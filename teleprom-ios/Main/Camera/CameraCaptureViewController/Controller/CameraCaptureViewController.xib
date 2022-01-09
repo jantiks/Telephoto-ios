@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CameraCaptureViewController" customModule="teleprom_ios" customModuleProvider="target">
             <connections>
                 <outlet property="previewView" destination="wb6-Hy-lIe" id="zby-R1-yIS"/>
+                <outlet property="screllRecordView" destination="Nam-jN-44h" id="RQF-au-0nj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,10 +23,19 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wb6-Hy-lIe" userLabel="preview">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nam-jN-44h" customClass="ScrollRecordView" customModule="teleprom_ios" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="500"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="500" id="LBS-UW-dBr"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
+                <constraint firstItem="Nam-jN-44h" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="9fj-jN-b87"/>
+                <constraint firstItem="Nam-jN-44h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="B5S-ox-acf"/>
                 <constraint firstItem="wb6-Hy-lIe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="W3p-3B-iIH"/>
+                <constraint firstItem="Nam-jN-44h" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="aPn-49-w4e"/>
                 <constraint firstAttribute="bottom" secondItem="wb6-Hy-lIe" secondAttribute="bottom" id="alc-vw-BFK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wb6-Hy-lIe" secondAttribute="trailing" id="dJw-ij-Pzv"/>
                 <constraint firstItem="wb6-Hy-lIe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="rvo-tF-8vK"/>

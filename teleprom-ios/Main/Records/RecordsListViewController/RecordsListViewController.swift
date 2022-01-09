@@ -179,10 +179,13 @@ extension RecordsListViewController: UICollectionViewDataSource {
             cell.configure(recordsConfigs[indexPath.item])
             cell.setSelectedCommand = DoneCommand({ [weak self] in
                 guard let self = self else { return }
-                guard let selectedCellConfigIndex = self.recordsConfigs.firstIndex(where: { $0.isSelected }), selectedCellConfigIndex != indexPath.item else { return }
-
-                self.recordsConfigs[selectedCellConfigIndex].isSelected = false
-                self.recordsCollectionView.reloadItems(at: [IndexPath(item: selectedCellConfigIndex, section: 0)])
+                
+                if let selectedCellConfigIndex = self.recordsConfigs.firstIndex(where: { $0.isSelected }), selectedCellConfigIndex != indexPath.item {
+                    self.recordsConfigs[selectedCellConfigIndex].isSelected = false
+                    self.recordsCollectionView.reloadItems(at: [IndexPath(item: selectedCellConfigIndex, section: 0)])
+                }
+                
+                self.recordsConfigs[indexPath.item].isSelected.toggle()
             })
             
             return cell
