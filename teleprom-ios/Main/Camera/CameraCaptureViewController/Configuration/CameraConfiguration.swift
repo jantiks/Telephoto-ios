@@ -116,6 +116,10 @@ extension CameraConfiguration {
     
     private func createCaptureSession() {
         captureSession = AVCaptureSession()
+        captureSession?.beginConfiguration()
+        let videoSetting: VideoSetting = UserSettingsManager.shared.getVideoSetting()
+        captureSession?.sessionPreset = videoSetting.preset
+        captureSession?.commitConfiguration()
         captureSession?.startRunning()
     }
     
@@ -147,6 +151,10 @@ extension CameraConfiguration {
             } else {
                 throw CameraControllerError.inputsAreInvalid
             }
+            
+            try frontCamera.lockForConfiguration()
+            frontCamera.setFrameRate(Float64(UserSettingsManager.shared.getVideoSetting().fps))
+            frontCamera.unlockForConfiguration()
         }
             
         else {

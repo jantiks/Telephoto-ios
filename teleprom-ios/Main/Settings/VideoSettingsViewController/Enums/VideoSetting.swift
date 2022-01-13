@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 enum VideoSetting: Int, CaseIterable {
     
@@ -47,6 +48,28 @@ enum VideoSetting: Int, CaseIterable {
             case .hd_1080p_60fps:
                 return "hd.1080p.60fps".localized
             }
+        }
+    }
+    
+    var fps: Int {
+        switch self {
+        case VideoSetting.hd_720p:
+            return 30
+        case VideoSetting.hd_1080p:
+            return 30
+        case VideoSetting.hd_1080p_60fps:
+            return 60
+        }
+    }
+    
+    var preset: AVCaptureSession.Preset {
+        switch self {
+        case VideoSetting.hd_720p:
+            return .hd1280x720
+        case VideoSetting.hd_1080p:
+            return .hd1920x1080
+        case VideoSetting.hd_1080p_60fps:
+            return .hd1920x1080
         }
     }
 }

@@ -7,15 +7,16 @@
 
 import UIKit
 
-class ScrollRecordView: BaseCustomView {
+class ScrollRecordView: BaseCustomView, UITextViewDelegate {
 
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var textViewContainer: UIView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var selectButton: UIButton!
-    @IBOutlet weak var expandButton: UIButton!
     
     private var record: Record?
+    private var scrollingTimer: Timer?
+    private var scrollingUnit: Float = 2
     
     override func getContentView() -> UIView {
         return contentView
@@ -30,42 +31,24 @@ class ScrollRecordView: BaseCustomView {
         
         selectButton.setTitle("main.tab.records.select.record".localized, for: .normal)
         setBackgroundOpacity(0.4)
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        
-        guard let touchPoint = (event?.allTouches?.first?.location(in: self)) else { return }
-        print("touch point \(touchPoint)")
-//        let frameForTouch = CGRect(x: sliderButton.frame.origin.x - 25, y: sliderButton.frame.origin.y, width: sliderButton.frame.width + 25, height: sliderButton.frame.height)
-//
-//        if frameForTouch.contains(touchPoint) {
-//            isDragging = true
-//            playerView?.pause()
-//        }
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesMoved(touches, with: event)
-        
-        guard let touchPoint = event?.allTouches?.first?.location(in: self) else { return }
-                
-//        if (isDragging) {
-//            updateSliderPosition(touchPoint.x)
-//        }
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        
-//        if isDragging {
-//            playerView?.play()
-//            isDragging = false
-//        }
+        textView.delegate = self
     }
     
     func setBackgroundOpacity(_ opacity: Double) {
-        textViewContainer.backgroundColor = UIColor.darkGray.withAlphaComponent(opacity)
+        textViewContainer.backgroundColor = UIColor.controllerGray.withAlphaComponent(opacity)
+    }
+    
+    func startScrolling() {
+        scrollingTimer?.invalidate()
+        scrollingTimer = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(scrollTextView), userInfo: nil, repeats: true)
+    }
+    
+    func stopScrolling() {
+        scrollingTimer?.invalidate()
+    }
+    
+    func speedScrolling(by: Float) {
+        scrollingUnit = by
     }
     
     private func recordSelectedAction(_ record: Record) {
@@ -73,6 +56,14 @@ class ScrollRecordView: BaseCustomView {
         
         textView.attributedText = record.getText()
         selectButton.isHidden = true
+    }
+    
+    @objc private func scrollTextView() {
+        if textView.contentSize.height > textView.contentOffset.y {
+            UIView.animate(withDuration: 0.02) { [unowned self] in
+                self.textView.contentOffset = CGPoint(x: self.textView.contentOffset.x, y: self.textView.contentOffset.y + CGFloat(self.scrollingUnit))
+            }
+        }
     }
     
     @IBAction func selectAction(_ sender: UIButton) {

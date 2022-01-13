@@ -43,3 +43,5 @@
 "loading.text" = "Загрузка";
 "done.text" = "Завершено";
 "video.delete.alert.message" = "Вы точно хотите удалить видео?";
+"camera.slider.explainer.speed.change" = "Скорость чтения";
+"camera.slider.explainer.transparancy.change" = "Прозрачность фона";

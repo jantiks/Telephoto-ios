@@ -4,14 +4,22 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CameraCaptureViewController" customModule="teleprom_ios" customModuleProvider="target">
             <connections>
+                <outlet property="expandButton" destination="LmK-k2-lGL" id="yUx-Rf-le6"/>
                 <outlet property="previewView" destination="wb6-Hy-lIe" id="zby-R1-yIS"/>
-                <outlet property="screllRecordView" destination="Nam-jN-44h" id="RQF-au-0nj"/>
+                <outlet property="scrollRecordHeightConstraint" destination="Tmi-G8-UP6" id="e2U-Xz-IgP"/>
+                <outlet property="scrollRecordView" destination="Nam-jN-44h" id="RQF-au-0nj"/>
+                <outlet property="slider" destination="dam-2P-Edo" id="Jfh-tw-udZ"/>
+                <outlet property="sliderExplainerLabel" destination="px3-X4-eJw" id="K6J-Um-3Fn"/>
+                <outlet property="sliderLabel" destination="px3-X4-eJw" id="sfp-Hv-Kck"/>
+                <outlet property="speedChangeButton" destination="x08-qG-LoK" id="6JE-rl-Tgj"/>
+                <outlet property="transparancyChangeButton" destination="tGs-xR-ySr" id="Zuj-Bo-jdb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,24 +31,126 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wb6-Hy-lIe" userLabel="preview">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nam-jN-44h" customClass="ScrollRecordView" customModule="teleprom_ios" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="44" width="414" height="500"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPV-GS-iD5" userLabel="sliderview">
+                    <rect key="frame" x="30" y="734" width="354" height="62"/>
+                    <subviews>
+                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfh-J9-acL">
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="62"/>
+                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nOh-0P-GbD">
+                                <rect key="frame" x="0.0" y="0.0" width="354" height="62"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </view>
+                            <blurEffect style="regular"/>
+                        </visualEffectView>
+                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x08-qG-LoK" userLabel="speed change">
+                            <rect key="frame" x="15" y="14" width="34" height="34"/>
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="textSpeedChangeDisabled"/>
+                            <state key="selected" image="textSpeedChange">
+                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="changeSpeedAction:" destination="-1" eventType="touchUpInside" id="t6z-zh-hV9"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGs-xR-ySr" userLabel="transparancy change">
+                            <rect key="frame" x="305" y="14" width="34" height="34"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="transparancyChangeDisabled"/>
+                            <state key="selected" image="transparancyChange"/>
+                            <connections>
+                                <action selector="changeTransparencyAction:" destination="-1" eventType="touchUpInside" id="Vs9-fH-FDf"/>
+                            </connections>
+                        </button>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="dam-2P-Edo">
+                            <rect key="frame" x="72" y="5" width="210" height="31"/>
+                            <color key="tintColor" red="0.94901960780000005" green="0.25098039220000001" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="sliderDidChnageValue:" destination="-1" eventType="valueChanged" id="wvp-XQ-2Sp"/>
+                            </connections>
+                        </slider>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="px3-X4-eJw" userLabel="sliderExplainer">
+                            <rect key="frame" x="159.5" y="40" width="35.5" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="500" id="LBS-UW-dBr"/>
+                        <constraint firstItem="tGs-xR-ySr" firstAttribute="centerY" secondItem="uPV-GS-iD5" secondAttribute="centerY" id="Bu0-7Q-ogP"/>
+                        <constraint firstItem="px3-X4-eJw" firstAttribute="top" secondItem="dam-2P-Edo" secondAttribute="bottom" constant="5" id="Lxe-Ek-gm7"/>
+                        <constraint firstItem="dam-2P-Edo" firstAttribute="top" secondItem="uPV-GS-iD5" secondAttribute="top" constant="5" id="NT0-8z-q1L"/>
+                        <constraint firstItem="dam-2P-Edo" firstAttribute="leading" secondItem="x08-qG-LoK" secondAttribute="trailing" constant="25" id="Ndu-oM-6kZ"/>
+                        <constraint firstItem="tGs-xR-ySr" firstAttribute="leading" secondItem="dam-2P-Edo" secondAttribute="trailing" constant="25" id="VFM-3H-aqw"/>
+                        <constraint firstItem="jfh-J9-acL" firstAttribute="leading" secondItem="uPV-GS-iD5" secondAttribute="leading" id="XbL-lW-cYQ"/>
+                        <constraint firstItem="jfh-J9-acL" firstAttribute="top" secondItem="uPV-GS-iD5" secondAttribute="top" id="arn-dK-HuA"/>
+                        <constraint firstItem="px3-X4-eJw" firstAttribute="centerX" secondItem="uPV-GS-iD5" secondAttribute="centerX" id="bdg-qk-fih"/>
+                        <constraint firstAttribute="bottom" secondItem="jfh-J9-acL" secondAttribute="bottom" id="g92-D9-fSD"/>
+                        <constraint firstAttribute="bottom" secondItem="px3-X4-eJw" secondAttribute="bottom" constant="5" id="hwV-aL-RFM"/>
+                        <constraint firstItem="x08-qG-LoK" firstAttribute="leading" secondItem="uPV-GS-iD5" secondAttribute="leading" constant="15" id="kMO-gf-lpk"/>
+                        <constraint firstAttribute="trailing" secondItem="jfh-J9-acL" secondAttribute="trailing" id="rOw-Q3-wrG"/>
+                        <constraint firstItem="x08-qG-LoK" firstAttribute="centerY" secondItem="uPV-GS-iD5" secondAttribute="centerY" id="uWO-K7-CdS"/>
+                        <constraint firstAttribute="trailing" secondItem="tGs-xR-ySr" secondAttribute="trailing" constant="15" id="uoP-3w-494"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="30"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRV-yL-RFg">
+                    <rect key="frame" x="173.5" y="653" width="67" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <connections>
+                        <action selector="switchCameraAction:" destination="-1" eventType="touchUpInside" id="p3w-sc-hGp"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nam-jN-44h" customClass="ScrollRecordView" customModule="teleprom_ios" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="Tmi-G8-UP6"/>
                     </constraints>
                 </view>
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LmK-k2-lGL" userLabel="expand button">
+                    <rect key="frame" x="0.0" y="294" width="414" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="5ER-Rq-0Hx"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                    <state key="normal">
+                        <imageReference key="image" image="arrow.up.and.down" catalog="system" symbolScale="large"/>
+                    </state>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
+                <constraint firstItem="uPV-GS-iD5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="6rc-3S-AIM"/>
                 <constraint firstItem="Nam-jN-44h" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="9fj-jN-b87"/>
                 <constraint firstItem="Nam-jN-44h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="B5S-ox-acf"/>
+                <constraint firstItem="LmK-k2-lGL" firstAttribute="top" secondItem="Nam-jN-44h" secondAttribute="bottom" constant="-50" id="Q9x-82-eOa"/>
+                <constraint firstAttribute="bottom" secondItem="uPV-GS-iD5" secondAttribute="bottom" constant="100" id="RLv-eD-bUX"/>
+                <constraint firstItem="tRV-yL-RFg" firstAttribute="centerX" secondItem="uPV-GS-iD5" secondAttribute="centerX" id="TPc-n1-ujD"/>
                 <constraint firstItem="wb6-Hy-lIe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="W3p-3B-iIH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uPV-GS-iD5" secondAttribute="trailing" constant="30" id="X97-6z-XiS"/>
+                <constraint firstItem="LmK-k2-lGL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="a9b-xd-8PC"/>
                 <constraint firstItem="Nam-jN-44h" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="aPn-49-w4e"/>
                 <constraint firstAttribute="bottom" secondItem="wb6-Hy-lIe" secondAttribute="bottom" id="alc-vw-BFK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wb6-Hy-lIe" secondAttribute="trailing" id="dJw-ij-Pzv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LmK-k2-lGL" secondAttribute="trailing" id="r82-DQ-FMG"/>
+                <constraint firstItem="uPV-GS-iD5" firstAttribute="top" secondItem="tRV-yL-RFg" secondAttribute="bottom" constant="50" id="rS3-82-qSm"/>
                 <constraint firstItem="wb6-Hy-lIe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="rvo-tF-8vK"/>
             </constraints>
             <point key="canvasLocation" x="-39.130434782608695" y="-11.383928571428571"/>
         </view>
     </objects>
+    <resources>
+        <image name="arrow.up.and.down" catalog="system" width="100" height="128"/>
+        <image name="textSpeedChange" width="34" height="34"/>
+        <image name="textSpeedChangeDisabled" width="34" height="34"/>
+        <image name="transparancyChange" width="34" height="34"/>
+        <image name="transparancyChangeDisabled" width="34" height="34"/>
+    </resources>
 </document>
