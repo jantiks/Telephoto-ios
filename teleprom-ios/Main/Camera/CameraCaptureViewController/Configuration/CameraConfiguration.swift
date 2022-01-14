@@ -47,6 +47,10 @@ class CameraConfiguration: NSObject {
     var videoOutput: AVCaptureMovieFileOutput?
     var audioInput: AVCaptureDeviceInput?
     var outputType: OutputType?
+    
+    deinit {
+        print("deinit \(CameraConfiguration.self)")
+    }
 }
 
 extension CameraConfiguration {
@@ -73,9 +77,7 @@ extension CameraConfiguration {
     }
     
     func startRunning() {
-        print("start")
         captureSession?.startRunning()
-        print("asd eddd")
     }
     
     func stopRunning() {
@@ -85,6 +87,7 @@ extension CameraConfiguration {
     func displayPreview(_ view: UIView) throws {
         guard let captureSession = captureSession, captureSession.isRunning else { throw CameraControllerError.captureSessionIsMissing }
         
+        previewLayer?.removeFromSuperlayer()
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspect
         previewLayer?.connection?.videoOrientation = .portrait
@@ -116,24 +119,32 @@ extension CameraConfiguration {
     
     private func createCaptureSession() {
         captureSession = AVCaptureSession()
-        captureSession?.beginConfiguration()
-        let videoSetting: VideoSetting = UserSettingsManager.shared.getVideoSetting()
-        captureSession?.sessionPreset = videoSetting.preset
-        captureSession?.commitConfiguration()
         captureSession?.startRunning()
     }
     
     private func configureCaptureDevices() throws {
-        let session = AVCaptureDevice.DiscoverySession.init(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: AVCaptureDevice.Position.front)
+        let session = AVCaptureDevice.DiscoverySession.init(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: AVCaptureDevice.Position.unspecified)
         
         let cameras = (session.devices.compactMap{$0})
 
+        try? setCameras(cameras: cameras)
+        audioDevice = AVCaptureDevice.default(for: AVMediaType.audio)
+    }
+    
+    private func setCameras(cameras: [AVCaptureDevice]) throws {
         for camera in cameras {
             if camera.position == .front {
                 frontCamera = camera
             }
+            
+            if camera.position == .back {
+                rearCamera = camera
+                
+                try camera.lockForConfiguration()
+                camera.focusMode = .continuousAutoFocus
+                camera.unlockForConfiguration()
+            }
         }
-        audioDevice = AVCaptureDevice.default(for: AVMediaType.audio)
     }
     
     //Configure inputs with capture session
@@ -143,25 +154,15 @@ extension CameraConfiguration {
             throw CameraControllerError.captureSessionIsMissing
         }
 
-        if let frontCamera = frontCamera {
-            frontCameraInput = try AVCaptureDeviceInput(device: frontCamera)
-            if captureSession.canAddInput(frontCameraInput!) {
-                captureSession.addInput(frontCameraInput!)
-                currentCameraPosition = .front
-            } else {
-                throw CameraControllerError.inputsAreInvalid
-            }
-            
-            try frontCamera.lockForConfiguration()
-            frontCamera.setFrameRate(Float64(UserSettingsManager.shared.getVideoSetting().fps))
-            frontCamera.unlockForConfiguration()
-        }
-            
-        else {
-            throw CameraControllerError.noCamerasAvailable
-        }
-        
+        setFrontCameraInput()
+        try? configureAudioInput(captureSession)
+    }
+    
+    private func configureAudioInput(_ captureSession: AVCaptureSession) throws {
         if let audioDevice = audioDevice {
+            if let audioInput = audioInput {
+                captureSession.removeInput(audioInput)
+            }
             audioInput = try AVCaptureDeviceInput(device: audioDevice)
             if captureSession.canAddInput(audioInput!) {
                 captureSession.addInput(audioInput!)
@@ -180,6 +181,63 @@ extension CameraConfiguration {
         if captureSession.canAddOutput(videoOutput!) {
             captureSession.addOutput(videoOutput!)
         }
+    }
+    
+    func switchCameras() throws {
+        guard let currentCameraPosition = currentCameraPosition, let captureSession = self.captureSession, captureSession.isRunning else { throw CameraControllerError.captureSessionIsMissing }
+        captureSession.beginConfiguration()
+        let inputs = captureSession.inputs
+        
+        switch currentCameraPosition {
+        case .front:
+            switchToRearCamera(inputs: inputs)
+            
+        case .rear:
+            switchToFrontCamera(inputs: inputs)
+        }
+        captureSession.commitConfiguration()
+    }
+    
+    private func switchToFrontCamera(inputs: [AVCaptureInput]) {
+        guard let rearCameraInput = rearCameraInput, inputs.contains(rearCameraInput) else { return }
+        
+        captureSession?.removeInput(rearCameraInput)
+        setFrontCameraInput()
+    }
+    
+    private func switchToRearCamera(inputs: [AVCaptureInput]) {
+        guard let frontCameraInput = self.frontCameraInput, inputs.contains(frontCameraInput) else { return }
+        
+        captureSession?.removeInput(frontCameraInput)
+        setBackCameraInput()
+    }
+    
+    private func setFrontCameraInput() {
+        guard let frontCamera = frontCamera else { return }
+        
+        frontCameraInput = try? AVCaptureDeviceInput(device: frontCamera)
+        if captureSession?.canAddInput(frontCameraInput!) == true {
+            captureSession?.addInput(frontCameraInput!)
+            currentCameraPosition = .front
+        }
+        
+        try? frontCamera.lockForConfiguration()
+        frontCamera.setActiveFormat(videoSetting: UserSettingsManager.shared.getVideoSetting())
+        frontCamera.unlockForConfiguration()
+    }
+    
+    private func setBackCameraInput() {
+        guard let rearCamera = rearCamera else { return }
+        
+        rearCameraInput = try? AVCaptureDeviceInput(device: rearCamera)
+        if captureSession?.canAddInput(rearCameraInput!) == true {
+            captureSession?.addInput(rearCameraInput!)
+            self.currentCameraPosition = .rear
+        }
+        
+        try? rearCamera.lockForConfiguration()
+        rearCamera.setActiveFormat(videoSetting: UserSettingsManager.shared.getVideoSetting())
+        rearCamera.unlockForConfiguration()
     }
 }
 

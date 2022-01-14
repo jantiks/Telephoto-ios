@@ -51,7 +51,7 @@ enum VideoSetting: Int, CaseIterable {
         }
     }
     
-    var fps: Int {
+    var fps: Double {
         switch self {
         case VideoSetting.hd_720p:
             return 30
@@ -62,14 +62,14 @@ enum VideoSetting: Int, CaseIterable {
         }
     }
     
-    var preset: AVCaptureSession.Preset {
+    var dimension: CGSize {
         switch self {
         case VideoSetting.hd_720p:
-            return .hd1280x720
+            return CGSize(width: 1280, height: 720)
         case VideoSetting.hd_1080p:
-            return .hd1920x1080
+            return CGSize(width: 1920, height: 1080)
         case VideoSetting.hd_1080p_60fps:
-            return .hd1920x1080
+            return CGSize(width: 1920, height: 1080)
         }
     }
 }

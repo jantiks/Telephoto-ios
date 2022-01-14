@@ -31,7 +31,7 @@ class CameraCaptureViewController: UIViewController {
     
     private var recButton: UIButton?
     private var tabBarBg: VisualEffectWithIntensityView?
-    private var cameraConfig: CameraConfiguration!
+    private var cameraConfig: CameraConfiguration = CameraConfiguration()
     private var isDragging = false
     private var videoRecordingStarted: Bool = false
     private var sliderMode: SliderMode = .textSpeedChange
@@ -40,7 +40,7 @@ class CameraCaptureViewController: UIViewController {
         super.viewWillAppear(animated)
         
         getTabBar()?.tabBar.backgroundColor = .clear
-        cameraConfig?.startRunning()
+        setCameraConfig()
         print("appear")
     }
     
@@ -52,13 +52,12 @@ class CameraCaptureViewController: UIViewController {
         tabBarBg?.removeFromSuperview()
         print("dissappear")
         removeRecButton()
-        cameraConfig?.stopRunning()
+        cameraConfig.stopRunning()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setCameraConfig()
         registerNotification()
         sliderExplainerLabel.text = "camera.slider.explainer.speed.change".localized
     }
@@ -107,7 +106,6 @@ class CameraCaptureViewController: UIViewController {
     }
     
     private func setCameraConfig() {
-        self.cameraConfig = CameraConfiguration()
         cameraConfig.setup { [weak self] (error) in
             guard let self = self else { return }
             
@@ -211,7 +209,7 @@ class CameraCaptureViewController: UIViewController {
     }
     
     @IBAction func switchCameraAction(_ sender: UIButton) {
-//        try! cameraConfig?.switchCameras()
+        try! cameraConfig.switchCameras()
     }
     
     @IBAction func didTapOnRecButton(_ sender: UIButton) {
