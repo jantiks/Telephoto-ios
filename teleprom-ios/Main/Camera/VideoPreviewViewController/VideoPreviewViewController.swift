@@ -19,6 +19,7 @@ class VideoPreviewViewController: BaseViewController {
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var loadingView: LoadingView!
     
+    private var aspectRatio: CGSize = CGSize(width: 9, height: 16)
     var videoUrl: URL! // should be setted before present
     
     private var player: AVPlayer!
@@ -43,6 +44,15 @@ class VideoPreviewViewController: BaseViewController {
 
         initPlayer()
         initUI()
+    }
+    
+    func setPlayerApectRatio(_ aspectRatio: CGSize) {
+        self.aspectRatio = aspectRatio
+        let viewSize = playerView.bounds.size
+        let height = viewSize.width * aspectRatio.height / aspectRatio.width
+        let rect = CGRect(x: 0, y: (viewSize.height / 2) - (height / 2) - (view.safeAreaInsets.top) / 2 , width: viewSize.width, height: height)
+        // Cuts rectangle inside view, leaving 20pt borders around
+        playerView.mask(withRect: rect)
     }
     
     private func initUI() {

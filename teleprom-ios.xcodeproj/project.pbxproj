@@ -63,7 +63,7 @@
 		A059E9D6278B08BF00C0153C /* ScrollRecordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A059E9D4278B08BF00C0153C /* ScrollRecordView.xib */; };
 		A059E9DC278B0EE600C0153C /* SelectRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059E9DA278B0EE600C0153C /* SelectRecordViewController.swift */; };
 		A059E9DD278B0EE600C0153C /* SelectRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A059E9DB278B0EE600C0153C /* SelectRecordViewController.xib */; };
-		A059E9DF278F85F500C0153C /* AVCaptureSessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059E9DE278F85F500C0153C /* AVCaptureSessionExtension.swift */; };
+		A059E9DF278F85F500C0153C /* AVFoundationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059E9DE278F85F500C0153C /* AVFoundationExtension.swift */; };
 		A0608BEC27874AAB004077F9 /* SaveVideoCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0608BEB27874AAB004077F9 /* SaveVideoCommand.swift */; };
 		A08153A627785EEF00AADED9 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153A527785EEF00AADED9 /* LanguageManager.swift */; };
 		A08153A827785FCC00AADED9 /* DoneCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153A727785FCC00AADED9 /* DoneCommand.swift */; };
@@ -90,6 +90,11 @@
 		A0B47B15278071F0004C7526 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B47B14278071F0004C7526 /* UIButtonExtension.swift */; };
 		A0B47B1927808824004C7526 /* TextModifierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B47B1727808824004C7526 /* TextModifierView.swift */; };
 		A0B47B1A27808824004C7526 /* TextModifierView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B47B1827808824004C7526 /* TextModifierView.xib */; };
+		A0C468C4279439F5006133E6 /* AspectRatioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C468C2279439F5006133E6 /* AspectRatioViewController.swift */; };
+		A0C468C5279439F5006133E6 /* AspectRatioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C468C3279439F5006133E6 /* AspectRatioViewController.xib */; };
+		A0C468C927943E84006133E6 /* AspectRationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C468C727943E84006133E6 /* AspectRationCell.swift */; };
+		A0C468CA27943E84006133E6 /* AspectRationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C468C827943E84006133E6 /* AspectRationCell.xib */; };
+		A0C468CC27944264006133E6 /* AspectRatioCellConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C468CB27944264006133E6 /* AspectRatioCellConfig.swift */; };
 		A0D31FAE27872DE3002B718D /* VideoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D31FAC27872DE3002B718D /* VideoPreviewViewController.swift */; };
 		A0D31FAF27872DE3002B718D /* VideoPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0D31FAD27872DE3002B718D /* VideoPreviewViewController.xib */; };
 /* End PBXBuildFile section */
@@ -156,7 +161,7 @@
 		A059E9D4278B08BF00C0153C /* ScrollRecordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollRecordView.xib; sourceTree = "<group>"; };
 		A059E9DA278B0EE600C0153C /* SelectRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRecordViewController.swift; sourceTree = "<group>"; };
 		A059E9DB278B0EE600C0153C /* SelectRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectRecordViewController.xib; sourceTree = "<group>"; };
-		A059E9DE278F85F500C0153C /* AVCaptureSessionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureSessionExtension.swift; sourceTree = "<group>"; };
+		A059E9DE278F85F500C0153C /* AVFoundationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVFoundationExtension.swift; sourceTree = "<group>"; };
 		A0608BEB27874AAB004077F9 /* SaveVideoCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveVideoCommand.swift; sourceTree = "<group>"; };
 		A08153A527785EEF00AADED9 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		A08153A727785FCC00AADED9 /* DoneCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneCommand.swift; sourceTree = "<group>"; };
@@ -183,6 +188,11 @@
 		A0B47B14278071F0004C7526 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		A0B47B1727808824004C7526 /* TextModifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifierView.swift; sourceTree = "<group>"; };
 		A0B47B1827808824004C7526 /* TextModifierView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextModifierView.xib; sourceTree = "<group>"; };
+		A0C468C2279439F5006133E6 /* AspectRatioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectRatioViewController.swift; sourceTree = "<group>"; };
+		A0C468C3279439F5006133E6 /* AspectRatioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AspectRatioViewController.xib; sourceTree = "<group>"; };
+		A0C468C727943E84006133E6 /* AspectRationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectRationCell.swift; sourceTree = "<group>"; };
+		A0C468C827943E84006133E6 /* AspectRationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AspectRationCell.xib; sourceTree = "<group>"; };
+		A0C468CB27944264006133E6 /* AspectRatioCellConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectRatioCellConfig.swift; sourceTree = "<group>"; };
 		A0D31FAC27872DE3002B718D /* VideoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPreviewViewController.swift; sourceTree = "<group>"; };
 		A0D31FAD27872DE3002B718D /* VideoPreviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPreviewViewController.xib; sourceTree = "<group>"; };
 		A75330ADA133111CCFF7D617 /* Pods-teleprom-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teleprom-ios.release.xcconfig"; path = "Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios.release.xcconfig"; sourceTree = "<group>"; };
@@ -286,7 +296,7 @@
 				A048127E2781FAF6002EF20F /* UIFontExtension.swift */,
 				A0301E732788DBAC00B40BE8 /* AVPlayerExtension.swift */,
 				A0301E82278A273400B40BE8 /* DoubleExtension.swift */,
-				A059E9DE278F85F500C0153C /* AVCaptureSessionExtension.swift */,
+				A059E9DE278F85F500C0153C /* AVFoundationExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -538,6 +548,7 @@
 		A0441A7327861E4600578EAE /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				A0C468C1279439DD006133E6 /* AspectRationViewController */,
 				A0D31FAA27872DA9002B718D /* CameraCaptureViewController */,
 				A0D31FAB27872DBF002B718D /* VideoPreviewViewController */,
 			);
@@ -688,6 +699,26 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A0C468C1279439DD006133E6 /* AspectRationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A0C468C627943E64006133E6 /* Cells */,
+				A0C468C2279439F5006133E6 /* AspectRatioViewController.swift */,
+				A0C468C3279439F5006133E6 /* AspectRatioViewController.xib */,
+			);
+			path = AspectRationViewController;
+			sourceTree = "<group>";
+		};
+		A0C468C627943E64006133E6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A0C468C727943E84006133E6 /* AspectRationCell.swift */,
+				A0C468C827943E84006133E6 /* AspectRationCell.xib */,
+				A0C468CB27944264006133E6 /* AspectRatioCellConfig.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		A0D31FAA27872DA9002B718D /* CameraCaptureViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -792,7 +823,9 @@
 				A059E9DD278B0EE600C0153C /* SelectRecordViewController.xib in Resources */,
 				A0441A7927861F0700578EAE /* CameraCaptureViewController.xib in Resources */,
 				A01C90B8277788B60098EEB8 /* SettingsViewController.xib in Resources */,
+				A0C468CA27943E84006133E6 /* AspectRationCell.xib in Resources */,
 				A08153B02778948000AADED9 /* AboutViewController.xib in Resources */,
+				A0C468C5279439F5006133E6 /* AspectRatioViewController.xib in Resources */,
 				A0301E8E278ACDD600B40BE8 /* LoadingView.xib in Resources */,
 				A01C90CF277818C90098EEB8 /* VideoSettingsViewController.xib in Resources */,
 				A0D31FAF27872DE3002B718D /* VideoPreviewViewController.xib in Resources */,
@@ -871,9 +904,10 @@
 				A08153AB277869E200AADED9 /* HelpViewController.swift in Sources */,
 				A01C9082277514F30098EEB8 /* BaseCustomView.swift in Sources */,
 				A0327368277845C9008A138C /* SetVideoSettingsCommand.swift in Sources */,
-				A059E9DF278F85F500C0153C /* AVCaptureSessionExtension.swift in Sources */,
+				A059E9DF278F85F500C0153C /* AVFoundationExtension.swift in Sources */,
 				A08153A827785FCC00AADED9 /* DoneCommand.swift in Sources */,
 				A059E9D1278AF21200C0153C /* UITabBarControllerExtension.swift in Sources */,
+				A0C468CC27944264006133E6 /* AspectRatioCellConfig.swift in Sources */,
 				A0301E89278A28AE00B40BE8 /* PlayerViewDelegate.swift in Sources */,
 				A01C90D127781A210098EEB8 /* UIViewExtension.swift in Sources */,
 				A01C907F277514DE0098EEB8 /* GlobalExtension.swift in Sources */,
@@ -906,8 +940,10 @@
 				A08153AF2778948000AADED9 /* AboutViewController.swift in Sources */,
 				A01C9086277515B80098EEB8 /* BaseViewController.swift in Sources */,
 				A0B45B91277B9BC500E8B0D7 /* Record.swift in Sources */,
+				A0C468C927943E84006133E6 /* AspectRationCell.swift in Sources */,
 				A01C90B4277787900098EEB8 /* StringExtension.swift in Sources */,
 				A0B45BA5277EE29000E8B0D7 /* RecordCellConfig.swift in Sources */,
+				A0C468C4279439F5006133E6 /* AspectRatioViewController.swift in Sources */,
 				A0B45B9E277EB7F600E8B0D7 /* RealmExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

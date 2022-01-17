@@ -184,7 +184,7 @@ extension CameraConfiguration {
     }
     
     func switchCameras() throws {
-        guard let currentCameraPosition = currentCameraPosition, let captureSession = self.captureSession, captureSession.isRunning else { throw CameraControllerError.captureSessionIsMissing }
+        guard let currentCameraPosition = currentCameraPosition, let captureSession = captureSession, captureSession.isRunning else { throw CameraControllerError.captureSessionIsMissing }
         captureSession.beginConfiguration()
         let inputs = captureSession.inputs
         
@@ -221,9 +221,7 @@ extension CameraConfiguration {
             currentCameraPosition = .front
         }
         
-        try? frontCamera.lockForConfiguration()
-        frontCamera.setActiveFormat(videoSetting: UserSettingsManager.shared.getVideoSetting())
-        frontCamera.unlockForConfiguration()
+        setActiveFormatFor(frontCamera)
     }
     
     private func setBackCameraInput() {
@@ -235,9 +233,13 @@ extension CameraConfiguration {
             self.currentCameraPosition = .rear
         }
         
-        try? rearCamera.lockForConfiguration()
-        rearCamera.setActiveFormat(videoSetting: UserSettingsManager.shared.getVideoSetting())
-        rearCamera.unlockForConfiguration()
+        setActiveFormatFor(rearCamera)
+    }
+    
+    private func setActiveFormatFor(_ camera: AVCaptureDevice) {
+        try? camera.lockForConfiguration()
+        camera.setActiveFormat(videoSetting: UserSettingsManager.shared.getVideoSetting())
+        camera.unlockForConfiguration()
     }
 }
 

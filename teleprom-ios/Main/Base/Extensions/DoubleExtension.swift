@@ -12,4 +12,8 @@ extension Double {
         let value = Int(self)
         return String(format: "%02d" + divider + "%02d", value/60,value%60)
     }
+    
+    func radians() -> Double {
+        return self * .pi / 180
+    }
 }

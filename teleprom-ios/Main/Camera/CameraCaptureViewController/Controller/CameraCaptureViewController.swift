@@ -35,12 +35,14 @@ class CameraCaptureViewController: UIViewController {
     private var isDragging = false
     private var videoRecordingStarted: Bool = false
     private var sliderMode: SliderMode = .textSpeedChange
+    private var selectedAspectRatio: CGSize = CGSize(width: 9, height: 16)
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         getTabBar()?.tabBar.backgroundColor = .clear
         setCameraConfig()
+        
         print("appear")
     }
     
@@ -74,8 +76,6 @@ class CameraCaptureViewController: UIViewController {
         guard let touchPoint = (event?.allTouches?.first?.location(in: view)) else { return }
         
         let frameForTouch = CGRect(x: expandButton.frame.origin.x, y: expandButton.frame.origin.y - 25, width: expandButton.frame.width, height: expandButton.frame.height + 25)
-        print("frame touch \(frameForTouch)")
-        print("touch point \(touchPoint)")
         if frameForTouch.contains(touchPoint) {
             isDragging = true
         }
@@ -159,6 +159,16 @@ class CameraCaptureViewController: UIViewController {
         notificationCenter.addObserver(self, selector: #selector(appCameToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
+    private func setAspectRatioAction(_ aspectRatio: CGSize) {
+        selectedAspectRatio = aspectRatio
+        let viewSize = previewView.bounds.size
+        let height = viewSize.width * aspectRatio.height / aspectRatio.width
+        let rect = CGRect(x: 0, y: (viewSize.height / 2) - (height / 2) - (view.safeAreaInsets.top) / 2 , width: viewSize.width, height: height)
+        
+        // Cuts rectangle inside view, leaving 20pt borders around
+        previewView.mask(withRect: rect)
+    }
+    
     @objc func appMovedToBackground() {
         if videoRecordingStarted {
             videoRecordingStarted = false
@@ -170,6 +180,7 @@ class CameraCaptureViewController: UIViewController {
     
     @objc func appCameToForeground() {
         print("app enters foreground")
+        cameraConfig.startRunning()
     }
     
     @IBAction func changeSpeedAction(_ sender: UIButton) {
@@ -212,6 +223,12 @@ class CameraCaptureViewController: UIViewController {
         try! cameraConfig.switchCameras()
     }
     
+    @IBAction func changeAspectRationAction(_ sender: UIButton) {
+        let vc = AspectRatioViewController()
+        vc.setAspectRatioAction = setAspectRatioAction
+        present(vc, animated: true)
+    }
+    
     @IBAction func didTapOnRecButton(_ sender: UIButton) {
         if videoRecordingStarted {
             recordingStarted(false)
@@ -235,6 +252,7 @@ class CameraCaptureViewController: UIViewController {
                 vc.videoUrl = url
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true)
+                vc.setPlayerApectRatio(self.selectedAspectRatio)
             }
             
             scrollRecordView.startScrolling()

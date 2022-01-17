@@ -45,3 +45,7 @@
 "video.delete.alert.message" = "Do you really want to delete this video?";
 "camera.slider.explainer.speed.change" = "Reading speed";
 "camera.slider.explainer.transparancy.change" = "Transparancy of background";
+"standart" = "Standart";
+"aspect.ratio.title" = "Choose aspect ratio";
+"aspect.ratio.instagram.story" = "Story";
+"aspect.ratio.publication" = "Publication";

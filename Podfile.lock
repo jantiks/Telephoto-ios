@@ -1,4 +1,5 @@
 PODS:
+  - ffmpeg-kit-ios-full (4.5.1)
   - Realm (10.20.0):
     - Realm/Headers (= 10.20.0)
   - Realm/Headers (10.20.0)
@@ -6,17 +7,20 @@ PODS:
     - Realm (= 10.20.0)
 
 DEPENDENCIES:
+  - ffmpeg-kit-ios-full
   - RealmSwift
 
 SPEC REPOS:
   trunk:
+    - ffmpeg-kit-ios-full
     - Realm
     - RealmSwift
 
 SPEC CHECKSUMS:
+  ffmpeg-kit-ios-full: 1e918caa885a00501ec1606c68a874d07d681705
   Realm: ae32bdc1da7d19c7617e0400201a77acd4a211b9
   RealmSwift: c95eec6a712924870b2e36c4c081d63ec07e5414
 
-PODFILE CHECKSUM: f457b184ff8d47c8f2b7df4c6e687774fdb5d728
+PODFILE CHECKSUM: ff73d59f8e9e9e25b5767c98661260a3475426ef
 
 COCOAPODS: 1.11.0

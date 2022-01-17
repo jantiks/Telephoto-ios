@@ -7,5 +7,5 @@ target 'teleprom-ios' do
 
   # Pods for teleprom-ios
 	pod 'RealmSwift'
-
+	pod 'ffmpeg-kit-ios-full'
 end

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SaveVideoCommand: NSObject, CommonCommand {
     
@@ -29,6 +30,23 @@ class SaveVideoCommand: NSObject, CommonCommand {
     }
     
     func execute() {
-        UISaveVideoAtPathToSavedPhotosAlbum(videoUrl.path, self, #selector(video(_:didFinishSavingWithError:contextInfo:)), nil)
+        let videoSetting = UserSettingsManager.shared.getVideoSetting()
+        
+        cropVideo(videoUrl, videoSetting: videoSetting) { newUrl in
+            UISaveVideoAtPathToSavedPhotosAlbum(newUrl.path, self, #selector(self.video(_:didFinishSavingWithError:contextInfo:)), nil)
+        }
+    }
+    
+    func cropVideo( _ outputFileUrl: URL, videoSetting: VideoSetting, callback: @escaping ( _ newUrl: URL ) -> () ) {
+        // Get input clip
+        let videoAsset: AVAsset = AVAsset( url: outputFileUrl )
+        
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let fileUrl = paths[0].appendingPathComponent("ffmpegOutput.mp4")
+        try? FileManager.default.removeItem(at: fileUrl)
+        
+        videoAsset.cropVideoTrack(at: 0, cropRect: CGRect(x: 0, y: 0, width: videoSetting.dimension.height, height: videoSetting.dimension.height), outputURL: fileUrl) { result in
+            callback(fileUrl)
+        }
     }
 }

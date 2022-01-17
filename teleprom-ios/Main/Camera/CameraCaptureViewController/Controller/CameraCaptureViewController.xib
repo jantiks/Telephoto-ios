@@ -89,6 +89,7 @@
                         <constraint firstAttribute="bottom" secondItem="jfh-J9-acL" secondAttribute="bottom" id="g92-D9-fSD"/>
                         <constraint firstAttribute="bottom" secondItem="px3-X4-eJw" secondAttribute="bottom" constant="5" id="hwV-aL-RFM"/>
                         <constraint firstItem="x08-qG-LoK" firstAttribute="leading" secondItem="uPV-GS-iD5" secondAttribute="leading" constant="15" id="kMO-gf-lpk"/>
+                        <constraint firstAttribute="height" constant="62" id="pIY-0f-2T6"/>
                         <constraint firstAttribute="trailing" secondItem="jfh-J9-acL" secondAttribute="trailing" id="rOw-Q3-wrG"/>
                         <constraint firstItem="x08-qG-LoK" firstAttribute="centerY" secondItem="uPV-GS-iD5" secondAttribute="centerY" id="uWO-K7-CdS"/>
                         <constraint firstAttribute="trailing" secondItem="tGs-xR-ySr" secondAttribute="trailing" constant="15" id="uoP-3w-494"/>
@@ -99,18 +100,34 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRV-yL-RFg">
-                    <rect key="frame" x="173.5" y="653" width="67" height="31"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                    <connections>
-                        <action selector="switchCameraAction:" destination="-1" eventType="touchUpInside" id="p3w-sc-hGp"/>
-                    </connections>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Vm7-LS-cqW">
+                    <rect key="frame" x="155" y="687" width="104" height="32"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRV-yL-RFg" userLabel="change cam button">
+                            <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" backgroundImage="cameraFlip"/>
+                            <connections>
+                                <action selector="switchCameraAction:" destination="-1" eventType="touchUpInside" id="p3w-sc-hGp"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLF-mg-nUe" userLabel="aspect ration button">
+                            <rect key="frame" x="72" y="0.0" width="32" height="32"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" backgroundImage="settings"/>
+                            <connections>
+                                <action selector="changeAspectRationAction:" destination="-1" eventType="touchUpInside" id="gkP-Bg-HQu"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="KHT-Lf-L6L"/>
+                    </constraints>
+                </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nam-jN-44h" customClass="ScrollRecordView" customModule="teleprom_ios" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="44" width="414" height="300"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="300" id="Tmi-G8-UP6"/>
+                        <constraint firstAttribute="height" priority="999" constant="300" id="Tmi-G8-UP6"/>
                     </constraints>
                 </view>
                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LmK-k2-lGL" userLabel="expand button">
@@ -132,15 +149,16 @@
                 <constraint firstItem="Nam-jN-44h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="B5S-ox-acf"/>
                 <constraint firstItem="LmK-k2-lGL" firstAttribute="top" secondItem="Nam-jN-44h" secondAttribute="bottom" constant="-50" id="Q9x-82-eOa"/>
                 <constraint firstAttribute="bottom" secondItem="uPV-GS-iD5" secondAttribute="bottom" constant="100" id="RLv-eD-bUX"/>
-                <constraint firstItem="tRV-yL-RFg" firstAttribute="centerX" secondItem="uPV-GS-iD5" secondAttribute="centerX" id="TPc-n1-ujD"/>
                 <constraint firstItem="wb6-Hy-lIe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="W3p-3B-iIH"/>
+                <constraint firstItem="uPV-GS-iD5" firstAttribute="top" secondItem="Vm7-LS-cqW" secondAttribute="bottom" constant="15" id="WWs-yx-VIo"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uPV-GS-iD5" secondAttribute="trailing" constant="30" id="X97-6z-XiS"/>
                 <constraint firstItem="LmK-k2-lGL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="a9b-xd-8PC"/>
                 <constraint firstItem="Nam-jN-44h" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="aPn-49-w4e"/>
                 <constraint firstAttribute="bottom" secondItem="wb6-Hy-lIe" secondAttribute="bottom" id="alc-vw-BFK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wb6-Hy-lIe" secondAttribute="trailing" id="dJw-ij-Pzv"/>
+                <constraint firstItem="Vm7-LS-cqW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Nam-jN-44h" secondAttribute="bottom" constant="10" id="jRH-oi-AHz"/>
+                <constraint firstItem="Vm7-LS-cqW" firstAttribute="centerX" secondItem="uPV-GS-iD5" secondAttribute="centerX" id="qKi-FD-5UJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LmK-k2-lGL" secondAttribute="trailing" id="r82-DQ-FMG"/>
-                <constraint firstItem="uPV-GS-iD5" firstAttribute="top" secondItem="tRV-yL-RFg" secondAttribute="bottom" constant="50" id="rS3-82-qSm"/>
                 <constraint firstItem="wb6-Hy-lIe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="rvo-tF-8vK"/>
             </constraints>
             <point key="canvasLocation" x="-39.130434782608695" y="-11.383928571428571"/>
@@ -148,6 +166,8 @@
     </objects>
     <resources>
         <image name="arrow.up.and.down" catalog="system" width="100" height="128"/>
+        <image name="cameraFlip" width="32" height="32"/>
+        <image name="settings" width="24" height="24"/>
         <image name="textSpeedChange" width="34" height="34"/>
         <image name="textSpeedChangeDisabled" width="34" height="34"/>
         <image name="transparancyChange" width="34" height="34"/>

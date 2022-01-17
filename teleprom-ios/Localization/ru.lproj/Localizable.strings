@@ -45,3 +45,7 @@
 "video.delete.alert.message" = "Вы точно хотите удалить видео?";
 "camera.slider.explainer.speed.change" = "Скорость чтения";
 "camera.slider.explainer.transparancy.change" = "Прозрачность фона";
+"standart" = "Стандарт";
+"aspect.ratio.title" = "Выберете разрешение";
+"aspect.ratio.instagram.story" = "История";
+"aspect.ratio.publication" = "Публикация";
