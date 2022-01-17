@@ -29,7 +29,7 @@ extension AVCaptureDevice {
 
 extension AVAsset {
     func cropVideoTrack(at index: Int, cropRect: CGRect, outputURL: URL, completion: @escaping (Result<Void, Swift.Error>) -> Void) {
-        
+        print("asd cropRect \(cropRect)")
         enum Orientation {
             case up, down, right, left
         }
@@ -74,7 +74,7 @@ extension AVAsset {
                 // the actual center cropping condition
                 finalTransform = finalTransform
                     .rotated(by: CGFloat(90.0.radians()))
-                    .translatedBy(x: -originalSize.height / 2  + 200, y: -originalSize.height)
+                    .translatedBy(x: -(originalSize.width - cropRect.width) / 2, y: -originalSize.height)
             }
             
         } else if trackOrientation == .down {

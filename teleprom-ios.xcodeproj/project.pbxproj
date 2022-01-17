@@ -65,6 +65,7 @@
 		A059E9DD278B0EE600C0153C /* SelectRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A059E9DB278B0EE600C0153C /* SelectRecordViewController.xib */; };
 		A059E9DF278F85F500C0153C /* AVFoundationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059E9DE278F85F500C0153C /* AVFoundationExtension.swift */; };
 		A0608BEC27874AAB004077F9 /* SaveVideoCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0608BEB27874AAB004077F9 /* SaveVideoCommand.swift */; };
+		A06B8AEE2795E88400374BBE /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B8AED2795E88400374BBE /* Video.swift */; };
 		A08153A627785EEF00AADED9 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153A527785EEF00AADED9 /* LanguageManager.swift */; };
 		A08153A827785FCC00AADED9 /* DoneCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153A727785FCC00AADED9 /* DoneCommand.swift */; };
 		A08153AB277869E200AADED9 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153A9277869E200AADED9 /* HelpViewController.swift */; };
@@ -163,6 +164,7 @@
 		A059E9DB278B0EE600C0153C /* SelectRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectRecordViewController.xib; sourceTree = "<group>"; };
 		A059E9DE278F85F500C0153C /* AVFoundationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVFoundationExtension.swift; sourceTree = "<group>"; };
 		A0608BEB27874AAB004077F9 /* SaveVideoCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveVideoCommand.swift; sourceTree = "<group>"; };
+		A06B8AED2795E88400374BBE /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		A08153A527785EEF00AADED9 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		A08153A727785FCC00AADED9 /* DoneCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneCommand.swift; sourceTree = "<group>"; };
 		A08153A9277869E200AADED9 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				A01C9091277767BE0098EEB8 /* TabBarViewControllerConfig.swift */,
+				A06B8AED2795E88400374BBE /* Video.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -890,6 +893,7 @@
 				A08153A627785EEF00AADED9 /* LanguageManager.swift in Sources */,
 				A0B45B97277BA96D00E8B0D7 /* CreateRecordViewController.swift in Sources */,
 				A01C90BE27778B340098EEB8 /* SettingsTableCellConfig.swift in Sources */,
+				A06B8AEE2795E88400374BBE /* Video.swift in Sources */,
 				A08153B22778AC1400AADED9 /* SKStoreReviewControllerExtension.swift in Sources */,
 				A0D31FAE27872DE3002B718D /* VideoPreviewViewController.swift in Sources */,
 				A01C9069277512200098EEB8 /* AppDelegate.swift in Sources */,

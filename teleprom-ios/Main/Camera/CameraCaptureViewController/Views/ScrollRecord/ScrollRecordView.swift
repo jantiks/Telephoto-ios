@@ -59,7 +59,7 @@ class ScrollRecordView: BaseCustomView, UITextViewDelegate {
     }
     
     @objc private func scrollTextView() {
-        if textView.contentSize.height > textView.contentOffset.y {
+        if textView.contentSize.height > textView.contentOffset.y && !textView.text.isEmpty {
             UIView.animate(withDuration: 0.02) { [unowned self] in
                 self.textView.contentOffset = CGPoint(x: self.textView.contentOffset.x, y: self.textView.contentOffset.y + CGFloat(self.scrollingUnit))
             }

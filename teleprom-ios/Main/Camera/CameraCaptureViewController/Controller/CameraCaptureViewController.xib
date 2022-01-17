@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CameraCaptureViewController" customModule="teleprom_ios" customModuleProvider="target">
             <connections>
+                <outlet property="actionButtonsStackview" destination="Vm7-LS-cqW" id="QqW-17-0cn"/>
                 <outlet property="expandButton" destination="LmK-k2-lGL" id="yUx-Rf-le6"/>
                 <outlet property="previewView" destination="wb6-Hy-lIe" id="zby-R1-yIS"/>
                 <outlet property="scrollRecordHeightConstraint" destination="Tmi-G8-UP6" id="e2U-Xz-IgP"/>

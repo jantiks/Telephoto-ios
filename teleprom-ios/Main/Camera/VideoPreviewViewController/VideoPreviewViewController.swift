@@ -46,12 +46,23 @@ class VideoPreviewViewController: BaseViewController {
         initUI()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        setAspectView()
+    }
+    
     func setPlayerApectRatio(_ aspectRatio: CGSize) {
         self.aspectRatio = aspectRatio
-        let viewSize = playerView.bounds.size
+        
+        setAspectView()
+    }
+    
+    private func setAspectView() {
+        let viewSize = view.bounds.size
         let height = viewSize.width * aspectRatio.height / aspectRatio.width
-        let rect = CGRect(x: 0, y: (viewSize.height / 2) - (height / 2) - (view.safeAreaInsets.top) / 2 , width: viewSize.width, height: height)
-        // Cuts rectangle inside view, leaving 20pt borders around
+        let rect = CGRect(x: 0, y: (viewSize.height / 2) - (height / 2), width: viewSize.width, height: height)
+        // Cuts rectangle inside view
         playerView.mask(withRect: rect)
     }
     
@@ -100,7 +111,7 @@ class VideoPreviewViewController: BaseViewController {
     
     @IBAction func saveAction(_ sender: UIButton) {
         showLoading()
-        SaveVideoCommand(videoUrl, savedAction: videoSavedAction, failedAction: videoSavingFailedAction).execute()
+        SaveVideoCommand(videoUrl, aspectRatio: aspectRatio, savedAction: videoSavedAction, failedAction: videoSavingFailedAction).execute()
     }
     
     @IBAction func playPuseAction(_ sender: UIButton) {
@@ -120,6 +131,10 @@ class VideoPreviewViewController: BaseViewController {
     
     @IBAction func closeAction(_ sender: UIButton) {
         dismiss(animated: true)
+    }
+    
+    deinit {
+        deleteVideo()
     }
 }
 

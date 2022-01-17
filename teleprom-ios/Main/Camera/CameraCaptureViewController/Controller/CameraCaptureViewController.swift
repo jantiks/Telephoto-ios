@@ -24,6 +24,7 @@ class CameraCaptureViewController: UIViewController {
     @IBOutlet weak var speedChangeButton: UIButton!
     @IBOutlet weak var transparancyChangeButton: UIButton!
     @IBOutlet weak var sliderExplainerLabel: UILabel!
+    @IBOutlet weak var actionButtonsStackview: UIStackView!
     
     private let recButtonSize = CGSize(width: 100, height: 100)
     private let maxScrollTextViewHeight: Double = 500
@@ -41,7 +42,7 @@ class CameraCaptureViewController: UIViewController {
         super.viewWillAppear(animated)
         
         getTabBar()?.tabBar.backgroundColor = .clear
-        setCameraConfig()
+        setCameraConfigIfHasAccess()
         
         print("appear")
     }
@@ -62,6 +63,12 @@ class CameraCaptureViewController: UIViewController {
 
         registerNotification()
         sliderExplainerLabel.text = "camera.slider.explainer.speed.change".localized
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        setAspectView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -98,10 +105,29 @@ class CameraCaptureViewController: UIViewController {
         }
     }
     
-    private func expandScrollView(_ point: Double) {
-        print("expans \(point)")
-        if point < maxScrollTextViewHeight && point > minScrollTextViewHeight {
-            scrollRecordHeightConstraint.constant = point
+    private func setAspectView() {
+        let viewSize = view.bounds.size
+        let height = viewSize.width * selectedAspectRatio.height / selectedAspectRatio.width
+        let rect = CGRect(x: 0, y: (viewSize.height / 2) - (height / 2), width: viewSize.width, height: height)
+        
+        // Cuts rectangle inside view, leaving 20pt borders around
+        previewView.mask(withRect: rect)
+    }
+    
+    private func setCameraConfigIfHasAccess() {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            self.setCameraConfig()
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
+                DispatchQueue.main.async {
+                    granted ? self?.setCameraConfig() : self?.alertCameraAccessNeeded()
+                }
+            }
+        case .denied:
+            alertCameraAccessNeeded()
+        case .restricted:
+            alertCameraAccessNeeded()
         }
     }
     
@@ -114,6 +140,29 @@ class CameraCaptureViewController: UIViewController {
             }
             
             try? self.cameraConfig.displayPreview(self.previewView)
+        }
+    }
+    
+    private func alertCameraAccessNeeded() {
+        let settingsAppURL = URL(string: UIApplication.openSettingsURLString)!
+        
+        let alert = UIAlertController(
+            title: "Need Camera Access",
+            message: "Camera access is required to make full use of this app.",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Allow Camera", style: .cancel, handler: { (alert) -> Void in
+            UIApplication.shared.open(settingsAppURL, options: [:], completionHandler: nil)
+        }))
+        
+        present(alert, animated: true)
+    }
+    
+    private func expandScrollView(_ point: Double) {
+        if point < maxScrollTextViewHeight && point > minScrollTextViewHeight {
+            scrollRecordHeightConstraint.constant = point
         }
     }
     
@@ -150,6 +199,7 @@ class CameraCaptureViewController: UIViewController {
         tabBarBg?.isHidden = started
         
         started ? recButton?.setBackgroundImage(UIImage(named: "stopRec")!, for: .normal) : recButton?.setBackgroundImage(UIImage(named: "startRec")!, for: .normal)
+        actionButtonsStackview.isHidden = started
     }
     
     private func registerNotification() {
@@ -161,12 +211,8 @@ class CameraCaptureViewController: UIViewController {
     
     private func setAspectRatioAction(_ aspectRatio: CGSize) {
         selectedAspectRatio = aspectRatio
-        let viewSize = previewView.bounds.size
-        let height = viewSize.width * aspectRatio.height / aspectRatio.width
-        let rect = CGRect(x: 0, y: (viewSize.height / 2) - (height / 2) - (view.safeAreaInsets.top) / 2 , width: viewSize.width, height: height)
         
-        // Cuts rectangle inside view, leaving 20pt borders around
-        previewView.mask(withRect: rect)
+        setAspectView()
     }
     
     @objc func appMovedToBackground() {
@@ -220,7 +266,7 @@ class CameraCaptureViewController: UIViewController {
     }
     
     @IBAction func switchCameraAction(_ sender: UIButton) {
-        try! cameraConfig.switchCameras()
+        try? cameraConfig.switchCameras()
     }
     
     @IBAction func changeAspectRationAction(_ sender: UIButton) {
@@ -247,12 +293,13 @@ class CameraCaptureViewController: UIViewController {
                     self.recordingStarted(false)
                     return
                 }
-
+                
+                // after completion, present video preview.
                 let vc = VideoPreviewViewController()
                 vc.videoUrl = url
                 vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true)
                 vc.setPlayerApectRatio(self.selectedAspectRatio)
+                self.present(vc, animated: true)
             }
             
             scrollRecordView.startScrolling()

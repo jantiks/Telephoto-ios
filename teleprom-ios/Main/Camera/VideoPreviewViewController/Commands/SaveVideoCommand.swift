@@ -11,11 +11,13 @@ import AVFoundation
 class SaveVideoCommand: NSObject, CommonCommand {
     
     private let videoUrl: URL
+    private let aspectRatio: CGSize
     private let savedAction: (() -> ())
     private let failedAction: (() -> ())
     
-    init(_ videoUrl: URL, savedAction: @escaping (() -> ()), failedAction: @escaping (() -> ())) {
+    init(_ videoUrl: URL, aspectRatio: CGSize ,savedAction: @escaping (() -> ()), failedAction: @escaping (() -> ())) {
         self.videoUrl = videoUrl
+        self.aspectRatio = aspectRatio
         self.savedAction = savedAction
         self.failedAction = failedAction
     }
@@ -30,14 +32,26 @@ class SaveVideoCommand: NSObject, CommonCommand {
     }
     
     func execute() {
-        let videoSetting = UserSettingsManager.shared.getVideoSetting()
-        
-        cropVideo(videoUrl, videoSetting: videoSetting) { newUrl in
-            UISaveVideoAtPathToSavedPhotosAlbum(newUrl.path, self, #selector(self.video(_:didFinishSavingWithError:contextInfo:)), nil)
+        if shouldCropVideo() {
+            print("no need to crop")
+            UISaveVideoAtPathToSavedPhotosAlbum(videoUrl.path, self, #selector(self.video(_:didFinishSavingWithError:contextInfo:)), nil)
+        } else {
+            let videoSetting = UserSettingsManager.shared.getVideoSetting()
+            
+            cropVideo(videoUrl, videoSetting: videoSetting) { newUrl in
+                UISaveVideoAtPathToSavedPhotosAlbum(newUrl.path, self, #selector(self.video(_:didFinishSavingWithError:contextInfo:)), nil)
+            }
         }
     }
     
-    func cropVideo( _ outputFileUrl: URL, videoSetting: VideoSetting, callback: @escaping ( _ newUrl: URL ) -> () ) {
+    private func shouldCropVideo() -> Bool {
+        let videoAsset: AVAsset = AVAsset( url: videoUrl )
+        let sizeOfTrack = videoAsset.tracks(withMediaType: .video)[0].naturalSize
+        
+        return sizeOfTrack.width / sizeOfTrack.height == aspectRatio.height / aspectRatio.width
+    }
+    
+    private func cropVideo( _ outputFileUrl: URL, videoSetting: VideoSetting, callback: @escaping ( _ newUrl: URL ) -> () ) {
         // Get input clip
         let videoAsset: AVAsset = AVAsset( url: outputFileUrl )
         
@@ -45,7 +59,7 @@ class SaveVideoCommand: NSObject, CommonCommand {
         let fileUrl = paths[0].appendingPathComponent("ffmpegOutput.mp4")
         try? FileManager.default.removeItem(at: fileUrl)
         
-        videoAsset.cropVideoTrack(at: 0, cropRect: CGRect(x: 0, y: 0, width: videoSetting.dimension.height, height: videoSetting.dimension.height), outputURL: fileUrl) { result in
+        videoAsset.cropVideoTrack(at: 0, cropRect: CGRect(x: 0, y: 0, width: videoSetting.dimension.height * aspectRatio.height / aspectRatio.width, height: videoSetting.dimension.height), outputURL: fileUrl) { result in
             callback(fileUrl)
         }
     }

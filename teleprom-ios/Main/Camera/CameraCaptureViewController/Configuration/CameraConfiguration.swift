@@ -93,7 +93,7 @@ extension CameraConfiguration {
         previewLayer?.connection?.videoOrientation = .portrait
         
         view.layer.insertSublayer(previewLayer!, at: 0)
-        previewLayer?.frame = CGRect(x: 0, y: 0, width: view.frame.width , height: view.frame.height)
+        previewLayer?.frame = view.bounds
     }
     
     func recordVideo(completion: @escaping (URL?, Error?)-> Void) {
