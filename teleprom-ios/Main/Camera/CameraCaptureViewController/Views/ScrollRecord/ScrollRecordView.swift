@@ -17,6 +17,7 @@ class ScrollRecordView: BaseCustomView, UITextViewDelegate {
     private var record: Record?
     private var scrollingTimer: Timer?
     private var scrollingUnit: Float = 2
+    private var opacity: Double = 0.4
     
     override func getContentView() -> UIView {
         return contentView
@@ -35,7 +36,12 @@ class ScrollRecordView: BaseCustomView, UITextViewDelegate {
     }
     
     func setBackgroundOpacity(_ opacity: Double) {
+        self.opacity = opacity
         textViewContainer.backgroundColor = UIColor.controllerGray.withAlphaComponent(opacity)
+    }
+    
+    func getBackgroundOpacity() -> Float {
+        return Float(opacity)
     }
     
     func startScrolling() {
@@ -47,8 +53,12 @@ class ScrollRecordView: BaseCustomView, UITextViewDelegate {
         scrollingTimer?.invalidate()
     }
     
-    func speedScrolling(by: Float) {
-        scrollingUnit = by
+    func speedScrolling(by unit: Float) {
+        scrollingUnit = unit
+    }
+    
+    func getScrollingSpeed() -> Float {
+        return scrollingUnit
     }
     
     private func recordSelectedAction(_ record: Record) {
@@ -59,7 +69,7 @@ class ScrollRecordView: BaseCustomView, UITextViewDelegate {
     }
     
     @objc private func scrollTextView() {
-        if textView.contentSize.height > textView.contentOffset.y && !textView.text.isEmpty {
+        if textView.contentSize.height > textView.contentOffset.y && !(record?.getText()?.string.isEmpty == true) {
             UIView.animate(withDuration: 0.02) { [unowned self] in
                 self.textView.contentOffset = CGPoint(x: self.textView.contentOffset.x, y: self.textView.contentOffset.y + CGFloat(self.scrollingUnit))
             }

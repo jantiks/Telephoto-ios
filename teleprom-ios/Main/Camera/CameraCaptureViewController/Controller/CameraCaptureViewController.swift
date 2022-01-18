@@ -234,11 +234,13 @@ class CameraCaptureViewController: UIViewController {
         
         if sender.isSelected {
             sliderMode = .textSpeedChange
+            slider.value = scrollRecordView.getScrollingSpeed()
             transparancyChangeButton.isSelected = false
             sliderExplainerLabel.text = "camera.slider.explainer.speed.change".localized
         } else {
             sliderExplainerLabel.text = "camera.slider.explainer.transparancy.change".localized
             transparancyChangeButton.isSelected = true
+            slider.value = scrollRecordView.getBackgroundOpacity() * 4
             sliderMode = .transparancyChange
         }
     }
@@ -249,10 +251,12 @@ class CameraCaptureViewController: UIViewController {
         if sender.isSelected {
             sliderMode = .transparancyChange
             speedChangeButton.isSelected = false
+            slider.value = scrollRecordView.getBackgroundOpacity() * 4
             sliderExplainerLabel.text = "camera.slider.explainer.transparancy.change".localized
         }  else {
             speedChangeButton.isSelected = true
             sliderMode = .textSpeedChange
+            slider.value = scrollRecordView.getScrollingSpeed()
             sliderExplainerLabel.text = "camera.slider.explainer.speed.change".localized
         }
     }
