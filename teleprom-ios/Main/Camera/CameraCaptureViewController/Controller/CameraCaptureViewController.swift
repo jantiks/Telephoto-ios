@@ -13,7 +13,7 @@ fileprivate enum SliderMode {
     case textSpeedChange, transparancyChange
 }
 
-class CameraCaptureViewController: UIViewController {
+class CameraCaptureViewController: BaseViewController {
     
     @IBOutlet private weak var previewView: UIView!
     @IBOutlet private weak var scrollRecordView: ScrollRecordView!
@@ -226,7 +226,9 @@ class CameraCaptureViewController: UIViewController {
     
     @objc func appCameToForeground() {
         print("app enters foreground")
-        cameraConfig.startRunning()
+        if isCurrentlyVisible() {
+            cameraConfig.startRunning()
+        }
     }
     
     @IBAction func changeSpeedAction(_ sender: UIButton) {

@@ -33,6 +33,7 @@ class ScrollRecordView: BaseCustomView, UITextViewDelegate {
         selectButton.setTitle("main.tab.records.select.record".localized, for: .normal)
         setBackgroundOpacity(0.4)
         textView.delegate = self
+        addTapGesture()
     }
     
     func setBackgroundOpacity(_ opacity: Double) {
@@ -61,6 +62,17 @@ class ScrollRecordView: BaseCustomView, UITextViewDelegate {
         return scrollingUnit
     }
     
+    private func addTapGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        textView.addGestureRecognizer(tap)
+    }
+    
+    @objc private func handleTap(_ gesture: UITapGestureRecognizer) {
+        let vc = SelectRecordViewController()
+        vc.recordSelected = recordSelectedAction(_:)
+        AppDelegate.getController()?.present(vc, animated: true)
+    }
+    
     private func recordSelectedAction(_ record: Record) {
         self.record = record
         
@@ -74,11 +86,5 @@ class ScrollRecordView: BaseCustomView, UITextViewDelegate {
                 self.textView.contentOffset = CGPoint(x: self.textView.contentOffset.x, y: self.textView.contentOffset.y + CGFloat(self.scrollingUnit))
             }
         }
-    }
-    
-    @IBAction func selectAction(_ sender: UIButton) {
-        let vc = SelectRecordViewController()
-        vc.recordSelected = recordSelectedAction(_:)
-        AppDelegate.getController()?.present(vc, animated: true)
     }
 }
