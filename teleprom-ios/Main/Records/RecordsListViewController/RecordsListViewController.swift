@@ -16,6 +16,7 @@ class RecordsListViewController: BaseViewController {
     @IBOutlet private weak var selectionActionsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var dublicateButton: UIButton!
     @IBOutlet private weak var deletButton: UIButton!
+    @IBOutlet private weak var subscribeButton: UIButton!
     
     private var recordsConfigs: [RecordCellConfig] = []
     private var mode: RecordsListMode = .add
@@ -89,6 +90,7 @@ class RecordsListViewController: BaseViewController {
         let deleteButtonTitle = "records.delete.all".localized
         let title = mode == .add ? "main.tab.records.your.records".localized : "main.tab.records.select.record".localized
         
+        subscribeButton.setTitle("continue.with.premium".localized, for: .normal)
         selectButton.setTitle(selectButtonTitle, for: .normal)
         dublicateButton.setTitle(dublicateButtonTitle, for: .normal)
         deletButton.setTitle(deleteButtonTitle, for: .normal)
@@ -100,6 +102,12 @@ class RecordsListViewController: BaseViewController {
     
     @IBAction func selectAction(_ sender: UIButton) {
         toggleSelectionMode()
+    }
+    
+    @IBAction func subscribeAction(_ sender: UIButton) {
+        let vc = SubscriptionViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
     @IBAction func dublicateAction(_ sender: UIButton) {

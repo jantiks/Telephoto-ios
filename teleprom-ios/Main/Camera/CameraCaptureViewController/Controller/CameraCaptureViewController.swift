@@ -13,7 +13,7 @@ fileprivate enum SliderMode {
     case textSpeedChange, transparancyChange
 }
 
-class CameraCaptureViewController: BaseViewController {
+class CameraCaptureViewController: UIViewController {
     
     @IBOutlet private weak var previewView: UIView!
     @IBOutlet private weak var scrollRecordView: ScrollRecordView!
@@ -37,25 +37,27 @@ class CameraCaptureViewController: BaseViewController {
     private var videoRecordingStarted: Bool = false
     private var sliderMode: SliderMode = .textSpeedChange
     private var selectedAspectRatio: CGSize = CGSize(width: 9, height: 16)
+    private var isCurrentlyVisible = false
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        print("asd camera appear")
         getTabBar()?.tabBar.backgroundColor = .clear
         setCameraConfigIfHasAccess()
-        
-        print("appear")
+        isCurrentlyVisible = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        print("asd camera dissape")
         getTabBar()?.tabBar.backgroundColor = .tabBarGray
         getTabBar()?.tabBar.isHidden = false
         tabBarBg?.removeFromSuperview()
-        print("dissappear")
         removeRecButton()
         cameraConfig.stopRunning()
+        isCurrentlyVisible = false
     }
     
     override func viewDidLoad() {
@@ -226,7 +228,7 @@ class CameraCaptureViewController: BaseViewController {
     
     @objc func appCameToForeground() {
         print("app enters foreground")
-        if isCurrentlyVisible() {
+        if isCurrentlyVisible {
             cameraConfig.startRunning()
         }
     }
