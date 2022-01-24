@@ -30,10 +30,14 @@ class ScrollRecordView: BaseCustomView, UITextViewDelegate {
     override func commonInit() {
         super.commonInit()
         
-        selectButton.setTitle("main.tab.records.select.record".localized, for: .normal)
+        languageConfigure()
         setBackgroundOpacity(0.4)
         textView.delegate = self
         addTapGesture()
+        
+        LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
+            self?.languageConfigure()
+        })])
     }
     
     func setBackgroundOpacity(_ opacity: Double) {
@@ -60,6 +64,10 @@ class ScrollRecordView: BaseCustomView, UITextViewDelegate {
     
     func getScrollingSpeed() -> Float {
         return scrollingUnit
+    }
+    
+    private func languageConfigure( ) {
+        selectButton.setTitle("main.tab.records.select.record".localized, for: .normal)
     }
     
     private func addTapGesture() {

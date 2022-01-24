@@ -66,6 +66,10 @@ class CameraCaptureViewController: UIViewController {
         cameraConfig.durationUpdated = { duration in
             print("asd duration \(duration)")
         }
+        
+        LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
+            self?.languageConfigure()
+        })])
     }
     
     override func viewDidLayoutSubviews() {
@@ -105,6 +109,14 @@ class CameraCaptureViewController: UIViewController {
         
         if isDragging {
             isDragging = false
+        }
+    }
+    
+    private func languageConfigure() {
+        if transparancyChangeButton.isSelected {
+            sliderExplainerLabel.text = "camera.slider.explainer.transparancy.change".localized
+        } else {
+            sliderExplainerLabel.text = "camera.slider.explainer.speed.change".localized
         }
     }
     

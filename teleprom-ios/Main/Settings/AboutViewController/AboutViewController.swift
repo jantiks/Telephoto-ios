@@ -26,6 +26,7 @@ class AboutViewController: BaseViewController {
     private func initUI() {
         setTableData()
         aboutTable.reloadData()
+        aboutTable.separatorStyle = .none
         title = "settings.about".localized
     }
     
@@ -47,9 +48,13 @@ extension AboutViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            
+            if let url = URL(string: "https://pages.flycricket.io/telepromter/terms.html") {
+                UIApplication.shared.open(url)
+            }
         } else if indexPath.row == 1 {
-            
+            if let url = URL(string: "https://pages.flycricket.io/telepromter/privacy.html") {
+                UIApplication.shared.open(url)
+            }
         } else if indexPath.row == 2 {
             
         } else if indexPath.row == 3 {
