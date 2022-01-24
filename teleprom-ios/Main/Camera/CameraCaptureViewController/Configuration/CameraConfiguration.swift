@@ -5,7 +5,6 @@
 //  Created by Tigran Arsenyan on 1/6/22.
 //
 
-import Foundation
 import AVFoundation
 import UIKit
 
@@ -30,23 +29,27 @@ class CameraConfiguration: NSObject {
         case video
     }
     
-    var captureSession: AVCaptureSession?
-    var frontCamera: AVCaptureDevice?
-    var rearCamera: AVCaptureDevice?
-    var audioDevice: AVCaptureDevice?
+    private var captureSession: AVCaptureSession?
+    private var frontCamera: AVCaptureDevice?
+    private var rearCamera: AVCaptureDevice?
+    private var audioDevice: AVCaptureDevice?
     
-    var currentCameraPosition: CameraPosition?
-    var frontCameraInput: AVCaptureDeviceInput?
-    var rearCameraInput: AVCaptureDeviceInput?
-    var photoOutput: AVCapturePhotoOutput?
-    var previewLayer: AVCaptureVideoPreviewLayer?
-    var flashMode: AVCaptureDevice.FlashMode = AVCaptureDevice.FlashMode.off
-    var photoCaptureCompletionBlock: ((UIImage?, Error?) -> Void)?
-    var videoRecordCompletionBlock: ((URL?, Error?) -> Void)?
+    private var currentCameraPosition: CameraPosition?
+    private var frontCameraInput: AVCaptureDeviceInput?
+    private var rearCameraInput: AVCaptureDeviceInput?
+    private var photoOutput: AVCapturePhotoOutput?
+    private var previewLayer: AVCaptureVideoPreviewLayer?
+    private var flashMode: AVCaptureDevice.FlashMode = AVCaptureDevice.FlashMode.off
+    private var photoCaptureCompletionBlock: ((UIImage?, Error?) -> Void)?
+    private var videoRecordCompletionBlock: ((URL?, Error?) -> Void)?
     
-    var videoOutput: AVCaptureMovieFileOutput?
-    var audioInput: AVCaptureDeviceInput?
-    var outputType: OutputType?
+    private var videoOutput: AVCaptureMovieFileOutput?
+    private var audioInput: AVCaptureDeviceInput?
+    private var outputType: OutputType?
+    private var durationTimer: Timer?
+    private var duration: Int = 0
+    
+    var durationUpdated: ((Int) -> ())?
     
     deinit {
         print("deinit \(CameraConfiguration.self)")
@@ -107,6 +110,7 @@ extension CameraConfiguration {
         try? FileManager.default.removeItem(at: fileUrl)
         videoOutput?.startRecording(to: fileUrl, recordingDelegate: self)
         videoRecordCompletionBlock = completion
+        initDurationTimer()
     }
     
     func stopRecording(completion: @escaping (Error?)->Void) {
@@ -115,6 +119,19 @@ extension CameraConfiguration {
             return
         }
         videoOutput?.stopRecording()
+        durationTimer?.invalidate()
+    }
+    
+    private func initDurationTimer() {
+        duration = 0
+        durationTimer?.invalidate()
+        
+        durationTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(increaseDuration), userInfo: nil, repeats: true)
+    }
+    
+    @objc private func increaseDuration() {
+        duration += 1
+        durationUpdated?(duration)
     }
     
     private func createCaptureSession() {

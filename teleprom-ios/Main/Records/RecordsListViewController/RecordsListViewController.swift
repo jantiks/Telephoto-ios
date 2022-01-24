@@ -17,6 +17,7 @@ class RecordsListViewController: BaseViewController {
     @IBOutlet private weak var dublicateButton: UIButton!
     @IBOutlet private weak var deletButton: UIButton!
     @IBOutlet private weak var subscribeButton: UIButton!
+    @IBOutlet private weak var subscriptionView: UIView!
     
     private var recordsConfigs: [RecordCellConfig] = []
     private var mode: RecordsListMode = .add
@@ -54,6 +55,7 @@ class RecordsListViewController: BaseViewController {
     }
     
     private func initUI() {
+        subscriptionView.isHidden = true
         interItemSpace = view.bounds.width * 0.05
         selectionActionsView.backgroundColor = .tabBarGray
         

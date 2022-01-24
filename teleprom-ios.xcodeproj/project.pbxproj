@@ -54,6 +54,8 @@
 		A03273702778526E008A138C /* LanguageSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032736E2778526E008A138C /* LanguageSelectionViewController.swift */; };
 		A03273712778526E008A138C /* LanguageSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A032736F2778526E008A138C /* LanguageSelectionViewController.xib */; };
 		A032737427785497008A138C /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032737327785497008A138C /* Languages.swift */; };
+		A042AE09279E130A00F38C5E /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042AE07279E130A00F38C5E /* OnboardingViewController.swift */; };
+		A042AE0A279E130A00F38C5E /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A042AE08279E130A00F38C5E /* OnboardingViewController.xib */; };
 		A0441A7827861F0700578EAE /* CameraCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0441A7627861F0700578EAE /* CameraCaptureViewController.swift */; };
 		A0441A7927861F0700578EAE /* CameraCaptureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0441A7727861F0700578EAE /* CameraCaptureViewController.xib */; };
 		A0441A7C2786318200578EAE /* CameraConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0441A7B2786318200578EAE /* CameraConfiguration.swift */; };
@@ -161,6 +163,8 @@
 		A032736E2778526E008A138C /* LanguageSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionViewController.swift; sourceTree = "<group>"; };
 		A032736F2778526E008A138C /* LanguageSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageSelectionViewController.xib; sourceTree = "<group>"; };
 		A032737327785497008A138C /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
+		A042AE07279E130A00F38C5E /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		A042AE08279E130A00F38C5E /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		A0441A7627861F0700578EAE /* CameraCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureViewController.swift; sourceTree = "<group>"; };
 		A0441A7727861F0700578EAE /* CameraCaptureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraCaptureViewController.xib; sourceTree = "<group>"; };
 		A0441A7B2786318200578EAE /* CameraConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraConfiguration.swift; sourceTree = "<group>"; };
@@ -293,6 +297,7 @@
 		A01C907D277514CC0098EEB8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A042AE06279E12A600F38C5E /* Onboarding */,
 				A01C908927751A350098EEB8 /* Base */,
 				A01C908B27751A500098EEB8 /* TabBar */,
 				A0B45B81277A462C00E8B0D7 /* Records */,
@@ -566,6 +571,15 @@
 				A032737327785497008A138C /* Languages.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		A042AE06279E12A600F38C5E /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A042AE07279E130A00F38C5E /* OnboardingViewController.swift */,
+				A042AE08279E130A00F38C5E /* OnboardingViewController.xib */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		A0441A7327861E4600578EAE /* Camera */ = {
@@ -859,6 +873,7 @@
 				A0301E792788E46900B40BE8 /* PlayerProgressView.xib in Resources */,
 				A04E6500279C283500A54C99 /* PremiumFeatureCell.xib in Resources */,
 				A0B45B8B277A4C3000E8B0D7 /* AddRecordCell.xib in Resources */,
+				A042AE0A279E130A00F38C5E /* OnboardingViewController.xib in Resources */,
 				A01C90C327779DD90098EEB8 /* SettingsTableViewCell.xib in Resources */,
 				A08153AC277869E200AADED9 /* HelpViewController.xib in Resources */,
 				A03273712778526E008A138C /* LanguageSelectionViewController.xib in Resources */,
@@ -984,6 +999,7 @@
 				A0301E712788C53900B40BE8 /* CustomPlayerView.swift in Sources */,
 				A0441A7C2786318200578EAE /* CameraConfiguration.swift in Sources */,
 				A059E9DC278B0EE600C0153C /* SelectRecordViewController.swift in Sources */,
+				A042AE09279E130A00F38C5E /* OnboardingViewController.swift in Sources */,
 				A032736D277846FA008A138C /* SetDefaultCommands.swift in Sources */,
 				A04E64FF279C283500A54C99 /* PremiumFeatureCell.swift in Sources */,
 				A0B47B15278071F0004C7526 /* UIButtonExtension.swift in Sources */,

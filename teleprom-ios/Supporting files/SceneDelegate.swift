@@ -15,10 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        let tabBar = TabBarViewController()
-        let home = BaseNavigationController(rootViewController: tabBar)
-        (UIApplication.shared.delegate as? AppDelegate)?.tabBarController = tabBar
-        self.window?.rootViewController = home
+        self.window?.rootViewController = getInitialViewController()
         window?.makeKeyAndVisible()
         window?.windowScene = windowScene
     }
@@ -51,6 +48,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
     
-    
+    private func getInitialViewController() -> UIViewController? {                
+        if UserDefaults.standard.bool(forKey: "UserHasSeenOnboarding") {
+            let tabBar = TabBarViewController()
+            let home = BaseNavigationController(rootViewController: tabBar)
+            (UIApplication.shared.delegate as? AppDelegate)?.tabBarController = tabBar
+            
+            return home
+        }
+        
+        return OnboardingViewController()
+    }
 }
 

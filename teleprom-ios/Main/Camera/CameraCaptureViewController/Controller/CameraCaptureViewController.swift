@@ -42,7 +42,6 @@ class CameraCaptureViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        print("asd camera appear")
         getTabBar()?.tabBar.backgroundColor = .clear
         setCameraConfigIfHasAccess()
         isCurrentlyVisible = true
@@ -51,7 +50,6 @@ class CameraCaptureViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        print("asd camera dissape")
         getTabBar()?.tabBar.backgroundColor = .tabBarGray
         getTabBar()?.tabBar.isHidden = false
         tabBarBg?.removeFromSuperview()
@@ -65,6 +63,9 @@ class CameraCaptureViewController: UIViewController {
 
         registerNotification()
         sliderExplainerLabel.text = "camera.slider.explainer.speed.change".localized
+        cameraConfig.durationUpdated = { duration in
+            print("asd duration \(duration)")
+        }
     }
     
     override func viewDidLayoutSubviews() {

@@ -18,6 +18,7 @@
                 <outlet property="selectionActionsView" destination="jZo-OE-0eB" id="9WX-vt-fif"/>
                 <outlet property="selectionActionsViewHeightConstraint" destination="NfT-6N-V2k" id="KyW-bZ-BIs"/>
                 <outlet property="subscribeButton" destination="pTm-zF-LCc" id="xgM-EF-YZN"/>
+                <outlet property="subscriptionView" destination="Rlj-VT-12R" id="LOA-z6-bOF"/>
                 <outlet property="titleLabel" destination="qxU-R5-BtI" id="q66-L7-hp5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -60,7 +61,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="vsa-FO-pvt">
                     <rect key="frame" x="0.0" y="114" width="414" height="782"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlj-VT-12R">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlj-VT-12R" userLabel="subscriptionView">
                             <rect key="frame" x="15" y="0.0" width="384" height="50"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTm-zF-LCc" userLabel="subscribe button">
