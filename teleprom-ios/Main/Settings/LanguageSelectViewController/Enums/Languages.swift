@@ -33,7 +33,7 @@ enum Languages: String, CaseIterable {
     }
     
     private static func getDeviceLanguageCode() -> String {
-        return Locale.current.languageCode ?? "en"
+        return String((UserDefaults.standard.value(forKey: "AppleLocale") as! String).prefix(2))
     }
     
     static func setAppLanguage(code: String) {

@@ -24,14 +24,14 @@ class BaseViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("asd will appear \(self)")
+
         isVisible = true
         navigationController?.navigationBar.isHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        print("asd disappear \(self)")
+
         isVisible = false
     }
     
