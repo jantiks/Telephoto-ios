@@ -39,6 +39,10 @@ class CameraCaptureViewController: UIViewController {
     private var selectedAspectRatio: CGSize = CGSize(width: 9, height: 16)
     private var isCurrentlyVisible = false
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

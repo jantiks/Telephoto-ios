@@ -18,10 +18,6 @@ class BaseTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UITabBar.appearance().backgroundColor = .tabBarGray
-        UITabBar.appearance().tintColor = .white
-        UITabBar.appearance().unselectedItemTintColor = .gray
-        
         LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
             self?.updateTabBar()
         })])
