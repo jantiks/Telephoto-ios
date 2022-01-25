@@ -12,11 +12,50 @@ class OnboardingViewController: BaseViewController {
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var continueButton: UIButton!
     
+    // first page top labels
+    @IBOutlet weak var firstTitleLabel: UILabel!
+    @IBOutlet weak var firstSubtitle: UILabel!
+    @IBOutlet weak var secondSubtitle: UILabel!
+    @IBOutlet weak var thirdSubtitle: UILabel!
+    
+    // first page bottom labels
+    @IBOutlet weak var secondTitleLabel: UILabel!
+    @IBOutlet weak var fifthSubtitle: UILabel!
+    @IBOutlet weak var sixthSubtitle: UILabel!
+    @IBOutlet weak var seventhSubtitle: UILabel!
+    @IBOutlet weak var eightSubtitle: UILabel!
+    
+    // secnod page labels
+    @IBOutlet weak var thirdTitleLabel: UILabel!
+    @IBOutlet weak var welcomeDescription: UILabel!
+    
     private let maxPageCount = 1
     
-    private func getCurrentPage() -> Int {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        print("CURRENT PAGE \(Int(floorf(Float(scrollView.contentOffset.x) / Float(scrollView.frame.size.width))))")
+        languageConfigure()
+    }
+    
+    private func languageConfigure() {
+        firstTitleLabel.text = "how.it.works".localized
+        firstSubtitle.text = "tap.subtitle".localized
+        secondSubtitle.text = "press.subtitle".localized
+        thirdSubtitle.text = "change.subtitle".localized
+        
+        secondTitleLabel.text = "it.is.nice.choice".localized
+        fifthSubtitle.text = "youtube.subtitle".localized
+        sixthSubtitle.text = "broadcaster.subtitle".localized
+        seventhSubtitle.text = "business.subtitle".localized
+        eightSubtitle.text = "tv.subtitle".localized
+        
+        thirdTitleLabel.text = "welcome.title".localized
+        welcomeDescription.text = "welcome.subtitle".localized
+        
+        continueButton.setTitle("continue".localized, for: .normal)
+    }
+    
+    private func getCurrentPage() -> Int {
         return Int(floorf(Float(scrollView.contentOffset.x) / Float(scrollView.frame.size.width)))
     }
     
