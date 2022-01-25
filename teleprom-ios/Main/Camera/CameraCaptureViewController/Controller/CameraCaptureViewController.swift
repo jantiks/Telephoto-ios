@@ -58,8 +58,10 @@ class CameraCaptureViewController: UIViewController {
         getTabBar()?.tabBar.isHidden = false
         tabBarBg?.removeFromSuperview()
         removeRecButton()
-        cameraConfig.stopRunning()
         isCurrentlyVisible = false
+        DispatchQueue.main.async {
+            self.cameraConfig.stopRunning()
+        }
     }
     
     override func viewDidLoad() {
@@ -70,7 +72,7 @@ class CameraCaptureViewController: UIViewController {
         cameraConfig.durationUpdated = { duration in
             print("asd duration \(duration)")
         }
-        
+
         LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
             self?.languageConfigure()
         })])
