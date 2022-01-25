@@ -46,6 +46,7 @@ class AspectRatioViewController: BaseViewController {
 
     private func initUI() {
         titleLabel.text = "aspect.ratio.title".localized
+        aspectRatiosTableView.separatorStyle = .none
         setSelectButton()
     }
     
