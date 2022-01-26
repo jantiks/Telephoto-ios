@@ -31,6 +31,7 @@ class CameraCaptureViewController: UIViewController {
     private let minScrollTextViewHeight: Double = 200
     
     private var recButton: UIButton?
+    private var recLabel: UILabel?
     private var tabBarBg: VisualEffectWithIntensityView?
     private var cameraConfig: CameraConfiguration = CameraConfiguration()
     private var isDragging = false
@@ -69,8 +70,8 @@ class CameraCaptureViewController: UIViewController {
 
         registerNotification()
         sliderExplainerLabel.text = "camera.slider.explainer.speed.change".localized
-        cameraConfig.durationUpdated = { duration in
-            print("asd duration \(duration)")
+        cameraConfig.durationUpdated = { [weak self] duration in
+            self?.recLabel?.text = "\(Double(duration).getTimeFormattedWithoutHour())"
         }
 
         LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
@@ -199,10 +200,18 @@ class CameraCaptureViewController: UIViewController {
         let recButtonYPosition = centerButtonFrame.minY + (centerButtonFrame.height - recButtonSize.height) / 2 - 8 // 8 is the bottom inset
         recButton?.frame = CGRect(x: recButtonXPosition , y: recButtonYPosition, width: recButtonSize.width, height: recButtonSize.width)
         recButton?.setBackgroundImage(UIImage(named: "startRec")!, for: .normal)
+        
+        recLabel = UILabel()
+        recLabel?.textAlignment = .center
+        recLabel?.textColor = .white
+        recLabel?.font = recLabel?.font.withSize(13)
+        getTabBar()?.view.addSubview(recLabel!)
+        recLabel?.frame = recButton!.frame
     }
     
     private func removeRecButton() {
         recButton?.removeFromSuperview()
+        recLabel?.removeFromSuperview()
     }
     
     private func setTabBarBg() {
@@ -239,8 +248,9 @@ class CameraCaptureViewController: UIViewController {
     @objc func appMovedToBackground() {
         if videoRecordingStarted {
             videoRecordingStarted = false
-            cameraConfig.stopRecording { (error) in
+            cameraConfig.stopRecording { [weak self] (error) in
                 print(error ?? "Video recording error")
+                self?.recLabel?.isHidden = true
             }
         }
     }
@@ -249,6 +259,7 @@ class CameraCaptureViewController: UIViewController {
         print("app enters foreground")
         if isCurrentlyVisible {
             cameraConfig.startRunning()
+            recLabel?.isHidden = false
         }
     }
     
@@ -307,12 +318,14 @@ class CameraCaptureViewController: UIViewController {
             recordingStarted(false)
             
             scrollRecordView.stopScrolling()
-            cameraConfig.stopRecording { (error) in
+            cameraConfig.stopRecording { [weak self] (error) in
                 print(error ?? "Video recording error")
+                self?.recLabel?.isHidden = true
             }
         } else if !videoRecordingStarted {
             recordingStarted(true)
             
+            recLabel?.isHidden = false
             cameraConfig.recordVideo { [weak self] (url, error) in
                 guard let self = self else { return }
                 guard let url = url else {
