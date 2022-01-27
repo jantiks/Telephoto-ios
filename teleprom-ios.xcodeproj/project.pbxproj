@@ -67,7 +67,6 @@
 		A04E6502279C2B2700A54C99 /* PremiumFeatureConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04E6501279C2B2700A54C99 /* PremiumFeatureConfig.swift */; };
 		A04E6506279CA12200A54C99 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04E6505279CA12200A54C99 /* IAPManager.swift */; };
 		A04E6509279CA24300A54C99 /* SubscriptionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04E6508279CA24300A54C99 /* SubscriptionType.swift */; };
-		A04E650B279CA7B100A54C99 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A04E650A279CA7B100A54C99 /* StoreKit.framework */; };
 		A059E9D1278AF21200C0153C /* UITabBarControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059E9D0278AF21200C0153C /* UITabBarControllerExtension.swift */; };
 		A059E9D5278B08BF00C0153C /* ScrollRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059E9D3278B08BF00C0153C /* ScrollRecordView.swift */; };
 		A059E9D6278B08BF00C0153C /* ScrollRecordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A059E9D4278B08BF00C0153C /* ScrollRecordView.xib */; };
@@ -176,7 +175,6 @@
 		A04E6501279C2B2700A54C99 /* PremiumFeatureConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumFeatureConfig.swift; sourceTree = "<group>"; };
 		A04E6505279CA12200A54C99 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		A04E6508279CA24300A54C99 /* SubscriptionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionType.swift; sourceTree = "<group>"; };
-		A04E650A279CA7B100A54C99 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A059E9D0278AF21200C0153C /* UITabBarControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarControllerExtension.swift; sourceTree = "<group>"; };
 		A059E9D3278B08BF00C0153C /* ScrollRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollRecordView.swift; sourceTree = "<group>"; };
 		A059E9D4278B08BF00C0153C /* ScrollRecordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollRecordView.xib; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				776E92F157D1B89515303503 /* Pods_teleprom_ios.framework in Frameworks */,
-				A04E650B279CA7B100A54C99 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +234,6 @@
 		14CD6CEEF1E0C2D0DF5ABC16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A04E650A279CA7B100A54C99 /* StoreKit.framework */,
 				DB97AD24EF2B45783D20B7C4 /* Pods_teleprom_ios.framework */,
 			);
 			name = Frameworks;
