@@ -85,6 +85,7 @@ extension CameraConfiguration {
     
     func stopRunning() {
         captureSession?.stopRunning()
+        durationTimer?.invalidate()
     }
     
     func displayPreview(_ view: UIView) throws {

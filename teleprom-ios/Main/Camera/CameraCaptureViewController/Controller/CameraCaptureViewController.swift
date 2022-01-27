@@ -31,7 +31,7 @@ class CameraCaptureViewController: UIViewController {
     private let minScrollTextViewHeight: Double = 200
     
     private var recButton: UIButton?
-    private var recLabel: UILabel?
+    private var durationLabel: UILabel?
     private var tabBarBg: VisualEffectWithIntensityView?
     private var cameraConfig: CameraConfiguration = CameraConfiguration()
     private var isDragging = false
@@ -71,7 +71,7 @@ class CameraCaptureViewController: UIViewController {
         registerNotification()
         sliderExplainerLabel.text = "camera.slider.explainer.speed.change".localized
         cameraConfig.durationUpdated = { [weak self] duration in
-            self?.recLabel?.text = "\(Double(duration).getTimeFormattedWithoutHour())"
+            self?.durationLabel?.text = "\(Double(duration).getTimeFormattedWithoutHour())"
         }
 
         LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
@@ -139,7 +139,7 @@ class CameraCaptureViewController: UIViewController {
     private func setCameraConfigIfHasAccess() {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
-            self.setCameraConfig()
+            setCameraConfig()
         case .notDetermined:
             AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
                 DispatchQueue.main.async {
@@ -201,17 +201,19 @@ class CameraCaptureViewController: UIViewController {
         recButton?.frame = CGRect(x: recButtonXPosition , y: recButtonYPosition, width: recButtonSize.width, height: recButtonSize.width)
         recButton?.setBackgroundImage(UIImage(named: "startRec")!, for: .normal)
         
-        recLabel = UILabel()
-        recLabel?.textAlignment = .center
-        recLabel?.textColor = .white
-        recLabel?.font = recLabel?.font.withSize(13)
-        getTabBar()?.view.addSubview(recLabel!)
-        recLabel?.frame = recButton!.frame
+        // duration label
+        durationLabel = UILabel()
+        durationLabel?.textAlignment = .center
+        durationLabel?.textColor = .white
+        durationLabel?.font = durationLabel?.font.withSize(13)
+        getTabBar()?.view.addSubview(durationLabel!)
+        durationLabel?.frame = recButton!.frame
+        durationLabel?.isHidden = true
     }
     
     private func removeRecButton() {
         recButton?.removeFromSuperview()
-        recLabel?.removeFromSuperview()
+        durationLabel?.removeFromSuperview()
     }
     
     private func setTabBarBg() {
@@ -224,6 +226,7 @@ class CameraCaptureViewController: UIViewController {
     }
     
     private func recordingStarted(_ started: Bool) {
+        durationLabel?.isHidden = !started
         videoRecordingStarted = started
         getTabBar()?.tabBar.isHidden = started
         tabBarBg?.isHidden = started
@@ -247,10 +250,9 @@ class CameraCaptureViewController: UIViewController {
     
     @objc func appMovedToBackground() {
         if videoRecordingStarted {
-            videoRecordingStarted = false
-            cameraConfig.stopRecording { [weak self] (error) in
+            recordingStarted(false)
+            cameraConfig.stopRecording { (error) in
                 print(error ?? "Video recording error")
-                self?.recLabel?.isHidden = true
             }
         }
     }
@@ -259,7 +261,6 @@ class CameraCaptureViewController: UIViewController {
         print("app enters foreground")
         if isCurrentlyVisible {
             cameraConfig.startRunning()
-            recLabel?.isHidden = false
         }
     }
     
@@ -320,12 +321,10 @@ class CameraCaptureViewController: UIViewController {
             scrollRecordView.stopScrolling()
             cameraConfig.stopRecording { [weak self] (error) in
                 print(error ?? "Video recording error")
-                self?.recLabel?.isHidden = true
             }
         } else if !videoRecordingStarted {
             recordingStarted(true)
             
-            recLabel?.isHidden = false
             cameraConfig.recordVideo { [weak self] (url, error) in
                 guard let self = self else { return }
                 guard let url = url else {
