@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectRecordViewController" customModule="teleprom_ios" customModuleProvider="target">
+            <connections>
+                <outlet property="recordsCollectionView" destination="bEF-N4-7dX" id="UUh-SW-3SF"/>
+                <outlet property="selectButton" destination="zvf-kq-MPW" id="EA1-lm-Zrz"/>
+                <outlet property="titleLabel" destination="yXS-CG-r4f" id="0Y9-GC-NQn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="heA-dM-6iU" userLabel="title view">
+                    <rect key="frame" x="15" y="59" width="384" height="33.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXS-CG-r4f" userLabel="title label">
+                            <rect key="frame" x="0.0" y="0.0" width="70" height="33.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvf-kq-MPW" userLabel="selectButton">
+                            <rect key="frame" x="315.5" y="1.5" width="68.5" height="31"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Button">
+                                <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="selectCancelAction:" destination="-1" eventType="touchUpInside" id="8q8-Qc-kMz"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="zvf-kq-MPW" firstAttribute="centerY" secondItem="heA-dM-6iU" secondAttribute="centerY" id="1Wu-kY-6If"/>
+                        <constraint firstAttribute="trailing" secondItem="zvf-kq-MPW" secondAttribute="trailing" id="73d-4V-p42"/>
+                        <constraint firstAttribute="bottom" secondItem="yXS-CG-r4f" secondAttribute="bottom" id="91Z-jI-muy"/>
+                        <constraint firstItem="yXS-CG-r4f" firstAttribute="leading" secondItem="heA-dM-6iU" secondAttribute="leading" id="c4m-hr-qHb"/>
+                        <constraint firstItem="yXS-CG-r4f" firstAttribute="top" secondItem="heA-dM-6iU" secondAttribute="top" id="ngC-ch-RHI"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bEF-N4-7dX">
+                    <rect key="frame" x="0.0" y="107.5" width="414" height="788.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mAN-Su-qZ4">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <constraints>
+                <constraint firstItem="heA-dM-6iU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="A5S-mt-DNf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="heA-dM-6iU" secondAttribute="trailing" constant="15" id="OAs-ib-Ps2"/>
+                <constraint firstAttribute="bottom" secondItem="bEF-N4-7dX" secondAttribute="bottom" id="U3N-eP-q4D"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bEF-N4-7dX" secondAttribute="trailing" id="UT5-6c-PFk"/>
+                <constraint firstItem="bEF-N4-7dX" firstAttribute="top" secondItem="heA-dM-6iU" secondAttribute="bottom" constant="15" id="Wrt-lI-xvF"/>
+                <constraint firstItem="heA-dM-6iU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="k89-Iw-Mfx"/>
+                <constraint firstItem="bEF-N4-7dX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pzx-Gl-VDx"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
+        </view>
+    </objects>
+</document>

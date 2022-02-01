@@ -1,0 +1,76 @@
+/* 
+  Localizable.strings
+  teleprom-ios
+
+  Created by Tigran Arsenyan on 12/25/21.
+  
+*/
+
+"main.tab.records" = "Records";
+"main.tab.settings" = "Settings";
+"settings.video.settings" = "Video Settings";
+"settings.language" = "Language";
+"settings.help" = "Help";
+"settings.about" = "About";
+"hd.720p" = "720P HD, 30 fps";
+"hd.1080p" = "1080P HD, 30 fps";
+"hd.1080p.60fps" = "1080P HD, 60 fps";
+"settings.explantation.label" = "A minute of video will contain:\n• 40  MB for 720р HD, 30 fps (less space)\n• 60  MB for 1080р HD, fps (default)\n• 90  MB for 1080р HD, 60 fps (smoothed out)";
+"settings.help.explanation" = "For errors or suggestions, you can contact us by Email";
+"settings.help.copy" = "Copy";
+"settings.help.copied" = "Copied";
+"about.user.agreement" = "User agreement";
+"about.policy" = "Privacy Policy";
+"about.share" = "Share app";
+"about.rate" = "Rate app";
+"main.tab.records.your.records" = "Your records";
+"main.tab.records.select.record" = "Select a record";
+"records.mode.select.button.title" = "Select";
+"records.mode.cancel.button.title" = "Cancel";
+"record.navbar.save" = "Save";
+"record.dublicate" = "(Copy)";
+"record.delete.popup.all" = "Do You definitely want to delete all records?";
+"record.delete.popup.single" = "Do You definitely want to delete this record?";
+"alert.delete" = "Delete";
+"alert.delete.all" = "Delete all";
+"alert.cancel" = "Cancel";
+"records.dublicate" = "Dublicate";
+"records.delete.all" = "Delete all";
+"create.record.title.text.placeholder" = "Title goes here";
+"create.record.content.text.placeholder" = "Enter some text";
+"video.delete" = "Delete";
+"video.download" = "Download";
+"loading.text" = "Loading";
+"done.text" = "Done";
+"video.delete.alert.message" = "Do you really want to delete this video?";
+"camera.slider.explainer.speed.change" = "Reading speed";
+"camera.slider.explainer.transparancy.change" = "Transparancy of background";
+"standart" = "Standart";
+"aspect.ratio.title" = "Choose aspect ratio";
+"aspect.ratio.instagram.story" = "Story";
+"aspect.ratio.publication" = "Publication";
+"continue.with.premium" = "Continue with premium";
+"with.premium" = "with Premium";
+"subscription.description" = "Try 'Premium' free for 3 days, then  2400₽/month.";
+"subscribe.now" = "Subscribe now";
+"privacy" = "Privacy";
+"restore" = "Restore";
+"terms" = "Terms";
+"export.videos.title" = "Exporting captured videos";
+"export.videos.subtitle" = "Unlimited video downloads";
+"turn.off.ads.title" = "Disablied ads";
+"turn.off.ads.subtitle" = "Forever";
+"apsect.ratio.title" = "Screen resolution";
+"apsect.ratio.subtitle" = "Adaptive screen resolution for any social network";
+"continue" = "Continue";
+"how.it.works" = "How it works";
+"tap.subtitle" = "Tap «+» button to create scripts";
+"press.subtitle" = "Press record and read the script on the screen";
+"change.subtitle" = "Set the speed of the crawl line";
+"it.is.nice.choice" = "Who will we help?";
+"youtube.subtitle" = "Youtubers, vlogger or influencer";
+"broadcaster.subtitle" = "Broadcaster, filmmaker, musician & singer";
+"business.subtitle" = "Business professional";
+"tv.subtitle" = "Self TV producer, or any public speaking!";
+"welcome.title" = "Welcome to our Telepromter";
+"welcome.subtitle" = "Record videos with unusual ease! You don't have to worry that you'll forget something while addressing your audience, just open your pocket teleprompter.";

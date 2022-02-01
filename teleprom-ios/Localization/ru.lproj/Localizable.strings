@@ -1,0 +1,76 @@
+/* 
+  Localizable.strings
+  teleprom-ios
+
+  Created by Tigran Arsenyan on 12/25/21.
+  
+*/
+
+"main.tab.records" = "Записи";
+"main.tab.settings" = "Настройки";
+"settings.video.settings" = "Настройка видео";
+"settings.language" = "Язык";
+"settings.help" = "Помощь";
+"settings.about" = "О приложении";
+"hd.720p" = "720P HD, 30 кадр/с";
+"hd.1080p" = "1080P HD, 30 кадр/с";
+"hd.1080p.60fps" = "1080P HD, 60 кадр/с";
+"settings.explantation.label" = "Минута видео составит примерно:\n• 40  МБ при 720р HD, 30 кадр/с (меньше места)\n• 60  МБ при 1080р HD, 30 кадр/с (по умолчанию)\n• 90  МБ при 1080р HD, 60 кадр/с (сглаженно)";
+"settings.help.explanation" = "При ошибках или предложениях вы можете связаться с нами через электронную почту";
+"settings.help.copy" = "Копировать";
+"settings.help.copied" = "Скопированно";
+"about.user.agreement" = "Пользовательское соглашение";
+"about.policy" = "Политика конфиденциальности";
+"about.share" = "Поделиться приложеннием";
+"about.rate" = "Оценить приложение";
+"main.tab.records.your.records" = "Ваши записи";
+"main.tab.records.select.record" = "Выберете запись";
+"records.mode.select.button.title" = "Выбрать";
+"records.mode.cancel.button.title" = "Отменить";
+"record.navbar.save" = "Сохранить";
+"record.dublicate" = "(Копия)";
+"record.delete.popup.all" = "Вы точно хотите удалить все записи?";
+"record.delete.popup.single" = "Вы точно хотите удалить запись?";
+"alert.delete" = "Удалить";
+"alert.delete.all" = "Удалить все";
+"alert.cancel" = "Отмена";
+"records.dublicate" = "Дублировать";
+"records.delete.all" = "Удалить все";
+"create.record.title.text.placeholder" = "Название идет здесь";
+"create.record.content.text.placeholder" = "Введите текст";
+"video.delete" = "Удалить";
+"video.download" = "Скачать";
+"loading.text" = "Загрузка";
+"done.text" = "Завершено";
+"video.delete.alert.message" = "Вы точно хотите удалить видео?";
+"camera.slider.explainer.speed.change" = "Скорость чтения";
+"camera.slider.explainer.transparancy.change" = "Прозрачность фона";
+"standart" = "Стандарт";
+"aspect.ratio.title" = "Выберете разрешение";
+"aspect.ratio.instagram.story" = "История";
+"aspect.ratio.publication" = "Публикация";
+"continue.with.premium" = "Продолжить с Премиум";
+"with.premium" = "с Премиум";
+"subscription.description" = "Попробуйте «Премиум» бесплатно 3 дня, и после  2400₽/мес.";
+"subscribe.now" = "Оформить сейчас";
+"privacy" = "Privacy";
+"restore" = "Restore";
+"terms" = "Terms";
+"export.videos.title" = "Экспорт отснятых видео";
+"export.videos.subtitle" = "Безлимитное скачивание видео на телефон";
+"turn.off.ads.title" = "Отключение рекламы";
+"turn.off.ads.subtitle" = "Навсегда";
+"apsect.ratio.title" = "Разрешение экрана";
+"apsect.ratio.subtitle" = "Адаптивное разрешение экрана под любую соц. сеть";
+"continue" = "Продолжить";
+"how.it.works" = "Как это работает:";
+"tap.subtitle" = "Нажмите кнопку «+», чтобы создать скрипты";
+"press.subtitle" = "Нажмите запись и прочитайте сценарий на экране";
+"change.subtitle" = "Настройте скорость прокрутки текста под себя";
+"it.is.nice.choice" = "Для кого мы полезны?";
+"youtube.subtitle" = "Ютуберов, блогеров и инфлюенсиров";
+"broadcaster.subtitle" = "Телеведущего, музыканта или певца";
+"business.subtitle" = "Профессионального бизнеса";
+"tv.subtitle" = "Самостоятельного телепродюсера или любое публичное выступление!";
+"welcome.title" = "Добро пожаловать в Телесуфлер";
+"welcome.subtitle" = "Записывайте видео с необыкновенной легкостью! Вам не нужно беспокоиться, что вы что-то забудете во время выступления перед аудиторией, просто откройте карманный телесуфлер.";

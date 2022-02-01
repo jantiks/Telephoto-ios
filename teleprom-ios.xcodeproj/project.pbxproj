@@ -13,9 +13,104 @@
 		A01C9070277512200098EEB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A01C906E277512200098EEB8 /* Main.storyboard */; };
 		A01C9072277512260098EEB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A01C9071277512260098EEB8 /* Assets.xcassets */; };
 		A01C9075277512260098EEB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A01C9073277512260098EEB8 /* LaunchScreen.storyboard */; };
+		A01C907F277514DE0098EEB8 /* GlobalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C907E277514DE0098EEB8 /* GlobalExtension.swift */; };
+		A01C9082277514F30098EEB8 /* BaseCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C9081277514F30098EEB8 /* BaseCustomView.swift */; };
+		A01C9086277515B80098EEB8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C9085277515B80098EEB8 /* BaseViewController.swift */; };
+		A01C908D27751A630098EEB8 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C908C27751A630098EEB8 /* BaseTabBarViewController.swift */; };
+		A01C908F2776F2420098EEB8 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C908E2776F2420098EEB8 /* UIColorExtention.swift */; };
+		A01C9092277767BE0098EEB8 /* TabBarViewControllerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C9091277767BE0098EEB8 /* TabBarViewControllerConfig.swift */; };
+		A01C909427776AD90098EEB8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C909327776AD90098EEB8 /* TabBarViewController.swift */; };
+		A01C909727776DE50098EEB8 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C909627776DE50098EEB8 /* BaseNavigationController.swift */; };
+		A01C90AF277785CF0098EEB8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A01C90B1277785CF0098EEB8 /* Localizable.strings */; };
+		A01C90B4277787900098EEB8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C90B3277787900098EEB8 /* StringExtension.swift */; };
+		A01C90B7277788B60098EEB8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C90B5277788B60098EEB8 /* SettingsViewController.swift */; };
+		A01C90B8277788B60098EEB8 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C90B6277788B60098EEB8 /* SettingsViewController.xib */; };
+		A01C90BE27778B340098EEB8 /* SettingsTableCellConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C90BD27778B340098EEB8 /* SettingsTableCellConfig.swift */; };
+		A01C90C227779DD90098EEB8 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C90C027779DD80098EEB8 /* SettingsTableViewCell.swift */; };
+		A01C90C327779DD90098EEB8 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C90C127779DD80098EEB8 /* SettingsTableViewCell.xib */; };
+		A01C90C62778182A0098EEB8 /* CommonCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C90C52778182A0098EEB8 /* CommonCommand.swift */; };
+		A01C90CE277818C90098EEB8 /* VideoSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C90CC277818C90098EEB8 /* VideoSettingsViewController.swift */; };
+		A01C90CF277818C90098EEB8 /* VideoSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C90CD277818C90098EEB8 /* VideoSettingsViewController.xib */; };
+		A01C90D127781A210098EEB8 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C90D027781A210098EEB8 /* UIViewExtension.swift */; };
+		A01C90D427781D8F0098EEB8 /* VideoSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C90D327781D8F0098EEB8 /* VideoSetting.swift */; };
+		A0301E712788C53900B40BE8 /* CustomPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0301E6F2788C53900B40BE8 /* CustomPlayerView.swift */; };
+		A0301E722788C53900B40BE8 /* CustomPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0301E702788C53900B40BE8 /* CustomPlayerView.xib */; };
+		A0301E742788DBAC00B40BE8 /* AVPlayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0301E732788DBAC00B40BE8 /* AVPlayerExtension.swift */; };
+		A0301E782788E46800B40BE8 /* PlayerProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0301E762788E46800B40BE8 /* PlayerProgressView.swift */; };
+		A0301E792788E46900B40BE8 /* PlayerProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0301E772788E46800B40BE8 /* PlayerProgressView.xib */; };
+		A0301E7C2789995700B40BE8 /* PlayerProgressDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0301E7B2789995700B40BE8 /* PlayerProgressDelegate.swift */; };
+		A0301E7F2789E80C00B40BE8 /* BaseProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0301E7E2789E80B00B40BE8 /* BaseProgressView.swift */; };
+		A0301E812789E81D00B40BE8 /* BasePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0301E802789E81D00B40BE8 /* BasePlayerView.swift */; };
+		A0301E83278A273400B40BE8 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0301E82278A273400B40BE8 /* DoubleExtension.swift */; };
+		A0301E89278A28AE00B40BE8 /* PlayerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0301E88278A28AE00B40BE8 /* PlayerViewDelegate.swift */; };
+		A0301E8D278ACDD600B40BE8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0301E8B278ACDD600B40BE8 /* LoadingView.swift */; };
+		A0301E8E278ACDD600B40BE8 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0301E8C278ACDD600B40BE8 /* LoadingView.xib */; };
+		A032736427783F18008A138C /* TableViewCellWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032736227783F18008A138C /* TableViewCellWithLabel.swift */; };
+		A032736527783F18008A138C /* TableViewCellWithLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = A032736327783F18008A138C /* TableViewCellWithLabel.xib */; };
+		A0327368277845C9008A138C /* SetVideoSettingsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0327367277845C9008A138C /* SetVideoSettingsCommand.swift */; };
+		A032736B27784646008A138C /* UserSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032736A27784646008A138C /* UserSettingsManager.swift */; };
+		A032736D277846FA008A138C /* SetDefaultCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032736C277846FA008A138C /* SetDefaultCommands.swift */; };
+		A03273702778526E008A138C /* LanguageSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032736E2778526E008A138C /* LanguageSelectionViewController.swift */; };
+		A03273712778526E008A138C /* LanguageSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A032736F2778526E008A138C /* LanguageSelectionViewController.xib */; };
+		A032737427785497008A138C /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032737327785497008A138C /* Languages.swift */; };
+		A042AE09279E130A00F38C5E /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042AE07279E130A00F38C5E /* OnboardingViewController.swift */; };
+		A042AE0A279E130A00F38C5E /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A042AE08279E130A00F38C5E /* OnboardingViewController.xib */; };
+		A0441A7827861F0700578EAE /* CameraCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0441A7627861F0700578EAE /* CameraCaptureViewController.swift */; };
+		A0441A7927861F0700578EAE /* CameraCaptureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0441A7727861F0700578EAE /* CameraCaptureViewController.xib */; };
+		A0441A7C2786318200578EAE /* CameraConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0441A7B2786318200578EAE /* CameraConfiguration.swift */; };
+		A048127F2781FAF6002EF20F /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A048127E2781FAF6002EF20F /* UIFontExtension.swift */; };
+		A04E64FA279B483B00A54C99 /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04E64F8279B483B00A54C99 /* SubscriptionViewController.swift */; };
+		A04E64FB279B483B00A54C99 /* SubscriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04E64F9279B483B00A54C99 /* SubscriptionViewController.xib */; };
+		A04E64FF279C283500A54C99 /* PremiumFeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04E64FD279C283500A54C99 /* PremiumFeatureCell.swift */; };
+		A04E6500279C283500A54C99 /* PremiumFeatureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04E64FE279C283500A54C99 /* PremiumFeatureCell.xib */; };
+		A04E6502279C2B2700A54C99 /* PremiumFeatureConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04E6501279C2B2700A54C99 /* PremiumFeatureConfig.swift */; };
+		A04E6506279CA12200A54C99 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04E6505279CA12200A54C99 /* IAPManager.swift */; };
+		A04E6509279CA24300A54C99 /* SubscriptionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04E6508279CA24300A54C99 /* SubscriptionType.swift */; };
+		A059E9D1278AF21200C0153C /* UITabBarControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059E9D0278AF21200C0153C /* UITabBarControllerExtension.swift */; };
+		A059E9D5278B08BF00C0153C /* ScrollRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059E9D3278B08BF00C0153C /* ScrollRecordView.swift */; };
+		A059E9D6278B08BF00C0153C /* ScrollRecordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A059E9D4278B08BF00C0153C /* ScrollRecordView.xib */; };
+		A059E9DC278B0EE600C0153C /* SelectRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059E9DA278B0EE600C0153C /* SelectRecordViewController.swift */; };
+		A059E9DD278B0EE600C0153C /* SelectRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A059E9DB278B0EE600C0153C /* SelectRecordViewController.xib */; };
+		A059E9DF278F85F500C0153C /* AVFoundationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059E9DE278F85F500C0153C /* AVFoundationExtension.swift */; };
+		A0608BEC27874AAB004077F9 /* SaveVideoCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0608BEB27874AAB004077F9 /* SaveVideoCommand.swift */; };
+		A06B8AEE2795E88400374BBE /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B8AED2795E88400374BBE /* Video.swift */; };
+		A08153A627785EEF00AADED9 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153A527785EEF00AADED9 /* LanguageManager.swift */; };
+		A08153A827785FCC00AADED9 /* DoneCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153A727785FCC00AADED9 /* DoneCommand.swift */; };
+		A08153AB277869E200AADED9 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153A9277869E200AADED9 /* HelpViewController.swift */; };
+		A08153AC277869E200AADED9 /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08153AA277869E200AADED9 /* HelpViewController.xib */; };
+		A08153AF2778948000AADED9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153AD2778948000AADED9 /* AboutViewController.swift */; };
+		A08153B02778948000AADED9 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08153AE2778948000AADED9 /* AboutViewController.xib */; };
+		A08153B22778AC1400AADED9 /* SKStoreReviewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08153B12778AC1400AADED9 /* SKStoreReviewControllerExtension.swift */; };
+		A09C46BB2780EBCC00B9DF23 /* VisualEffectViewWithIntensity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09C46BA2780EBCC00B9DF23 /* VisualEffectViewWithIntensity.swift */; };
+		A0B45B84277A463C00E8B0D7 /* RecordsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B82277A463C00E8B0D7 /* RecordsListViewController.swift */; };
+		A0B45B85277A463C00E8B0D7 /* RecordsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B45B83277A463C00E8B0D7 /* RecordsListViewController.xib */; };
+		A0B45B8A277A4C3000E8B0D7 /* AddRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B88277A4C3000E8B0D7 /* AddRecordCell.swift */; };
+		A0B45B8B277A4C3000E8B0D7 /* AddRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B45B89277A4C3000E8B0D7 /* AddRecordCell.xib */; };
+		A0B45B8E277B9B1000E8B0D7 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B8C277B9B1000E8B0D7 /* RecordCell.swift */; };
+		A0B45B8F277B9B1000E8B0D7 /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B45B8D277B9B1000E8B0D7 /* RecordCell.xib */; };
+		A0B45B91277B9BC500E8B0D7 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B90277B9BC500E8B0D7 /* Record.swift */; };
+		A0B45B93277B9C1200E8B0D7 /* BaseRealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B92277B9C1200E8B0D7 /* BaseRealmObject.swift */; };
+		A0B45B97277BA96D00E8B0D7 /* CreateRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B95277BA96D00E8B0D7 /* CreateRecordViewController.swift */; };
+		A0B45B98277BA96D00E8B0D7 /* CreateRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B45B96277BA96D00E8B0D7 /* CreateRecordViewController.xib */; };
+		A0B45B9C277E470E00E8B0D7 /* RecordDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B9B277E470E00E8B0D7 /* RecordDataProvider.swift */; };
+		A0B45B9E277EB7F600E8B0D7 /* RealmExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45B9D277EB7F600E8B0D7 /* RealmExtension.swift */; };
+		A0B45BA1277ED68800E8B0D7 /* RecordsListMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45BA0277ED68800E8B0D7 /* RecordsListMode.swift */; };
+		A0B45BA5277EE29000E8B0D7 /* RecordCellConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B45BA4277EE29000E8B0D7 /* RecordCellConfig.swift */; };
+		A0B47B15278071F0004C7526 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B47B14278071F0004C7526 /* UIButtonExtension.swift */; };
+		A0B47B1927808824004C7526 /* TextModifierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B47B1727808824004C7526 /* TextModifierView.swift */; };
+		A0B47B1A27808824004C7526 /* TextModifierView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B47B1827808824004C7526 /* TextModifierView.xib */; };
+		A0C468C4279439F5006133E6 /* AspectRatioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C468C2279439F5006133E6 /* AspectRatioViewController.swift */; };
+		A0C468C5279439F5006133E6 /* AspectRatioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C468C3279439F5006133E6 /* AspectRatioViewController.xib */; };
+		A0C468C927943E84006133E6 /* AspectRationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C468C727943E84006133E6 /* AspectRationCell.swift */; };
+		A0C468CA27943E84006133E6 /* AspectRationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C468C827943E84006133E6 /* AspectRationCell.xib */; };
+		A0C468CC27944264006133E6 /* AspectRatioCellConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C468CB27944264006133E6 /* AspectRatioCellConfig.swift */; };
+		A0D31FAE27872DE3002B718D /* VideoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D31FAC27872DE3002B718D /* VideoPreviewViewController.swift */; };
+		A0D31FAF27872DE3002B718D /* VideoPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0D31FAD27872DE3002B718D /* VideoPreviewViewController.xib */; };
+		ABAE513169378AEA14636FAA /* Pods_teleprom_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 519B550047D2595DAEF93B63 /* Pods_teleprom_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		519B550047D2595DAEF93B63 /* Pods_teleprom_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_teleprom_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01C9065277512200098EEB8 /* teleprom-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "teleprom-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01C9068277512200098EEB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A01C906A277512200098EEB8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +119,104 @@
 		A01C9071277512260098EEB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A01C9074277512260098EEB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A01C9076277512260098EEB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A01C907E277514DE0098EEB8 /* GlobalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalExtension.swift; sourceTree = "<group>"; };
+		A01C9081277514F30098EEB8 /* BaseCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCustomView.swift; sourceTree = "<group>"; };
+		A01C9085277515B80098EEB8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A01C908C27751A630098EEB8 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
+		A01C908E2776F2420098EEB8 /* UIColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtention.swift; sourceTree = "<group>"; };
+		A01C9091277767BE0098EEB8 /* TabBarViewControllerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewControllerConfig.swift; sourceTree = "<group>"; };
+		A01C909327776AD90098EEB8 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		A01C909627776DE50098EEB8 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		A01C90AD277785B00098EEB8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		A01C90AE277785B00098EEB8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A01C90B0277785CF0098EEB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A01C90B2277785DC0098EEB8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A01C90B3277787900098EEB8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		A01C90B5277788B60098EEB8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A01C90B6277788B60098EEB8 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		A01C90BD27778B340098EEB8 /* SettingsTableCellConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableCellConfig.swift; sourceTree = "<group>"; };
+		A01C90C027779DD80098EEB8 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		A01C90C127779DD80098EEB8 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		A01C90C52778182A0098EEB8 /* CommonCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCommand.swift; sourceTree = "<group>"; };
+		A01C90CC277818C90098EEB8 /* VideoSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSettingsViewController.swift; sourceTree = "<group>"; };
+		A01C90CD277818C90098EEB8 /* VideoSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoSettingsViewController.xib; sourceTree = "<group>"; };
+		A01C90D027781A210098EEB8 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		A01C90D327781D8F0098EEB8 /* VideoSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSetting.swift; sourceTree = "<group>"; };
+		A0301E6F2788C53900B40BE8 /* CustomPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlayerView.swift; sourceTree = "<group>"; };
+		A0301E702788C53900B40BE8 /* CustomPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPlayerView.xib; sourceTree = "<group>"; };
+		A0301E732788DBAC00B40BE8 /* AVPlayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerExtension.swift; sourceTree = "<group>"; };
+		A0301E762788E46800B40BE8 /* PlayerProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProgressView.swift; sourceTree = "<group>"; };
+		A0301E772788E46800B40BE8 /* PlayerProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerProgressView.xib; sourceTree = "<group>"; };
+		A0301E7B2789995700B40BE8 /* PlayerProgressDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProgressDelegate.swift; sourceTree = "<group>"; };
+		A0301E7E2789E80B00B40BE8 /* BaseProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProgressView.swift; sourceTree = "<group>"; };
+		A0301E802789E81D00B40BE8 /* BasePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePlayerView.swift; sourceTree = "<group>"; };
+		A0301E82278A273400B40BE8 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		A0301E88278A28AE00B40BE8 /* PlayerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewDelegate.swift; sourceTree = "<group>"; };
+		A0301E8B278ACDD600B40BE8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		A0301E8C278ACDD600B40BE8 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		A032736227783F18008A138C /* TableViewCellWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellWithLabel.swift; sourceTree = "<group>"; };
+		A032736327783F18008A138C /* TableViewCellWithLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellWithLabel.xib; sourceTree = "<group>"; };
+		A0327367277845C9008A138C /* SetVideoSettingsCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetVideoSettingsCommand.swift; sourceTree = "<group>"; };
+		A032736A27784646008A138C /* UserSettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsManager.swift; sourceTree = "<group>"; };
+		A032736C277846FA008A138C /* SetDefaultCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDefaultCommands.swift; sourceTree = "<group>"; };
+		A032736E2778526E008A138C /* LanguageSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionViewController.swift; sourceTree = "<group>"; };
+		A032736F2778526E008A138C /* LanguageSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageSelectionViewController.xib; sourceTree = "<group>"; };
+		A032737327785497008A138C /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
+		A042AE07279E130A00F38C5E /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		A042AE08279E130A00F38C5E /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
+		A0441A7627861F0700578EAE /* CameraCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureViewController.swift; sourceTree = "<group>"; };
+		A0441A7727861F0700578EAE /* CameraCaptureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraCaptureViewController.xib; sourceTree = "<group>"; };
+		A0441A7B2786318200578EAE /* CameraConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraConfiguration.swift; sourceTree = "<group>"; };
+		A048127E2781FAF6002EF20F /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		A04E64F8279B483B00A54C99 /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
+		A04E64F9279B483B00A54C99 /* SubscriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionViewController.xib; sourceTree = "<group>"; };
+		A04E64FD279C283500A54C99 /* PremiumFeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumFeatureCell.swift; sourceTree = "<group>"; };
+		A04E64FE279C283500A54C99 /* PremiumFeatureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PremiumFeatureCell.xib; sourceTree = "<group>"; };
+		A04E6501279C2B2700A54C99 /* PremiumFeatureConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumFeatureConfig.swift; sourceTree = "<group>"; };
+		A04E6505279CA12200A54C99 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		A04E6508279CA24300A54C99 /* SubscriptionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionType.swift; sourceTree = "<group>"; };
+		A059E9D0278AF21200C0153C /* UITabBarControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarControllerExtension.swift; sourceTree = "<group>"; };
+		A059E9D3278B08BF00C0153C /* ScrollRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollRecordView.swift; sourceTree = "<group>"; };
+		A059E9D4278B08BF00C0153C /* ScrollRecordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollRecordView.xib; sourceTree = "<group>"; };
+		A059E9DA278B0EE600C0153C /* SelectRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRecordViewController.swift; sourceTree = "<group>"; };
+		A059E9DB278B0EE600C0153C /* SelectRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectRecordViewController.xib; sourceTree = "<group>"; };
+		A059E9DE278F85F500C0153C /* AVFoundationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVFoundationExtension.swift; sourceTree = "<group>"; };
+		A0608BEB27874AAB004077F9 /* SaveVideoCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveVideoCommand.swift; sourceTree = "<group>"; };
+		A06B8AED2795E88400374BBE /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		A08153A527785EEF00AADED9 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		A08153A727785FCC00AADED9 /* DoneCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneCommand.swift; sourceTree = "<group>"; };
+		A08153A9277869E200AADED9 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		A08153AA277869E200AADED9 /* HelpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
+		A08153AD2778948000AADED9 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		A08153AE2778948000AADED9 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		A08153B12778AC1400AADED9 /* SKStoreReviewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKStoreReviewControllerExtension.swift; sourceTree = "<group>"; };
+		A09C46BA2780EBCC00B9DF23 /* VisualEffectViewWithIntensity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectViewWithIntensity.swift; sourceTree = "<group>"; };
+		A0B45B82277A463C00E8B0D7 /* RecordsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListViewController.swift; sourceTree = "<group>"; };
+		A0B45B83277A463C00E8B0D7 /* RecordsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordsListViewController.xib; sourceTree = "<group>"; };
+		A0B45B88277A4C3000E8B0D7 /* AddRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordCell.swift; sourceTree = "<group>"; };
+		A0B45B89277A4C3000E8B0D7 /* AddRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddRecordCell.xib; sourceTree = "<group>"; };
+		A0B45B8C277B9B1000E8B0D7 /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
+		A0B45B8D277B9B1000E8B0D7 /* RecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordCell.xib; sourceTree = "<group>"; };
+		A0B45B90277B9BC500E8B0D7 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		A0B45B92277B9C1200E8B0D7 /* BaseRealmObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRealmObject.swift; sourceTree = "<group>"; };
+		A0B45B95277BA96D00E8B0D7 /* CreateRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecordViewController.swift; sourceTree = "<group>"; };
+		A0B45B96277BA96D00E8B0D7 /* CreateRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateRecordViewController.xib; sourceTree = "<group>"; };
+		A0B45B9B277E470E00E8B0D7 /* RecordDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDataProvider.swift; sourceTree = "<group>"; };
+		A0B45B9D277EB7F600E8B0D7 /* RealmExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmExtension.swift; sourceTree = "<group>"; };
+		A0B45BA0277ED68800E8B0D7 /* RecordsListMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListMode.swift; sourceTree = "<group>"; };
+		A0B45BA4277EE29000E8B0D7 /* RecordCellConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCellConfig.swift; sourceTree = "<group>"; };
+		A0B47B14278071F0004C7526 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		A0B47B1727808824004C7526 /* TextModifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifierView.swift; sourceTree = "<group>"; };
+		A0B47B1827808824004C7526 /* TextModifierView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextModifierView.xib; sourceTree = "<group>"; };
+		A0C468C2279439F5006133E6 /* AspectRatioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectRatioViewController.swift; sourceTree = "<group>"; };
+		A0C468C3279439F5006133E6 /* AspectRatioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AspectRatioViewController.xib; sourceTree = "<group>"; };
+		A0C468C727943E84006133E6 /* AspectRationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectRationCell.swift; sourceTree = "<group>"; };
+		A0C468C827943E84006133E6 /* AspectRationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AspectRationCell.xib; sourceTree = "<group>"; };
+		A0C468CB27944264006133E6 /* AspectRatioCellConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectRatioCellConfig.swift; sourceTree = "<group>"; };
+		A0D31FAC27872DE3002B718D /* VideoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPreviewViewController.swift; sourceTree = "<group>"; };
+		A0D31FAD27872DE3002B718D /* VideoPreviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPreviewViewController.xib; sourceTree = "<group>"; };
+		D8AEFA3040B62CC0933D62D8 /* Pods-teleprom-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teleprom-ios.release.xcconfig"; path = "Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios.release.xcconfig"; sourceTree = "<group>"; };
+		E4941D353668A4399675EA55 /* Pods-teleprom-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teleprom-ios.debug.xcconfig"; path = "Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +224,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABAE513169378AEA14636FAA /* Pods_teleprom_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2332C8178EBF67004BA63688 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				519B550047D2595DAEF93B63 /* Pods_teleprom_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		31F447850B6B50212D211C8D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4941D353668A4399675EA55 /* Pods-teleprom-ios.debug.xcconfig */,
+				D8AEFA3040B62CC0933D62D8 /* Pods-teleprom-ios.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A01C905C277512200098EEB8 = {
 			isa = PBXGroup;
 			children = (
 				A01C9067277512200098EEB8 /* teleprom-ios */,
 				A01C9066277512200098EEB8 /* Products */,
+				31F447850B6B50212D211C8D /* Pods */,
+				2332C8178EBF67004BA63688 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +269,540 @@
 		A01C9067277512200098EEB8 /* teleprom-ios */ = {
 			isa = PBXGroup;
 			children = (
+				A01C909E277781720098EEB8 /* Localization */,
+				A01C907D277514CC0098EEB8 /* Main */,
+				A01C907C277514990098EEB8 /* Supporting files */,
+				A01C9076277512260098EEB8 /* Info.plist */,
+			);
+			path = "teleprom-ios";
+			sourceTree = "<group>";
+		};
+		A01C907C277514990098EEB8 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
 				A01C9068277512200098EEB8 /* AppDelegate.swift */,
 				A01C906A277512200098EEB8 /* SceneDelegate.swift */,
 				A01C906C277512200098EEB8 /* ViewController.swift */,
 				A01C906E277512200098EEB8 /* Main.storyboard */,
 				A01C9071277512260098EEB8 /* Assets.xcassets */,
 				A01C9073277512260098EEB8 /* LaunchScreen.storyboard */,
-				A01C9076277512260098EEB8 /* Info.plist */,
 			);
-			path = "teleprom-ios";
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		A01C907D277514CC0098EEB8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A042AE06279E12A600F38C5E /* Onboarding */,
+				A01C908927751A350098EEB8 /* Base */,
+				A01C908B27751A500098EEB8 /* TabBar */,
+				A0B45B81277A462C00E8B0D7 /* Records */,
+				A0441A7327861E4600578EAE /* Camera */,
+				A01C909927776EFC0098EEB8 /* Settings */,
+				A0492BCD279B414400EF0C3F /* Subscriptions */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A01C9080277514E20098EEB8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A01C907E277514DE0098EEB8 /* GlobalExtension.swift */,
+				A059E9D0278AF21200C0153C /* UITabBarControllerExtension.swift */,
+				A01C908E2776F2420098EEB8 /* UIColorExtention.swift */,
+				A01C90B3277787900098EEB8 /* StringExtension.swift */,
+				A01C90D027781A210098EEB8 /* UIViewExtension.swift */,
+				A08153B12778AC1400AADED9 /* SKStoreReviewControllerExtension.swift */,
+				A0B45B9D277EB7F600E8B0D7 /* RealmExtension.swift */,
+				A0B47B14278071F0004C7526 /* UIButtonExtension.swift */,
+				A048127E2781FAF6002EF20F /* UIFontExtension.swift */,
+				A0301E732788DBAC00B40BE8 /* AVPlayerExtension.swift */,
+				A0301E82278A273400B40BE8 /* DoubleExtension.swift */,
+				A059E9DE278F85F500C0153C /* AVFoundationExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A01C9083277514FA0098EEB8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A01C9081277514F30098EEB8 /* BaseCustomView.swift */,
+				A09C46BA2780EBCC00B9DF23 /* VisualEffectViewWithIntensity.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A01C9084277515AA0098EEB8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A01C908C27751A630098EEB8 /* BaseTabBarViewController.swift */,
+				A01C9085277515B80098EEB8 /* BaseViewController.swift */,
+				A01C909627776DE50098EEB8 /* BaseNavigationController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A01C908927751A350098EEB8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A0301E86278A289000B40BE8 /* Player */,
+				A0B45B9A277E46F900E8B0D7 /* Data Providers */,
+				A0B45B94277B9CEA00E8B0D7 /* RealmModels */,
+				A03273692778462F008A138C /* Managers */,
+				A01C90C42778181C0098EEB8 /* Commands */,
+				A01C909527776B180098EEB8 /* Models */,
+				A01C9084277515AA0098EEB8 /* Controllers */,
+				A01C9080277514E20098EEB8 /* Extensions */,
+				A01C9083277514FA0098EEB8 /* Views */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A01C908B27751A500098EEB8 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				A01C909327776AD90098EEB8 /* TabBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		A01C909527776B180098EEB8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A01C9091277767BE0098EEB8 /* TabBarViewControllerConfig.swift */,
+				A06B8AED2795E88400374BBE /* Video.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A01C909927776EFC0098EEB8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A01C90C7277818580098EEB8 /* SettingsViewController */,
+				A01C90C8277818760098EEB8 /* VideoSettingsViewController */,
+				A01C90C92778188A0098EEB8 /* LanguageSelectViewController */,
+				A01C90CA277818990098EEB8 /* HelpViewController */,
+				A01C90CB277818A30098EEB8 /* AboutViewController */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A01C909E277781720098EEB8 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				A01C90B1277785CF0098EEB8 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		A01C90B927778AB30098EEB8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A01C90BD27778B340098EEB8 /* SettingsTableCellConfig.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A01C90BF27779D760098EEB8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A01C90C027779DD80098EEB8 /* SettingsTableViewCell.swift */,
+				A01C90C127779DD80098EEB8 /* SettingsTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A01C90C42778181C0098EEB8 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				A01C90C52778182A0098EEB8 /* CommonCommand.swift */,
+				A0327367277845C9008A138C /* SetVideoSettingsCommand.swift */,
+				A032736C277846FA008A138C /* SetDefaultCommands.swift */,
+				A08153A727785FCC00AADED9 /* DoneCommand.swift */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
+		A01C90C7277818580098EEB8 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A01C90BF27779D760098EEB8 /* Cells */,
+				A01C90B927778AB30098EEB8 /* Models */,
+				A01C90B5277788B60098EEB8 /* SettingsViewController.swift */,
+				A01C90B6277788B60098EEB8 /* SettingsViewController.xib */,
+			);
+			path = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		A01C90C8277818760098EEB8 /* VideoSettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A032735F27783EDC008A138C /* Cells */,
+				A01C90CC277818C90098EEB8 /* VideoSettingsViewController.swift */,
+				A01C90CD277818C90098EEB8 /* VideoSettingsViewController.xib */,
+				A01C90D227781D840098EEB8 /* Enums */,
+			);
+			path = VideoSettingsViewController;
+			sourceTree = "<group>";
+		};
+		A01C90C92778188A0098EEB8 /* LanguageSelectViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A032737227785481008A138C /* Enums */,
+				A032736E2778526E008A138C /* LanguageSelectionViewController.swift */,
+				A032736F2778526E008A138C /* LanguageSelectionViewController.xib */,
+			);
+			path = LanguageSelectViewController;
+			sourceTree = "<group>";
+		};
+		A01C90CA277818990098EEB8 /* HelpViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A08153A9277869E200AADED9 /* HelpViewController.swift */,
+				A08153AA277869E200AADED9 /* HelpViewController.xib */,
+			);
+			path = HelpViewController;
+			sourceTree = "<group>";
+		};
+		A01C90CB277818A30098EEB8 /* AboutViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A08153AD2778948000AADED9 /* AboutViewController.swift */,
+				A08153AE2778948000AADED9 /* AboutViewController.xib */,
+			);
+			path = AboutViewController;
+			sourceTree = "<group>";
+		};
+		A01C90D227781D840098EEB8 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A01C90D327781D8F0098EEB8 /* VideoSetting.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		A0301E662788BF6500B40BE8 /* PlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				A0301E6F2788C53900B40BE8 /* CustomPlayerView.swift */,
+				A0301E702788C53900B40BE8 /* CustomPlayerView.xib */,
+			);
+			path = PlayerView;
+			sourceTree = "<group>";
+		};
+		A0301E752788E33300B40BE8 /* PlayerProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				A0301E762788E46800B40BE8 /* PlayerProgressView.swift */,
+				A0301E772788E46800B40BE8 /* PlayerProgressView.xib */,
+			);
+			path = PlayerProgressView;
+			sourceTree = "<group>";
+		};
+		A0301E7A2789994500B40BE8 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				A0301E7B2789995700B40BE8 /* PlayerProgressDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		A0301E7D2789E7F900B40BE8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A0301E7E2789E80B00B40BE8 /* BaseProgressView.swift */,
+				A0301E802789E81D00B40BE8 /* BasePlayerView.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A0301E86278A289000B40BE8 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				A0301E87278A289A00B40BE8 /* Delegates */,
+				A0301E7D2789E7F900B40BE8 /* Protocols */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		A0301E87278A289A00B40BE8 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				A0301E88278A28AE00B40BE8 /* PlayerViewDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		A0301E8A278ACDC200B40BE8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0301E8B278ACDD600B40BE8 /* LoadingView.swift */,
+				A0301E8C278ACDD600B40BE8 /* LoadingView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A032735F27783EDC008A138C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A032736227783F18008A138C /* TableViewCellWithLabel.swift */,
+				A032736327783F18008A138C /* TableViewCellWithLabel.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A03273692778462F008A138C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A032736A27784646008A138C /* UserSettingsManager.swift */,
+				A08153A527785EEF00AADED9 /* LanguageManager.swift */,
+				A04E6507279CA22C00A54C99 /* Subscriptions */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		A032737227785481008A138C /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A032737327785497008A138C /* Languages.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		A042AE06279E12A600F38C5E /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A042AE07279E130A00F38C5E /* OnboardingViewController.swift */,
+				A042AE08279E130A00F38C5E /* OnboardingViewController.xib */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		A0441A7327861E4600578EAE /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				A0C468C1279439DD006133E6 /* AspectRationViewController */,
+				A0D31FAA27872DA9002B718D /* CameraCaptureViewController */,
+				A0D31FAB27872DBF002B718D /* VideoPreviewViewController */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		A0441A7A2786317500578EAE /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				A0441A7B2786318200578EAE /* CameraConfiguration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		A0492BCD279B414400EF0C3F /* Subscriptions */ = {
+			isa = PBXGroup;
+			children = (
+				A04E64FC279C280500A54C99 /* table cells */,
+				A04E64F8279B483B00A54C99 /* SubscriptionViewController.swift */,
+				A04E64F9279B483B00A54C99 /* SubscriptionViewController.xib */,
+			);
+			path = Subscriptions;
+			sourceTree = "<group>";
+		};
+		A04E64FC279C280500A54C99 /* table cells */ = {
+			isa = PBXGroup;
+			children = (
+				A04E64FD279C283500A54C99 /* PremiumFeatureCell.swift */,
+				A04E64FE279C283500A54C99 /* PremiumFeatureCell.xib */,
+				A04E6501279C2B2700A54C99 /* PremiumFeatureConfig.swift */,
+			);
+			path = "table cells";
+			sourceTree = "<group>";
+		};
+		A04E6507279CA22C00A54C99 /* Subscriptions */ = {
+			isa = PBXGroup;
+			children = (
+				A04E6505279CA12200A54C99 /* IAPManager.swift */,
+				A04E6508279CA24300A54C99 /* SubscriptionType.swift */,
+			);
+			path = Subscriptions;
+			sourceTree = "<group>";
+		};
+		A059E9D2278B08AA00C0153C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A059E9D8278B0EC000C0153C /* ScrollRecord */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A059E9D7278B0E7B00C0153C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A0441A7627861F0700578EAE /* CameraCaptureViewController.swift */,
+				A0441A7727861F0700578EAE /* CameraCaptureViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A059E9D8278B0EC000C0153C /* ScrollRecord */ = {
+			isa = PBXGroup;
+			children = (
+				A059E9D9278B0ED400C0153C /* SelectRecordController */,
+				A059E9D3278B08BF00C0153C /* ScrollRecordView.swift */,
+				A059E9D4278B08BF00C0153C /* ScrollRecordView.xib */,
+			);
+			path = ScrollRecord;
+			sourceTree = "<group>";
+		};
+		A059E9D9278B0ED400C0153C /* SelectRecordController */ = {
+			isa = PBXGroup;
+			children = (
+				A059E9DA278B0EE600C0153C /* SelectRecordViewController.swift */,
+				A059E9DB278B0EE600C0153C /* SelectRecordViewController.xib */,
+			);
+			path = SelectRecordController;
+			sourceTree = "<group>";
+		};
+		A0608BEA27874A99004077F9 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				A0608BEB27874AAB004077F9 /* SaveVideoCommand.swift */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
+		A0B45B81277A462C00E8B0D7 /* Records */ = {
+			isa = PBXGroup;
+			children = (
+				A0B45B86277A483900E8B0D7 /* RecordsListViewController */,
+				A0B45B99277BA97500E8B0D7 /* RecordViewController */,
+			);
+			path = Records;
+			sourceTree = "<group>";
+		};
+		A0B45B86277A483900E8B0D7 /* RecordsListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A0B45B9F277ED63F00E8B0D7 /* Enums */,
+				A0B45B87277A4BFC00E8B0D7 /* Cells */,
+				A0B45B82277A463C00E8B0D7 /* RecordsListViewController.swift */,
+				A0B45B83277A463C00E8B0D7 /* RecordsListViewController.xib */,
+			);
+			path = RecordsListViewController;
+			sourceTree = "<group>";
+		};
+		A0B45B87277A4BFC00E8B0D7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A0B45BA2277EE27900E8B0D7 /* Add record cell */,
+				A0B45BA3277EE28300E8B0D7 /* Record cell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A0B45B94277B9CEA00E8B0D7 /* RealmModels */ = {
+			isa = PBXGroup;
+			children = (
+				A0B45B90277B9BC500E8B0D7 /* Record.swift */,
+				A0B45B92277B9C1200E8B0D7 /* BaseRealmObject.swift */,
+			);
+			path = RealmModels;
+			sourceTree = "<group>";
+		};
+		A0B45B99277BA97500E8B0D7 /* RecordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A0B47B1627807539004C7526 /* Views */,
+				A0B45B95277BA96D00E8B0D7 /* CreateRecordViewController.swift */,
+				A0B45B96277BA96D00E8B0D7 /* CreateRecordViewController.xib */,
+			);
+			path = RecordViewController;
+			sourceTree = "<group>";
+		};
+		A0B45B9A277E46F900E8B0D7 /* Data Providers */ = {
+			isa = PBXGroup;
+			children = (
+				A0B45B9B277E470E00E8B0D7 /* RecordDataProvider.swift */,
+			);
+			path = "Data Providers";
+			sourceTree = "<group>";
+		};
+		A0B45B9F277ED63F00E8B0D7 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A0B45BA0277ED68800E8B0D7 /* RecordsListMode.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		A0B45BA2277EE27900E8B0D7 /* Add record cell */ = {
+			isa = PBXGroup;
+			children = (
+				A0B45B88277A4C3000E8B0D7 /* AddRecordCell.swift */,
+				A0B45B89277A4C3000E8B0D7 /* AddRecordCell.xib */,
+			);
+			path = "Add record cell";
+			sourceTree = "<group>";
+		};
+		A0B45BA3277EE28300E8B0D7 /* Record cell */ = {
+			isa = PBXGroup;
+			children = (
+				A0B45B8C277B9B1000E8B0D7 /* RecordCell.swift */,
+				A0B45B8D277B9B1000E8B0D7 /* RecordCell.xib */,
+				A0B45BA4277EE29000E8B0D7 /* RecordCellConfig.swift */,
+			);
+			path = "Record cell";
+			sourceTree = "<group>";
+		};
+		A0B47B1627807539004C7526 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0B47B1727808824004C7526 /* TextModifierView.swift */,
+				A0B47B1827808824004C7526 /* TextModifierView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A0C468C1279439DD006133E6 /* AspectRationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A0C468C627943E64006133E6 /* Cells */,
+				A0C468C2279439F5006133E6 /* AspectRatioViewController.swift */,
+				A0C468C3279439F5006133E6 /* AspectRatioViewController.xib */,
+			);
+			path = AspectRationViewController;
+			sourceTree = "<group>";
+		};
+		A0C468C627943E64006133E6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A0C468C727943E84006133E6 /* AspectRationCell.swift */,
+				A0C468C827943E84006133E6 /* AspectRationCell.xib */,
+				A0C468CB27944264006133E6 /* AspectRatioCellConfig.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A0D31FAA27872DA9002B718D /* CameraCaptureViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A059E9D7278B0E7B00C0153C /* Controller */,
+				A0441A7A2786317500578EAE /* Configuration */,
+				A059E9D2278B08AA00C0153C /* Views */,
+			);
+			path = CameraCaptureViewController;
+			sourceTree = "<group>";
+		};
+		A0D31FAB27872DBF002B718D /* VideoPreviewViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A0301E8A278ACDC200B40BE8 /* Views */,
+				A0301E7A2789994500B40BE8 /* Delegates */,
+				A0301E752788E33300B40BE8 /* PlayerProgressView */,
+				A0301E662788BF6500B40BE8 /* PlayerView */,
+				A0608BEA27874A99004077F9 /* Commands */,
+				A0D31FAC27872DE3002B718D /* VideoPreviewViewController.swift */,
+				A0D31FAD27872DE3002B718D /* VideoPreviewViewController.xib */,
+			);
+			path = VideoPreviewViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +812,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A01C9079277512260098EEB8 /* Build configuration list for PBXNativeTarget "teleprom-ios" */;
 			buildPhases = (
+				23AFC8BD6AF60E17FDB79EFA /* [CP] Check Pods Manifest.lock */,
 				A01C9061277512200098EEB8 /* Sources */,
 				A01C9062277512200098EEB8 /* Frameworks */,
 				A01C9063277512200098EEB8 /* Resources */,
+				69454C030AF4C96C9C99C28E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -109,6 +849,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = A01C905C277512200098EEB8;
 			productRefGroup = A01C9066277512200098EEB8 /* Products */;
@@ -125,22 +866,157 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0301E792788E46900B40BE8 /* PlayerProgressView.xib in Resources */,
+				A04E6500279C283500A54C99 /* PremiumFeatureCell.xib in Resources */,
+				A0B45B8B277A4C3000E8B0D7 /* AddRecordCell.xib in Resources */,
+				A042AE0A279E130A00F38C5E /* OnboardingViewController.xib in Resources */,
+				A01C90C327779DD90098EEB8 /* SettingsTableViewCell.xib in Resources */,
+				A08153AC277869E200AADED9 /* HelpViewController.xib in Resources */,
+				A03273712778526E008A138C /* LanguageSelectionViewController.xib in Resources */,
+				A0B47B1A27808824004C7526 /* TextModifierView.xib in Resources */,
+				A0B45B85277A463C00E8B0D7 /* RecordsListViewController.xib in Resources */,
 				A01C9075277512260098EEB8 /* LaunchScreen.storyboard in Resources */,
+				A059E9D6278B08BF00C0153C /* ScrollRecordView.xib in Resources */,
+				A0B45B8F277B9B1000E8B0D7 /* RecordCell.xib in Resources */,
+				A032736527783F18008A138C /* TableViewCellWithLabel.xib in Resources */,
+				A04E64FB279B483B00A54C99 /* SubscriptionViewController.xib in Resources */,
+				A01C90AF277785CF0098EEB8 /* Localizable.strings in Resources */,
+				A0301E722788C53900B40BE8 /* CustomPlayerView.xib in Resources */,
 				A01C9072277512260098EEB8 /* Assets.xcassets in Resources */,
 				A01C9070277512200098EEB8 /* Main.storyboard in Resources */,
+				A0B45B98277BA96D00E8B0D7 /* CreateRecordViewController.xib in Resources */,
+				A059E9DD278B0EE600C0153C /* SelectRecordViewController.xib in Resources */,
+				A0441A7927861F0700578EAE /* CameraCaptureViewController.xib in Resources */,
+				A01C90B8277788B60098EEB8 /* SettingsViewController.xib in Resources */,
+				A0C468CA27943E84006133E6 /* AspectRationCell.xib in Resources */,
+				A08153B02778948000AADED9 /* AboutViewController.xib in Resources */,
+				A0C468C5279439F5006133E6 /* AspectRatioViewController.xib in Resources */,
+				A0301E8E278ACDD600B40BE8 /* LoadingView.xib in Resources */,
+				A01C90CF277818C90098EEB8 /* VideoSettingsViewController.xib in Resources */,
+				A0D31FAF27872DE3002B718D /* VideoPreviewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23AFC8BD6AF60E17FDB79EFA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-teleprom-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69454C030AF4C96C9C99C28E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A01C9061277512200098EEB8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0B45BA1277ED68800E8B0D7 /* RecordsListMode.swift in Sources */,
+				A0301E782788E46800B40BE8 /* PlayerProgressView.swift in Sources */,
 				A01C906D277512200098EEB8 /* ViewController.swift in Sources */,
+				A0301E812789E81D00B40BE8 /* BasePlayerView.swift in Sources */,
+				A059E9D5278B08BF00C0153C /* ScrollRecordView.swift in Sources */,
+				A0B45B84277A463C00E8B0D7 /* RecordsListViewController.swift in Sources */,
+				A08153A627785EEF00AADED9 /* LanguageManager.swift in Sources */,
+				A0B45B97277BA96D00E8B0D7 /* CreateRecordViewController.swift in Sources */,
+				A01C90BE27778B340098EEB8 /* SettingsTableCellConfig.swift in Sources */,
+				A04E6506279CA12200A54C99 /* IAPManager.swift in Sources */,
+				A06B8AEE2795E88400374BBE /* Video.swift in Sources */,
+				A08153B22778AC1400AADED9 /* SKStoreReviewControllerExtension.swift in Sources */,
+				A0D31FAE27872DE3002B718D /* VideoPreviewViewController.swift in Sources */,
 				A01C9069277512200098EEB8 /* AppDelegate.swift in Sources */,
+				A032736B27784646008A138C /* UserSettingsManager.swift in Sources */,
+				A04E6502279C2B2700A54C99 /* PremiumFeatureConfig.swift in Sources */,
+				A01C9092277767BE0098EEB8 /* TabBarViewControllerConfig.swift in Sources */,
+				A0301E7C2789995700B40BE8 /* PlayerProgressDelegate.swift in Sources */,
+				A0301E742788DBAC00B40BE8 /* AVPlayerExtension.swift in Sources */,
+				A048127F2781FAF6002EF20F /* UIFontExtension.swift in Sources */,
+				A0B47B1927808824004C7526 /* TextModifierView.swift in Sources */,
+				A0301E8D278ACDD600B40BE8 /* LoadingView.swift in Sources */,
+				A01C90CE277818C90098EEB8 /* VideoSettingsViewController.swift in Sources */,
+				A08153AB277869E200AADED9 /* HelpViewController.swift in Sources */,
+				A01C9082277514F30098EEB8 /* BaseCustomView.swift in Sources */,
+				A0327368277845C9008A138C /* SetVideoSettingsCommand.swift in Sources */,
+				A059E9DF278F85F500C0153C /* AVFoundationExtension.swift in Sources */,
+				A08153A827785FCC00AADED9 /* DoneCommand.swift in Sources */,
+				A059E9D1278AF21200C0153C /* UITabBarControllerExtension.swift in Sources */,
+				A0C468CC27944264006133E6 /* AspectRatioCellConfig.swift in Sources */,
+				A0301E89278A28AE00B40BE8 /* PlayerViewDelegate.swift in Sources */,
+				A01C90D127781A210098EEB8 /* UIViewExtension.swift in Sources */,
+				A01C907F277514DE0098EEB8 /* GlobalExtension.swift in Sources */,
+				A0B45B9C277E470E00E8B0D7 /* RecordDataProvider.swift in Sources */,
+				A0301E83278A273400B40BE8 /* DoubleExtension.swift in Sources */,
+				A0B45B93277B9C1200E8B0D7 /* BaseRealmObject.swift in Sources */,
+				A01C90C62778182A0098EEB8 /* CommonCommand.swift in Sources */,
+				A0B45B8E277B9B1000E8B0D7 /* RecordCell.swift in Sources */,
+				A04E6509279CA24300A54C99 /* SubscriptionType.swift in Sources */,
+				A01C908F2776F2420098EEB8 /* UIColorExtention.swift in Sources */,
+				A0441A7827861F0700578EAE /* CameraCaptureViewController.swift in Sources */,
+				A09C46BB2780EBCC00B9DF23 /* VisualEffectViewWithIntensity.swift in Sources */,
+				A0301E7F2789E80C00B40BE8 /* BaseProgressView.swift in Sources */,
+				A01C908D27751A630098EEB8 /* BaseTabBarViewController.swift in Sources */,
+				A01C90C227779DD90098EEB8 /* SettingsTableViewCell.swift in Sources */,
+				A01C909727776DE50098EEB8 /* BaseNavigationController.swift in Sources */,
+				A0301E712788C53900B40BE8 /* CustomPlayerView.swift in Sources */,
+				A0441A7C2786318200578EAE /* CameraConfiguration.swift in Sources */,
+				A059E9DC278B0EE600C0153C /* SelectRecordViewController.swift in Sources */,
+				A042AE09279E130A00F38C5E /* OnboardingViewController.swift in Sources */,
+				A032736D277846FA008A138C /* SetDefaultCommands.swift in Sources */,
+				A04E64FF279C283500A54C99 /* PremiumFeatureCell.swift in Sources */,
+				A0B47B15278071F0004C7526 /* UIButtonExtension.swift in Sources */,
 				A01C906B277512200098EEB8 /* SceneDelegate.swift in Sources */,
+				A0B45B8A277A4C3000E8B0D7 /* AddRecordCell.swift in Sources */,
+				A03273702778526E008A138C /* LanguageSelectionViewController.swift in Sources */,
+				A032736427783F18008A138C /* TableViewCellWithLabel.swift in Sources */,
+				A032737427785497008A138C /* Languages.swift in Sources */,
+				A0608BEC27874AAB004077F9 /* SaveVideoCommand.swift in Sources */,
+				A01C909427776AD90098EEB8 /* TabBarViewController.swift in Sources */,
+				A01C90B7277788B60098EEB8 /* SettingsViewController.swift in Sources */,
+				A01C90D427781D8F0098EEB8 /* VideoSetting.swift in Sources */,
+				A08153AF2778948000AADED9 /* AboutViewController.swift in Sources */,
+				A01C9086277515B80098EEB8 /* BaseViewController.swift in Sources */,
+				A0B45B91277B9BC500E8B0D7 /* Record.swift in Sources */,
+				A04E64FA279B483B00A54C99 /* SubscriptionViewController.swift in Sources */,
+				A0C468C927943E84006133E6 /* AspectRationCell.swift in Sources */,
+				A01C90B4277787900098EEB8 /* StringExtension.swift in Sources */,
+				A0B45BA5277EE29000E8B0D7 /* RecordCellConfig.swift in Sources */,
+				A0C468C4279439F5006133E6 /* AspectRatioViewController.swift in Sources */,
+				A0B45B9E277EB7F600E8B0D7 /* RealmExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +1027,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A01C906F277512200098EEB8 /* Base */,
+				A01C90AD277785B00098EEB8 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -159,8 +1036,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				A01C9074277512260098EEB8 /* Base */,
+				A01C90AE277785B00098EEB8 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A01C90B1277785CF0098EEB8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A01C90B0277785CF0098EEB8 /* en */,
+				A01C90B2277785DC0098EEB8 /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -170,6 +1057,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -217,7 +1105,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -231,6 +1119,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -272,7 +1161,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -284,57 +1173,69 @@
 		};
 		A01C907A277512260098EEB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4941D353668A4399675EA55 /* Pods-teleprom-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QJU8QY9SND;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = MQ852JYW2V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "teleprom-ios/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Used to record of video";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Used to record the audio";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Used to save the video in your device.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "tigran.teleprom-ios";
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = tigran.teleprom.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		A01C907B277512260098EEB8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8AEFA3040B62CC0933D62D8 /* Pods-teleprom-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QJU8QY9SND;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = MQ852JYW2V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "teleprom-ios/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Used to record of video";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Used to record the audio";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Used to save the video in your device.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "tigran.teleprom-ios";
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = tigran.teleprom.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
