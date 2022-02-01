@@ -40,7 +40,6 @@ class TextModifierView: BaseCustomView {
         changeFontButton.layer.borderWidth = 0.5
         changeFontButton.layer.borderColor = UIColor.white.cgColor
         setSelectFontTableView()
-        setActionViewsBg()
         setSelectFontTableBg()
     }
     
@@ -58,20 +57,12 @@ class TextModifierView: BaseCustomView {
         italicButton.isSelected = currentFont.fontName == ".SFUI-RegularItalic"
         underlineButton.isSelected = textView?.typingAttributes[NSAttributedString.Key.underlineStyle] as? Int == NSUnderlineStyle.single.rawValue
         changeFontButton.setTitle("\(Int(currentFont.pointSize))", for: .normal)
+        hideSelectFontTableView(true)
+        changeFontButton.isSelected = false
     }
  
     private func setHeightConstraint(_ constant: CGFloat) {
         constraints.first(where: { $0.firstAttribute == .height })?.constant = constant
-    }
-    
-    private func setActionViewsBg() {
-        let effectView = VisualEffectWithIntensityView(effect:  UIBlurEffect(style: .light), intensity: 0.4)
-        insertSubview(effectView, at: 0)
-        effectView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint(item: effectView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: effectView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: effectView, attribute: .top, relatedBy: .equal, toItem: actionViews, attribute: .top, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: effectView, attribute: .bottom, relatedBy: .equal, toItem: actionViews, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
     }
     
     private func setSelectFontTableBg() {
@@ -114,6 +105,12 @@ class TextModifierView: BaseCustomView {
                 textView?.typingAttributes[key] = value
             }
         }
+    }
+    
+    private func hideSelectFontTableView(_ isHidden: Bool) {
+        selectFontTableView.isHidden = isHidden
+        selectionFontTableBg?.isHidden = isHidden
+        setHeightConstraint(isHidden ? initalHeight : expandedHeight)
     }
         
     @IBAction func boldAction(_ sender: UIButton) {
@@ -165,9 +162,7 @@ class TextModifierView: BaseCustomView {
     @IBAction func changeFontAction(_ sender: UIButton) {
         sender.isSelected.toggle()
         
-        selectFontTableView.isHidden = !sender.isSelected
-        selectionFontTableBg?.isHidden = selectFontTableView.isHidden
-        setHeightConstraint(selectFontTableView.isHidden ? initalHeight : expandedHeight)
+        hideSelectFontTableView(!sender.isSelected)
     }
     
     @IBAction func leftAlignAction(_ sender: UIButton) {

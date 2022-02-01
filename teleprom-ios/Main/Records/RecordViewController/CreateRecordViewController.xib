@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateRecordViewController" customModule="teleprom_ios" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundBlurView" destination="D6u-vm-KS8" id="pIA-hz-SyK"/>
                 <outlet property="backgroundView" destination="WFe-rx-mPS" id="hWY-aH-Lhm"/>
+                <outlet property="blurBackgroundViewHeightConstraint" destination="FJh-QI-sBg" id="ZVW-eo-QmA"/>
+                <outlet property="bottomSafeAreaView" destination="bVI-6c-R4o" id="rFA-9d-6Cf"/>
                 <outlet property="contentTextView" destination="sjq-D0-3JV" id="udd-4b-y21"/>
-                <outlet property="contentTextViewBottomConstraint" destination="OeV-Pg-LQt" id="Uud-1W-8wc"/>
+                <outlet property="contentTextViewBottomConstraint" destination="ryJ-5C-rDx" id="tEq-gO-qe1"/>
                 <outlet property="textModifierBottomConstraint" destination="5Kh-xs-uhj" id="vAo-JU-Jyb"/>
                 <outlet property="textViewModifier" destination="uyM-06-BJJ" id="GBg-m3-WWm"/>
                 <outlet property="titleTextField" destination="TRh-d4-JR4" id="AJm-dI-8dk"/>
@@ -45,38 +48,54 @@
                     </constraints>
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjq-D0-3JV">
-                    <rect key="frame" x="15" y="119.5" width="384" height="682.5"/>
+                    <rect key="frame" x="15" y="119.5" width="384" height="776.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. isicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </mutableString>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D6u-vm-KS8" userLabel="background blur view">
+                    <rect key="frame" x="0.0" y="802" width="414" height="94"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="94" id="FJh-QI-sBg"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uyM-06-BJJ" customClass="TextModifierView" customModule="teleprom_ios" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="802" width="414" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="PG9-oR-8vH"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVI-6c-R4o" userLabel="safe area view">
+                    <rect key="frame" x="0.0" y="862" width="414" height="34"/>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uyM-06-BJJ" secondAttribute="trailing" id="3O3-hb-yWd"/>
                 <constraint firstItem="5cn-ZA-diW" firstAttribute="top" secondItem="TRh-d4-JR4" secondAttribute="bottom" id="3mG-56-10V"/>
+                <constraint firstAttribute="trailing" secondItem="bVI-6c-R4o" secondAttribute="trailing" id="54k-am-inv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="uyM-06-BJJ" secondAttribute="bottom" id="5Kh-xs-uhj"/>
+                <constraint firstAttribute="trailing" secondItem="D6u-vm-KS8" secondAttribute="trailing" id="7Nx-Ki-b7X"/>
+                <constraint firstItem="bVI-6c-R4o" firstAttribute="top" secondItem="uyM-06-BJJ" secondAttribute="bottom" id="BeB-pW-6od"/>
                 <constraint firstItem="TRh-d4-JR4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="D4I-nl-Y2e"/>
                 <constraint firstItem="sjq-D0-3JV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="DBU-nS-gGm"/>
                 <constraint firstItem="5cn-ZA-diW" firstAttribute="leading" secondItem="TRh-d4-JR4" secondAttribute="leading" id="GdP-nI-KRp"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="WFe-rx-mPS" secondAttribute="top" id="IDp-Bz-G1r"/>
+                <constraint firstItem="bVI-6c-R4o" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JpI-WB-B3o"/>
                 <constraint firstItem="TRh-d4-JR4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="KHK-c1-sW2"/>
+                <constraint firstItem="D6u-vm-KS8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Klz-ta-jmD"/>
                 <constraint firstItem="5cn-ZA-diW" firstAttribute="trailing" secondItem="TRh-d4-JR4" secondAttribute="trailing" id="ODY-xK-oeT"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sjq-D0-3JV" secondAttribute="bottom" constant="60" id="OeV-Pg-LQt"/>
                 <constraint firstItem="sjq-D0-3JV" firstAttribute="top" secondItem="5cn-ZA-diW" secondAttribute="bottom" constant="15" id="Opg-IX-vom"/>
                 <constraint firstItem="uyM-06-BJJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WaA-ip-exY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WFe-rx-mPS" secondAttribute="trailing" id="emg-06-hgW"/>
+                <constraint firstAttribute="bottom" secondItem="bVI-6c-R4o" secondAttribute="bottom" id="hqd-T4-wIF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TRh-d4-JR4" secondAttribute="trailing" constant="10" id="jWU-Kw-RIt"/>
                 <constraint firstAttribute="bottom" secondItem="WFe-rx-mPS" secondAttribute="bottom" id="koC-Dy-4ZT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sjq-D0-3JV" secondAttribute="trailing" constant="15" id="l8I-cB-NXK"/>
+                <constraint firstAttribute="bottom" secondItem="sjq-D0-3JV" secondAttribute="bottom" id="ryJ-5C-rDx"/>
+                <constraint firstAttribute="bottom" secondItem="D6u-vm-KS8" secondAttribute="bottom" id="uNd-DU-vOj"/>
                 <constraint firstItem="WFe-rx-mPS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wdv-Ra-RpF"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>

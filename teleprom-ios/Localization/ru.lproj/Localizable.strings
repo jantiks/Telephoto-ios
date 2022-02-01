@@ -36,8 +36,8 @@
 "alert.cancel" = "Отмена";
 "records.dublicate" = "Дублировать";
 "records.delete.all" = "Удалить все";
-"create.record.title.text.placeholder" = "Название идет здесь...";
-"create.record.content.text.placeholder" = "Введите текст...";
+"create.record.title.text.placeholder" = "Название идет здесь";
+"create.record.content.text.placeholder" = "Введите текст";
 "video.delete" = "Удалить";
 "video.download" = "Скачать";
 "loading.text" = "Загрузка";
