@@ -32,7 +32,7 @@ class BaseNavigationController: UINavigationController {
     }
     
     deinit {
-        print("deinit \(self )")
+        print("deinit \(self)")
     }
 }
 

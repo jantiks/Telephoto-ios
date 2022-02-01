@@ -13,6 +13,7 @@ class RecordsListViewController: BaseViewController {
     @IBOutlet private weak var recordsCollectionView: UICollectionView!
     @IBOutlet private weak var selectButton: UIButton!
     @IBOutlet private weak var selectionActionsView: UIView!
+    @IBOutlet private weak var bottomSafeAreaView: UIView!
     @IBOutlet private weak var selectionActionsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var dublicateButton: UIButton!
     @IBOutlet private weak var deletButton: UIButton!
@@ -58,6 +59,8 @@ class RecordsListViewController: BaseViewController {
         subscriptionView.isHidden = true
         interItemSpace = view.bounds.width * 0.05
         selectionActionsView.backgroundColor = .tabBarGray
+        bottomSafeAreaView.backgroundColor = .tabBarGray
+        selectButton.setTitleColor(.telepromPink.withAlphaComponent(0.3), for: .disabled)
         
         updateViewsForCurrentSelectionMode()
         
@@ -69,12 +72,13 @@ class RecordsListViewController: BaseViewController {
         recordsConfigs = RecordDataProvider.shared.getAll().reversed().map({ RecordCellConfig(record: $0, mode: mode) })
         recordsCollectionView.reloadData()
         languageConfigure()
+        
+        selectButton.isEnabled = !recordsConfigs.isEmpty
     }
     
-    private func toggleSelectionMode() {
-        mode.toggle()
+    private func setSelectionMode(_ mode: RecordsListMode) {
+        self.mode = mode
         updateViewsForCurrentSelectionMode()
-        selectionActionsViewHeightConstraint.constant = tabBarController?.tabBar.bounds.height ?? 49
     }
     
     private func updateViewsForCurrentSelectionMode() {
@@ -103,7 +107,8 @@ class RecordsListViewController: BaseViewController {
     }
     
     @IBAction func selectAction(_ sender: UIButton) {
-        toggleSelectionMode()
+        let newMode = self.mode == .add ? RecordsListMode.select : RecordsListMode.add
+        setSelectionMode(newMode)
     }
     
     @IBAction func subscribeAction(_ sender: UIButton) {
@@ -129,8 +134,12 @@ class RecordsListViewController: BaseViewController {
         ac.addAction(UIAlertAction(title: deleteTitle, style: .destructive, handler: { [weak self] action in
             if let record = self?.recordsConfigs.first(where: { $0.isSelected })?.record {
                 RecordDataProvider.shared.delete(record)
+                if self?.recordsConfigs.isEmpty == true {
+                    self?.setSelectionMode(.add)
+                }
             } else {
                 RecordDataProvider.shared.deleteAll()
+                self?.setSelectionMode(.add)
             }
         }))
         
