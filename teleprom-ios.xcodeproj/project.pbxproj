@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		776E92F157D1B89515303503 /* Pods_teleprom_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB97AD24EF2B45783D20B7C4 /* Pods_teleprom_ios.framework */; };
 		A01C9069277512200098EEB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C9068277512200098EEB8 /* AppDelegate.swift */; };
 		A01C906B277512200098EEB8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C906A277512200098EEB8 /* SceneDelegate.swift */; };
 		A01C906D277512200098EEB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C906C277512200098EEB8 /* ViewController.swift */; };
@@ -107,10 +106,11 @@
 		A0C468CC27944264006133E6 /* AspectRatioCellConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C468CB27944264006133E6 /* AspectRatioCellConfig.swift */; };
 		A0D31FAE27872DE3002B718D /* VideoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D31FAC27872DE3002B718D /* VideoPreviewViewController.swift */; };
 		A0D31FAF27872DE3002B718D /* VideoPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0D31FAD27872DE3002B718D /* VideoPreviewViewController.xib */; };
+		ABAE513169378AEA14636FAA /* Pods_teleprom_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 519B550047D2595DAEF93B63 /* Pods_teleprom_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4B8500C923282F43DFB2C95E /* Pods-teleprom-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teleprom-ios.debug.xcconfig"; path = "Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		519B550047D2595DAEF93B63 /* Pods_teleprom_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_teleprom_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01C9065277512200098EEB8 /* teleprom-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "teleprom-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01C9068277512200098EEB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A01C906A277512200098EEB8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -215,8 +215,8 @@
 		A0C468CB27944264006133E6 /* AspectRatioCellConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectRatioCellConfig.swift; sourceTree = "<group>"; };
 		A0D31FAC27872DE3002B718D /* VideoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPreviewViewController.swift; sourceTree = "<group>"; };
 		A0D31FAD27872DE3002B718D /* VideoPreviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPreviewViewController.xib; sourceTree = "<group>"; };
-		A75330ADA133111CCFF7D617 /* Pods-teleprom-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teleprom-ios.release.xcconfig"; path = "Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios.release.xcconfig"; sourceTree = "<group>"; };
-		DB97AD24EF2B45783D20B7C4 /* Pods_teleprom_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_teleprom_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8AEFA3040B62CC0933D62D8 /* Pods-teleprom-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teleprom-ios.release.xcconfig"; path = "Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios.release.xcconfig"; sourceTree = "<group>"; };
+		E4941D353668A4399675EA55 /* Pods-teleprom-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teleprom-ios.debug.xcconfig"; path = "Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,17 +224,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				776E92F157D1B89515303503 /* Pods_teleprom_ios.framework in Frameworks */,
+				ABAE513169378AEA14636FAA /* Pods_teleprom_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		14CD6CEEF1E0C2D0DF5ABC16 /* Frameworks */ = {
+		2332C8178EBF67004BA63688 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DB97AD24EF2B45783D20B7C4 /* Pods_teleprom_ios.framework */,
+				519B550047D2595DAEF93B63 /* Pods_teleprom_ios.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -242,8 +242,8 @@
 		31F447850B6B50212D211C8D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4B8500C923282F43DFB2C95E /* Pods-teleprom-ios.debug.xcconfig */,
-				A75330ADA133111CCFF7D617 /* Pods-teleprom-ios.release.xcconfig */,
+				E4941D353668A4399675EA55 /* Pods-teleprom-ios.debug.xcconfig */,
+				D8AEFA3040B62CC0933D62D8 /* Pods-teleprom-ios.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -254,7 +254,7 @@
 				A01C9067277512200098EEB8 /* teleprom-ios */,
 				A01C9066277512200098EEB8 /* Products */,
 				31F447850B6B50212D211C8D /* Pods */,
-				14CD6CEEF1E0C2D0DF5ABC16 /* Frameworks */,
+				2332C8178EBF67004BA63688 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -812,11 +812,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A01C9079277512260098EEB8 /* Build configuration list for PBXNativeTarget "teleprom-ios" */;
 			buildPhases = (
-				F4CDB77ECACBD822B692651D /* [CP] Check Pods Manifest.lock */,
+				23AFC8BD6AF60E17FDB79EFA /* [CP] Check Pods Manifest.lock */,
 				A01C9061277512200098EEB8 /* Sources */,
 				A01C9062277512200098EEB8 /* Frameworks */,
 				A01C9063277512200098EEB8 /* Resources */,
-				41504BBBCA1AC4E177671DD2 /* [CP] Embed Pods Frameworks */,
+				69454C030AF4C96C9C99C28E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -900,24 +900,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		41504BBBCA1AC4E177671DD2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F4CDB77ECACBD822B692651D /* [CP] Check Pods Manifest.lock */ = {
+		23AFC8BD6AF60E17FDB79EFA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -937,6 +920,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69454C030AF4C96C9C99C28E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-teleprom-ios/Pods-teleprom-ios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1173,7 +1173,7 @@
 		};
 		A01C907A277512260098EEB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B8500C923282F43DFB2C95E /* Pods-teleprom-ios.debug.xcconfig */;
+			baseConfigurationReference = E4941D353668A4399675EA55 /* Pods-teleprom-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1207,7 +1207,7 @@
 		};
 		A01C907B277512260098EEB8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A75330ADA133111CCFF7D617 /* Pods-teleprom-ios.release.xcconfig */;
+			baseConfigurationReference = D8AEFA3040B62CC0933D62D8 /* Pods-teleprom-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
