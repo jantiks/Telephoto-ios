@@ -29,5 +29,14 @@ class TabBarViewController: BaseTabBarViewController {
         UITabBar.appearance().tintColor = .white
         UITabBar.appearance().unselectedItemTintColor = .gray
         tabBar.barTintColor = .tabBarGray
+        languageConfigure()
+        
+        LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
+            self?.languageConfigure()
+        })])
+    }
+    
+    private func languageConfigure() {
+        navigationItem.backButtonTitle = "back".localized
     }
 }

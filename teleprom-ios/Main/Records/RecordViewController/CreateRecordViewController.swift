@@ -85,7 +85,7 @@ class CreateRecordViewController: BaseViewController {
         doneToolbar.barStyle = .black
         
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+        let done: UIBarButtonItem = UIBarButtonItem(title: "create.record.toolbar.title".localized, style: .done, target: self, action: #selector(self.doneButtonAction))
         done.tintColor = .white
         
         let items = [flexSpace, done]

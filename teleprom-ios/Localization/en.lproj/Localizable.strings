@@ -74,3 +74,5 @@
 "tv.subtitle" = "Self TV producer, or any public speaking!";
 "welcome.title" = "Welcome to our Telepromter";
 "welcome.subtitle" = "Record videos with unusual ease! You don't have to worry that you'll forget something while addressing your audience, just open your pocket teleprompter.";
+"create.record.toolbar.title" = "Done";
+"back" = "Back";

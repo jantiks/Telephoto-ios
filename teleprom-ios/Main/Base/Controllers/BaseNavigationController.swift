@@ -28,7 +28,13 @@ class BaseNavigationController: UINavigationController {
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.shadowImage = UIImage()
-        navigationItem.backButtonTitle = " "
+        LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
+            self?.languageConfigure()
+        })])
+    }
+    
+    private func languageConfigure() {
+        navigationItem.backButtonTitle = "back".localized
     }
     
     deinit {
