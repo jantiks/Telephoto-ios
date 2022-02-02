@@ -30,6 +30,7 @@ class RecordsListViewController: BaseViewController {
         registerCells()
         setDelegates()
         initUI()
+        checkSubscriptionState()
         
         LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
             self?.reloadData()
@@ -56,7 +57,6 @@ class RecordsListViewController: BaseViewController {
     }
     
     private func initUI() {
-        subscriptionView.isHidden = true
         interItemSpace = view.bounds.width * 0.05
         selectionActionsView.backgroundColor = .tabBarGray
         bottomSafeAreaView.backgroundColor = .tabBarGray
@@ -66,6 +66,12 @@ class RecordsListViewController: BaseViewController {
         
         let flow = recordsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         flow.sectionInset = UIEdgeInsets(top: 0, left: interItemSpace, bottom: 0, right: interItemSpace)
+    }
+    
+    private func checkSubscriptionState() {
+        IAPManager.shared.checkPermissions { [weak self] hasPermisison in
+            self?.subscriptionView.isHidden = hasPermisison
+        }
     }
     
     private func reloadData() {

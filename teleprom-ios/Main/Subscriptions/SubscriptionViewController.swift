@@ -61,6 +61,10 @@ class SubscriptionViewController: BaseViewController {
     @IBAction func closeAction(_ sender: UIButton) {
         dismiss(animated: true)
     }
+    
+    @IBAction func subscribeAction(_ sender: UIButton) {
+        IAPManager.shared.purchase(product: SubscriptionType.weekly)
+    }
 }
 
 extension SubscriptionViewController: UITableViewDelegate {

@@ -8,5 +8,5 @@
 import Foundation
 
 enum SubscriptionType: String {
-    case weekly = "Pro"
+    case weekly = "premium_weekly"
 }

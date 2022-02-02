@@ -109,9 +109,22 @@ class VideoPreviewViewController: BaseViewController {
         }
     }
     
+    private func showSubscriptionsController() {
+        let vc = SubscriptionViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
     @IBAction func saveAction(_ sender: UIButton) {
-        showLoading()
-        SaveVideoCommand(videoUrl, aspectRatio: aspectRatio, savedAction: videoSavedAction, failedAction: videoSavingFailedAction).execute()
+        IAPManager.shared.checkPermissions { [weak self] hasPermition in
+            guard let self = self else { return }
+            if hasPermition {
+                self.showLoading()
+                SaveVideoCommand(self.videoUrl, aspectRatio: self.aspectRatio, savedAction: self.videoSavedAction, failedAction: self.videoSavingFailedAction).execute()
+            } else {
+                self.showSubscriptionsController()
+            }
+        }
     }
     
     @IBAction func playPuseAction(_ sender: UIButton) {
@@ -140,6 +153,6 @@ class VideoPreviewViewController: BaseViewController {
 
 extension VideoPreviewViewController: PlayerViewDelegate {
     func playPauseAction(_ isPlaying: Bool) {
-        isPlaying ? playButton.setImage(UIImage(systemName: "pause.circle.fill"), for: .normal) : playButton.setImage(UIImage(systemName: "play.circle.fill"), for: .normal)
+        isPlaying ? playButton.setImage(UIImage(named: "pause"), for: .normal) : playButton.setImage(UIImage(named: "play"), for: .normal)
     }
 }

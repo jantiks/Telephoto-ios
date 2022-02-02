@@ -7,4 +7,5 @@ target 'teleprom-ios' do
 
   # Pods for teleprom-ios
 	pod 'RealmSwift'
+	pod 'Qonversion'
 end

@@ -96,7 +96,7 @@ class CreateRecordViewController: BaseViewController {
         titleTextField.inputAccessoryView = doneToolbar
     }
     
-    @objc private func doneButtonAction(){
+    @objc private func doneButtonAction() {
         view.endEditing(true)
     }
     
