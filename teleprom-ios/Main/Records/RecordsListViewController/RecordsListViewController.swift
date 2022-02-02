@@ -146,14 +146,19 @@ class RecordsListViewController: BaseViewController {
         let ac = UIAlertController(title: alertTitle, message: nil, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "alert.cancel".localized, style: .default, handler: nil))
         ac.addAction(UIAlertAction(title: deleteTitle, style: .destructive, handler: { [weak self] action in
-            if let record = self?.recordsConfigs.first(where: { $0.isSelected })?.record {
-                RecordDataProvider.shared.delete(record)
+            if let records = self?.recordsConfigs.filter({ $0.isSelected }) {
+                if records.isEmpty {
+                    // if no records is selected, delete all records
+                    RecordDataProvider.shared.deleteAll()
+                    self?.setSelectionMode(.add)
+                    return
+                }
+                
+                records.forEach({ RecordDataProvider.shared.delete($0.record) })
+                
                 if self?.recordsConfigs.isEmpty == true {
                     self?.setSelectionMode(.add)
                 }
-            } else {
-                RecordDataProvider.shared.deleteAll()
-                self?.setSelectionMode(.add)
             }
         }))
         
@@ -198,7 +203,6 @@ extension RecordsListViewController: UICollectionViewDataSource {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addCell", for: indexPath) as? AddRecordCell else { fatalError("couldn't load addCell") }
                 
                 return cell
-                
             } else {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recordCell", for: indexPath) as? RecordCell else { fatalError("couldn't load recordCell") }
                 
@@ -212,11 +216,6 @@ extension RecordsListViewController: UICollectionViewDataSource {
             cell.configure(recordsConfigs[indexPath.item])
             cell.setSelectedCommand = DoneCommand({ [weak self] in
                 guard let self = self else { return }
-                
-                if let selectedCellConfigIndex = self.recordsConfigs.firstIndex(where: { $0.isSelected }), selectedCellConfigIndex != indexPath.item {
-                    self.recordsConfigs[selectedCellConfigIndex].isSelected = false
-                    self.recordsCollectionView.reloadItems(at: [IndexPath(item: selectedCellConfigIndex, section: 0)])
-                }
                 
                 self.recordsConfigs[indexPath.item].isSelected.toggle()
             })

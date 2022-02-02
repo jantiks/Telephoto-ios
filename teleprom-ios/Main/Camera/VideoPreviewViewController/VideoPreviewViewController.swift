@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import Photos
 
 class VideoPreviewViewController: BaseViewController {
 
@@ -115,15 +116,51 @@ class VideoPreviewViewController: BaseViewController {
         present(vc, animated: true)
     }
     
+    private func alertCameraAccessNeeded() {
+        let settingsAppURL = URL(string: UIApplication.openSettingsURLString)!
+        
+        let alert = UIAlertController(
+            title: "gallery.access.title".localized,
+            message: "gallery.access.message".localized,
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "alert.cancel".localized, style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "alert.allow".localized, style: .cancel, handler: { (alert) -> Void in
+            UIApplication.shared.open(settingsAppURL, options: [:], completionHandler: nil)
+        }))
+        
+        present(alert, animated: true)
+    }
+    
+    private func saveVideo() {
+        showLoading()
+        SaveVideoCommand(videoUrl, aspectRatio: aspectRatio, savedAction: videoSavedAction, failedAction: videoSavingFailedAction).execute()
+    }
+    
+    private func downloadVideoIfHasAccess() {
+        switch PHPhotoLibrary.authorizationStatus() {
+        case .authorized:
+            //handle authorized status
+            saveVideo()
+        case .denied, .restricted :
+            alertCameraAccessNeeded()
+            //handle denied status
+        case .notDetermined:
+            // ask for permissions
+            PHPhotoLibrary.requestAuthorization { [weak self] status in
+                status == .authorized ? self?.saveVideo() : self?.alertCameraAccessNeeded()
+            }
+        default:
+            alertCameraAccessNeeded()
+        }
+    }
+    
     @IBAction func saveAction(_ sender: UIButton) {
         IAPManager.shared.checkPermissions { [weak self] hasPermition in
             guard let self = self else { return }
-            if hasPermition {
-                self.showLoading()
-                SaveVideoCommand(self.videoUrl, aspectRatio: self.aspectRatio, savedAction: self.videoSavedAction, failedAction: self.videoSavingFailedAction).execute()
-            } else {
-                self.showSubscriptionsController()
-            }
+            
+            hasPermition ? self.downloadVideoIfHasAccess() : self.showSubscriptionsController()
         }
     }
     

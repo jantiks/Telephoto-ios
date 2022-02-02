@@ -44,27 +44,6 @@ class CameraCaptureViewController: UIViewController {
         return .portrait
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        getTabBar()?.tabBar.backgroundColor = .clear
-        setCameraConfigIfHasAccess()
-        isCurrentlyVisible = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        getTabBar()?.tabBar.backgroundColor = .tabBarGray
-        getTabBar()?.tabBar.isHidden = false
-        tabBarBg?.removeFromSuperview()
-        removeRecButton()
-        isCurrentlyVisible = false
-        DispatchQueue.main.async {
-            self.cameraConfig.stopRunning()
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -83,13 +62,6 @@ class CameraCaptureViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         setAspectView()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        setTabBarBg()
-        addRecButton()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -169,13 +141,13 @@ class CameraCaptureViewController: UIViewController {
         let settingsAppURL = URL(string: UIApplication.openSettingsURLString)!
         
         let alert = UIAlertController(
-            title: "Need Camera Access",
-            message: "Camera access is required to make full use of this app.",
+            title: "camera.access.title".localized,
+            message: "camera.access.message".localized,
             preferredStyle: .alert
         )
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Allow Camera", style: .cancel, handler: { (alert) -> Void in
+        alert.addAction(UIAlertAction(title: "alert.cancel".localized, style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "alert.allow".localized, style: .cancel, handler: { (alert) -> Void in
             UIApplication.shared.open(settingsAppURL, options: [:], completionHandler: nil)
         }))
         
@@ -350,6 +322,27 @@ class CameraCaptureViewController: UIViewController {
             }
             
             scrollRecordView.startScrolling()
+        }
+    }
+}
+
+extension CameraCaptureViewController: TabBarSelectable {
+    func selectionChanged(selectedController: UIViewController) {
+        if selectedController == self {
+            getTabBar()?.tabBar.backgroundColor = .clear
+            setCameraConfigIfHasAccess()
+            isCurrentlyVisible = true
+            setTabBarBg()
+            addRecButton()
+        } else {
+            getTabBar()?.tabBar.backgroundColor = .tabBarGray
+            getTabBar()?.tabBar.isHidden = false
+            tabBarBg?.removeFromSuperview()
+            removeRecButton()
+            isCurrentlyVisible = false
+            DispatchQueue.main.async {
+                self.cameraConfig.stopRunning()
+            }
         }
     }
 }

@@ -82,3 +82,8 @@
 "advertizing.first.subtitle" = "Export of videos";
 "advertizing.second.subtitle" = "Turning off ads";
 "advertizing.third.subtitle" = "Adaptive screen ratio";
+"gallery.access.title" = "Need Gallery Access";
+"gallery.access.message" = "Gallery access is required for downloading the video";
+"camera.access.title" = "Need Camera Access";
+"camera.access.message" = "Camera access is required to make full use of this app.";
+"alert.allow" = "Allow";

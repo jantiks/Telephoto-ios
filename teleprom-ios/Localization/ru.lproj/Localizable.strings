@@ -82,3 +82,8 @@
 "advertizing.first.subtitle" = "Экспорт отснятых видео";
 "advertizing.second.subtitle" = "Отключение рекламы";
 "advertizing.third.subtitle" = "Адаптивное разрешение экрана";
+"gallery.access.title" = "Требуется доступ к галерее";
+"gallery.access.message" = "Для загрузки видео требуется доступ к галерее";
+"camera.access.title" = "Требуется доступ к камере";
+"camera.access.message" = "Доступ к камере требуется, чтобы в полной мере использовать это приложение.";
+"alert.allow" = "Разрешить";
