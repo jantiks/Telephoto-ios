@@ -95,11 +95,15 @@ class VideoPreviewViewController: BaseViewController {
     }
     
     private func showLoading() {
-        loadingView.startLoading()
+        DispatchQueue.main.async { [weak self] in
+            self?.loadingView.startLoading()
+        }
     }
     
     private func hideLoading() {
-        loadingView.stopLoading()
+        DispatchQueue.main.async { [weak self] in
+            self?.loadingView.stopLoading()
+        }
     }
     
     private func deleteVideo() {
@@ -117,20 +121,22 @@ class VideoPreviewViewController: BaseViewController {
     }
     
     private func alertCameraAccessNeeded() {
-        let settingsAppURL = URL(string: UIApplication.openSettingsURLString)!
-        
-        let alert = UIAlertController(
-            title: "gallery.access.title".localized,
-            message: "gallery.access.message".localized,
-            preferredStyle: .alert
-        )
-        
-        alert.addAction(UIAlertAction(title: "alert.cancel".localized, style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "alert.allow".localized, style: .cancel, handler: { (alert) -> Void in
-            UIApplication.shared.open(settingsAppURL, options: [:], completionHandler: nil)
-        }))
-        
-        present(alert, animated: true)
+        DispatchQueue.main.async { [weak self] in
+            let settingsAppURL = URL(string: UIApplication.openSettingsURLString)!
+            
+            let alert = UIAlertController(
+                title: "gallery.access.title".localized,
+                message: "gallery.access.message".localized,
+                preferredStyle: .alert
+            )
+            
+            alert.addAction(UIAlertAction(title: "alert.cancel".localized, style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "alert.allow".localized, style: .cancel, handler: { (alert) -> Void in
+                UIApplication.shared.open(settingsAppURL, options: [:], completionHandler: nil)
+            }))
+            
+            self?.present(alert, animated: true)
+        }
     }
     
     private func saveVideo() {

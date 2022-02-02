@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="OK2-z4-gC5">
-                    <rect key="frame" x="0.0" y="99" width="414" height="797"/>
+                    <rect key="frame" x="0.0" y="104" width="414" height="792"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghn-cY-Fv7" customClass="SubscriptionAdvertizingView" customModule="teleprom_ios" customModuleProvider="target">
                             <rect key="frame" x="20" y="0.0" width="374" height="190"/>
@@ -32,7 +32,7 @@
                             </constraints>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YYc-8E-Hpb">
-                            <rect key="frame" x="0.0" y="205" width="414" height="592"/>
+                            <rect key="frame" x="0.0" y="205" width="414" height="587"/>
                         </tableView>
                     </subviews>
                     <constraints>
@@ -55,7 +55,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="OK2-z4-gC5" firstAttribute="top" secondItem="J8q-hA-0u8" secondAttribute="bottom" constant="10" id="332-rf-lrO"/>
+                <constraint firstItem="OK2-z4-gC5" firstAttribute="top" secondItem="J8q-hA-0u8" secondAttribute="bottom" constant="15" id="332-rf-lrO"/>
                 <constraint firstItem="J8q-hA-0u8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="7RT-mK-NDz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="J8q-hA-0u8" secondAttribute="trailing" id="Tfm-bB-1dv"/>
                 <constraint firstItem="OK2-z4-gC5" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="bEN-Lm-gWD"/>

@@ -57,17 +57,20 @@ class IAPManager {
         Qonversion.purchase(product.rawValue) { [weak self] result, error, canceled in
             guard error == nil else {
                 print("Error purchasing product")
+                self?.setLastSubscribedState(isSubscribed: false)
                 completion(false)
                 return
             }
 
             guard !canceled else {
                 print("purchase canceled")
+                self?.setLastSubscribedState(isSubscribed: false)
                 completion(false)
                 return
             }
             
             self?.reloadCommands.forEach({ $0.execute() })
+            self?.setLastSubscribedState(isSubscribed: true)
             completion(true)
             print("Purchase completed")
         }

@@ -59,11 +59,11 @@
                         <constraint firstItem="qxU-R5-BtI" firstAttribute="top" secondItem="ABo-EJ-5jk" secondAttribute="top" id="wJ1-WP-o9j"/>
                     </constraints>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="vsa-FO-pvt">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vsa-FO-pvt">
                     <rect key="frame" x="0.0" y="114" width="414" height="748"/>
                     <subviews>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlj-VT-12R" userLabel="subscriptionView">
-                            <rect key="frame" x="15" y="-50" width="384" height="50"/>
+                            <rect key="frame" x="15" y="-70" width="384" height="70"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTm-zF-LCc" userLabel="subscribe button">
                                     <rect key="frame" x="0.0" y="0.0" width="384" height="50"/>
@@ -96,7 +96,7 @@
                                 </imageView>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="pTm-zF-LCc" secondAttribute="bottom" id="6Vq-50-Uhn"/>
+                                <constraint firstAttribute="bottom" secondItem="pTm-zF-LCc" secondAttribute="bottom" constant="20" id="6Vq-50-Uhn"/>
                                 <constraint firstItem="2mE-oh-TMg" firstAttribute="centerY" secondItem="pTm-zF-LCc" secondAttribute="centerY" id="6WU-sA-T5d"/>
                                 <constraint firstItem="pTm-zF-LCc" firstAttribute="top" secondItem="Rlj-VT-12R" secondAttribute="top" id="6ka-ST-gbv"/>
                                 <constraint firstItem="2mE-oh-TMg" firstAttribute="trailing" secondItem="pTm-zF-LCc" secondAttribute="trailing" constant="-10" id="Dwc-5H-pRf"/>
@@ -105,7 +105,7 @@
                             </constraints>
                         </view>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ec9-AO-RuP" userLabel="records collection view">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="698"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="699"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VUY-5w-ii2">
                                 <size key="itemSize" width="128" height="128"/>
