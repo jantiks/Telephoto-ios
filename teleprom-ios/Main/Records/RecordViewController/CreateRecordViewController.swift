@@ -73,12 +73,14 @@ class CreateRecordViewController: BaseViewController {
     private func initUI() {
         titleTextField.text = record?.getTitle()
         contentTextView.attributedText = record?.getText()
-        title = "\(contentTextView.text.count)/1000"
         
         setNavBarButtons()
         setTitleTextField()
         setConetentTextView()
         addDoneButtonOnKeyboard()
+        IAPManager.shared.checkPermissions { [weak self] hasPermission in
+            self?.title = hasPermission ? "" : "\(self?.contentTextView.text.count ?? 0)/1000"
+        }
     }
     
     private func addDoneButtonOnKeyboard(){
@@ -173,7 +175,9 @@ class CreateRecordViewController: BaseViewController {
 
 extension CreateRecordViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        title = "\(textView.text.count)/\(maxTextCount)"
+        if !IAPManager.shared.getLastSubscribedState() {
+            title = "\(textView.text.count)/\(maxTextCount)"
+        }
         
         textViewModifier.textViewDidChange()
         contentTextViewPlaceholderLabel.isHidden = !textView.text.isEmpty
@@ -183,8 +187,12 @@ extension CreateRecordViewController: UITextViewDelegate {
     func textView(_ textView: UITextView,
                   shouldChangeTextIn range: NSRange,
                   replacementText text: String) -> Bool {
-        return textLimit(existingText: textView.text,
-                              newText: text,
-                              limit: maxTextCount)
+        if !IAPManager.shared.getLastSubscribedState() {
+            return textLimit(existingText: textView.text,
+                                  newText: text,
+                                  limit: maxTextCount)
+        }
+        
+        return true
     }
 }
