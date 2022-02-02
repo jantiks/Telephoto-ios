@@ -22,6 +22,7 @@ class CreateRecordViewController: BaseViewController {
     private var contentTextViewPlaceholderLabel: UILabel!
     private var record: Record?
     private var firstLayoutTime = true
+    private let maxTextCount = 1000
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -136,6 +137,14 @@ class CreateRecordViewController: BaseViewController {
         NSLayoutConstraint(item: effectView, attribute: .bottom, relatedBy: .equal, toItem: backgroundBlurView, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
     }
     
+    private func textLimit(existingText: String?,
+                           newText: String,
+                           limit: Int) -> Bool {
+        let text = existingText ?? ""
+        let isAtLimit = text.count + newText.count <= limit
+        return isAtLimit
+    }
+    
     override func keyboardDidHide() {
         textModifierBottomConstraint.constant = 0
         contentTextViewBottomConstraint.constant = 0
@@ -164,10 +173,18 @@ class CreateRecordViewController: BaseViewController {
 
 extension CreateRecordViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        title = "\(textView.text.count)/1000"
+        title = "\(textView.text.count)/\(maxTextCount)"
         
         textViewModifier.textViewDidChange()
         contentTextViewPlaceholderLabel.isHidden = !textView.text.isEmpty
         navigationItem.rightBarButtonItem?.isEnabled = !textView.text.isEmpty && titleTextField.text?.isEmpty == false
+    }
+    
+    func textView(_ textView: UITextView,
+                  shouldChangeTextIn range: NSRange,
+                  replacementText text: String) -> Bool {
+        return textLimit(existingText: textView.text,
+                              newText: text,
+                              limit: maxTextCount)
     }
 }
