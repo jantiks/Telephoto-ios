@@ -76,3 +76,9 @@
 "welcome.subtitle" = "Записывайте видео с необыкновенной легкостью! Вам не нужно беспокоиться, что вы что-то забудете во время выступления перед аудиторией, просто откройте карманный телесуфлер.";
 "create.record.toolbar.title" = "Готово";
 "back" = "Назад";
+"subscription.error.title" = "Что-то пошло не так";
+"subscription.error.subtitle" = "Не удалось совершить покупку. Повторите попытку позже.";
+"restore.success.title" = "Успешно восстановлен";
+"advertizing.first.subtitle" = "Экспорт отснятых видео";
+"advertizing.second.subtitle" = "Отключение рекламы";
+"advertizing.third.subtitle" = "Адаптивное разрешение экрана";

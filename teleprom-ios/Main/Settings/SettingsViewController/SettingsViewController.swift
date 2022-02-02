@@ -11,6 +11,7 @@ class SettingsViewController: BaseViewController {
     
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var settingsTableView: UITableView!
+    @IBOutlet private weak var subscriptionAdvertizing: SubscriptionAdvertizingView!
     
     private var tableData: [SettingsTableCellConfig] = []
     override func viewDidLoad() {
@@ -20,26 +21,38 @@ class SettingsViewController: BaseViewController {
         settingsTableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingsTableViewCell")
         initUI()
         reloadData()
-        LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
-            self?.reloadData()
-        })])
+        setReloadCommands()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
     }
-//
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        navigationController?.navigationBar.isHidden = false
-//    }
+    
+    private func setReloadCommands() {
+        LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
+            self?.reloadData()
+            self?.subscriptionAdvertizing.languageConfigure()
+        })])
+        
+        IAPManager.shared.addReloadCommands([DoneCommand({ [weak self] in
+            self?.subscriptionAdvertizing.isHidden = true
+        })])
+    }
     
     private func initUI() {
         view.backgroundColor = .controllerGray
         settingsTableView.backgroundColor = .controllerGray
         settingsTableView.separatorColor = .clear
         titleLabel.text = "main.tab.settings".localized
+        checkSubscriptionState()
+    }
+    
+    private func checkSubscriptionState() {
+        subscriptionAdvertizing.isHidden = IAPManager.shared.getLastSubscribedState()
+        IAPManager.shared.checkPermissions { [weak self] hasPermisison in
+            self?.subscriptionAdvertizing.isHidden = hasPermisison
+        }
     }
     
     private func reloadData() {

@@ -73,7 +73,7 @@ class CameraCaptureViewController: UIViewController {
         cameraConfig.durationUpdated = { [weak self] duration in
             self?.durationLabel?.text = "\(Double(duration).getTimeFormattedWithoutHour())"
         }
-
+        
         LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
             self?.languageConfigure()
         })])
@@ -309,9 +309,17 @@ class CameraCaptureViewController: UIViewController {
     }
     
     @IBAction func changeAspectRationAction(_ sender: UIButton) {
-        let vc = AspectRatioViewController()
-        vc.setAspectRatioAction = setAspectRatioAction
-        present(vc, animated: true)
+        if IAPManager.shared.getLastSubscribedState() {
+            // user has subscription, show the aspect ratio view controller
+            let vc = AspectRatioViewController()
+            vc.setAspectRatioAction = setAspectRatioAction
+            present(vc, animated: true)
+        } else {
+            // user doesnt have access for aspect ratio controller
+            let vc = SubscriptionViewController()
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
+        }
     }
     
     @IBAction func didTapOnRecButton(_ sender: UIButton) {

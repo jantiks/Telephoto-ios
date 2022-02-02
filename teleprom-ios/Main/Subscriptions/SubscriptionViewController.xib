@@ -64,18 +64,27 @@
                             <color key="tintColor" red="0.94901960780000005" green="0.25098039220000001" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="privacyAction:" destination="-1" eventType="touchUpInside" id="Dpu-IV-6q8"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAr-XK-WfT">
                             <rect key="frame" x="108.5" y="0.0" width="78" height="30"/>
                             <color key="tintColor" red="0.94901960780000005" green="0.25098039220000001" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="restoreAction:" destination="-1" eventType="touchUpInside" id="NEf-Mn-rRs"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GsQ-nQ-xco">
                             <rect key="frame" x="216.5" y="0.0" width="78.5" height="30"/>
                             <color key="tintColor" red="0.94901960780000005" green="0.25098039220000001" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="termsAction:" destination="-1" eventType="touchUpInside" id="yfx-uV-UGY"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>

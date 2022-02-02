@@ -17,6 +17,8 @@ class SubscriptionViewController: BaseViewController {
     @IBOutlet private weak var privacyButton: UIButton!
     @IBOutlet private weak var premiumFeaturesTableView: UITableView!
     
+    private var loaderView: UIView?
+    private var reloadCommands: [CommonCommand] = []
     private let cellHeight: CGFloat = 75
     private let featuresData: [PremiumFeatureConfig] = [
                                                         PremiumFeatureConfig(title: "export.videos.title".localized, subtitle: "export.videos.subtitle".localized),
@@ -27,6 +29,10 @@ class SubscriptionViewController: BaseViewController {
         super.viewDidLoad()
 
         initUI()
+    }
+    
+    func addReloadCommands(_ commands: [CommonCommand]) {
+        reloadCommands.append(contentsOf: commands)
     }
     
     private func initUI() {
@@ -58,12 +64,74 @@ class SubscriptionViewController: BaseViewController {
         termsButton.setTitle("terms".localized, for: .normal)
     }
     
+    private func showLoader() {
+        loaderView = UIView()
+        loaderView?.frame = view.frame
+        loaderView?.backgroundColor = .darkGray.withAlphaComponent(0.5)
+        view.addSubview(loaderView!)
+        
+        // activity indicator
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.color = .white
+        indicator.startAnimating()
+        loaderView?.addSubview(indicator)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(item: indicator, attribute: .centerX, relatedBy: .equal, toItem: loaderView!, attribute: .centerX, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: indicator, attribute: .centerY, relatedBy: .equal, toItem: loaderView!, attribute: .centerY, multiplier: 1.0, constant: 0).isActive = true
+    }
+    
+    private func hideLoader() {
+        loaderView?.removeFromSuperview()
+    }
+    
+    private func getSuccessRestoreAlert() -> UIViewController {
+        let ac = UIAlertController(title: "restore.success.title".localized, message: nil, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        return ac
+    }
+    
     @IBAction func closeAction(_ sender: UIButton) {
         dismiss(animated: true)
     }
     
     @IBAction func subscribeAction(_ sender: UIButton) {
-        IAPManager.shared.purchase(product: SubscriptionType.weekly)
+        showLoader()
+        IAPManager.shared.purchase(product: SubscriptionType.weekly) { [weak self] completed in
+            if completed  {
+                self?.reloadCommands.forEach({ $0.execute() })
+                self?.dismiss(animated: true)
+            }
+            
+            self?.hideLoader()
+        }
+    }
+    
+    @IBAction func restoreAction(_ sender: UIButton) {
+        showLoader()
+        IAPManager.shared.restore { [weak self] completed in
+            guard let self = self else { return }
+            
+            if completed {
+                self.reloadCommands.forEach({ $0.execute() })
+                self.dismiss(animated: true)
+                AppDelegate.getController()?.present(self.getSuccessRestoreAlert(), animated: true)
+            }
+            
+            self.hideLoader()
+        }
+    }
+    
+    @IBAction func privacyAction(_ sender: UIButton) {
+        if let url = URL(string: Utils.privacyUrl) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    @IBAction func termsAction(_ sender: UIButton) {
+        if let url = URL(string: Utils.termsUrl) {
+            UIApplication.shared.open(url)
+        }
     }
 }
 

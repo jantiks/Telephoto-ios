@@ -48,15 +48,18 @@ extension AboutViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            if let url = URL(string: "https://pages.flycricket.io/telepromter/terms.html") {
+            if let url = URL(string: Utils.termsUrl) {
                 UIApplication.shared.open(url)
             }
         } else if indexPath.row == 1 {
-            if let url = URL(string: "https://pages.flycricket.io/telepromter/privacy.html") {
+            if let url = URL(string: Utils.privacyUrl) {
                 UIApplication.shared.open(url)
             }
         } else if indexPath.row == 2 {
-            
+            if let url = URL(string: Utils.appUrl) {
+                let ac = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+                present(ac, animated: true)
+            }
         } else if indexPath.row == 3 {
             SKStoreReviewController.requestReviewFromScene()
         }

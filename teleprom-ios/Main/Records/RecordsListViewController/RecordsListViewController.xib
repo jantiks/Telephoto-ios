@@ -62,7 +62,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="vsa-FO-pvt">
                     <rect key="frame" x="0.0" y="114" width="414" height="782"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlj-VT-12R" userLabel="subscriptionView">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlj-VT-12R" userLabel="subscriptionView">
                             <rect key="frame" x="15" y="0.0" width="384" height="50"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTm-zF-LCc" userLabel="subscribe button">
@@ -105,7 +105,7 @@
                             </constraints>
                         </view>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ec9-AO-RuP" userLabel="records collection view">
-                            <rect key="frame" x="0.0" y="75" width="414" height="707"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="782"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VUY-5w-ii2">
                                 <size key="itemSize" width="128" height="128"/>

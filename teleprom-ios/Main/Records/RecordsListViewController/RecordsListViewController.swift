@@ -31,7 +31,15 @@ class RecordsListViewController: BaseViewController {
         setDelegates()
         initUI()
         checkSubscriptionState()
-        
+        setReloadCommands()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    private func setReloadCommands() {
         LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
             self?.reloadData()
         })])
@@ -39,11 +47,10 @@ class RecordsListViewController: BaseViewController {
         RecordDataProvider.shared.addReloadCommands([DoneCommand({ [weak self] in
             self?.reloadData()
         })])
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
+        
+        IAPManager.shared.addReloadCommands([DoneCommand({ [weak self]  in
+            self?.subscriptionView.isHidden = true
+        })])
     }
 
     private func registerCells() {
@@ -69,6 +76,7 @@ class RecordsListViewController: BaseViewController {
     }
     
     private func checkSubscriptionState() {
+        subscriptionView.isHidden = IAPManager.shared.getLastSubscribedState()
         IAPManager.shared.checkPermissions { [weak self] hasPermisison in
             self?.subscriptionView.isHidden = hasPermisison
         }
