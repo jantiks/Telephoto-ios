@@ -43,6 +43,7 @@ class SubscriptionViewController: BaseViewController {
     }
     
     private func setTableView() {
+        premiumFeaturesTableView.backgroundColor = .white
         premiumFeaturesTableView.separatorStyle = .none
         premiumFeaturesTableView.isScrollEnabled = false
         premiumFeaturesTableView.delegate = self
