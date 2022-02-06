@@ -24,10 +24,25 @@ class TabBarViewController: BaseTabBarViewController {
         ])
     }
     
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        viewControllers?.forEach({
+            ($0 as? TabBarSelectable)?.selectionChanged(selectedController: viewController)
+        })
+    }
+    
     private func initUI() {
         UITabBar.appearance().backgroundColor = .tabBarGray
         UITabBar.appearance().tintColor = .white
         UITabBar.appearance().unselectedItemTintColor = .gray
         tabBar.barTintColor = .tabBarGray
+        languageConfigure()
+        
+        LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
+            self?.languageConfigure()
+        })])
+    }
+    
+    private func languageConfigure() {
+        navigationItem.backButtonTitle = "back".localized
     }
 }

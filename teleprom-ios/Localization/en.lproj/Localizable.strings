@@ -74,3 +74,16 @@
 "tv.subtitle" = "Self TV producer, or any public speaking!";
 "welcome.title" = "Welcome to our Telepromter";
 "welcome.subtitle" = "Record videos with unusual ease! You don't have to worry that you'll forget something while addressing your audience, just open your pocket teleprompter.";
+"create.record.toolbar.title" = "Done";
+"back" = "Back";
+"subscription.error.title" = "Something went wrong";
+"subscription.error.subtitle" = "Couldn't make the purchase, please try later again";
+"restore.success.title" = "Restored successfully";
+"advertizing.first.subtitle" = "Export of videos";
+"advertizing.second.subtitle" = "Turning off ads";
+"advertizing.third.subtitle" = "Adaptive screen ratio";
+"gallery.access.title" = "Need Gallery Access";
+"gallery.access.message" = "Gallery access is required for downloading the video";
+"camera.access.title" = "Need Camera Access";
+"camera.access.message" = "Camera access is required to make full use of this app.";
+"alert.allow" = "Allow";

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecordsListViewController" customModule="teleprom_ios" customModuleProvider="target">
             <connections>
+                <outlet property="bottomSafeAreaView" destination="IL0-4A-GYT" id="w5M-SA-Pqs"/>
                 <outlet property="deletButton" destination="Jii-5G-Qfv" id="eoZ-3k-c3P"/>
                 <outlet property="dublicateButton" destination="TNy-kh-roD" id="nxa-LD-BHo"/>
                 <outlet property="recordsCollectionView" destination="ec9-AO-RuP" id="xUR-b6-mLP"/>
@@ -39,7 +40,7 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3Q-cs-BRZ" userLabel="copy button">
                             <rect key="frame" x="315.5" y="-0.5" width="68.5" height="31"/>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" red="0.8662583828" green="0.223597616" blue="0.47182530160000002" alpha="0.69944571190000004" colorSpace="custom" customColorSpace="sRGB"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Button">
                                 <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/>
@@ -58,11 +59,11 @@
                         <constraint firstItem="qxU-R5-BtI" firstAttribute="top" secondItem="ABo-EJ-5jk" secondAttribute="top" id="wJ1-WP-o9j"/>
                     </constraints>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="vsa-FO-pvt">
-                    <rect key="frame" x="0.0" y="114" width="414" height="782"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vsa-FO-pvt">
+                    <rect key="frame" x="0.0" y="114" width="414" height="748"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlj-VT-12R" userLabel="subscriptionView">
-                            <rect key="frame" x="15" y="0.0" width="384" height="50"/>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlj-VT-12R" userLabel="subscriptionView">
+                            <rect key="frame" x="15" y="-70" width="384" height="70"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTm-zF-LCc" userLabel="subscribe button">
                                     <rect key="frame" x="0.0" y="0.0" width="384" height="50"/>
@@ -95,7 +96,7 @@
                                 </imageView>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="pTm-zF-LCc" secondAttribute="bottom" id="6Vq-50-Uhn"/>
+                                <constraint firstAttribute="bottom" secondItem="pTm-zF-LCc" secondAttribute="bottom" constant="20" id="6Vq-50-Uhn"/>
                                 <constraint firstItem="2mE-oh-TMg" firstAttribute="centerY" secondItem="pTm-zF-LCc" secondAttribute="centerY" id="6WU-sA-T5d"/>
                                 <constraint firstItem="pTm-zF-LCc" firstAttribute="top" secondItem="Rlj-VT-12R" secondAttribute="top" id="6ka-ST-gbv"/>
                                 <constraint firstItem="2mE-oh-TMg" firstAttribute="trailing" secondItem="pTm-zF-LCc" secondAttribute="trailing" constant="-10" id="Dwc-5H-pRf"/>
@@ -104,7 +105,7 @@
                             </constraints>
                         </view>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ec9-AO-RuP" userLabel="records collection view">
-                            <rect key="frame" x="0.0" y="75" width="414" height="707"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="699"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VUY-5w-ii2">
                                 <size key="itemSize" width="128" height="128"/>
@@ -113,70 +114,76 @@
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
                         </collectionView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZo-OE-0eB">
+                            <rect key="frame" x="0.0" y="699" width="414" height="49"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1hq-vw-l83">
+                                    <rect key="frame" x="0.0" y="8" width="414" height="41"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNy-kh-roD" userLabel="dublicate button">
+                                            <rect key="frame" x="0.0" y="0.0" width="207" height="41"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Dublicate">
+                                                <imageReference key="image" image="square.on.square" catalog="system" symbolScale="medium"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="dublicateAction:" destination="-1" eventType="touchUpInside" id="RNg-1n-dMv"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jii-5G-Qfv" userLabel="delete button">
+                                            <rect key="frame" x="207" y="0.0" width="207" height="41"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Delete">
+                                                <imageReference key="image" image="trash" catalog="system" symbolScale="medium"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="deleteAction:" destination="-1" eventType="touchUpInside" id="7KJ-YN-vXJ"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="1hq-vw-l83" secondAttribute="bottom" id="8W6-oY-4e1"/>
+                                <constraint firstAttribute="height" constant="49" id="NfT-6N-V2k"/>
+                                <constraint firstItem="1hq-vw-l83" firstAttribute="top" secondItem="jZo-OE-0eB" secondAttribute="top" constant="8" id="UyD-ar-k2D"/>
+                                <constraint firstAttribute="trailing" secondItem="1hq-vw-l83" secondAttribute="trailing" id="hUI-oh-yyz"/>
+                                <constraint firstItem="1hq-vw-l83" firstAttribute="leading" secondItem="jZo-OE-0eB" secondAttribute="leading" id="puK-qK-1JE"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="jZo-OE-0eB" firstAttribute="leading" secondItem="vsa-FO-pvt" secondAttribute="leading" id="35T-7c-z6b"/>
                         <constraint firstItem="ec9-AO-RuP" firstAttribute="leading" secondItem="vsa-FO-pvt" secondAttribute="leading" id="ARt-GS-wtJ"/>
+                        <constraint firstAttribute="trailing" secondItem="jZo-OE-0eB" secondAttribute="trailing" id="Dzu-a1-5KQ"/>
                         <constraint firstAttribute="trailing" secondItem="ec9-AO-RuP" secondAttribute="trailing" id="LAF-se-vF8"/>
                         <constraint firstItem="Rlj-VT-12R" firstAttribute="leading" secondItem="vsa-FO-pvt" secondAttribute="leading" constant="15" id="dX9-cN-rAk"/>
                         <constraint firstAttribute="trailing" secondItem="Rlj-VT-12R" secondAttribute="trailing" constant="15" id="eEG-Tl-Zys"/>
                     </constraints>
                 </stackView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZo-OE-0eB">
-                    <rect key="frame" x="0.0" y="806" width="414" height="90"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1hq-vw-l83">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNy-kh-roD" userLabel="dublicate button">
-                                    <rect key="frame" x="0.0" y="0.0" width="207" height="90"/>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="Dublicate">
-                                        <imageReference key="image" image="square.on.square" catalog="system" symbolScale="medium"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="dublicateAction:" destination="-1" eventType="touchUpInside" id="RNg-1n-dMv"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jii-5G-Qfv" userLabel="delete button">
-                                    <rect key="frame" x="207" y="0.0" width="207" height="90"/>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="Delete">
-                                        <imageReference key="image" image="trash" catalog="system" symbolScale="medium"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="deleteAction:" destination="-1" eventType="touchUpInside" id="7KJ-YN-vXJ"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                        </stackView>
-                    </subviews>
-                    <constraints>
-                        <constraint firstAttribute="bottom" secondItem="1hq-vw-l83" secondAttribute="bottom" id="8W6-oY-4e1"/>
-                        <constraint firstAttribute="height" constant="90" id="NfT-6N-V2k"/>
-                        <constraint firstItem="1hq-vw-l83" firstAttribute="top" secondItem="jZo-OE-0eB" secondAttribute="top" id="UyD-ar-k2D"/>
-                        <constraint firstAttribute="trailing" secondItem="1hq-vw-l83" secondAttribute="trailing" id="hUI-oh-yyz"/>
-                        <constraint firstItem="1hq-vw-l83" firstAttribute="leading" secondItem="jZo-OE-0eB" secondAttribute="leading" id="puK-qK-1JE"/>
-                    </constraints>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IL0-4A-GYT" userLabel="safe area view">
+                    <rect key="frame" x="0.0" y="862" width="414" height="34"/>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="jZo-OE-0eB" secondAttribute="bottom" id="Gua-Qj-p4H"/>
+                <constraint firstAttribute="bottom" secondItem="IL0-4A-GYT" secondAttribute="bottom" id="0lH-Mf-Mqd"/>
+                <constraint firstItem="IL0-4A-GYT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Fva-6d-PuY"/>
+                <constraint firstAttribute="trailing" secondItem="IL0-4A-GYT" secondAttribute="trailing" id="Klg-nI-f0B"/>
                 <constraint firstAttribute="trailing" secondItem="vsa-FO-pvt" secondAttribute="trailing" id="PgG-wi-Jrw"/>
                 <constraint firstItem="vsa-FO-pvt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Pvw-gZ-amT"/>
                 <constraint firstItem="ABo-EJ-5jk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="cWW-ey-aqR"/>
                 <constraint firstAttribute="trailing" secondItem="ABo-EJ-5jk" secondAttribute="trailing" constant="15" id="f3M-3b-U9Y"/>
                 <constraint firstItem="ABo-EJ-5jk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="fjo-3y-7Kr"/>
-                <constraint firstAttribute="bottom" secondItem="vsa-FO-pvt" secondAttribute="bottom" id="imA-tF-daP"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jZo-OE-0eB" secondAttribute="trailing" id="nbD-Hi-6VH"/>
+                <constraint firstItem="IL0-4A-GYT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lyh-9a-Ilg"/>
                 <constraint firstItem="vsa-FO-pvt" firstAttribute="top" secondItem="ABo-EJ-5jk" secondAttribute="bottom" constant="25" id="tqm-y4-4e9"/>
-                <constraint firstItem="jZo-OE-0eB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="weR-aQ-3tA"/>
+                <constraint firstItem="IL0-4A-GYT" firstAttribute="top" secondItem="vsa-FO-pvt" secondAttribute="bottom" id="x4s-ah-iVE"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="97"/>
+            <point key="canvasLocation" x="137.68115942028987" y="96.428571428571431"/>
         </view>
     </objects>
     <resources>

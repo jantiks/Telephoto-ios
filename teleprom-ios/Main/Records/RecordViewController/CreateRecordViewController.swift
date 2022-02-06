@@ -22,6 +22,7 @@ class CreateRecordViewController: BaseViewController {
     private var contentTextViewPlaceholderLabel: UILabel!
     private var record: Record?
     private var firstLayoutTime = true
+    private let maxTextCount = 1000
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,12 +73,14 @@ class CreateRecordViewController: BaseViewController {
     private func initUI() {
         titleTextField.text = record?.getTitle()
         contentTextView.attributedText = record?.getText()
-        title = "\(contentTextView.text.count)/1000"
         
         setNavBarButtons()
         setTitleTextField()
         setConetentTextView()
         addDoneButtonOnKeyboard()
+        IAPManager.shared.checkPermissions { [weak self] hasPermission in
+            self?.title = hasPermission ? "" : "\(self?.contentTextView.text.count ?? 0)/1000"
+        }
     }
     
     private func addDoneButtonOnKeyboard(){
@@ -85,7 +88,7 @@ class CreateRecordViewController: BaseViewController {
         doneToolbar.barStyle = .black
         
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+        let done: UIBarButtonItem = UIBarButtonItem(title: "create.record.toolbar.title".localized, style: .done, target: self, action: #selector(self.doneButtonAction))
         done.tintColor = .white
         
         let items = [flexSpace, done]
@@ -96,7 +99,7 @@ class CreateRecordViewController: BaseViewController {
         titleTextField.inputAccessoryView = doneToolbar
     }
     
-    @objc private func doneButtonAction(){
+    @objc private func doneButtonAction() {
         view.endEditing(true)
     }
     
@@ -136,6 +139,14 @@ class CreateRecordViewController: BaseViewController {
         NSLayoutConstraint(item: effectView, attribute: .bottom, relatedBy: .equal, toItem: backgroundBlurView, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
     }
     
+    private func textLimit(existingText: String?,
+                           newText: String,
+                           limit: Int) -> Bool {
+        let text = existingText ?? ""
+        let isAtLimit = text.count + newText.count <= limit
+        return isAtLimit
+    }
+    
     override func keyboardDidHide() {
         textModifierBottomConstraint.constant = 0
         contentTextViewBottomConstraint.constant = 0
@@ -164,10 +175,24 @@ class CreateRecordViewController: BaseViewController {
 
 extension CreateRecordViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        title = "\(textView.text.count)/1000"
+        if !IAPManager.shared.getLastSubscribedState() {
+            title = "\(textView.text.count)/\(maxTextCount)"
+        }
         
         textViewModifier.textViewDidChange()
         contentTextViewPlaceholderLabel.isHidden = !textView.text.isEmpty
         navigationItem.rightBarButtonItem?.isEnabled = !textView.text.isEmpty && titleTextField.text?.isEmpty == false
+    }
+    
+    func textView(_ textView: UITextView,
+                  shouldChangeTextIn range: NSRange,
+                  replacementText text: String) -> Bool {
+        if !IAPManager.shared.getLastSubscribedState() {
+            return textLimit(existingText: textView.text,
+                                  newText: text,
+                                  limit: maxTextCount)
+        }
+        
+        return true
     }
 }

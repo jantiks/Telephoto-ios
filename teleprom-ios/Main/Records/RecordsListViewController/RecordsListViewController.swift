@@ -13,6 +13,7 @@ class RecordsListViewController: BaseViewController {
     @IBOutlet private weak var recordsCollectionView: UICollectionView!
     @IBOutlet private weak var selectButton: UIButton!
     @IBOutlet private weak var selectionActionsView: UIView!
+    @IBOutlet private weak var bottomSafeAreaView: UIView!
     @IBOutlet private weak var selectionActionsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var dublicateButton: UIButton!
     @IBOutlet private weak var deletButton: UIButton!
@@ -29,7 +30,16 @@ class RecordsListViewController: BaseViewController {
         registerCells()
         setDelegates()
         initUI()
-        
+        checkSubscriptionState()
+        setReloadCommands()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    private func setReloadCommands() {
         LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
             self?.reloadData()
         })])
@@ -37,11 +47,10 @@ class RecordsListViewController: BaseViewController {
         RecordDataProvider.shared.addReloadCommands([DoneCommand({ [weak self] in
             self?.reloadData()
         })])
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
+        
+        IAPManager.shared.addReloadCommands([DoneCommand({ [weak self]  in
+            self?.subscriptionView.isHidden = true
+        })])
     }
 
     private func registerCells() {
@@ -55,9 +64,10 @@ class RecordsListViewController: BaseViewController {
     }
     
     private func initUI() {
-        subscriptionView.isHidden = true
         interItemSpace = view.bounds.width * 0.05
         selectionActionsView.backgroundColor = .tabBarGray
+        bottomSafeAreaView.backgroundColor = .tabBarGray
+        selectButton.setTitleColor(.telepromPink.withAlphaComponent(0.3), for: .disabled)
         
         updateViewsForCurrentSelectionMode()
         
@@ -65,16 +75,24 @@ class RecordsListViewController: BaseViewController {
         flow.sectionInset = UIEdgeInsets(top: 0, left: interItemSpace, bottom: 0, right: interItemSpace)
     }
     
+    private func checkSubscriptionState() {
+        subscriptionView.isHidden = IAPManager.shared.getLastSubscribedState()
+        IAPManager.shared.checkPermissions { [weak self] hasPermisison in
+            self?.subscriptionView.isHidden = hasPermisison
+        }
+    }
+    
     private func reloadData() {
         recordsConfigs = RecordDataProvider.shared.getAll().reversed().map({ RecordCellConfig(record: $0, mode: mode) })
         recordsCollectionView.reloadData()
         languageConfigure()
+        
+        selectButton.isEnabled = !recordsConfigs.isEmpty
     }
     
-    private func toggleSelectionMode() {
-        mode.toggle()
+    private func setSelectionMode(_ mode: RecordsListMode) {
+        self.mode = mode
         updateViewsForCurrentSelectionMode()
-        selectionActionsViewHeightConstraint.constant = tabBarController?.tabBar.bounds.height ?? 49
     }
     
     private func updateViewsForCurrentSelectionMode() {
@@ -103,7 +121,8 @@ class RecordsListViewController: BaseViewController {
     }
     
     @IBAction func selectAction(_ sender: UIButton) {
-        toggleSelectionMode()
+        let newMode = self.mode == .add ? RecordsListMode.select : RecordsListMode.add
+        setSelectionMode(newMode)
     }
     
     @IBAction func subscribeAction(_ sender: UIButton) {
@@ -127,10 +146,19 @@ class RecordsListViewController: BaseViewController {
         let ac = UIAlertController(title: alertTitle, message: nil, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "alert.cancel".localized, style: .default, handler: nil))
         ac.addAction(UIAlertAction(title: deleteTitle, style: .destructive, handler: { [weak self] action in
-            if let record = self?.recordsConfigs.first(where: { $0.isSelected })?.record {
-                RecordDataProvider.shared.delete(record)
-            } else {
-                RecordDataProvider.shared.deleteAll()
+            if let records = self?.recordsConfigs.filter({ $0.isSelected }) {
+                if records.isEmpty {
+                    // if no records is selected, delete all records
+                    RecordDataProvider.shared.deleteAll()
+                    self?.setSelectionMode(.add)
+                    return
+                }
+                
+                records.forEach({ RecordDataProvider.shared.delete($0.record) })
+                
+                if self?.recordsConfigs.isEmpty == true {
+                    self?.setSelectionMode(.add)
+                }
             }
         }))
         
@@ -175,7 +203,6 @@ extension RecordsListViewController: UICollectionViewDataSource {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addCell", for: indexPath) as? AddRecordCell else { fatalError("couldn't load addCell") }
                 
                 return cell
-                
             } else {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recordCell", for: indexPath) as? RecordCell else { fatalError("couldn't load recordCell") }
                 
@@ -189,11 +216,6 @@ extension RecordsListViewController: UICollectionViewDataSource {
             cell.configure(recordsConfigs[indexPath.item])
             cell.setSelectedCommand = DoneCommand({ [weak self] in
                 guard let self = self else { return }
-                
-                if let selectedCellConfigIndex = self.recordsConfigs.firstIndex(where: { $0.isSelected }), selectedCellConfigIndex != indexPath.item {
-                    self.recordsConfigs[selectedCellConfigIndex].isSelected = false
-                    self.recordsCollectionView.reloadItems(at: [IndexPath(item: selectedCellConfigIndex, section: 0)])
-                }
                 
                 self.recordsConfigs[indexPath.item].isSelected.toggle()
             })

@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import Photos
 
 class VideoPreviewViewController: BaseViewController {
 
@@ -94,11 +95,15 @@ class VideoPreviewViewController: BaseViewController {
     }
     
     private func showLoading() {
-        loadingView.startLoading()
+        DispatchQueue.main.async { [weak self] in
+            self?.loadingView.startLoading()
+        }
     }
     
     private func hideLoading() {
-        loadingView.stopLoading()
+        DispatchQueue.main.async { [weak self] in
+            self?.loadingView.stopLoading()
+        }
     }
     
     private func deleteVideo() {
@@ -109,9 +114,60 @@ class VideoPreviewViewController: BaseViewController {
         }
     }
     
-    @IBAction func saveAction(_ sender: UIButton) {
+    private func showSubscriptionsController() {
+        let vc = SubscriptionViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
+    private func alertCameraAccessNeeded() {
+        DispatchQueue.main.async { [weak self] in
+            let settingsAppURL = URL(string: UIApplication.openSettingsURLString)!
+            
+            let alert = UIAlertController(
+                title: "gallery.access.title".localized,
+                message: "gallery.access.message".localized,
+                preferredStyle: .alert
+            )
+            
+            alert.addAction(UIAlertAction(title: "alert.cancel".localized, style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "alert.allow".localized, style: .cancel, handler: { (alert) -> Void in
+                UIApplication.shared.open(settingsAppURL, options: [:], completionHandler: nil)
+            }))
+            
+            self?.present(alert, animated: true)
+        }
+    }
+    
+    private func saveVideo() {
         showLoading()
         SaveVideoCommand(videoUrl, aspectRatio: aspectRatio, savedAction: videoSavedAction, failedAction: videoSavingFailedAction).execute()
+    }
+    
+    private func downloadVideoIfHasAccess() {
+        switch PHPhotoLibrary.authorizationStatus() {
+        case .authorized:
+            //handle authorized status
+            saveVideo()
+        case .denied, .restricted :
+            alertCameraAccessNeeded()
+            //handle denied status
+        case .notDetermined:
+            // ask for permissions
+            PHPhotoLibrary.requestAuthorization { [weak self] status in
+                status == .authorized ? self?.saveVideo() : self?.alertCameraAccessNeeded()
+            }
+        default:
+            alertCameraAccessNeeded()
+        }
+    }
+    
+    @IBAction func saveAction(_ sender: UIButton) {
+        IAPManager.shared.checkPermissions { [weak self] hasPermition in
+            guard let self = self else { return }
+            
+            hasPermition ? self.downloadVideoIfHasAccess() : self.showSubscriptionsController()
+        }
     }
     
     @IBAction func playPuseAction(_ sender: UIButton) {
@@ -140,6 +196,6 @@ class VideoPreviewViewController: BaseViewController {
 
 extension VideoPreviewViewController: PlayerViewDelegate {
     func playPauseAction(_ isPlaying: Bool) {
-        isPlaying ? playButton.setImage(UIImage(systemName: "pause.circle.fill"), for: .normal) : playButton.setImage(UIImage(systemName: "play.circle.fill"), for: .normal)
+        isPlaying ? playButton.setImage(UIImage(named: "pause"), for: .normal) : playButton.setImage(UIImage(named: "play"), for: .normal)
     }
 }

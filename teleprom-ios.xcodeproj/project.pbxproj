@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		986C1C8D27AA975E00F9668C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986C1C8C27AA975E00F9668C /* Utils.swift */; };
+		986C1C9127AAAD9000F9668C /* SubscriptionAdvertizingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986C1C8F27AAAD9000F9668C /* SubscriptionAdvertizingView.swift */; };
+		986C1C9227AAAD9000F9668C /* SubscriptionAdvertizingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 986C1C9027AAAD9000F9668C /* SubscriptionAdvertizingView.xib */; };
+		986C1C9627AADB7100F9668C /* TabBarSelectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986C1C9527AADB7100F9668C /* TabBarSelectable.swift */; };
+		986C1C9827AB041C00F9668C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986C1C9727AB041B00F9668C /* StoreKit.framework */; };
 		A01C9069277512200098EEB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C9068277512200098EEB8 /* AppDelegate.swift */; };
 		A01C906B277512200098EEB8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C906A277512200098EEB8 /* SceneDelegate.swift */; };
 		A01C906D277512200098EEB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C906C277512200098EEB8 /* ViewController.swift */; };
@@ -111,6 +116,11 @@
 
 /* Begin PBXFileReference section */
 		519B550047D2595DAEF93B63 /* Pods_teleprom_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_teleprom_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		986C1C8C27AA975E00F9668C /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		986C1C8F27AAAD9000F9668C /* SubscriptionAdvertizingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionAdvertizingView.swift; sourceTree = "<group>"; };
+		986C1C9027AAAD9000F9668C /* SubscriptionAdvertizingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionAdvertizingView.xib; sourceTree = "<group>"; };
+		986C1C9527AADB7100F9668C /* TabBarSelectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSelectable.swift; sourceTree = "<group>"; };
+		986C1C9727AB041B00F9668C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A01C9065277512200098EEB8 /* teleprom-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "teleprom-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01C9068277512200098EEB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A01C906A277512200098EEB8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABAE513169378AEA14636FAA /* Pods_teleprom_ios.framework in Frameworks */,
+				986C1C9827AB041C00F9668C /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +245,7 @@
 		2332C8178EBF67004BA63688 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				986C1C9727AB041B00F9668C /* StoreKit.framework */,
 				519B550047D2595DAEF93B63 /* Pods_teleprom_ios.framework */,
 			);
 			name = Frameworks;
@@ -246,6 +258,15 @@
 				D8AEFA3040B62CC0933D62D8 /* Pods-teleprom-ios.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		986C1C8E27AAABEA00F9668C /* views */ = {
+			isa = PBXGroup;
+			children = (
+				986C1C8F27AAAD9000F9668C /* SubscriptionAdvertizingView.swift */,
+				986C1C9027AAAD9000F9668C /* SubscriptionAdvertizingView.xib */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 		A01C905C277512200098EEB8 = {
@@ -362,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				A01C909327776AD90098EEB8 /* TabBarViewController.swift */,
+				986C1C9527AADB7100F9668C /* TabBarSelectable.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -557,6 +579,7 @@
 				A032736A27784646008A138C /* UserSettingsManager.swift */,
 				A08153A527785EEF00AADED9 /* LanguageManager.swift */,
 				A04E6507279CA22C00A54C99 /* Subscriptions */,
+				986C1C8C27AA975E00F9668C /* Utils.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -599,6 +622,7 @@
 		A0492BCD279B414400EF0C3F /* Subscriptions */ = {
 			isa = PBXGroup;
 			children = (
+				986C1C8E27AAABEA00F9668C /* views */,
 				A04E64FC279C280500A54C99 /* table cells */,
 				A04E64F8279B483B00A54C99 /* SubscriptionViewController.swift */,
 				A04E64F9279B483B00A54C99 /* SubscriptionViewController.xib */,
@@ -867,6 +891,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0301E792788E46900B40BE8 /* PlayerProgressView.xib in Resources */,
+				986C1C9227AAAD9000F9668C /* SubscriptionAdvertizingView.xib in Resources */,
 				A04E6500279C283500A54C99 /* PremiumFeatureCell.xib in Resources */,
 				A0B45B8B277A4C3000E8B0D7 /* AddRecordCell.xib in Resources */,
 				A042AE0A279E130A00F38C5E /* OnboardingViewController.xib in Resources */,
@@ -993,14 +1018,17 @@
 				A01C90C227779DD90098EEB8 /* SettingsTableViewCell.swift in Sources */,
 				A01C909727776DE50098EEB8 /* BaseNavigationController.swift in Sources */,
 				A0301E712788C53900B40BE8 /* CustomPlayerView.swift in Sources */,
+				986C1C8D27AA975E00F9668C /* Utils.swift in Sources */,
 				A0441A7C2786318200578EAE /* CameraConfiguration.swift in Sources */,
 				A059E9DC278B0EE600C0153C /* SelectRecordViewController.swift in Sources */,
+				986C1C9127AAAD9000F9668C /* SubscriptionAdvertizingView.swift in Sources */,
 				A042AE09279E130A00F38C5E /* OnboardingViewController.swift in Sources */,
 				A032736D277846FA008A138C /* SetDefaultCommands.swift in Sources */,
 				A04E64FF279C283500A54C99 /* PremiumFeatureCell.swift in Sources */,
 				A0B47B15278071F0004C7526 /* UIButtonExtension.swift in Sources */,
 				A01C906B277512200098EEB8 /* SceneDelegate.swift in Sources */,
 				A0B45B8A277A4C3000E8B0D7 /* AddRecordCell.swift in Sources */,
+				986C1C9627AADB7100F9668C /* TabBarSelectable.swift in Sources */,
 				A03273702778526E008A138C /* LanguageSelectionViewController.swift in Sources */,
 				A032736427783F18008A138C /* TableViewCellWithLabel.swift in Sources */,
 				A032737427785497008A138C /* Languages.swift in Sources */,
@@ -1178,7 +1206,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MQ852JYW2V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "teleprom-ios/Info.plist";
@@ -1196,7 +1224,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = tigran.teleprom.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1212,7 +1240,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MQ852JYW2V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "teleprom-ios/Info.plist";
@@ -1230,7 +1258,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = tigran.teleprom.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

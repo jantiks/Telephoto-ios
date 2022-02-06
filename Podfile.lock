@@ -1,4 +1,7 @@
 PODS:
+  - Qonversion (2.18.2):
+    - Qonversion/Main (= 2.18.2)
+  - Qonversion/Main (2.18.2)
   - Realm (10.20.0):
     - Realm/Headers (= 10.20.0)
   - Realm/Headers (10.20.0)
@@ -6,17 +9,20 @@ PODS:
     - Realm (= 10.20.0)
 
 DEPENDENCIES:
+  - Qonversion
   - RealmSwift
 
 SPEC REPOS:
   trunk:
+    - Qonversion
     - Realm
     - RealmSwift
 
 SPEC CHECKSUMS:
+  Qonversion: 1945887953f1f94a5d1785fb916c6acad4521d13
   Realm: ae32bdc1da7d19c7617e0400201a77acd4a211b9
   RealmSwift: c95eec6a712924870b2e36c4c081d63ec07e5414
 
-PODFILE CHECKSUM: e4dd2c54d693a012898afecf61b1e3658a0e4e06
+PODFILE CHECKSUM: b1dcddb398ac3add7e2cbe6f00ecd78530c3a634
 
 COCOAPODS: 1.11.2

@@ -122,6 +122,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
+                                                            <color key="tintColor" red="0.94680309460000001" green="0.223597616" blue="0.47182530160000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstItem="Aeg-wx-QAz" firstAttribute="top" secondItem="l3I-VF-MPF" secondAttribute="top" id="2sh-P5-HZk"/>
                                                                 <constraint firstItem="PJC-ok-365" firstAttribute="leading" secondItem="1Ke-cW-leK" secondAttribute="leading" constant="30" id="4Hy-ox-Tjb"/>

@@ -19,7 +19,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .controllerGray
-        navigationItem.backButtonTitle = ""
+        navigationItem.backButtonTitle = "back".localized
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseTabBarViewController: UITabBarController {
+class BaseTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
@@ -18,6 +18,7 @@ class BaseTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        delegate = self
         LanguageManager.shared.addReloadCommands([DoneCommand({ [weak self] in
             self?.updateTabBar()
         })])
