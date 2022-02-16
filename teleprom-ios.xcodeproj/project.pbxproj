@@ -1210,6 +1210,7 @@
 				DEVELOPMENT_TEAM = MQ852JYW2V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "teleprom-ios/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Teleprompter;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used to record of video";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Used to record the audio";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Used to save the video in your device.";
@@ -1224,7 +1225,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.3;
+				MARKETING_VERSION = 0.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = tigran.teleprom.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1244,6 +1245,7 @@
 				DEVELOPMENT_TEAM = MQ852JYW2V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "teleprom-ios/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Teleprompter;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used to record of video";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Used to record the audio";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Used to save the video in your device.";
@@ -1258,7 +1260,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.3;
+				MARKETING_VERSION = 0.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = tigran.teleprom.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
